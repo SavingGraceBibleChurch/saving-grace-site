@@ -1,11 +1,28 @@
-// Sermon descriptions and recording lengths (see scripts/export_local_content.py).
+// Sermon descriptions and recording lengths. The base set comes from the local database
+// (scripts/export_local_content.py); descriptions written from SermonAudio transcripts
+// (scripts/add_description.py) and SermonAudio recording lengths fill the gaps.
 import extrasData from "../data/sermon-extras.json";
+import addedDescriptions from "../data/sermon-descriptions-added.json";
+import addedDurations from "../data/sermon-durations-added.json";
 import type { Sermon } from "./types";
 
 interface Extra { summary: string; durationSeconds: number | null; durationProvider: string | null }
 const extras = extrasData as Record<string, Extra>;
+const descriptions = addedDescriptions as Record<string, string>;
+const durations = addedDurations as Record<string, number>;
 
-export const extraFor = (sermon: Sermon): Extra | undefined => extras[String(sermon.wpId)];
+export function extraFor(sermon: Sermon): Extra | undefined {
+  const key = String(sermon.wpId);
+  const base = extras[key];
+  const summary = base?.summary || descriptions[key] || "";
+  const durationSeconds = base?.durationSeconds ?? durations[key] ?? null;
+  if (!summary && !durationSeconds) return undefined;
+  return {
+    summary,
+    durationSeconds,
+    durationProvider: base?.durationSeconds ? base.durationProvider : durations[key] ? "sermonaudio" : null,
+  };
+}
 
 /** "55:26" or "1:00:16". */
 export function formatDuration(seconds?: number | null): string | null {

@@ -212,6 +212,13 @@ home = {
 }
 
 # ---------------------------------------------------------------- sermons
+# WordPress embeds the wrong SermonAudio recording on these sermons (each plays another
+# sermon's audio). The correct recordings were found on SermonAudio by title and date.
+SERMONAUDIO_CORRECTIONS = {
+    29228: "5519101127290",    # Compassionate Healer (28 Oct 2018) embedded "The Compassion of The Christ"
+    29449: "21720121734252",   # Judas The Unsaved Apostle Part 2 (15 Oct 2017) embedded Part 1
+}
+
 YOUTUBE = [r"youtu\.be/([\w-]{11})", r"[?&]v=([\w-]{11})", r"/embed/([\w-]{11})", r"/live/([\w-]{11})", r"/shorts/([\w-]{11})"]
 
 
@@ -258,7 +265,7 @@ for row in sorted(sermon_rows, key=lambda r: r["post_date"], reverse=True):
         "passages": groups["passage"],
         "passage": text(m.get("asp_sermon_bible_passage")),
         "youtubeId": youtube_id(m.get("asp_sermon_youtube")),
-        "sermonAudioId": sermonaudio_id(m.get("asp_sermon_audio_embed")),
+        "sermonAudioId": SERMONAUDIO_CORRECTIONS.get(int(row["ID"])) or sermonaudio_id(m.get("asp_sermon_audio_embed")),
         "pdf": site_path(m.get("asp_sermon_pdf")) if m.get("asp_sermon_pdf") else None,
         "body": row["post_content"].strip() or None,
         "seo": seo,
