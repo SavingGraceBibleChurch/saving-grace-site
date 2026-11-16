@@ -6,6 +6,7 @@ import { sermons, term, speakerName, sermonSummary, youtubeThumbnail, SITE, SITE
 import { bookGroup } from "../../lib/books";
 import { formatDate } from "../../lib/events";
 import { extraFor, formatDuration, paragraphs, excerpt } from "../../lib/extras";
+import { transcriptFor } from "../../lib/transcripts";
 import type { Sermon } from "../../lib/types";
 
 export function getStaticPaths() {
@@ -20,7 +21,8 @@ const mainBook = sermon.books.find((slug) => slug !== "selected-text");
 const extra = extraFor(sermon);
 const duration = formatDuration(extra?.durationSeconds);
 const about = extra?.summary ? paragraphs(extra.summary) : [];
-const description = sermon.seo.description || (extra?.summary ? excerpt(extra.summary) : sermonSummary(sermon));
+const transcript = transcriptFor(sermon);
+const description = sermon.seo.description ||(extra?.summary ? excerpt(extra.summary) : sermonSummary(sermon));
 
 // Related: the rest of the same series first, then the same book, newest first.
 const related: Sermon[] = [];
@@ -94,6 +96,18 @@ if (sermon.youtubeId) {
             <section class="sermon__about" id="about" aria-labelledby="about-heading">
               <h2 id="about-heading">About this sermon</h2>
               {about.map((text) => <p>{text}</p>)}
+            </section>
+          )}
+          {transcript && (
+            <section class="sermon__transcript" aria-labelledby="transcript-heading" data-pagefind-ignore>
+              <h2 id="transcript-heading" class="sr-only">Transcript</h2>
+              <details class="studies__transcript" id="transcript">
+                <summary><span><span class="studies__disclosure" aria-hidden="true">+</span>Complete transcript</span><span class="studies__transcript-length">{transcript.words.toLocaleString("en-AU")} words</span></summary>
+                <div class="studies__transcript-body">
+                  <p class="sermon__transcript-note">{transcript.source === "sermonaudio" ? "Machine transcript from SermonAudio." : "Machine transcript from the video captions."} It has not been checked against the recording and may contain errors.</p>
+                  {paragraphs(transcript.text).map((text) => <p>{text}</p>)}
+                </div>
+              </details>
             </section>
           )}
         </div>

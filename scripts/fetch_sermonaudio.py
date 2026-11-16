@@ -1,9 +1,10 @@
-"""Fetches SermonAudio metadata and transcripts for sermons that have no description yet.
+"""Fetches SermonAudio metadata and transcripts for sermons that have no description yet,
+or for every sermon with --all.
 
 The API key is read from a local file outside the repository and is never printed or saved.
 Raw responses go to private/sermonaudio/ (gitignored).
 
-Run: python scripts/fetch_sermonaudio.py <path to api-key.txt>
+Run: python scripts/fetch_sermonaudio.py <path to api-key.txt> [--all]
 """
 import json
 import sys
@@ -19,7 +20,7 @@ API = "https://api.sermonaudio.com/v2/node/sermons/"
 key = Path(sys.argv[1]).read_text(encoding="utf-8").strip()
 sermons = json.loads((ROOT / "src/data/sermons.json").read_text(encoding="utf-8"))
 extras = json.loads((ROOT / "src/data/sermon-extras.json").read_text(encoding="utf-8"))
-targets = [s for s in sermons if not extras.get(str(s["wpId"]), {}).get("summary")]
+targets = sermons if "--all" in sys.argv[2:] else [s for s in sermons if not extras.get(str(s["wpId"]), {}).get("summary")]
 OUT.mkdir(parents=True, exist_ok=True)
 
 

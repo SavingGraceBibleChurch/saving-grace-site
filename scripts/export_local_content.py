@@ -4,6 +4,7 @@ Writes:
   src/data/sermon-extras.json        description and recording length per sermon (keyed by WordPress ID)
   src/data/studies.json              Tuesday Night Studies courses, sections and session index
   src/data/study-content/<slug>.json description, transcript, questions and Scripture references per study
+  private/db-transcripts/<wpId>.txt  caption transcripts per sermon, the fallback used by scripts/clean_transcripts.py
 
 The connection is forced read-only and uses the standard PostgreSQL password file,
 so no credential ever appears here. Run: python scripts/export_local_content.py
@@ -47,17 +48,24 @@ by_title_date = {(s["title"].strip().lower(), s["date"]): s for s in site_sermon
 
 rows = query("""
   select s.source_wordpress_id as wp, s.title, s.service_date::text as date, s.summary,
+         (select t.body_text from sermon_transcripts t where t.sermon_id = s.id order by t.updated_at desc limit 1) as transcript,
          (select json_agg(json_build_object('provider', m.provider, 'seconds', m.duration_seconds))
             from sermon_media m where m.sermon_id = s.id and m.duration_seconds is not null) as media
   from sermons s
   where s.deleted_at is null and s.source_wordpress_id is not null
 """)
 extras, unmatched = {}, []
+db_transcripts = ROOT / "private" / "db-transcripts"
+db_transcripts.mkdir(parents=True, exist_ok=True)
+for old in db_transcripts.glob("*.txt"):
+    old.unlink()
 for row in rows:
     sermon = by_wp.get(row["wp"]) or by_title_date.get((row["title"].strip().lower(), row["date"]))
     if not sermon:
         unmatched.append(row["wp"])
         continue
+    if clean(row["transcript"]):
+        (db_transcripts / f"{sermon['wpId']}.txt").write_text(clean(row["transcript"]) + "\n", encoding="utf-8")
     media = row["media"] or []
     # The video length is preferred because the video is the main player; audio is the fallback.
     pick = next((m for m in media if m["provider"] == "youtube"), None) or next(iter(media), None)

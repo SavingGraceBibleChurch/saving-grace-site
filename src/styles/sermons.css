@@ -181,3 +181,5 @@
 .sermon__about p { font-family: var(--font-serif); font-size: 1.1875rem; line-height: 1.72; color: var(--ink-soft); }
 .sermon__about p + p { margin-top: 1.1em; }
 .video, .audio { scroll-margin-top: 7.5rem; }
+.sermon__transcript { margin-top: clamp(2rem, 1.5rem + 2vw, 3rem); max-width: 44rem; }
+.studies__transcript-body .sermon__transcript-note { font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: var(--ink-mute); }

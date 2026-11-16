@@ -217,6 +217,9 @@ home = {
 SERMONAUDIO_CORRECTIONS = {
     29228: "5519101127290",    # Compassionate Healer (28 Oct 2018) embedded "The Compassion of The Christ"
     29449: "21720121734252",   # Judas The Unsaved Apostle Part 2 (15 Oct 2017) embedded Part 1
+    29617: "72124310454265",   # Tychicus the Beloved Servant (21 Jul 2024) embedded "The Christ-Centered Wife"
+    29650: "8252474156356",    # Mark The Minister of Second Chance (25 Aug 2024) embedded "The Christ-Centered Wife"
+    29764: "1122574993607",    # Our Hope Beyond The Grave (12 Jan 2025) embedded "Confidence in The Triune God - Part 3"
 }
 
 YOUTUBE = [r"youtu\.be/([\w-]{11})", r"[?&]v=([\w-]{11})", r"/embed/([\w-]{11})", r"/live/([\w-]{11})", r"/shorts/([\w-]{11})"]
