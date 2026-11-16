@@ -8,17 +8,15 @@ by [Pagefind](https://pagefind.app).
 **Status:** the pages, sermons, events and SEO layer are built and verified locally.
 The site is not deployed, and WordPress is still the live site.
 
-## Two designs
+## Design history
 
-| Branch | Design |
-|---|---|
-| `main` | The original Astra + Impeccable design. |
-| `redesign-fable` | An editorial redesign: Newsreader and Instrument Sans type, warm paper with deep navy and a brick-ember accent, photos framed in a church-window arch. |
+`main` is the editorial redesign: Newsreader and Instrument Sans type, warm paper with deep navy and a brick-ember accent, and photos framed in a church-window arch.
 
-Both branches use the same data, URLs, titles, descriptions and H1s, and both pass `scripts/verify-seo.mjs`.
-Switch with `git switch main` or `git switch redesign-fable`, then run `npm install` and `npm run build`.
+The original Astra + Impeccable design is kept at the tag `original-design`. To look at it, run `git switch --detach original-design`, then `npm install` and `npm run build`. `git switch main` brings the redesign back.
 
-## What's on the redesign branch
+Both use the same data, URLs, titles, descriptions and H1s, and both pass `scripts/verify-seo.mjs`.
+
+## What's in the redesign
 
 - **Sermons page:** the SermonsV5 layout from the old project (finder, Bible bookshelf, journal rows, series and speaker tables) in this site's colours, nine sermons per page with "More sermons".
 - **Speaker, series, Bible book and passage pages:** sectioned tables. WordPress's "topics" are Scripture passages, so they live under `/sermons/passage/`.
