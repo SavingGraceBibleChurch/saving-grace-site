@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SermonCard from "../components/SermonCard.astro";
+import SermonFeature from "../components/SermonFeature.astro";
 import EventRow from "../components/EventRow.astro";
 import Picture from "../components/Picture.astro";
 import { home, sermons, SITE, SITE_NAME } from "../lib/content";
@@ -12,6 +13,10 @@ const hero = copy.heroCopy;
 const services = copy.servicesCopy;
 const about = copy.aboutCopy;
 const soon = upcoming(melbourneToday(), 21, 4);
+const [latest, ...recent] = sermons.slice(0, 3);
+// "Sunday Morning 10:30am (Formal)" -> big numerals "10:30" and "am".
+const clock = (title: string) => title.match(/(\d{1,2}:\d{2})\s*(am|pm)/iu);
+const serviceList = [services.morning, services.evening].map((service: { title: string; text: string; href: string }) => ({ ...service, clock: clock(service.title) }));
 
 const jsonLd = [
   {
@@ -60,76 +65,112 @@ const jsonLd = [
   ogImage="/media/congregation.jpg"
   jsonLd={jsonLd}
 >
-  <div class="home">
-    <section class="arrive" aria-labelledby="hero-heading">
-      <div class="arrive__inner">
-        <div class="arrive__welcome">
-          <h1 id="hero-heading" class="arrive__title"><span class="arrive__eyebrow">{hero.eyebrow}</span> <span class="arrive__name">{hero.nameLine1}</span> <span class="arrive__name">{hero.nameLine2}</span></h1>
-          <p class="arrive__place">Westmeadows, Melbourne</p>
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow">Westmeadows, Melbourne</p>
+        <h1 id="hero-heading" class="hero__title"><span class="hero__kicker">{hero.eyebrow}</span> <span>{hero.nameLine1}</span> <span>{hero.nameLine2}</span></h1>
+        <p class="hero__lede">{seo.description}</p>
+        <div class="hero__actions">
+          <a class="button button--lg" href={hero.joinHref}>{hero.join}</a>
+          <a class="link-arrow" href={hero.joinHref}>{hero.newHere} What to expect</a>
         </div>
-        <div class="welcome-card" id="visit">
-          <div class="welcome-card__body">
-            <p class="welcome-card__time">{hero.serviceTime}</p>
-            <p class="welcome-card__where">{hero.address}</p>
-            <a class="button welcome-card__cta" href={hero.joinHref}>{hero.join}</a>
-            <a class="welcome-card__more" href={hero.joinHref}>{hero.newHere} What to expect</a>
-          </div>
-        </div>
+        <dl class="hero__facts">
+          <div><dt>Lord's Day</dt><dd>{hero.serviceTime}</dd></div>
+          <div><dt>Find us</dt><dd>{hero.address}</dd></div>
+        </dl>
       </div>
-      <figure class="arrive__photograph"><Picture id="congregation" class="arrive__image" eager /></figure>
-      <div class="arrive__inner arrive__inner--services" id="services">
-        <section aria-labelledby="services-heading">
-          <div class="section__head"><h2 id="services-heading" class="section__title">{services.heading}</h2></div>
-          <ul class="services" role="list">
-            <li class="service service--morning"><h3 class="service__title"><a href={services.morning.href}>{services.morning.title}</a></h3><p class="service__text">{services.morning.text}</p></li>
-            <li class="service service--evening"><h3 class="service__title"><a href={services.evening.href}>{services.evening.title}</a></h3><p class="service__text">{services.evening.text}</p></li>
-          </ul>
-        </section>
-      </div>
-    </section>
+      <figure class="hero__art">
+        <div class="arch"><Picture id="congregation" eager /></div>
+        <a class="hero__card" href={hero.joinHref}>
+          <span class="hero__card-label">This Lord's Day</span>
+          <span class="hero__card-time">{hero.serviceTime}</span>
+          <span class="hero__card-note">Morning Worship</span>
+        </a>
+      </figure>
+    </div>
+  </section>
 
-    <section class="section welcome" id="welcome" aria-labelledby="welcome-heading">
-      <div class="welcome__spread">
-        <h2 id="welcome-heading" class="welcome__title">{copy.welcomeCopy.heading}</h2>
-        <p class="welcome__lede lede">{copy.welcomeCopy.paragraph}</p>
-      </div>
-      <ul class="pillars" role="list">
-        {copy.pillars.map((pillar: any) => (
-          <li class="pillar">
-            <div class="pillar__body">
-              <h3 class="pillar__title" id={`pillar-${pillar.id}`}>{pillar.title}</h3>
-              <p class="pillar__text">{pillar.text}</p>
-              <a class="pillar__more" href={pillar.href}>{pillar.readMore}<span class="sr-only"> about {pillar.title}</span></a>
-            </div>
+  <section class="services band--navy" id="services" aria-labelledby="services-heading">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <div><p class="eyebrow">Every Sunday</p><h2 id="services-heading">{services.heading}</h2></div>
+      </header>
+      <ul class="services__grid" role="list">
+        {serviceList.map((service, index) => (
+          <li class="service" data-reveal style={`--reveal-delay:${index * 0.12}s`}>
+            {service.clock && <p class="service__time" aria-hidden="true">{service.clock[1]}<small>{service.clock[2]!.toLowerCase()}</small></p>}
+            <h3 class="service__title"><a href={service.href}>{service.title}</a></h3>
+            <p class="service__text">{service.text}</p>
+            <span class="link-arrow" aria-hidden="true">Learn more</span>
           </li>
         ))}
       </ul>
-      <figure class="home__photo"><Picture id="welcome-door" class="home__photo-image" /></figure>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="sermons" aria-labelledby="recent-heading">
-      <div class="section__head"><h2 id="recent-heading" class="section__title">{copy.sermonsCopy.heading}</h2><div class="section__aside"><a class="button button--outline" href="/sermons/">{copy.sermonsCopy.viewAll}</a></div></div>
-      <ul class="cards" role="list">{sermons.slice(0, 3).map((sermon, index) => <SermonCard sermon={sermon} latest={index === 0} />)}</ul>
-    </section>
-
-    <section class="section about-row" aria-labelledby="about-heading">
-      <div class="about" id="about">
-        <h2 id="about-heading" class="about__title">{about.heading}</h2>
-        <p class="about__text prose">{about.paragraph}</p>
-        <p class="about__more"><a class="pillar__more" href={about.learnMoreHref}>{about.learnMore}</a></p>
+  <section class="section" id="welcome" aria-labelledby="welcome-heading">
+    <div class="wrap welcome__grid">
+      <figure class="welcome__art" data-reveal><div class="arch"><Picture id="welcome-door" /></div></figure>
+      <div>
+        <div data-reveal>
+          <p class="eyebrow">Our church</p>
+          <h2 id="welcome-heading" class="welcome__title">{copy.welcomeCopy.heading}</h2>
+          <p class="welcome__lede">{copy.welcomeCopy.paragraph}</p>
+        </div>
+        <ul class="pillars" role="list">
+          {copy.pillars.map((pillar: { id: string; title: string; text: string; href: string; readMore: string }, index: number) => (
+            <li class="pillar" data-reveal style={`--reveal-delay:${(index % 2) * 0.1}s`}>
+              <h3 class="pillar__title" id={`pillar-${pillar.id}`}>{pillar.title}</h3>
+              <p class="pillar__text">{pillar.text}</p>
+              <a class="link-arrow" href={pillar.href}>{pillar.readMore}<span class="sr-only"> about {pillar.title}</span></a>
+            </li>
+          ))}
+        </ul>
       </div>
-      <section class="offering" id="give" aria-labelledby="give-heading">
-        <h2 id="give-heading" class="offering__title">{about.giveHeading}</h2>
-        <blockquote class="offering__quote"><p>{about.quote}</p><footer class="offering__cite">{about.attribution}</footer></blockquote>
-        <p class="offering__link"><a class="button button--onink" href={about.giveHref}>{about.giveLink}</a></p>
-      </section>
-    </section>
+    </div>
+  </section>
 
-    {soon.length > 0 && (
-      <section class="section" id="events" aria-labelledby="events-heading">
-        <div class="section__head"><h2 id="events-heading" class="section__title">{copy.eventsCopy.heading}</h2><div class="section__aside"><a class="button button--outline events__calendar" href="/events/">{copy.eventsCopy.viewCalendar}</a></div></div>
-        <ol class="events" role="list">{soon.map((occurrence) => <EventRow occurrence={occurrence} />)}</ol>
+  <section class="section section--tint" id="sermons" aria-labelledby="recent-heading">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <div><p class="eyebrow">Preaching</p><h2 id="recent-heading">{copy.sermonsCopy.heading}</h2></div>
+        <a class="button button--outline" href="/sermons/">{copy.sermonsCopy.viewAll}</a>
+      </header>
+      <div class="showcase" data-reveal>
+        {latest && <SermonFeature sermon={latest} />}
+        <ul class="showcase__side" role="list">{recent.map((sermon) => <SermonCard sermon={sermon} row />)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="about-heading">
+    <div class="wrap about-give">
+      <div class="about" id="about" data-reveal>
+        <p class="eyebrow">Who we are</p>
+        <h2 id="about-heading" class="about__title">{about.heading}</h2>
+        <p class="about__text">{about.paragraph}</p>
+        <a class="link-arrow" href={about.learnMoreHref}>{about.learnMore.replace(/\s*>\s*$/u, "")}</a>
+      </div>
+      <section class="give-card" id="give" aria-labelledby="give-heading" data-reveal style="--reveal-delay:.12s">
+        <div>
+          <h2 id="give-heading" class="eyebrow">{about.giveHeading}</h2>
+          <blockquote><p>{about.quote}</p><footer>{about.attribution.replace(/^[—–-]\s*/u, "")}</footer></blockquote>
+        </div>
+        <p><a class="button button--onink" href={about.giveHref}>{about.giveLink}</a></p>
       </section>
-    )}
-  </div>
+    </div>
+  </section>
+
+  {soon.length > 0 && (
+    <section class="section section--tint" id="events" aria-labelledby="events-heading">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <div><p class="eyebrow">Coming up</p><h2 id="events-heading">{copy.eventsCopy.heading}</h2></div>
+          <a class="button button--outline" href="/events/">{copy.eventsCopy.viewCalendar}</a>
+        </header>
+        <ol class="events" role="list" data-reveal>{soon.map((occurrence) => <EventRow occurrence={occurrence} />)}</ol>
+      </div>
+    </section>
+  )}
 </BaseLayout>

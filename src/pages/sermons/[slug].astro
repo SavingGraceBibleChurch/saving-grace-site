@@ -59,60 +59,94 @@ if (sermon.youtubeId) {
   jsonLd={jsonLd}
 >
   <article class={`sermon hue--${bookGroup(mainBook)}`} data-pagefind-meta={`date:${sermon.date}`}>
-
-    <aside class="sermon__rail" aria-label="Sermon details">
-      <div class="rail">
-        <dl class="rail__meta">
-          <dt>Preached</dt><dd>{formatDate(sermon.date)}</dd>
-          {speakers.length > 0 && <><dt>Speaker</dt><dd>{speakers.map((s, i) => <>{i > 0 && ", "}<a href={s!.path}>{s!.name}</a></>)}</dd></>}
-          {series.length > 0 && <><dt>Series</dt><dd>{series.map((s, i) => <>{i > 0 && ", "}<a href={s!.path}>{s!.name}</a></>)}</dd></>}
-          {sermon.passage && <><dt>Passage</dt><dd>{sermon.passage}</dd></>}
-          {books.length > 0 && <><dt>Bible book</dt><dd>{books.map((b, i) => <>{i > 0 && ", "}<a href={b!.path}>{b!.name}</a></>)}</dd></>}
-          {topics.length > 0 && <><dt>Topics</dt><dd>{topics.map((t, i) => <>{i > 0 && ", "}<a href={t!.path}>{t!.name}</a></>)}</dd></>}
-        </dl>
-      </div>
-    </aside>
-
-    <div class="sermon__body">
+    <div class="wrap">
       <header class="sermon__head">
         <nav aria-label="Breadcrumb"><ol class="trail" role="list"><li><a href="/">Home</a></li><li><a href="/sermons/">Sermons</a></li>{books[0] && <li><a href={books[0].path}>{books[0].name}</a></li>}</ol></nav>
-        {sermon.passage && <p class="sermon__stamp">{sermon.passage}</p>}
-        <h1 class:list={["sermon__title", { "is-long": sermon.title.length > 40 }]}>{sermon.seo.h1 ?? sermon.title}</h1>
-        <p class="sermon__meta">
-          <span><time datetime={sermon.date}>{formatDate(sermon.date)}</time></span>
-          {speakers.map((s) => <span><a href={s!.path}>{s!.name}</a></span>)}
-          {series.map((s) => <span><a href={s!.path}>{s!.name}</a></span>)}
+        {sermon.passage && <p class="sermon__passage">{sermon.passage}</p>}
+        <h1 class:list={["sermon__title", { "is-long": sermon.title.length > 44 }]}>{sermon.seo.h1 ?? sermon.title}</h1>
+        <p class="sermon__meta dots">
+          <time datetime={sermon.date}>{formatDate(sermon.date)}</time>
+          {speakers.map((s) => <a href={s!.path}>{s!.name}</a>)}
+          {series.map((s) => <a href={s!.path}>{s!.name}</a>)}
         </p>
       </header>
-      <section class="sermon-section sermon-section--media" id="watch" aria-labelledby="watch-heading">
-        <h2 id="watch-heading" class="sr-only">Watch or listen</h2>
-        {sermon.youtubeId && (
-          <figure class="video-embed">
-            <iframe src={`https://www.youtube-nocookie.com/embed/${sermon.youtubeId}`} title={`${sermon.title} — ${speakerName(sermon)}`} loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </figure>
-        )}
-        {sermon.sermonAudioId && (
-          <div class="audio-embed">
-            <iframe src={`https://embed.sermonaudio.com/player/a/${sermon.sermonAudioId}/?mini=true`} title={`Listen to ${sermon.title} on SermonAudio`} loading="lazy" height="60"></iframe>
-          </div>
-        )}
-        <p class="media-links">
-          {sermon.youtubeId && <a href={`https://www.youtube.com/watch?v=${sermon.youtubeId}`} rel="noopener">Watch on YouTube<span class="sr-only"> (external site)</span></a>}
-          {sermon.sermonAudioId && <a href={`https://www.sermonaudio.com/sermons/${sermon.sermonAudioId}`} rel="noopener">Listen on SermonAudio<span class="sr-only"> (external site)</span></a>}
-        </p>
-      </section>
+
+      <div class="sermon__layout">
+        <div class="sermon__main">
+          <section id="watch" aria-labelledby="watch-heading">
+            <h2 id="watch-heading" class="sr-only">Watch or listen</h2>
+            {sermon.youtubeId && (
+              <a class="video" href={`https://www.youtube.com/watch?v=${sermon.youtubeId}`} rel="noopener" data-youtube={sermon.youtubeId} data-title={`${sermon.title} — ${speakerName(sermon)}`}>
+                <img
+                  src={`https://i.ytimg.com/vi/${sermon.youtubeId}/maxresdefault.jpg`}
+                  data-fallback={`https://i.ytimg.com/vi/${sermon.youtubeId}/hqdefault.jpg`}
+                  onload="if(this.naturalWidth<200&&this.dataset.fallback){this.src=this.dataset.fallback;delete this.dataset.fallback}"
+                  onerror="this.remove()"
+                  alt=""
+                  width="1280"
+                  height="720"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+                <span class="video__play" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor" /></svg></span>
+                <span class="video__label">Watch the sermon<span class="sr-only">: {sermon.title}</span></span>
+              </a>
+            )}
+            {sermon.sermonAudioId && (
+              <div class="audio">
+                <iframe src={`https://embed.sermonaudio.com/player/a/${sermon.sermonAudioId}/?mini=true`} title={`Listen to ${sermon.title} on SermonAudio`} loading="lazy" height="60"></iframe>
+              </div>
+            )}
+            <p class="media-links">
+              {sermon.youtubeId && <a class="link-arrow" href={`https://www.youtube.com/watch?v=${sermon.youtubeId}`} rel="noopener">Watch on YouTube<span class="sr-only"> (external site)</span></a>}
+              {sermon.sermonAudioId && <a class="link-arrow" href={`https://www.sermonaudio.com/sermons/${sermon.sermonAudioId}`} rel="noopener">Listen on SermonAudio<span class="sr-only"> (external site)</span></a>}
+            </p>
+          </section>
+        </div>
+
+        <aside class="details-card" aria-label="Sermon details">
+          <dl>
+            <div><dt>Preached</dt><dd>{formatDate(sermon.date)}</dd></div>
+            {speakers.length > 0 && <div><dt>Speaker</dt><dd>{speakers.map((s, i) => <>{i > 0 && ", "}<a href={s!.path}>{s!.name}</a></>)}</dd></div>}
+            {series.length > 0 && <div><dt>Series</dt><dd>{series.map((s, i) => <>{i > 0 && ", "}<a href={s!.path}>{s!.name}</a></>)}</dd></div>}
+            {sermon.passage && <div><dt>Passage</dt><dd>{sermon.passage}</dd></div>}
+            {books.length > 0 && <div><dt>Bible book</dt><dd>{books.map((b, i) => <>{i > 0 && ", "}<a href={b!.path}>{b!.name}</a></>)}</dd></div>}
+            {topics.length > 0 && <div><dt>Topics</dt><dd>{topics.map((t, i) => <>{i > 0 && ", "}<a href={t!.path}>{t!.name}</a></>)}</dd></div>}
+          </dl>
+        </aside>
+      </div>
 
       {related.length > 0 && (
-        <section class="sermon-section" id="related" aria-labelledby="related-heading">
-          <h2 id="related-heading" class="section__title">Related sermons</h2>
+        <section class="sermon__section" id="related" aria-labelledby="related-heading">
+          <h2 id="related-heading">Related sermons</h2>
           <ul class="cards" role="list">{related.map((s) => <SermonCard sermon={s} />)}</ul>
         </section>
       )}
 
       <nav class="sermon-step" aria-label="More sermons">
-        {newer && <a class="sermon-step__link" href={newer.path} rel="prev"><span class="sermon-step__label">Newer sermon</span>{newer.title}</a>}
-        {older && <a class="sermon-step__link sermon-step__link--older" href={older.path} rel="next"><span class="sermon-step__label">Older sermon</span>{older.title}</a>}
+        {newer && <a class="sermon-step__link" href={newer.path} rel="prev"><span class="sermon-step__label">← Newer sermon</span>{newer.title}</a>}
+        {older && <a class="sermon-step__link sermon-step__link--older" href={older.path} rel="next"><span class="sermon-step__label">Older sermon →</span>{older.title}</a>}
       </nav>
     </div>
   </article>
+  <script is:inline>
+    // Swap the video still for the YouTube player only when someone presses play.
+    document.querySelectorAll("a[data-youtube]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        if (event.metaKey || event.ctrlKey || event.shiftKey) return;
+        event.preventDefault();
+        var frame = document.createElement("iframe");
+        frame.src = "https://www.youtube-nocookie.com/embed/" + link.dataset.youtube + "?autoplay=1&rel=0";
+        frame.title = link.dataset.title || "Sermon video";
+        frame.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+        frame.allowFullscreen = true;
+        frame.referrerPolicy = "strict-origin-when-cross-origin";
+        var holder = document.createElement("div");
+        holder.className = "video";
+        holder.setAttribute("data-playing", "");
+        holder.appendChild(frame);
+        link.replaceWith(holder);
+      });
+    });
+  </script>
 </BaseLayout>

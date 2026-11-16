@@ -111,7 +111,7 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July", 
     >
       <article class="page page--blog">
         <PageHead title={post.h1} trail={[{ label: "Home", href: "/" }, { label: "Blogs", href: "/blogs/" }]} eyebrow="Blog">
-          <p class="page__category"><time datetime={post.date}>{formatDate(post.date)}</time></p>
+          <p class="page-head__extra"><time datetime={post.date}>{formatDate(post.date)}</time></p>
         </PageHead>
         <div class="page__body">
           {image && <figure class="figure figure--full"><Picture id={post.media} class="figure__image" eager /></figure>}

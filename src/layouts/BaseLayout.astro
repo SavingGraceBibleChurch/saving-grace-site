@@ -1,11 +1,12 @@
 ---
-import "../styles/tokens.css";
-import "../styles/core.css";
-import "../styles/church.css";
+import "@fontsource-variable/newsreader/opsz.css";
+import "@fontsource-variable/newsreader/opsz-italic.css";
+import "@fontsource-variable/instrument-sans/index.css";
+import "../styles/base.css";
+import "../styles/chrome.css";
 import "../styles/home.css";
-import "../styles/cards.css";
-import "../styles/sermon.css";
-import "../styles/site.css";
+import "../styles/pages.css";
+import "../styles/sermons.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE, SITE_NAME } from "../lib/content";
@@ -26,7 +27,6 @@ interface Props {
   breadcrumbs?: Crumb[];
   jsonLd?: Record<string, unknown>[];
   currentPath?: string;
-  search?: boolean;
 }
 
 const {
@@ -41,7 +41,6 @@ const {
   breadcrumbs = [],
   jsonLd = [],
   currentPath = Astro.url.pathname,
-  search = true,
 } = Astro.props;
 
 const absolute = (path: string) => (path.startsWith("http") ? path : `${SITE}${path}`);
@@ -72,8 +71,8 @@ const robots = indexable ? "index, follow, max-image-preview:large, max-snippet:
     <link rel="canonical" href={canonicalUrl} />
     <meta name="robots" content={robots} />
     <meta name="color-scheme" content="light" />
-    <link rel="preload" href="/brand/fonts/bitstream-vera-sans-regular.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/brand/fonts/bitstream-vera-sans-bold.ttf" as="font" type="font/ttf" crossorigin />
+    <meta name="theme-color" content="#0e2a38" />
+    <script is:inline>document.documentElement.classList.add("js");</script>
     <link rel="icon" href="/brand/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/brand/icon-192.png" sizes="192x192" />
     <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} » Sermons`} href="/sermons/feed/" />
@@ -93,10 +92,22 @@ const robots = indexable ? "index, follow, max-image-preview:large, max-snippet:
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    <Header currentPath={currentPath} search={search} />
-    <main id="main-content" class="site-main" data-pagefind-body>
+    <Header currentPath={currentPath} />
+    <main id="main-content" data-pagefind-body>
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      (function () {
+        var items = document.querySelectorAll("[data-reveal]");
+        if (!("IntersectionObserver" in window)) { items.forEach(function (el) { el.classList.add("is-visible"); }); return; }
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
+          });
+        }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+        items.forEach(function (el) { observer.observe(el); });
+      })();
+    </script>
   </body>
 </html>

@@ -1,0 +1,40 @@
+---
+// The newest sermon as a large card with its video still.
+import type { Sermon } from "../lib/types";
+import { term, speakerName } from "../lib/content";
+import { bookGroup } from "../lib/books";
+import { formatDate } from "../lib/events";
+
+interface Props { sermon: Sermon; headingLevel?: 2 | 3; label?: string }
+const { sermon, headingLevel = 3, label = "Latest sermon" } = Astro.props;
+const Heading = `h${headingLevel}` as "h2" | "h3";
+const bookSlug = sermon.books.find((slug) => slug !== "selected-text") ?? null;
+const series = sermon.series.map((slug) => term("series", slug)).find((t) => t !== undefined);
+---
+<article class:list={["feature", `hue--${bookGroup(bookSlug)}`]}>
+  <div class="feature__media" aria-hidden="true">
+    {sermon.youtubeId && (
+      <img
+        src={`https://i.ytimg.com/vi/${sermon.youtubeId}/maxresdefault.jpg`}
+        data-fallback={`https://i.ytimg.com/vi/${sermon.youtubeId}/hqdefault.jpg`}
+        onload="if(this.naturalWidth<200&&this.dataset.fallback){this.src=this.dataset.fallback;delete this.dataset.fallback}"
+        onerror="this.remove()"
+        alt=""
+        width="1280"
+        height="720"
+        decoding="async"
+      />
+    )}
+  </div>
+  <span class="feature__play" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor" /></svg></span>
+  <div class="feature__body">
+    <p class="eyebrow">{label}</p>
+    <Heading class="feature__title"><a href={sermon.path}>{sermon.title}</a></Heading>
+    <p class="feature__meta dots">
+      <time datetime={sermon.date}>{formatDate(sermon.date)}</time>
+      <span>{speakerName(sermon)}</span>
+      {sermon.passage && <span>{sermon.passage}</span>}
+      {series && <span>{series.name}</span>}
+    </p>
+  </div>
+</article>

@@ -1,5 +1,6 @@
 ---
 import Picture from "./Picture.astro";
+import { imageFor } from "../lib/content";
 import { inline } from "../lib/markup";
 
 export interface Trail { label: string; href: string }
@@ -11,15 +12,25 @@ interface Props {
   hero?: { media: string; treatment?: string; alt?: string; enabled?: boolean } | null;
 }
 const { title, trail = [], eyebrow, lede, hero } = Astro.props;
-const showHero = hero && hero.enabled !== false;
+const image = hero && hero.enabled !== false ? imageFor(hero.media) : undefined;
+// Wide photographs sit under the title as a banner; upright ones go beside it in an arch.
+const banner = image ? image.width / image.height >= 1.5 && image.width >= 900 : false;
+const aside = Boolean(image) && !banner;
+const upright = image ? image.width / image.height < 0.9 : false;
 ---
-<header class:list={["page__head", { "page__head--aside": showHero }]}>
-  <div class="page__head-text">
-    {trail.length > 0 && <nav aria-label="Breadcrumb"><ol class="trail" role="list">{trail.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ol></nav>}
-    <h1 class:list={["page__title", { "page__title--long": title.length > 32 }]}>{title}</h1>
-    {eyebrow && eyebrow !== title && <p class="page__category">{eyebrow}</p>}
-    {lede && <p class="lede page__lede" set:html={inline(lede)} />}
-    <slot />
+<header class:list={["page-head", { "page-head--aside": aside, "page-head--banner": banner }]}>
+  <div class="wrap">
+    <div class="page-head__inner">
+      <div class="page-head__text">
+        {trail.length > 0 && <nav aria-label="Breadcrumb"><ol class="trail" role="list">{trail.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ol></nav>}
+        {eyebrow && eyebrow !== title && <p class="eyebrow">{eyebrow}</p>}
+        <h1 class:list={["page-head__title", { "is-long": title.length > 34 }]}>{title}</h1>
+        {lede && <p class="page-head__lede" set:html={inline(lede)} />}
+        <slot />
+      </div>
+      {aside && upright && <figure class="page-head__arch"><div class="arch"><Picture id={hero!.media} alt={hero!.alt ?? ""} eager /></div></figure>}
+      {aside && !upright && <figure class="page-head__frame"><Picture id={hero!.media} alt={hero!.alt ?? ""} eager /></figure>}
+    </div>
+    {banner && <figure class="page-head__banner"><Picture id={hero!.media} alt={hero!.alt ?? ""} eager /></figure>}
   </div>
-  {showHero && <div class="page__head-picture"><Picture id={hero!.media} class="page__head-image" alt={hero!.alt ?? ""} eager /></div>}
 </header>

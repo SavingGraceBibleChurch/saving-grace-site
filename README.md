@@ -1,12 +1,22 @@
 # Saving Grace Bible Church website
 
-A static rebuild of https://www.savinggrace.org.au with the Astra + Impeccable design.
+A static rebuild of https://www.savinggrace.org.au.
 Every page is generated ahead of time with [Astro](https://astro.build), so there is no
 WordPress, PHP, plugins, database or server to patch. Search is built at the same time
 by [Pagefind](https://pagefind.app).
 
 **Status:** the pages, sermons, events and SEO layer are built and verified locally.
 The site is not deployed, and WordPress is still the live site.
+
+## Two designs
+
+| Branch | Design |
+|---|---|
+| `main` | The original Astra + Impeccable design. |
+| `redesign-fable` | An editorial redesign: Newsreader and Instrument Sans type, warm paper with deep navy and a brick-ember accent, photos framed in a church-window arch. |
+
+Both branches use the same data, URLs, titles, descriptions and H1s, and both pass `scripts/verify-seo.mjs`.
+Switch with `git switch main` or `git switch redesign-fable`, then run `npm install` and `npm run build`.
 
 ## Commands
 

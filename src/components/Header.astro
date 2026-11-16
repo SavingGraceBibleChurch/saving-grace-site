@@ -1,77 +1,84 @@
 ---
 import { primaryNav, notice, givingPath } from "../lib/site";
+import type { NavItem } from "../lib/site";
 
-interface Props { currentPath: string; search?: boolean }
-const { currentPath, search = true } = Astro.props;
-const active = (href: string) => href !== "/" && currentPath.startsWith(href);
+interface Props { currentPath: string }
+const { currentPath } = Astro.props;
+const inSection = (item: NavItem) =>
+  item.href === "/" ? currentPath === "/" : currentPath.startsWith(item.href) || Boolean(item.menu?.some((link) => link.href === currentPath));
 ---
-<aside class="notice" aria-label="Church notice" data-pagefind-ignore><div class="notice__inner"><span class="notice__pin" aria-hidden="true"></span><p>{notice}</p></div></aside>
-<header class="masthead" id="top" data-site-header data-pagefind-ignore>
-  <div class="masthead__inner">
-    <a class="brand" href="/"><img class="brand__logo" src="/brand/saving-grace-logo.png" width="300" height="178" alt="Saving Grace Bible Church" decoding="async" /><span class="sr-only">, Home</span></a>
-    <button class="masthead__mobile-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" data-site-toggle hidden>Menu<span class="masthead__chevron" aria-hidden="true"></span></button>
-    <nav class="masthead__nav" id="primary-navigation" aria-label="Primary">
-      <ul class="masthead__links">
+<aside class="notice" aria-label="Church notice" data-pagefind-ignore>
+  <div class="wrap notice__inner"><span class="notice__dot" aria-hidden="true"></span><p>{notice}</p></div>
+</aside>
+<header class="site-header" id="top" data-header data-pagefind-ignore>
+  <div class="wrap site-header__inner">
+    <a class="brand" href="/"><img src="/brand/saving-grace-logo.png" width="300" height="178" alt="Saving Grace Bible Church" decoding="async" /><span class="sr-only">, Home</span></a>
+    <nav class="nav" id="primary-navigation" aria-label="Primary">
+      <ul class="nav__list" role="list">
         {primaryNav.map((item) =>
           item.menu ? (
-            <li class="masthead__links-menu">
-              <details class="masthead__menu" data-menu>
-                <summary class:list={["masthead__menu-toggle", { "is-active": active(item.href) || item.menu.some((link) => link.href === currentPath) }]} aria-controls={`menu-${item.label.toLowerCase().replace(/\W+/g, "-")}`}>{item.label}<span class="masthead__chevron" aria-hidden="true"></span></summary>
-                <ul class="masthead__dropdown masthead__dropdown--wide" id={`menu-${item.label.toLowerCase().replace(/\W+/g, "-")}`}>
-                  {item.menu.map((link) => (
-                    <li class:list={{ "masthead__dropdown-sub": link.sub }}>
-                      <a href={link.href} aria-current={link.href === currentPath ? "page" : undefined}>{link.label}</a>
-                    </li>
-                  ))}
-                </ul>
+            <li class="nav__item">
+              <details class="nav__menu" name="primary-menu">
+                <summary class:list={["nav__link", { "is-active": inSection(item) }]}>
+                  {item.label}
+                  <svg class="nav__chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4.25 6 8l4-3.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </summary>
+                <div class="nav__panel">
+                  <ul role="list">
+                    {item.menu.map((link) => (
+                      <li class:list={{ "is-sub": link.sub }}><a href={link.href} aria-current={link.href === currentPath ? "page" : undefined}>{link.label}</a></li>
+                    ))}
+                  </ul>
+                </div>
               </details>
             </li>
           ) : (
-            <li><a href={item.href} aria-current={item.href === currentPath ? "page" : undefined}>{item.label}</a></li>
+            <li class="nav__item"><a class:list={["nav__link", { "is-active": inSection(item) }]} href={item.href} aria-current={item.href === currentPath ? "page" : undefined}>{item.label}</a></li>
           )
         )}
       </ul>
+      <a class="button button--ember button--lg nav__give" href={givingPath}>Give</a>
     </nav>
-    <div class="masthead__actions">
-      {search && (
-        <form class="masthead__search" method="get" action="/search/" role="search" aria-label="Search the website">
-          <label class="sr-only" for="masthead-search">Search sermons and pages</label>
-          <input id="masthead-search" class="control" name="q" type="search" maxlength="120" placeholder="Search sermons" autocomplete="off" />
-          <button class="button button--outline" type="submit">Search</button>
-        </form>
-      )}
-      <a class="masthead__search-link" href="/search/">Search</a>
-      <a class="button masthead__give" href={givingPath}>Give</a>
+    <div class="site-header__actions">
+      <a class="icon-button" href="/search/">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.7" /><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+        <span class="sr-only">Search sermons and pages</span>
+      </a>
+      <a class="button button--ember site-header__give" href={givingPath}>Give</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>
+        <span class="menu-toggle__bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+      </button>
     </div>
   </div>
 </header>
 <script is:inline>
 (function () {
-  var header = document.querySelector('[data-site-header]');
-  var toggle = document.querySelector('[data-site-toggle]');
-  if (!header || !toggle) return;
-  header.classList.add('masthead--compact');
-  toggle.hidden = false;
-  var nav = header.querySelector('[aria-label="Primary"]');
-  var compact = window.matchMedia('(max-width: 76rem)');
-  function fitPanel() { header.style.setProperty('--nav-header-bottom', Math.max(0, header.getBoundingClientRect().bottom) + 'px'); }
-  function setOpen(open, returnFocus) {
-    if (open) fitPanel();
-    toggle.setAttribute('aria-expanded', String(open));
-    if (open) header.setAttribute('data-nav-open', ''); else header.removeAttribute('data-nav-open');
-    if (!open && nav) nav.querySelectorAll('details[open]').forEach(function (menu) { menu.open = false; });
-    if (returnFocus) toggle.focus();
+  var header = document.querySelector("[data-header]");
+  if (!header) return;
+  var toggle = header.querySelector("[data-menu-toggle]");
+  function closeMenus(except) {
+    header.querySelectorAll("details[open]").forEach(function (menu) { if (menu !== except) menu.open = false; });
   }
-  toggle.addEventListener('click', function () { setOpen(toggle.getAttribute('aria-expanded') !== 'true', false); });
-  header.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { event.preventDefault(); setOpen(false, true); }
+  function setOpen(open) {
+    if (open) header.style.setProperty("--nav-top", Math.max(0, header.getBoundingClientRect().bottom) + "px");
+    toggle.setAttribute("aria-expanded", String(open));
+    header.toggleAttribute("data-open", open);
+    document.documentElement.toggleAttribute("data-nav-open", open);
+    if (!open) closeMenus();
+  }
+  toggle.addEventListener("click", function () { setOpen(toggle.getAttribute("aria-expanded") !== "true"); });
+  document.addEventListener("click", function (event) {
+    if (!header.contains(event.target)) closeMenus();
   });
-  document.addEventListener('click', function (event) {
-    if (!header.contains(event.target)) setOpen(false, false);
-    if (nav) nav.querySelectorAll('details[open]').forEach(function (menu) { if (!menu.contains(event.target)) menu.open = false; });
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+    var open = header.querySelector("details[open]");
+    if (open) { open.open = false; open.querySelector("summary").focus(); }
+    else if (toggle.getAttribute("aria-expanded") === "true") { setOpen(false); toggle.focus(); }
   });
-  header.addEventListener('focusout', function (event) { if (event.relatedTarget && !header.contains(event.relatedTarget)) setOpen(false, false); });
-  window.addEventListener('resize', fitPanel);
-  compact.addEventListener('change', function () { setOpen(false, compact.matches && nav && nav.contains(document.activeElement)); });
+  window.matchMedia("(min-width: 66.01rem)").addEventListener("change", function () { setOpen(false); });
+  function onScroll() { header.toggleAttribute("data-scrolled", window.scrollY > 8); }
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 })();
 </script>

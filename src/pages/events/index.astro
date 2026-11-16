@@ -18,6 +18,6 @@ const seo = liveCapture as { title: string; description: string };
 >
   <article class="page page--events">
     <PageHead title="News & Events" trail={[{ label: "Home", href: "/" }]} eyebrow={page.eyebrow} lede={page.lede} hero={page.hero} />
-    <Blocks blocks={page.blocks} />
+    <div class="page__body"><Blocks blocks={page.blocks} /></div>
   </article>
 </BaseLayout>
