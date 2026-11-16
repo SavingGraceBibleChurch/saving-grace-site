@@ -1,0 +1,538 @@
+[
+ {
+  "bookend": "Old Testament",
+  "short": "OT"
+ },
+ {
+  "slug": "genesis",
+  "name": "Genesis",
+  "abbr": "Ge",
+  "group": "law",
+  "len": "mid",
+  "sqrt": 7.07
+ },
+ {
+  "slug": "exodus",
+  "name": "Exodus",
+  "abbr": "Ex",
+  "group": "law",
+  "len": "short",
+  "sqrt": 6.32
+ },
+ {
+  "slug": "leviticus",
+  "name": "Leviticus",
+  "abbr": "Le",
+  "group": "law",
+  "len": "mid",
+  "sqrt": 5.2
+ },
+ {
+  "slug": "numbers",
+  "name": "Numbers",
+  "abbr": "Nu",
+  "group": "law",
+  "len": "mid",
+  "sqrt": 6.0
+ },
+ {
+  "slug": "deuteronomy",
+  "name": "Deuteronomy",
+  "abbr": "Dt",
+  "group": "law",
+  "len": "long",
+  "sqrt": 5.83
+ },
+ {
+  "slug": "joshua",
+  "name": "Joshua",
+  "abbr": "Jos",
+  "group": "history",
+  "len": "short",
+  "sqrt": 4.9
+ },
+ {
+  "slug": "judges",
+  "name": "Judges",
+  "abbr": "Jdg",
+  "group": "history",
+  "len": "short",
+  "sqrt": 4.58
+ },
+ {
+  "slug": "ruth",
+  "name": "Ruth",
+  "abbr": "Ru",
+  "group": "history",
+  "len": "short",
+  "sqrt": 2.0
+ },
+ {
+  "slug": "1-samuel",
+  "name": "1 Samuel",
+  "abbr": "1Sa",
+  "group": "history",
+  "len": "mid",
+  "sqrt": 5.57
+ },
+ {
+  "slug": "2-samuel",
+  "name": "2 Samuel",
+  "abbr": "2Sa",
+  "group": "history",
+  "len": "mid",
+  "sqrt": 4.9
+ },
+ {
+  "slug": "1-kings",
+  "name": "1 Kings",
+  "abbr": "1Ki",
+  "group": "history",
+  "len": "mid",
+  "sqrt": 4.69
+ },
+ {
+  "slug": "2-kings",
+  "name": "2 Kings",
+  "abbr": "2Ki",
+  "group": "history",
+  "len": "mid",
+  "sqrt": 5.0
+ },
+ {
+  "slug": "1-chronicles",
+  "name": "1 Chronicles",
+  "abbr": "1Ch",
+  "group": "history",
+  "len": "long",
+  "sqrt": 5.39
+ },
+ {
+  "slug": "2-chronicles",
+  "name": "2 Chronicles",
+  "abbr": "2Ch",
+  "group": "history",
+  "len": "long",
+  "sqrt": 6.0
+ },
+ {
+  "slug": "ezra",
+  "name": "Ezra",
+  "abbr": "Ezr",
+  "group": "history",
+  "len": "short",
+  "sqrt": 3.16
+ },
+ {
+  "slug": "nehemiah",
+  "name": "Nehemiah",
+  "abbr": "Ne",
+  "group": "history",
+  "len": "mid",
+  "sqrt": 3.61
+ },
+ {
+  "slug": "esther",
+  "name": "Esther",
+  "abbr": "Es",
+  "group": "history",
+  "len": "short",
+  "sqrt": 3.16
+ },
+ {
+  "slug": "job",
+  "name": "Job",
+  "abbr": "Job",
+  "group": "wisdom",
+  "len": "short",
+  "sqrt": 6.48
+ },
+ {
+  "slug": "psalms",
+  "name": "Psalms",
+  "abbr": "Ps",
+  "group": "wisdom",
+  "len": "short",
+  "sqrt": 12.25
+ },
+ {
+  "slug": "proverbs",
+  "name": "Proverbs",
+  "abbr": "Pr",
+  "group": "wisdom",
+  "len": "mid",
+  "sqrt": 5.57
+ },
+ {
+  "slug": "ecclesiastes",
+  "name": "Ecclesiastes",
+  "abbr": "Ec",
+  "group": "wisdom",
+  "len": "long",
+  "sqrt": 3.46
+ },
+ {
+  "slug": "song-of-solomon",
+  "name": "Song of Solomon",
+  "abbr": "So",
+  "group": "wisdom",
+  "len": "long",
+  "sqrt": 2.83
+ },
+ {
+  "slug": "isaiah",
+  "name": "Isaiah",
+  "abbr": "Is",
+  "group": "major-prophets",
+  "len": "short",
+  "sqrt": 8.12
+ },
+ {
+  "slug": "jeremiah",
+  "name": "Jeremiah",
+  "abbr": "Je",
+  "group": "major-prophets",
+  "len": "mid",
+  "sqrt": 7.21
+ },
+ {
+  "slug": "lamentations",
+  "name": "Lamentations",
+  "abbr": "La",
+  "group": "major-prophets",
+  "len": "long",
+  "sqrt": 2.24
+ },
+ {
+  "slug": "ezekiel",
+  "name": "Ezekiel",
+  "abbr": "Eze",
+  "group": "major-prophets",
+  "len": "mid",
+  "sqrt": 6.93
+ },
+ {
+  "slug": "daniel",
+  "name": "Daniel",
+  "abbr": "Da",
+  "group": "major-prophets",
+  "len": "short",
+  "sqrt": 3.46
+ },
+ {
+  "slug": "hosea",
+  "name": "Hosea",
+  "abbr": "Ho",
+  "group": "minor-prophets",
+  "len": "short",
+  "sqrt": 3.74
+ },
+ {
+  "slug": "joel",
+  "name": "Joel",
+  "abbr": "Joe",
+  "group": "minor-prophets",
+  "len": "short",
+  "sqrt": 1.73
+ },
+ {
+  "slug": "amos",
+  "name": "Amos",
+  "abbr": "Am",
+  "group": "minor-prophets",
+  "len": "short",
+  "sqrt": 3.0
+ },
+ {
+  "slug": "obadiah",
+  "name": "Obadiah",
+  "abbr": "Ob",
+  "group": "minor-prophets",
+  "len": "mid",
+  "sqrt": 1.0
+ },
+ {
+  "slug": "jonah",
+  "name": "Jonah",
+  "abbr": "Jon",
+  "group": "minor-prophets",
+  "len": "short",
+  "sqrt": 2.0
+ },
+ {
+  "slug": "micah",
+  "name": "Micah",
+  "abbr": "Mic",
+  "group": "minor-prophets",
+  "len": "short",
+  "sqrt": 2.65
+ },
+ {
+  "slug": "nahum",
+  "name": "Nahum",
+  "abbr": "Na",
+  "group": "minor-prophets",
+  "len": "short",
+  "sqrt": 1.73
+ },
+ {
+  "slug": "habakkuk",
+  "name": "Habakkuk",
+  "abbr": "Hab",
+  "group": "minor-prophets",
+  "len": "mid",
+  "sqrt": 1.73
+ },
+ {
+  "slug": "zephaniah",
+  "name": "Zephaniah",
+  "abbr": "Zep",
+  "group": "minor-prophets",
+  "len": "mid",
+  "sqrt": 1.73
+ },
+ {
+  "slug": "haggai",
+  "name": "Haggai",
+  "abbr": "Hag",
+  "group": "minor-prophets",
+  "len": "short",
+  "sqrt": 1.41
+ },
+ {
+  "slug": "zechariah",
+  "name": "Zechariah",
+  "abbr": "Zec",
+  "group": "minor-prophets",
+  "len": "mid",
+  "sqrt": 3.74
+ },
+ {
+  "slug": "malachi",
+  "name": "Malachi",
+  "abbr": "Mal",
+  "group": "minor-prophets",
+  "len": "mid",
+  "sqrt": 2.0
+ },
+ {
+  "bookend": "New Testament",
+  "short": "NT"
+ },
+ {
+  "slug": "matthew",
+  "name": "Matthew",
+  "abbr": "Mt",
+  "group": "gospels-acts",
+  "len": "mid",
+  "sqrt": 5.29
+ },
+ {
+  "slug": "mark",
+  "name": "Mark",
+  "abbr": "Mk",
+  "group": "gospels-acts",
+  "len": "short",
+  "sqrt": 4.0
+ },
+ {
+  "slug": "luke",
+  "name": "Luke",
+  "abbr": "Lk",
+  "group": "gospels-acts",
+  "len": "short",
+  "sqrt": 4.9
+ },
+ {
+  "slug": "john",
+  "name": "John",
+  "abbr": "Jn",
+  "group": "gospels-acts",
+  "len": "short",
+  "sqrt": 4.58
+ },
+ {
+  "slug": "acts",
+  "name": "Acts",
+  "abbr": "Ac",
+  "group": "gospels-acts",
+  "len": "short",
+  "sqrt": 5.29
+ },
+ {
+  "slug": "romans",
+  "name": "Romans",
+  "abbr": "Ro",
+  "group": "pauline",
+  "len": "short",
+  "sqrt": 4.0
+ },
+ {
+  "slug": "1-corinthians",
+  "name": "1 Corinthians",
+  "abbr": "1Co",
+  "group": "pauline",
+  "len": "long",
+  "sqrt": 4.0
+ },
+ {
+  "slug": "2-corinthians",
+  "name": "2 Corinthians",
+  "abbr": "2Co",
+  "group": "pauline",
+  "len": "long",
+  "sqrt": 3.61
+ },
+ {
+  "slug": "galatians",
+  "name": "Galatians",
+  "abbr": "Ga",
+  "group": "pauline",
+  "len": "mid",
+  "sqrt": 2.45
+ },
+ {
+  "slug": "ephesians",
+  "name": "Ephesians",
+  "abbr": "Eph",
+  "group": "pauline",
+  "len": "mid",
+  "sqrt": 2.45
+ },
+ {
+  "slug": "philippians",
+  "name": "Philippians",
+  "abbr": "Php",
+  "group": "pauline",
+  "len": "long",
+  "sqrt": 2.0
+ },
+ {
+  "slug": "colossians",
+  "name": "Colossians",
+  "abbr": "Col",
+  "group": "pauline",
+  "len": "mid",
+  "sqrt": 2.0
+ },
+ {
+  "slug": "1-thessalonians",
+  "name": "1 Thessalonians",
+  "abbr": "1Th",
+  "group": "pauline",
+  "len": "long",
+  "sqrt": 2.24
+ },
+ {
+  "slug": "2-thessalonians",
+  "name": "2 Thessalonians",
+  "abbr": "2Th",
+  "group": "pauline",
+  "len": "long",
+  "sqrt": 1.73
+ },
+ {
+  "slug": "1-timothy",
+  "name": "1 Timothy",
+  "abbr": "1Ti",
+  "group": "pauline",
+  "len": "mid",
+  "sqrt": 2.45
+ },
+ {
+  "slug": "2-timothy",
+  "name": "2 Timothy",
+  "abbr": "2Ti",
+  "group": "pauline",
+  "len": "mid",
+  "sqrt": 2.0
+ },
+ {
+  "slug": "titus",
+  "name": "Titus",
+  "abbr": "Tt",
+  "group": "pauline",
+  "len": "short",
+  "sqrt": 1.73
+ },
+ {
+  "slug": "philemon",
+  "name": "Philemon",
+  "abbr": "Phm",
+  "group": "pauline",
+  "len": "mid",
+  "sqrt": 1.0
+ },
+ {
+  "slug": "hebrews",
+  "name": "Hebrews",
+  "abbr": "Heb",
+  "group": "general",
+  "len": "mid",
+  "sqrt": 3.61
+ },
+ {
+  "slug": "james",
+  "name": "James",
+  "abbr": "Jas",
+  "group": "general",
+  "len": "short",
+  "sqrt": 2.24
+ },
+ {
+  "slug": "1-peter",
+  "name": "1 Peter",
+  "abbr": "1Pe",
+  "group": "general",
+  "len": "mid",
+  "sqrt": 2.24
+ },
+ {
+  "slug": "2-peter",
+  "name": "2 Peter",
+  "abbr": "2Pe",
+  "group": "general",
+  "len": "mid",
+  "sqrt": 1.73
+ },
+ {
+  "slug": "1-john",
+  "name": "1 John",
+  "abbr": "1Jn",
+  "group": "general",
+  "len": "short",
+  "sqrt": 2.24
+ },
+ {
+  "slug": "2-john",
+  "name": "2 John",
+  "abbr": "2Jn",
+  "group": "general",
+  "len": "short",
+  "sqrt": 1.0
+ },
+ {
+  "slug": "3-john",
+  "name": "3 John",
+  "abbr": "3Jn",
+  "group": "general",
+  "len": "short",
+  "sqrt": 1.0
+ },
+ {
+  "slug": "jude",
+  "name": "Jude",
+  "abbr": "Jud",
+  "group": "general",
+  "len": "short",
+  "sqrt": 1.0
+ },
+ {
+  "slug": "revelation",
+  "name": "Revelation",
+  "abbr": "Re",
+  "group": "revelation",
+  "len": "mid",
+  "sqrt": 4.69
+ }
+]

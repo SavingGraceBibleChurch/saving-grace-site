@@ -1,6 +1,7 @@
 // One sitemap listing every indexable URL with its last-modified date.
 import { pages, posts, sermons, taxonomyTerms, sermonsFor, SITE } from "../lib/content";
 import { events } from "../lib/events";
+import { allSeries, allSessions, seriesPath, sessionPath, studiesPath } from "../lib/studies";
 
 type Entry = { path: string; lastmod?: string | null; images?: string[] };
 
@@ -17,8 +18,11 @@ export function GET() {
     ...posts.map((p) => ({ path: p.path, lastmod: day(p.seo.modified) ?? p.modified ?? p.date })),
     ...sermons.filter((s) => s.seo.indexable).map((s) => ({ path: s.path, lastmod: s.modified > s.date ? s.modified : s.date, images: s.youtubeId ? [`https://i.ytimg.com/vi/${s.youtubeId}/hqdefault.jpg`] : [] })),
     ...taxonomyTerms.filter((t) => t.count > 0).map((t) => ({ path: t.path, lastmod: sermonsFor(t.kind, t.slug)[0]?.date })),
-    ...["speaker", "series", "book", "topic"].map((k) => ({ path: `/sermons/${k}/`, lastmod: newest })),
+    ...["speaker", "series", "book", "passage"].map((k) => ({ path: `/sermons/${k}/`, lastmod: newest })),
     ...events.map((e) => ({ path: e.path })),
+    { path: studiesPath },
+    ...allSeries.map((s) => ({ path: seriesPath(s) })),
+    ...allSessions.map((s) => ({ path: sessionPath(s), lastmod: s.date, images: s.youtubeId ? [`https://i.ytimg.com/vi/${s.youtubeId}/hqdefault.jpg`] : [] })),
   ];
   const body = entries
     .map((e) => `<url><loc>${xmlEscape(SITE + e.path)}</loc>${e.lastmod ? `<lastmod>${e.lastmod}</lastmod>` : ""}${(e.images ?? []).map((i) => `<image:image><image:loc>${xmlEscape(i)}</image:loc></image:image>`).join("")}</url>`)

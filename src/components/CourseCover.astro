@@ -1,0 +1,18 @@
+---
+// A course shown as a book cover: title, session and section counts.
+import type { StudySeries } from "../lib/studies";
+import { courseSessions, sectionsOf, toneOf, seriesPath, quantity } from "../lib/studies";
+
+interface Props { course: StudySeries; compact?: boolean }
+const { course, compact = false } = Astro.props;
+const sessions = courseSessions(course).length;
+const sections = sectionsOf(course).length;
+---
+<a class:list={["cover", `cover--${toneOf(course)}`, { "cover--compact": compact }]} href={seriesPath(course)}>
+  <span class="cover__rule" aria-hidden="true"></span>
+  <span class="cover__title">{course.title}</span>
+  <span class="cover__bottom">
+    <span>{quantity(sessions, "session")}{sections > 0 && <span class="cover__sections">{quantity(sections, "section")}</span>}</span>
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
+  </span>
+</a>

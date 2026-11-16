@@ -1,0 +1,94 @@
+---
+// The shelf of all 66 books. Books with sermons are solid spines that link to their
+// sermons; the rest are outlines. Folded by default ("Browse by Bible book"), or
+// always open on the Bible books page.
+import { canon, canonBooks, isBook, chapters } from "../lib/canon";
+import { termsOf, sermons, speakerName } from "../lib/content";
+import { formatDate } from "../lib/events";
+
+interface Props { open?: boolean }
+const { open = false } = Astro.props;
+
+const books = new Map(termsOf("book").map((t) => [t.slug, t]));
+const preached = canonBooks.filter((book) => books.has(book.slug));
+const total = canonBooks.reduce((sum, book) => sum + chapters(book), 0);
+let offset = 0;
+const segments = canonBooks.map((book) => {
+  const segment = { x: offset, width: chapters(book), group: book.group, preached: books.has(book.slug) };
+  offset += segment.width;
+  return segment;
+});
+// Sermons that are not tied to one book of the Bible.
+const topical = sermons.filter((sermon) => !sermon.books.some((slug) => slug !== "selected-text"));
+const spines = canon.map((item) => {
+  if (!isBook(item)) return { bookend: item };
+  return { book: item, term: books.get(item.slug), index: canonBooks.indexOf(item) };
+});
+const summary = `Sermons have been preached from ${preached.length} of the 66 books: ${preached.map((book) => `${book.name} (${books.get(book.slug)!.count})`).join(", ")}. Books without sermons are shown as outlines and are not links.`;
+---
+{open ? (
+  <nav class="shelf shelf--settle shelf--open" aria-label="Bible books">
+    <p class="sr-only">{summary}</p>
+    <ol class="shelf__row" role="list">
+      {spines.map((spine) =>
+        spine.bookend ? (
+          <li class="bookend" aria-hidden="true"><span class="bookend__long">{spine.bookend.bookend}</span><span class="bookend__short">{spine.bookend.short}</span></li>
+        ) : spine.term ? (
+          <li class={`spine hue--${spine.book!.group} is-preached`} data-len={spine.book!.len} style={`--sqrt:${spine.book!.sqrt};--i:${spine.index}`}>
+            <a class="spine__link" href={spine.term.path}><span class="spine__name" aria-hidden="true">{spine.book!.name}</span><span class="spine__abbr" aria-hidden="true">{spine.book!.abbr}</span><span class="spine__count" aria-hidden="true">{spine.term.count}</span><span class="sr-only">{spine.book!.name}, {spine.term.count} sermon{spine.term.count === 1 ? "" : "s"}</span></a>
+          </li>
+        ) : (
+          <li class="spine" data-len={spine.book!.len} style={`--sqrt:${spine.book!.sqrt};--i:${spine.index}`}><span class="spine__ghost" aria-hidden="true"><span class="spine__name">{spine.book!.name}</span><span class="spine__abbr">{spine.book!.abbr}</span></span></li>
+        )
+      )}
+    </ol>
+  </nav>
+) : (
+  <section class="fold-section" aria-labelledby="shelf-heading">
+    <details class="fold" id="shelf" data-fold>
+      <summary class="fold__summary">
+        <span class="fold__chevron" aria-hidden="true"></span>
+        <span class="fold__label"><span class="fold__title" id="shelf-heading">Browse by Bible book</span><span class="fold__hint">{preached.length} books with sermons · take one off the shelf</span></span>
+        <span class="fold__strip">
+          <svg class="strip" viewBox={`0 0 ${total} 10`} preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            {segments.map((s) => <rect class:list={["strip__seg", { "strip__seg--preached": s.preached }, s.preached && `hue--${s.group}`]} x={s.x} y="4" width={s.width} height="6" />)}
+          </svg>
+        </span>
+      </summary>
+      <div class="fold__body">
+        <nav class="shelf shelf--settle" aria-labelledby="shelf-heading">
+          <p class="sr-only">{summary}</p>
+          <ol class="shelf__row" role="list">
+            {spines.map((spine) =>
+              spine.bookend ? (
+                <li class="bookend" aria-hidden="true"><span class="bookend__long">{spine.bookend.bookend}</span><span class="bookend__short">{spine.bookend.short}</span></li>
+              ) : spine.term ? (
+                <li class={`spine hue--${spine.book!.group} is-preached`} data-len={spine.book!.len} style={`--sqrt:${spine.book!.sqrt};--i:${spine.index}`}>
+                  <a class="spine__link" href={spine.term.path}><span class="spine__name" aria-hidden="true">{spine.book!.name}</span><span class="spine__abbr" aria-hidden="true">{spine.book!.abbr}</span><span class="spine__count" aria-hidden="true">{spine.term.count}</span><span class="sr-only">{spine.book!.name}, {spine.term.count} sermon{spine.term.count === 1 ? "" : "s"}</span></a>
+                </li>
+              ) : (
+                <li class="spine" data-len={spine.book!.len} style={`--sqrt:${spine.book!.sqrt};--i:${spine.index}`}><span class="spine__ghost" aria-hidden="true"><span class="spine__name">{spine.book!.name}</span><span class="spine__abbr">{spine.book!.abbr}</span></span></li>
+              )
+            )}
+          </ol>
+        </nav>
+      </div>
+    </details>
+    {topical.length > 0 && (
+      <details class="topical-library" id="topical-sermons">
+        <summary class="topical-library__summary">
+          <span class="topical-library__book"><span>Topical</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+          <span class="topical-library__caption">{topical.length} sermons<span>Sermons exploring themes across Scripture</span></span>
+        </summary>
+        <div class="topical-library__contents">
+          <h2 class="sr-only">Topical sermons</h2>
+          <ol class="topical-library__list" role="list">
+            {topical.map((sermon) => (
+              <li><a class="topical-library__sermon" href={sermon.path}><span class="topical-library__title">{sermon.title}</span><span class="topical-library__meta"><span>{speakerName(sermon)}</span><time datetime={sermon.date}>{formatDate(sermon.date)}</time></span></a></li>
+            ))}
+          </ol>
+        </div>
+      </details>
+    )}
+  </section>
+)}

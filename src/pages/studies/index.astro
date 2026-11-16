@@ -1,0 +1,29 @@
+---
+// Tuesday Night Studies: the course library.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CourseCover from "../../components/CourseCover.astro";
+import { courses, allSessions, quantity, studiesPath } from "../../lib/studies";
+import { SITE, SITE_NAME } from "../../lib/content";
+---
+<BaseLayout
+  title={`Tuesday Night Studies - ${SITE_NAME} - Bible-Based Worship in Melbourne`}
+  description={`${quantity(courses.length, "course")} and ${quantity(allSessions.length, "study")} from the Tuesday night Bible study at Saving Grace Bible Church, each with its recording, transcript and study questions.`}
+  canonical={studiesPath}
+  breadcrumbs={[{ name: "Home", path: "/" }, { name: "Tuesday Night Studies", path: studiesPath }]}
+  jsonLd={[{ "@context": "https://schema.org", "@type": "CollectionPage", url: `${SITE}${studiesPath}`, name: "Tuesday Night Studies", inLanguage: "en-AU", isPartOf: { "@id": `${SITE}/#website` } }]}
+>
+  <div class="wrap studies" data-pagefind-ignore="all">
+    <header class="studies__opening studies__opening--library">
+      <h1>Tuesday Night Studies</h1>
+      <div class="studies__introduction">
+        <p>A place to take your time with the teaching.</p>
+        <p>Choose a course, explore its sections, and follow each study through the recording, transcript and questions.</p>
+        <a class="link-arrow" href="#courses">Explore the courses</a>
+      </div>
+    </header>
+    <section id="courses" aria-labelledby="study-courses-heading">
+      <div class="studies__catalogue-heading"><h2 id="study-courses-heading">The course library</h2><p>{quantity(courses.length, "course")}<span aria-hidden="true"> / </span>{quantity(allSessions.length, "study")}</p></div>
+      <div class="studies__covers">{courses.map((course) => <article aria-label={course.title}><CourseCover course={course} /></article>)}</div>
+    </section>
+  </div>
+</BaseLayout>

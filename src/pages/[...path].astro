@@ -2,7 +2,7 @@
 // Every church page and blog post at its live WordPress URL, plus the blog's date archives.
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHead from "../components/PageHead.astro";
-import Blocks from "../components/Blocks.astro";
+import Doc from "../components/Doc.astro";
 import Related from "../components/Related.astro";
 import Picture from "../components/Picture.astro";
 import BlogList from "../components/BlogList.astro";
@@ -69,10 +69,7 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July", 
     >
       <article class={`page page--${page.section}`}>
         <PageHead title={page.h1} trail={trailFor(page)} eyebrow={page.eyebrow} lede={page.lede} hero={page.hero} />
-        <div class="page__body">
-          <Blocks blocks={page.blocks} />
-          {page.aside.length > 0 && <Blocks blocks={page.aside} />}
-        </div>
+        <Doc blocks={page.blocks} aside={page.aside} />
         <Related ids={page.related} />
       </article>
     </BaseLayout>
@@ -113,10 +110,8 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July", 
         <PageHead title={post.h1} trail={[{ label: "Home", href: "/" }, { label: "Blogs", href: "/blogs/" }]} eyebrow="Blog">
           <p class="page-head__extra"><time datetime={post.date}>{formatDate(post.date)}</time></p>
         </PageHead>
-        <div class="page__body">
-          {image && <figure class="figure figure--full"><Picture id={post.media} class="figure__image" eager /></figure>}
-          <Blocks blocks={post.blocks} />
-        </div>
+        {image && <div class="wrap"><figure class="figure figure--full doc__lead-image"><Picture id={post.media} class="figure__image" eager /></figure></div>}
+        <Doc blocks={post.blocks} />
       </article>
     </BaseLayout>
   );

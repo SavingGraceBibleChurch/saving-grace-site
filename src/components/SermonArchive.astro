@@ -1,10 +1,12 @@
 ---
+// The sermons page (the SermonsV5 design): finder, bookshelf, last week's sermon,
+// the journal of recent sermons, then the series and speaker tables.
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHead from "./PageHead.astro";
-import SermonCard from "./SermonCard.astro";
-import SermonFeature from "./SermonFeature.astro";
+import JournalEntry from "./JournalEntry.astro";
+import BookShelf from "./BookShelf.astro";
 import Pagination from "./Pagination.astro";
-import { sermons, termsOf, taxonomyLabels, ARCHIVE_PAGE_SIZE, chunk, SITE } from "../lib/content";
+import { sermons, termsOf, taxonomyLabels, imageFor, ARCHIVE_PAGE_SIZE, chunk, SITE } from "../lib/content";
+import { canonOrder } from "../lib/canon";
 
 interface Props { page: number }
 const { page } = Astro.props;
@@ -16,42 +18,163 @@ const title = page === 1
   ? "Sermons - Saving Grace Bible Church - Bible-Based Worship in Melbourne"
   : `Sermons - Saving Grace Bible Church - Bible-Based Worship in Melbourne - Page ${page}`;
 const speakers = termsOf("speaker").sort((a, b) => b.count - a.count);
-const books = termsOf("book").filter((b) => b.slug !== "selected-text").sort((a, b) => b.count - a.count);
-const series = termsOf("series").sort((a, b) => b.count - a.count).slice(0, 10);
-const [latest, ...rest] = items;
-const grid = page === 1 ? rest : items;
-const first = (page - 1) * ARCHIVE_PAGE_SIZE + 1;
+const series = termsOf("series").sort((a, b) => a.name.localeCompare(b.name));
+const books = termsOf("book").filter((b) => b.slug !== "selected-text").sort((a, b) => canonOrder(a.slug) - canonOrder(b.slug));
+const passages = termsOf("passage").sort((a, b) => a.name.localeCompare(b.name, "en", { numeric: true }));
+const discovery = page === 1;
+const latest = discovery ? items[0] : undefined;
+const recent = latest ? items.slice(1) : items;
+const shown = Math.min(page * ARCHIVE_PAGE_SIZE, sermons.length);
+const portraitFor = (name: string) => (name === "Wesam Saad" ? imageFor("wesam") : name === "Ralph Gambardella" ? imageFor("ralph") : undefined);
 ---
 <BaseLayout
   title={title}
-  description={page === 1 ? "Watch and listen to Christ-centred, expository sermons preached at Saving Grace Bible Church in Westmeadows, Melbourne. Browse by speaker, series, Bible book or topic." : ""}
+  description={page === 1 ? "Browse sermons from Saving Grace Bible Church by speaker, series, Scripture, Bible book, or service date." : ""}
   canonical={path}
   indexable={page === 1}
   breadcrumbs={[{ name: "Home", path: "/" }, { name: "Sermons", path: "/sermons/" }]}
   jsonLd={page === 1 ? [{ "@context": "https://schema.org", "@type": "CollectionPage", "@id": `${SITE}/sermons/#webpage`, url: `${SITE}/sermons/`, name: "Sermons", inLanguage: "en-AU", isPartOf: { "@id": `${SITE}/#website` } }] : []}
 >
-  <article class="page page--sermons">
-    <PageHead title={page === 1 ? "Sermons" : `Sermons — page ${page}`} trail={[{ label: "Home", href: "/" }]} eyebrow={`${sermons.length} sermons since ${sermons.at(-1)?.date.slice(0, 4)}`}>
-      <form class="search-field" method="get" action="/search/" role="search" aria-label="Search sermons" id="sermon-search">
-        <label class="sr-only" for="sermon-search-input">Search sermons</label>
-        <input id="sermon-search-input" type="search" name="q" placeholder="Search titles, passages and topics" maxlength="120" />
-        <button class="button" type="submit">Search</button>
+  <div class="wrap v5" data-pagefind-ignore="all">
+    <header class="v5__heading"><h1>Sermons</h1><p>Explore the preaching of God's Word at Saving Grace.</p></header>
+
+    <section class="finder" aria-label="Find sermons">
+      <form class="finder__form" method="get" action="/search/" role="search" data-finder>
+        <div class="finder__row">
+          <div class="field"><label class="field__label" for="sermon-search">Search sermons</label><input id="sermon-search" class="control" name="q" type="search" maxlength="120" autocomplete="off" placeholder="A word, a name, a passage" /></div>
+          <div class="field"><label class="field__label" for="speaker-filter">Speaker</label><select id="speaker-filter" class="control control--select" data-go><option value="">All speakers</option>{speakers.map((t) => <option value={t.path}>{t.name} ({t.count})</option>)}</select></div>
+          <div class="field"><label class="field__label" for="series-filter">Series</label><select id="series-filter" class="control control--select" data-go><option value="">All series</option>{series.map((t) => <option value={t.path}>{t.name} ({t.count})</option>)}</select></div>
+          <div class="finder__submit"><button class="button" type="submit">Search</button></div>
+        </div>
+        <details class="refine" data-refine>
+          <summary class="refine__summary"><span>More filters</span></summary>
+          <div class="refine__grid">
+            <div class="field"><label class="field__label" for="book-filter">Bible book</label><select id="book-filter" class="control control--select" data-go><option value="">All books</option>{books.map((t) => <option value={t.path}>{t.name} ({t.count})</option>)}</select></div>
+            <div class="field"><label class="field__label" for="passage-filter">Scripture reference</label><select id="passage-filter" class="control control--select" data-go><option value="">All references</option>{passages.map((t) => <option value={t.path}>{t.name}</option>)}</select></div>
+          </div>
+        </details>
       </form>
-    </PageHead>
-    <div class="page__body">
-      {page === 1 && (
-        <nav class="browse" aria-label="Browse sermons">
-          <div class="browse__row"><p class="browse__label"><a href={taxonomyLabels.speaker.path}>Speakers</a></p><ul class="browse__chips" role="list">{speakers.map((t) => <li><a class="chip" href={t.path}>{t.name}<span class="chip__count">{t.count}</span></a></li>)}</ul></div>
-          <div class="browse__row"><p class="browse__label"><a href={taxonomyLabels.book.path}>Bible books</a></p><ul class="browse__chips" role="list">{books.map((t) => <li><a class="chip" href={t.path}>{t.name}<span class="chip__count">{t.count}</span></a></li>)}</ul></div>
-          <div class="browse__row"><p class="browse__label"><a href={taxonomyLabels.series.path}>Series</a></p><ul class="browse__chips" role="list">{series.map((t) => <li><a class="chip" href={t.path}>{t.name}</a></li>)}<li><a class="chip" href={taxonomyLabels.series.path}>All series →</a></li><li><a class="chip" href={taxonomyLabels.topic.path}>Browse {termsOf("topic").length} topics →</a></li></ul></div>
-        </nav>
-      )}
-      <section class="archive__results" aria-labelledby="results-heading" id="results">
-        <header class="section-head"><h2 id="results-heading">{page === 1 ? "Latest sermons" : `Sermons ${first}–${first + items.length - 1}`}</h2></header>
-        {page === 1 && latest && <div class="archive__feature"><SermonFeature sermon={latest} /></div>}
-        <ul class="cards" role="list">{grid.map((sermon) => <SermonCard sermon={sermon} />)}</ul>
+    </section>
+
+    <BookShelf />
+
+    {latest && (
+      <section class="v5__featured" aria-labelledby="v5-latest-heading">
+        <div class="section__head"><h2 id="v5-latest-heading" class="section__title">Last Week’s Sermon</h2><div class="section__aside"><span>Latest available recording</span></div></div>
+        <ul class="journal" role="list"><JournalEntry sermon={latest} featured /></ul>
+      </section>
+    )}
+
+    <section class="v5__recent" id="v5-results" tabindex="-1" aria-labelledby="v5-results-heading" data-v5-base={base}>
+      <div class="section__head">
+        <h2 id="v5-results-heading" class="section__title">{discovery ? "Recent sermons" : "All sermons, newest first"}</h2>
+        <div class="section__aside">{discovery ? <a href="#v5-more">Browse all {sermons.length} sermons</a> : <><span>{sermons.length} sermons</span> <a href={base}>Back to recent sermons</a></>}</div>
+      </div>
+      <ul class="journal" role="list">{recent.map((sermon) => <JournalEntry sermon={sermon} />)}</ul>
+      <div class="v5__browse" id="v5-more" data-v5-pagination data-page={page} data-total={sermons.length}>
+        <p class="v5__progress" data-v5-progress>Showing {shown} of {sermons.length} sermons</p>
+        {page < pages.length
+          ? <a class="button v5__more" data-v5-more href={`${base}page/${page + 1}/`} aria-controls="v5-results">More sermons <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M12 4v15m-6-6 6 6 6-6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+          : <p class="v5__end">You’ve reached the end of these sermons.</p>}
         <Pagination current={page} total={pages.length} base={base} />
+      </div>
+      <p class="v5__load-status" role="status" aria-live="polite" aria-atomic="true" data-v5-load-status></p>
+    </section>
+
+    <div class="v5__indexes">
+      <section class="v5-directory-section v5-directory-section--series" aria-labelledby="v5-series-heading">
+        <header class="v5-directory-heading"><div><h2 id="v5-series-heading">Series</h2><p>Counts show available sermons assigned to each series.</p></div><a href={taxonomyLabels.series.path}>All series <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></a></header>
+        <table class="v5-directory"><caption class="sr-only">Series and available sermons</caption>
+          <thead><tr><th scope="col">Series title</th><th scope="col">Sermons</th></tr></thead>
+          <tbody>
+            {series.map((t) => (
+              <tr><th scope="row"><a class="v5-directory__link" href={t.path}>
+                <span class="v5-directory__symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v15M3 4h5a4 4 0 0 1 4 2 4 4 0 0 1 4-2h5v14h-5a4 4 0 0 0-4 2 4 4 0 0 0-4-2H3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /></svg></span>
+                <span class="v5-directory__name">{t.name}</span><span class="v5-directory__arrow"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              </a></th><td><span class="v5-directory__count">{t.count}</span></td></tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+      <section class="v5-directory-section v5-directory-section--speakers" aria-labelledby="v5-speakers-heading">
+        <header class="v5-directory-heading"><div><h2 id="v5-speakers-heading">Speakers</h2><p>Explore the sermons by speaker.</p></div><a href={taxonomyLabels.speaker.path}>All speakers <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></a></header>
+        <table class="v5-directory"><caption class="sr-only">Speakers and available sermons</caption>
+          <thead><tr><th scope="col">Speaker</th><th scope="col">Sermons</th></tr></thead>
+          <tbody>
+            {speakers.map((t) => {
+              const portrait = portraitFor(t.name);
+              return (
+                <tr><th scope="row"><a class="v5-directory__link" href={t.path}>
+                  {portrait
+                    ? <img class="v5-directory__portrait" src={portrait.src} width={portrait.width} height={portrait.height} alt="" loading="lazy" decoding="async" />
+                    : <span class="v5-directory__symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8.5" r="3.5" stroke="currentColor" stroke-width="1.5" /><path d="M5 20a7 7 0 0 1 14 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg></span>}
+                  <span class="v5-directory__name">{t.name}</span><span class="v5-directory__arrow"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+                </a></th><td><span class="v5-directory__count">{t.count}</span></td></tr>
+              );
+            })}
+          </tbody>
+        </table>
       </section>
     </div>
-  </article>
+  </div>
+
+  <script is:inline>
+  (function () {
+    // Finder: a search term goes to the site search; otherwise the chosen filter opens its page.
+    var form = document.querySelector("[data-finder]");
+    if (form) {
+      var selects = form.querySelectorAll("select[data-go]");
+      form.addEventListener("submit", function (event) {
+        var query = form.querySelector('input[name="q"]').value.trim();
+        if (query) return;
+        event.preventDefault();
+        for (var i = 0; i < selects.length; i += 1) if (selects[i].value) { location.href = selects[i].value; return; }
+        form.querySelector('input[name="q"]').focus();
+      });
+      selects.forEach(function (select) {
+        select.addEventListener("change", function () { if (select.value) location.href = select.value; });
+      });
+    }
+
+    // "More sermons" appends the next page in place; the plain link still works without JavaScript.
+    var section = document.querySelector(".v5__recent[data-v5-base]");
+    if (!section) return;
+    var status = section.querySelector("[data-v5-load-status]");
+    var loading = false;
+    section.addEventListener("click", async function (event) {
+      var link = event.target.closest("[data-v5-more]");
+      if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if (loading) return;
+      loading = true;
+      link.setAttribute("aria-disabled", "true");
+      link.textContent = "Loading sermons…";
+      try {
+        var response = await fetch(link.href, { headers: { Accept: "text/html" } });
+        if (!response.ok) throw new Error("Page unavailable");
+        var doc = new DOMParser().parseFromString(await response.text(), "text/html");
+        var incoming = doc.querySelector(".v5__recent[data-v5-base]");
+        var nextList = incoming && incoming.querySelector(":scope > .journal");
+        var nextControls = incoming && incoming.querySelector("[data-v5-pagination]");
+        var list = section.querySelector(":scope > .journal");
+        if (!nextList || !nextControls || !list) throw new Error("Unexpected page");
+        var rows = Array.from(nextList.children).map(function (row) { return document.importNode(row, true); });
+        rows.forEach(function (row) { list.appendChild(row); });
+        section.querySelector("[data-v5-pagination]").replaceWith(document.importNode(nextControls, true));
+        status.textContent = rows.length + " more sermons loaded.";
+        var first = rows[0] && rows[0].querySelector(".journal__title a");
+        if (first) first.focus({ preventScroll: true });
+      } catch (error) {
+        location.href = link.href;
+      } finally {
+        loading = false;
+      }
+    });
+    var jump = section.querySelector('a[href="#v5-more"]');
+    if (jump) jump.addEventListener("click", function (event) {
+      var more = section.querySelector("[data-v5-more]");
+      if (more) { event.preventDefault(); more.scrollIntoView({ block: "center" }); more.focus({ preventScroll: true }); }
+    });
+  })();
+  </script>
 </BaseLayout>

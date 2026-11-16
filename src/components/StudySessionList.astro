@@ -1,0 +1,30 @@
+---
+import type { StudySession } from "../lib/studies";
+import { sessionPath } from "../lib/studies";
+import { formatDuration } from "../lib/extras";
+import { formatDate } from "../lib/events";
+
+interface Props { sessions: StudySession[] }
+const { sessions } = Astro.props;
+---
+<ol class="study-list" role="list">
+  {sessions.map((session, index) => {
+    const length = formatDuration(session.durationSeconds);
+    return (
+      <li>
+        <a class="study-list__link" href={sessionPath(session)}>
+          <span class="study-list__num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+          <span class="study-list__copy">
+            <strong>{session.title}</strong>
+            <span class="study-list__meta">
+              {session.teacher && <span>{session.teacher}</span>}
+              {session.date && <time datetime={session.date}>{formatDate(session.date)}</time>}
+              {length && <span class="study-list__length"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 6v6l4 2" /></svg>{length}</span>}
+            </span>
+          </span>
+          <span class="study-list__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12h15m-6-6 6 6-6 6" /></svg></span>
+        </a>
+      </li>
+    );
+  })}
+</ol>

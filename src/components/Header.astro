@@ -76,7 +76,7 @@ const inSection = (item: NavItem) =>
     if (open) { open.open = false; open.querySelector("summary").focus(); }
     else if (toggle.getAttribute("aria-expanded") === "true") { setOpen(false); toggle.focus(); }
   });
-  window.matchMedia("(min-width: 66.01rem)").addEventListener("change", function () { setOpen(false); });
+  window.matchMedia("(min-width: 78.01rem)").addEventListener("change", function () { setOpen(false); });
   function onScroll() { header.toggleAttribute("data-scrolled", window.scrollY > 8); }
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });

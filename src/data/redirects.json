@@ -925,4609 +925,4609 @@
  },
  {
   "from": "/sermons/?sermon_topics=1-corinthians-1123-30",
-  "to": "/sermons/topic/1-corinthians-1123-30/",
+  "to": "/sermons/passage/1-corinthians-1123-30/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-corinthians-1123-30",
-  "to": "/sermons/topic/1-corinthians-1123-30/",
+  "to": "/sermons/passage/1-corinthians-1123-30/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-corinthians-924-27",
-  "to": "/sermons/topic/1-corinthians-924-27/",
+  "to": "/sermons/passage/1-corinthians-924-27/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-corinthians-924-27",
-  "to": "/sermons/topic/1-corinthians-924-27/",
+  "to": "/sermons/passage/1-corinthians-924-27/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-11-4",
-  "to": "/sermons/topic/1-john-11-4/",
+  "to": "/sermons/passage/1-john-11-4/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-11-4",
-  "to": "/sermons/topic/1-john-11-4/",
+  "to": "/sermons/passage/1-john-11-4/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-17-22",
-  "to": "/sermons/topic/1-john-17-22/",
+  "to": "/sermons/passage/1-john-17-22/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-17-22",
-  "to": "/sermons/topic/1-john-17-22/",
+  "to": "/sermons/passage/1-john-17-22/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-212-14",
-  "to": "/sermons/topic/1-john-212-14/",
+  "to": "/sermons/passage/1-john-212-14/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-212-14",
-  "to": "/sermons/topic/1-john-212-14/",
+  "to": "/sermons/passage/1-john-212-14/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-215-17",
-  "to": "/sermons/topic/1-john-215-17/",
+  "to": "/sermons/passage/1-john-215-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-215-17",
-  "to": "/sermons/topic/1-john-215-17/",
+  "to": "/sermons/passage/1-john-215-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-218-28",
-  "to": "/sermons/topic/1-john-218-28/",
+  "to": "/sermons/passage/1-john-218-28/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-218-28",
-  "to": "/sermons/topic/1-john-218-28/",
+  "to": "/sermons/passage/1-john-218-28/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-228-33",
-  "to": "/sermons/topic/1-john-228-33/",
+  "to": "/sermons/passage/1-john-228-33/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-228-33",
-  "to": "/sermons/topic/1-john-228-33/",
+  "to": "/sermons/passage/1-john-228-33/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-23-6",
-  "to": "/sermons/topic/1-john-23-6/",
+  "to": "/sermons/passage/1-john-23-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-23-6",
-  "to": "/sermons/topic/1-john-23-6/",
+  "to": "/sermons/passage/1-john-23-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-27-11",
-  "to": "/sermons/topic/1-john-27-11/",
+  "to": "/sermons/passage/1-john-27-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-27-11",
-  "to": "/sermons/topic/1-john-27-11/",
+  "to": "/sermons/passage/1-john-27-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-311-18",
-  "to": "/sermons/topic/1-john-311-18/",
+  "to": "/sermons/passage/1-john-311-18/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-311-18",
-  "to": "/sermons/topic/1-john-311-18/",
+  "to": "/sermons/passage/1-john-311-18/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-34-10",
-  "to": "/sermons/topic/1-john-34-10/",
+  "to": "/sermons/passage/1-john-34-10/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-34-10",
-  "to": "/sermons/topic/1-john-34-10/",
+  "to": "/sermons/passage/1-john-34-10/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-41-6",
-  "to": "/sermons/topic/1-john-41-6/",
+  "to": "/sermons/passage/1-john-41-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-41-6",
-  "to": "/sermons/topic/1-john-41-6/",
+  "to": "/sermons/passage/1-john-41-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-47-21",
-  "to": "/sermons/topic/1-john-47-21/",
+  "to": "/sermons/passage/1-john-47-21/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-47-21",
-  "to": "/sermons/topic/1-john-47-21/",
+  "to": "/sermons/passage/1-john-47-21/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-51-5",
-  "to": "/sermons/topic/1-john-51-5/",
+  "to": "/sermons/passage/1-john-51-5/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-51-5",
-  "to": "/sermons/topic/1-john-51-5/",
+  "to": "/sermons/passage/1-john-51-5/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-513",
-  "to": "/sermons/topic/1-john-513/",
+  "to": "/sermons/passage/1-john-513/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-513",
-  "to": "/sermons/topic/1-john-513/",
+  "to": "/sermons/passage/1-john-513/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-514-21",
-  "to": "/sermons/topic/1-john-514-21/",
+  "to": "/sermons/passage/1-john-514-21/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-514-21",
-  "to": "/sermons/topic/1-john-514-21/",
+  "to": "/sermons/passage/1-john-514-21/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-john-56-12",
-  "to": "/sermons/topic/1-john-56-12/",
+  "to": "/sermons/passage/1-john-56-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-john-56-12",
-  "to": "/sermons/topic/1-john-56-12/",
+  "to": "/sermons/passage/1-john-56-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-1",
-  "to": "/sermons/topic/1-peter-1/",
+  "to": "/sermons/passage/1-peter-1/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-1",
-  "to": "/sermons/topic/1-peter-1/",
+  "to": "/sermons/passage/1-peter-1/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-11",
-  "to": "/sermons/topic/1-peter-11/",
+  "to": "/sermons/passage/1-peter-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-11",
-  "to": "/sermons/topic/1-peter-11/",
+  "to": "/sermons/passage/1-peter-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-11-2",
-  "to": "/sermons/topic/1-peter-11-2/",
+  "to": "/sermons/passage/1-peter-11-2/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-11-2",
-  "to": "/sermons/topic/1-peter-11-2/",
+  "to": "/sermons/passage/1-peter-11-2/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-110-12",
-  "to": "/sermons/topic/1-peter-110-12/",
+  "to": "/sermons/passage/1-peter-110-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-110-12",
-  "to": "/sermons/topic/1-peter-110-12/",
+  "to": "/sermons/passage/1-peter-110-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-113",
-  "to": "/sermons/topic/1-peter-113/",
+  "to": "/sermons/passage/1-peter-113/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-113",
-  "to": "/sermons/topic/1-peter-113/",
+  "to": "/sermons/passage/1-peter-113/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-113-16",
-  "to": "/sermons/topic/1-peter-113-16/",
+  "to": "/sermons/passage/1-peter-113-16/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-113-16",
-  "to": "/sermons/topic/1-peter-113-16/",
+  "to": "/sermons/passage/1-peter-113-16/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-117",
-  "to": "/sermons/topic/1-peter-117/",
+  "to": "/sermons/passage/1-peter-117/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-117",
-  "to": "/sermons/topic/1-peter-117/",
+  "to": "/sermons/passage/1-peter-117/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-118-21",
-  "to": "/sermons/topic/1-peter-118-21/",
+  "to": "/sermons/passage/1-peter-118-21/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-118-21",
-  "to": "/sermons/topic/1-peter-118-21/",
+  "to": "/sermons/passage/1-peter-118-21/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-122-25",
-  "to": "/sermons/topic/1-peter-122-25/",
+  "to": "/sermons/passage/1-peter-122-25/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-122-25",
-  "to": "/sermons/topic/1-peter-122-25/",
+  "to": "/sermons/passage/1-peter-122-25/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-13-5",
-  "to": "/sermons/topic/1-peter-13-5/",
+  "to": "/sermons/passage/1-peter-13-5/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-13-5",
-  "to": "/sermons/topic/1-peter-13-5/",
+  "to": "/sermons/passage/1-peter-13-5/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-16-7",
-  "to": "/sermons/topic/1-peter-16-7/",
+  "to": "/sermons/passage/1-peter-16-7/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-16-7",
-  "to": "/sermons/topic/1-peter-16-7/",
+  "to": "/sermons/passage/1-peter-16-7/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-18",
-  "to": "/sermons/topic/1-peter-18/",
+  "to": "/sermons/passage/1-peter-18/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-18",
-  "to": "/sermons/topic/1-peter-18/",
+  "to": "/sermons/passage/1-peter-18/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-21-3",
-  "to": "/sermons/topic/1-peter-21-3/",
+  "to": "/sermons/passage/1-peter-21-3/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-21-3",
-  "to": "/sermons/topic/1-peter-21-3/",
+  "to": "/sermons/passage/1-peter-21-3/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-211-12",
-  "to": "/sermons/topic/1-peter-211-12/",
+  "to": "/sermons/passage/1-peter-211-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-211-12",
-  "to": "/sermons/topic/1-peter-211-12/",
+  "to": "/sermons/passage/1-peter-211-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-213-17",
-  "to": "/sermons/topic/1-peter-213-17/",
+  "to": "/sermons/passage/1-peter-213-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-213-17",
-  "to": "/sermons/topic/1-peter-213-17/",
+  "to": "/sermons/passage/1-peter-213-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-215-17",
-  "to": "/sermons/topic/1-peter-215-17/",
+  "to": "/sermons/passage/1-peter-215-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-215-17",
-  "to": "/sermons/topic/1-peter-215-17/",
+  "to": "/sermons/passage/1-peter-215-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-218-21",
-  "to": "/sermons/topic/1-peter-218-21/",
+  "to": "/sermons/passage/1-peter-218-21/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-218-21",
-  "to": "/sermons/topic/1-peter-218-21/",
+  "to": "/sermons/passage/1-peter-218-21/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-221-25",
-  "to": "/sermons/topic/1-peter-221-25/",
+  "to": "/sermons/passage/1-peter-221-25/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-221-25",
-  "to": "/sermons/topic/1-peter-221-25/",
+  "to": "/sermons/passage/1-peter-221-25/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-24-10",
-  "to": "/sermons/topic/1-peter-24-10/",
+  "to": "/sermons/passage/1-peter-24-10/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-24-10",
-  "to": "/sermons/topic/1-peter-24-10/",
+  "to": "/sermons/passage/1-peter-24-10/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-29-10",
-  "to": "/sermons/topic/1-peter-29-10/",
+  "to": "/sermons/passage/1-peter-29-10/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-29-10",
-  "to": "/sermons/topic/1-peter-29-10/",
+  "to": "/sermons/passage/1-peter-29-10/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-31-6",
-  "to": "/sermons/topic/1-peter-31-6/",
+  "to": "/sermons/passage/1-peter-31-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-31-6",
-  "to": "/sermons/topic/1-peter-31-6/",
+  "to": "/sermons/passage/1-peter-31-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-313-17",
-  "to": "/sermons/topic/1-peter-313-17/",
+  "to": "/sermons/passage/1-peter-313-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-313-17",
-  "to": "/sermons/topic/1-peter-313-17/",
+  "to": "/sermons/passage/1-peter-313-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-318",
-  "to": "/sermons/topic/1-peter-318/",
+  "to": "/sermons/passage/1-peter-318/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-318",
-  "to": "/sermons/topic/1-peter-318/",
+  "to": "/sermons/passage/1-peter-318/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-319-22",
-  "to": "/sermons/topic/1-peter-319-22/",
+  "to": "/sermons/passage/1-peter-319-22/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-319-22",
-  "to": "/sermons/topic/1-peter-319-22/",
+  "to": "/sermons/passage/1-peter-319-22/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-37",
-  "to": "/sermons/topic/1-peter-37/",
+  "to": "/sermons/passage/1-peter-37/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-37",
-  "to": "/sermons/topic/1-peter-37/",
+  "to": "/sermons/passage/1-peter-37/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-38-12",
-  "to": "/sermons/topic/1-peter-38-12/",
+  "to": "/sermons/passage/1-peter-38-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-38-12",
-  "to": "/sermons/topic/1-peter-38-12/",
+  "to": "/sermons/passage/1-peter-38-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=1-peter-48-11",
-  "to": "/sermons/topic/1-peter-48-11/",
+  "to": "/sermons/passage/1-peter-48-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/1-peter-48-11",
-  "to": "/sermons/topic/1-peter-48-11/",
+  "to": "/sermons/passage/1-peter-48-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=2-corinthians-38",
-  "to": "/sermons/topic/2-corinthians-38/",
+  "to": "/sermons/passage/2-corinthians-38/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/2-corinthians-38",
-  "to": "/sermons/topic/2-corinthians-38/",
+  "to": "/sermons/passage/2-corinthians-38/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=2-timothy-1",
-  "to": "/sermons/topic/2-timothy-1/",
+  "to": "/sermons/passage/2-timothy-1/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/2-timothy-1",
-  "to": "/sermons/topic/2-timothy-1/",
+  "to": "/sermons/passage/2-timothy-1/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=acts-41-4",
-  "to": "/sermons/topic/acts-41-4/",
+  "to": "/sermons/passage/acts-41-4/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/acts-41-4",
-  "to": "/sermons/topic/acts-41-4/",
+  "to": "/sermons/passage/acts-41-4/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-11",
-  "to": "/sermons/topic/colossians-11/",
+  "to": "/sermons/passage/colossians-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-11",
-  "to": "/sermons/topic/colossians-11/",
+  "to": "/sermons/passage/colossians-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-11-2",
-  "to": "/sermons/topic/colossians-11-2/",
+  "to": "/sermons/passage/colossians-11-2/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-11-2",
-  "to": "/sermons/topic/colossians-11-2/",
+  "to": "/sermons/passage/colossians-11-2/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-112",
-  "to": "/sermons/topic/colossians-112/",
+  "to": "/sermons/passage/colossians-112/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-112",
-  "to": "/sermons/topic/colossians-112/",
+  "to": "/sermons/passage/colossians-112/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-113",
-  "to": "/sermons/topic/colossians-113/",
+  "to": "/sermons/passage/colossians-113/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-113",
-  "to": "/sermons/topic/colossians-113/",
+  "to": "/sermons/passage/colossians-113/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-114",
-  "to": "/sermons/topic/colossians-114/",
+  "to": "/sermons/passage/colossians-114/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-114",
-  "to": "/sermons/topic/colossians-114/",
+  "to": "/sermons/passage/colossians-114/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-115",
-  "to": "/sermons/topic/colossians-115/",
+  "to": "/sermons/passage/colossians-115/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-115",
-  "to": "/sermons/topic/colossians-115/",
+  "to": "/sermons/passage/colossians-115/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-116-17",
-  "to": "/sermons/topic/colossians-116-17/",
+  "to": "/sermons/passage/colossians-116-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-116-17",
-  "to": "/sermons/topic/colossians-116-17/",
+  "to": "/sermons/passage/colossians-116-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-118",
-  "to": "/sermons/topic/colossians-118/",
+  "to": "/sermons/passage/colossians-118/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-118",
-  "to": "/sermons/topic/colossians-118/",
+  "to": "/sermons/passage/colossians-118/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-119-20",
-  "to": "/sermons/topic/colossians-119-20/",
+  "to": "/sermons/passage/colossians-119-20/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-119-20",
-  "to": "/sermons/topic/colossians-119-20/",
+  "to": "/sermons/passage/colossians-119-20/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-121-22",
-  "to": "/sermons/topic/colossians-121-22/",
+  "to": "/sermons/passage/colossians-121-22/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-121-22",
-  "to": "/sermons/topic/colossians-121-22/",
+  "to": "/sermons/passage/colossians-121-22/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-123",
-  "to": "/sermons/topic/colossians-123/",
+  "to": "/sermons/passage/colossians-123/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-123",
-  "to": "/sermons/topic/colossians-123/",
+  "to": "/sermons/passage/colossians-123/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-124-25",
-  "to": "/sermons/topic/colossians-124-25/",
+  "to": "/sermons/passage/colossians-124-25/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-124-25",
-  "to": "/sermons/topic/colossians-124-25/",
+  "to": "/sermons/passage/colossians-124-25/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-126-27",
-  "to": "/sermons/topic/colossians-126-27/",
+  "to": "/sermons/passage/colossians-126-27/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-126-27",
-  "to": "/sermons/topic/colossians-126-27/",
+  "to": "/sermons/passage/colossians-126-27/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-128",
-  "to": "/sermons/topic/colossians-128/",
+  "to": "/sermons/passage/colossians-128/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-128",
-  "to": "/sermons/topic/colossians-128/",
+  "to": "/sermons/passage/colossians-128/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-128-29",
-  "to": "/sermons/topic/colossians-128-29/",
+  "to": "/sermons/passage/colossians-128-29/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-128-29",
-  "to": "/sermons/topic/colossians-128-29/",
+  "to": "/sermons/passage/colossians-128-29/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-13-4",
-  "to": "/sermons/topic/colossians-13-4/",
+  "to": "/sermons/passage/colossians-13-4/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-13-4",
-  "to": "/sermons/topic/colossians-13-4/",
+  "to": "/sermons/passage/colossians-13-4/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-15",
-  "to": "/sermons/topic/colossians-15/",
+  "to": "/sermons/passage/colossians-15/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-15",
-  "to": "/sermons/topic/colossians-15/",
+  "to": "/sermons/passage/colossians-15/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-16",
-  "to": "/sermons/topic/colossians-16/",
+  "to": "/sermons/passage/colossians-16/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-16",
-  "to": "/sermons/topic/colossians-16/",
+  "to": "/sermons/passage/colossians-16/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-17",
-  "to": "/sermons/topic/colossians-17/",
+  "to": "/sermons/passage/colossians-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-17",
-  "to": "/sermons/topic/colossians-17/",
+  "to": "/sermons/passage/colossians-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-18",
-  "to": "/sermons/topic/colossians-18/",
+  "to": "/sermons/passage/colossians-18/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-18",
-  "to": "/sermons/topic/colossians-18/",
+  "to": "/sermons/passage/colossians-18/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-19",
-  "to": "/sermons/topic/colossians-19/",
+  "to": "/sermons/passage/colossians-19/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-19",
-  "to": "/sermons/topic/colossians-19/",
+  "to": "/sermons/passage/colossians-19/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-19-11",
-  "to": "/sermons/topic/colossians-19-11/",
+  "to": "/sermons/passage/colossians-19-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-19-11",
-  "to": "/sermons/topic/colossians-19-11/",
+  "to": "/sermons/passage/colossians-19-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-21-2",
-  "to": "/sermons/topic/colossians-21-2/",
+  "to": "/sermons/passage/colossians-21-2/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-21-2",
-  "to": "/sermons/topic/colossians-21-2/",
+  "to": "/sermons/passage/colossians-21-2/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-211-15",
-  "to": "/sermons/topic/colossians-211-15/",
+  "to": "/sermons/passage/colossians-211-15/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-211-15",
-  "to": "/sermons/topic/colossians-211-15/",
+  "to": "/sermons/passage/colossians-211-15/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-216-19",
-  "to": "/sermons/topic/colossians-216-19/",
+  "to": "/sermons/passage/colossians-216-19/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-216-19",
-  "to": "/sermons/topic/colossians-216-19/",
+  "to": "/sermons/passage/colossians-216-19/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-220-23",
-  "to": "/sermons/topic/colossians-220-23/",
+  "to": "/sermons/passage/colossians-220-23/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-220-23",
-  "to": "/sermons/topic/colossians-220-23/",
+  "to": "/sermons/passage/colossians-220-23/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-23",
-  "to": "/sermons/topic/colossians-23/",
+  "to": "/sermons/passage/colossians-23/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-23",
-  "to": "/sermons/topic/colossians-23/",
+  "to": "/sermons/passage/colossians-23/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-24-7",
-  "to": "/sermons/topic/colossians-24-7/",
+  "to": "/sermons/passage/colossians-24-7/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-24-7",
-  "to": "/sermons/topic/colossians-24-7/",
+  "to": "/sermons/passage/colossians-24-7/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-28-10",
-  "to": "/sermons/topic/colossians-28-10/",
+  "to": "/sermons/passage/colossians-28-10/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-28-10",
-  "to": "/sermons/topic/colossians-28-10/",
+  "to": "/sermons/passage/colossians-28-10/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-31-2",
-  "to": "/sermons/topic/colossians-31-2/",
+  "to": "/sermons/passage/colossians-31-2/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-31-2",
-  "to": "/sermons/topic/colossians-31-2/",
+  "to": "/sermons/passage/colossians-31-2/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-312-13",
-  "to": "/sermons/topic/colossians-312-13/",
+  "to": "/sermons/passage/colossians-312-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-312-13",
-  "to": "/sermons/topic/colossians-312-13/",
+  "to": "/sermons/passage/colossians-312-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-313",
-  "to": "/sermons/topic/colossians-313/",
+  "to": "/sermons/passage/colossians-313/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-313",
-  "to": "/sermons/topic/colossians-313/",
+  "to": "/sermons/passage/colossians-313/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-314-15",
-  "to": "/sermons/topic/colossians-314-15/",
+  "to": "/sermons/passage/colossians-314-15/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-314-15",
-  "to": "/sermons/topic/colossians-314-15/",
+  "to": "/sermons/passage/colossians-314-15/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-316-17",
-  "to": "/sermons/topic/colossians-316-17/",
+  "to": "/sermons/passage/colossians-316-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-316-17",
-  "to": "/sermons/topic/colossians-316-17/",
+  "to": "/sermons/passage/colossians-316-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-317-19",
-  "to": "/sermons/topic/colossians-317-19/",
+  "to": "/sermons/passage/colossians-317-19/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-317-19",
-  "to": "/sermons/topic/colossians-317-19/",
+  "to": "/sermons/passage/colossians-317-19/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-318",
-  "to": "/sermons/topic/colossians-318/",
+  "to": "/sermons/passage/colossians-318/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-318",
-  "to": "/sermons/topic/colossians-318/",
+  "to": "/sermons/passage/colossians-318/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-320",
-  "to": "/sermons/topic/colossians-320/",
+  "to": "/sermons/passage/colossians-320/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-320",
-  "to": "/sermons/topic/colossians-320/",
+  "to": "/sermons/passage/colossians-320/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-321",
-  "to": "/sermons/topic/colossians-321/",
+  "to": "/sermons/passage/colossians-321/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-321",
-  "to": "/sermons/topic/colossians-321/",
+  "to": "/sermons/passage/colossians-321/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-322-41",
-  "to": "/sermons/topic/colossians-322-41/",
+  "to": "/sermons/passage/colossians-322-41/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-322-41",
-  "to": "/sermons/topic/colossians-322-41/",
+  "to": "/sermons/passage/colossians-322-41/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-33-4",
-  "to": "/sermons/topic/colossians-33-4/",
+  "to": "/sermons/passage/colossians-33-4/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-33-4",
-  "to": "/sermons/topic/colossians-33-4/",
+  "to": "/sermons/passage/colossians-33-4/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-35-7",
-  "to": "/sermons/topic/colossians-35-7/",
+  "to": "/sermons/passage/colossians-35-7/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-35-7",
-  "to": "/sermons/topic/colossians-35-7/",
+  "to": "/sermons/passage/colossians-35-7/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-38",
-  "to": "/sermons/topic/colossians-38/",
+  "to": "/sermons/passage/colossians-38/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-38",
-  "to": "/sermons/topic/colossians-38/",
+  "to": "/sermons/passage/colossians-38/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-39-11",
-  "to": "/sermons/topic/colossians-39-11/",
+  "to": "/sermons/passage/colossians-39-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-39-11",
-  "to": "/sermons/topic/colossians-39-11/",
+  "to": "/sermons/passage/colossians-39-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-410",
-  "to": "/sermons/topic/colossians-410/",
+  "to": "/sermons/passage/colossians-410/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-410",
-  "to": "/sermons/topic/colossians-410/",
+  "to": "/sermons/passage/colossians-410/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-411",
-  "to": "/sermons/topic/colossians-411/",
+  "to": "/sermons/passage/colossians-411/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-411",
-  "to": "/sermons/topic/colossians-411/",
+  "to": "/sermons/passage/colossians-411/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-411-13",
-  "to": "/sermons/topic/colossians-411-13/",
+  "to": "/sermons/passage/colossians-411-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-411-13",
-  "to": "/sermons/topic/colossians-411-13/",
+  "to": "/sermons/passage/colossians-411-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-414",
-  "to": "/sermons/topic/colossians-414/",
+  "to": "/sermons/passage/colossians-414/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-414",
-  "to": "/sermons/topic/colossians-414/",
+  "to": "/sermons/passage/colossians-414/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-415-18",
-  "to": "/sermons/topic/colossians-415-18/",
+  "to": "/sermons/passage/colossians-415-18/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-415-18",
-  "to": "/sermons/topic/colossians-415-18/",
+  "to": "/sermons/passage/colossians-415-18/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-42-4",
-  "to": "/sermons/topic/colossians-42-4/",
+  "to": "/sermons/passage/colossians-42-4/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-42-4",
-  "to": "/sermons/topic/colossians-42-4/",
+  "to": "/sermons/passage/colossians-42-4/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-45-6",
-  "to": "/sermons/topic/colossians-45-6/",
+  "to": "/sermons/passage/colossians-45-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-45-6",
-  "to": "/sermons/topic/colossians-45-6/",
+  "to": "/sermons/passage/colossians-45-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-47-8",
-  "to": "/sermons/topic/colossians-47-8/",
+  "to": "/sermons/passage/colossians-47-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-47-8",
-  "to": "/sermons/topic/colossians-47-8/",
+  "to": "/sermons/passage/colossians-47-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=colossians-49",
-  "to": "/sermons/topic/colossians-49/",
+  "to": "/sermons/passage/colossians-49/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/colossians-49",
-  "to": "/sermons/topic/colossians-49/",
+  "to": "/sermons/passage/colossians-49/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=ex-3414",
-  "to": "/sermons/topic/ex-3414/",
+  "to": "/sermons/passage/ex-3414/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/ex-3414",
-  "to": "/sermons/topic/ex-3414/",
+  "to": "/sermons/passage/ex-3414/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=exodus-171-7",
-  "to": "/sermons/topic/exodus-171-7/",
+  "to": "/sermons/passage/exodus-171-7/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/exodus-171-7",
-  "to": "/sermons/topic/exodus-171-7/",
+  "to": "/sermons/passage/exodus-171-7/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=exodus-310-15",
-  "to": "/sermons/topic/exodus-310-15/",
+  "to": "/sermons/passage/exodus-310-15/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/exodus-310-15",
-  "to": "/sermons/topic/exodus-310-15/",
+  "to": "/sermons/passage/exodus-310-15/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=genesis-320-24",
-  "to": "/sermons/topic/genesis-320-24/",
+  "to": "/sermons/passage/genesis-320-24/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/genesis-320-24",
-  "to": "/sermons/topic/genesis-320-24/",
+  "to": "/sermons/passage/genesis-320-24/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=genesis-37-50",
-  "to": "/sermons/topic/genesis-37-50/",
+  "to": "/sermons/passage/genesis-37-50/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/genesis-37-50",
-  "to": "/sermons/topic/genesis-37-50/",
+  "to": "/sermons/passage/genesis-37-50/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=hebrews-111-3",
-  "to": "/sermons/topic/hebrews-111-3/",
+  "to": "/sermons/passage/hebrews-111-3/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/hebrews-111-3",
-  "to": "/sermons/topic/hebrews-111-3/",
+  "to": "/sermons/passage/hebrews-111-3/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=hebrews-1125-26",
-  "to": "/sermons/topic/hebrews-1125-26/",
+  "to": "/sermons/passage/hebrews-1125-26/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/hebrews-1125-26",
-  "to": "/sermons/topic/hebrews-1125-26/",
+  "to": "/sermons/passage/hebrews-1125-26/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=isaiah-4216",
-  "to": "/sermons/topic/isaiah-4216/",
+  "to": "/sermons/passage/isaiah-4216/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/isaiah-4216",
-  "to": "/sermons/topic/isaiah-4216/",
+  "to": "/sermons/passage/isaiah-4216/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=isaiah-53",
-  "to": "/sermons/topic/isaiah-53/",
+  "to": "/sermons/passage/isaiah-53/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/isaiah-53",
-  "to": "/sermons/topic/isaiah-53/",
+  "to": "/sermons/passage/isaiah-53/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=isaiah-555-7",
-  "to": "/sermons/topic/isaiah-555-7/",
+  "to": "/sermons/passage/isaiah-555-7/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/isaiah-555-7",
-  "to": "/sermons/topic/isaiah-555-7/",
+  "to": "/sermons/passage/isaiah-555-7/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=isaiah-556-7",
-  "to": "/sermons/topic/isaiah-556-7/",
+  "to": "/sermons/passage/isaiah-556-7/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/isaiah-556-7",
-  "to": "/sermons/topic/isaiah-556-7/",
+  "to": "/sermons/passage/isaiah-556-7/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=isaiah-61-4",
-  "to": "/sermons/topic/isaiah-61-4/",
+  "to": "/sermons/passage/isaiah-61-4/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/isaiah-61-4",
-  "to": "/sermons/topic/isaiah-61-4/",
+  "to": "/sermons/passage/isaiah-61-4/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=isaiah-65-8",
-  "to": "/sermons/topic/isaiah-65-8/",
+  "to": "/sermons/passage/isaiah-65-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/isaiah-65-8",
-  "to": "/sermons/topic/isaiah-65-8/",
+  "to": "/sermons/passage/isaiah-65-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=isaiah-710-14",
-  "to": "/sermons/topic/isaiah-710-14/",
+  "to": "/sermons/passage/isaiah-710-14/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/isaiah-710-14",
-  "to": "/sermons/topic/isaiah-710-14/",
+  "to": "/sermons/passage/isaiah-710-14/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=isaiah-96",
-  "to": "/sermons/topic/isaiah-96/",
+  "to": "/sermons/passage/isaiah-96/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/isaiah-96",
-  "to": "/sermons/topic/isaiah-96/",
+  "to": "/sermons/passage/isaiah-96/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=james-11-12",
-  "to": "/sermons/topic/james-11-12/",
+  "to": "/sermons/passage/james-11-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/james-11-12",
-  "to": "/sermons/topic/james-11-12/",
+  "to": "/sermons/passage/james-11-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=james-118-27",
-  "to": "/sermons/topic/james-118-27/",
+  "to": "/sermons/passage/james-118-27/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/james-118-27",
-  "to": "/sermons/topic/james-118-27/",
+  "to": "/sermons/passage/james-118-27/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=james-214-26",
-  "to": "/sermons/topic/james-214-26/",
+  "to": "/sermons/passage/james-214-26/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/james-214-26",
-  "to": "/sermons/topic/james-214-26/",
+  "to": "/sermons/passage/james-214-26/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=james-31-12",
-  "to": "/sermons/topic/james-31-12/",
+  "to": "/sermons/passage/james-31-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/james-31-12",
-  "to": "/sermons/topic/james-31-12/",
+  "to": "/sermons/passage/james-31-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=james-313-18",
-  "to": "/sermons/topic/james-313-18/",
+  "to": "/sermons/passage/james-313-18/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/james-313-18",
-  "to": "/sermons/topic/james-313-18/",
+  "to": "/sermons/passage/james-313-18/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=james-41-6",
-  "to": "/sermons/topic/james-41-6/",
+  "to": "/sermons/passage/james-41-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/james-41-6",
-  "to": "/sermons/topic/james-41-6/",
+  "to": "/sermons/passage/james-41-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=james-413-17",
-  "to": "/sermons/topic/james-413-17/",
+  "to": "/sermons/passage/james-413-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/james-413-17",
-  "to": "/sermons/topic/james-413-17/",
+  "to": "/sermons/passage/james-413-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=james-46-10",
-  "to": "/sermons/topic/james-46-10/",
+  "to": "/sermons/passage/james-46-10/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/james-46-10",
-  "to": "/sermons/topic/james-46-10/",
+  "to": "/sermons/passage/james-46-10/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=job-11-5",
-  "to": "/sermons/topic/job-11-5/",
+  "to": "/sermons/passage/job-11-5/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/job-11-5",
-  "to": "/sermons/topic/job-11-5/",
+  "to": "/sermons/passage/job-11-5/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=job-113-22",
-  "to": "/sermons/topic/job-113-22/",
+  "to": "/sermons/passage/job-113-22/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/job-113-22",
-  "to": "/sermons/topic/job-113-22/",
+  "to": "/sermons/passage/job-113-22/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=job-16-12",
-  "to": "/sermons/topic/job-16-12/",
+  "to": "/sermons/passage/job-16-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/job-16-12",
-  "to": "/sermons/topic/job-16-12/",
+  "to": "/sermons/passage/job-16-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=job-21-10",
-  "to": "/sermons/topic/job-21-10/",
+  "to": "/sermons/passage/job-21-10/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/job-21-10",
-  "to": "/sermons/topic/job-21-10/",
+  "to": "/sermons/passage/job-21-10/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=john-114-18",
-  "to": "/sermons/topic/john-114-18/",
+  "to": "/sermons/passage/john-114-18/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/john-114-18",
-  "to": "/sermons/topic/john-114-18/",
+  "to": "/sermons/passage/john-114-18/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=john-171",
-  "to": "/sermons/topic/john-171/",
+  "to": "/sermons/passage/john-171/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/john-171",
-  "to": "/sermons/topic/john-171/",
+  "to": "/sermons/passage/john-171/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=john-211-14",
-  "to": "/sermons/topic/john-211-14/",
+  "to": "/sermons/passage/john-211-14/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/john-211-14",
-  "to": "/sermons/topic/john-211-14/",
+  "to": "/sermons/passage/john-211-14/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-1-67-71",
-  "to": "/sermons/topic/luke-1-67-71/",
+  "to": "/sermons/passage/luke-1-67-71/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-1-67-71",
-  "to": "/sermons/topic/luke-1-67-71/",
+  "to": "/sermons/passage/luke-1-67-71/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-11-4",
-  "to": "/sermons/topic/luke-11-4/",
+  "to": "/sermons/passage/luke-11-4/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-11-4",
-  "to": "/sermons/topic/luke-11-4/",
+  "to": "/sermons/passage/luke-11-4/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-115-17",
-  "to": "/sermons/topic/luke-115-17/",
+  "to": "/sermons/passage/luke-115-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-115-17",
-  "to": "/sermons/topic/luke-115-17/",
+  "to": "/sermons/passage/luke-115-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-118-25",
-  "to": "/sermons/topic/luke-118-25/",
+  "to": "/sermons/passage/luke-118-25/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-118-25",
-  "to": "/sermons/topic/luke-118-25/",
+  "to": "/sermons/passage/luke-118-25/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-1213-21",
-  "to": "/sermons/topic/luke-1213-21/",
+  "to": "/sermons/passage/luke-1213-21/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-1213-21",
-  "to": "/sermons/topic/luke-1213-21/",
+  "to": "/sermons/passage/luke-1213-21/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-126-33",
-  "to": "/sermons/topic/luke-126-33/",
+  "to": "/sermons/passage/luke-126-33/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-126-33",
-  "to": "/sermons/topic/luke-126-33/",
+  "to": "/sermons/passage/luke-126-33/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-134-44",
-  "to": "/sermons/topic/luke-134-44/",
+  "to": "/sermons/passage/luke-134-44/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-134-44",
-  "to": "/sermons/topic/luke-134-44/",
+  "to": "/sermons/passage/luke-134-44/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-146-50",
-  "to": "/sermons/topic/luke-146-50/",
+  "to": "/sermons/passage/luke-146-50/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-146-50",
-  "to": "/sermons/topic/luke-146-50/",
+  "to": "/sermons/passage/luke-146-50/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-15-14",
-  "to": "/sermons/topic/luke-15-14/",
+  "to": "/sermons/passage/luke-15-14/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-15-14",
-  "to": "/sermons/topic/luke-15-14/",
+  "to": "/sermons/passage/luke-15-14/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-151-55",
-  "to": "/sermons/topic/luke-151-55/",
+  "to": "/sermons/passage/luke-151-55/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-151-55",
-  "to": "/sermons/topic/luke-151-55/",
+  "to": "/sermons/passage/luke-151-55/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-156-66",
-  "to": "/sermons/topic/luke-156-66/",
+  "to": "/sermons/passage/luke-156-66/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-156-66",
-  "to": "/sermons/topic/luke-156-66/",
+  "to": "/sermons/passage/luke-156-66/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-172",
-  "to": "/sermons/topic/luke-172/",
+  "to": "/sermons/passage/luke-172/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-172",
-  "to": "/sermons/topic/luke-172/",
+  "to": "/sermons/passage/luke-172/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-173-77",
-  "to": "/sermons/topic/luke-173-77/",
+  "to": "/sermons/passage/luke-173-77/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-173-77",
-  "to": "/sermons/topic/luke-173-77/",
+  "to": "/sermons/passage/luke-173-77/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-178-80",
-  "to": "/sermons/topic/luke-178-80/",
+  "to": "/sermons/passage/luke-178-80/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-178-80",
-  "to": "/sermons/topic/luke-178-80/",
+  "to": "/sermons/passage/luke-178-80/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-21-7",
-  "to": "/sermons/topic/luke-21-7/",
+  "to": "/sermons/passage/luke-21-7/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-21-7",
-  "to": "/sermons/topic/luke-21-7/",
+  "to": "/sermons/passage/luke-21-7/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-225-32",
-  "to": "/sermons/topic/luke-225-32/",
+  "to": "/sermons/passage/luke-225-32/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-225-32",
-  "to": "/sermons/topic/luke-225-32/",
+  "to": "/sermons/passage/luke-225-32/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-233-38",
-  "to": "/sermons/topic/luke-233-38/",
+  "to": "/sermons/passage/luke-233-38/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-233-38",
-  "to": "/sermons/topic/luke-233-38/",
+  "to": "/sermons/passage/luke-233-38/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-251-luke-36",
-  "to": "/sermons/topic/luke-251-luke-36/",
+  "to": "/sermons/passage/luke-251-luke-36/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-251-luke-36",
-  "to": "/sermons/topic/luke-251-luke-36/",
+  "to": "/sermons/passage/luke-251-luke-36/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-28-20",
-  "to": "/sermons/topic/luke-28-20/",
+  "to": "/sermons/passage/luke-28-20/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-28-20",
-  "to": "/sermons/topic/luke-28-20/",
+  "to": "/sermons/passage/luke-28-20/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-314-16",
-  "to": "/sermons/topic/luke-314-16/",
+  "to": "/sermons/passage/luke-314-16/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-314-16",
-  "to": "/sermons/topic/luke-314-16/",
+  "to": "/sermons/passage/luke-314-16/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-317",
-  "to": "/sermons/topic/luke-317/",
+  "to": "/sermons/passage/luke-317/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-317",
-  "to": "/sermons/topic/luke-317/",
+  "to": "/sermons/passage/luke-317/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-318-20",
-  "to": "/sermons/topic/luke-318-20/",
+  "to": "/sermons/passage/luke-318-20/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-318-20",
-  "to": "/sermons/topic/luke-318-20/",
+  "to": "/sermons/passage/luke-318-20/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-321-22",
-  "to": "/sermons/topic/luke-321-22/",
+  "to": "/sermons/passage/luke-321-22/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-321-22",
-  "to": "/sermons/topic/luke-321-22/",
+  "to": "/sermons/passage/luke-321-22/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-323-38",
-  "to": "/sermons/topic/luke-323-38/",
+  "to": "/sermons/passage/luke-323-38/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-323-38",
-  "to": "/sermons/topic/luke-323-38/",
+  "to": "/sermons/passage/luke-323-38/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-37-11",
-  "to": "/sermons/topic/luke-37-11/",
+  "to": "/sermons/passage/luke-37-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-37-11",
-  "to": "/sermons/topic/luke-37-11/",
+  "to": "/sermons/passage/luke-37-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-41-13",
-  "to": "/sermons/topic/luke-41-13/",
+  "to": "/sermons/passage/luke-41-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-41-13",
-  "to": "/sermons/topic/luke-41-13/",
+  "to": "/sermons/passage/luke-41-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-414-21",
-  "to": "/sermons/topic/luke-414-21/",
+  "to": "/sermons/passage/luke-414-21/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-414-21",
-  "to": "/sermons/topic/luke-414-21/",
+  "to": "/sermons/passage/luke-414-21/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-422-30",
-  "to": "/sermons/topic/luke-422-30/",
+  "to": "/sermons/passage/luke-422-30/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-422-30",
-  "to": "/sermons/topic/luke-422-30/",
+  "to": "/sermons/passage/luke-422-30/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-431-37",
-  "to": "/sermons/topic/luke-431-37/",
+  "to": "/sermons/passage/luke-431-37/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-431-37",
-  "to": "/sermons/topic/luke-431-37/",
+  "to": "/sermons/passage/luke-431-37/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-438-41",
-  "to": "/sermons/topic/luke-438-41/",
+  "to": "/sermons/passage/luke-438-41/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-438-41",
-  "to": "/sermons/topic/luke-438-41/",
+  "to": "/sermons/passage/luke-438-41/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-442-44",
-  "to": "/sermons/topic/luke-442-44/",
+  "to": "/sermons/passage/luke-442-44/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-442-44",
-  "to": "/sermons/topic/luke-442-44/",
+  "to": "/sermons/passage/luke-442-44/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-443",
-  "to": "/sermons/topic/luke-443/",
+  "to": "/sermons/passage/luke-443/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-443",
-  "to": "/sermons/topic/luke-443/",
+  "to": "/sermons/passage/luke-443/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-51-11",
-  "to": "/sermons/topic/luke-51-11/",
+  "to": "/sermons/passage/luke-51-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-51-11",
-  "to": "/sermons/topic/luke-51-11/",
+  "to": "/sermons/passage/luke-51-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-511",
-  "to": "/sermons/topic/luke-511/",
+  "to": "/sermons/passage/luke-511/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-511",
-  "to": "/sermons/topic/luke-511/",
+  "to": "/sermons/passage/luke-511/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-511-12",
-  "to": "/sermons/topic/luke-511-12/",
+  "to": "/sermons/passage/luke-511-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-511-12",
-  "to": "/sermons/topic/luke-511-12/",
+  "to": "/sermons/passage/luke-511-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-512-16",
-  "to": "/sermons/topic/luke-512-16/",
+  "to": "/sermons/passage/luke-512-16/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-512-16",
-  "to": "/sermons/topic/luke-512-16/",
+  "to": "/sermons/passage/luke-512-16/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-515-20",
-  "to": "/sermons/topic/luke-515-20/",
+  "to": "/sermons/passage/luke-515-20/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-515-20",
-  "to": "/sermons/topic/luke-515-20/",
+  "to": "/sermons/passage/luke-515-20/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-521-26",
-  "to": "/sermons/topic/luke-521-26/",
+  "to": "/sermons/passage/luke-521-26/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-521-26",
-  "to": "/sermons/topic/luke-521-26/",
+  "to": "/sermons/passage/luke-521-26/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-527-32",
-  "to": "/sermons/topic/luke-527-32/",
+  "to": "/sermons/passage/luke-527-32/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-527-32",
-  "to": "/sermons/topic/luke-527-32/",
+  "to": "/sermons/passage/luke-527-32/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-61-5",
-  "to": "/sermons/topic/luke-61-5/",
+  "to": "/sermons/passage/luke-61-5/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-61-5",
-  "to": "/sermons/topic/luke-61-5/",
+  "to": "/sermons/passage/luke-61-5/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-612-16",
-  "to": "/sermons/topic/luke-612-16/",
+  "to": "/sermons/passage/luke-612-16/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-612-16",
-  "to": "/sermons/topic/luke-612-16/",
+  "to": "/sermons/passage/luke-612-16/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-613",
-  "to": "/sermons/topic/luke-613/",
+  "to": "/sermons/passage/luke-613/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-613",
-  "to": "/sermons/topic/luke-613/",
+  "to": "/sermons/passage/luke-613/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-614",
-  "to": "/sermons/topic/luke-614/",
+  "to": "/sermons/passage/luke-614/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-614",
-  "to": "/sermons/topic/luke-614/",
+  "to": "/sermons/passage/luke-614/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-615",
-  "to": "/sermons/topic/luke-615/",
+  "to": "/sermons/passage/luke-615/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-615",
-  "to": "/sermons/topic/luke-615/",
+  "to": "/sermons/passage/luke-615/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-615-16",
-  "to": "/sermons/topic/luke-615-16/",
+  "to": "/sermons/passage/luke-615-16/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-615-16",
-  "to": "/sermons/topic/luke-615-16/",
+  "to": "/sermons/passage/luke-615-16/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-66-11",
-  "to": "/sermons/topic/luke-66-11/",
+  "to": "/sermons/passage/luke-66-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-66-11",
-  "to": "/sermons/topic/luke-66-11/",
+  "to": "/sermons/passage/luke-66-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=luke-84-14",
-  "to": "/sermons/topic/luke-84-14/",
+  "to": "/sermons/passage/luke-84-14/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/luke-84-14",
-  "to": "/sermons/topic/luke-84-14/",
+  "to": "/sermons/passage/luke-84-14/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-101-12",
-  "to": "/sermons/topic/mark-101-12/",
+  "to": "/sermons/passage/mark-101-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-101-12",
-  "to": "/sermons/topic/mark-101-12/",
+  "to": "/sermons/passage/mark-101-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-101-9",
-  "to": "/sermons/topic/mark-101-9/",
+  "to": "/sermons/passage/mark-101-9/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-101-9",
-  "to": "/sermons/topic/mark-101-9/",
+  "to": "/sermons/passage/mark-101-9/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1013-16",
-  "to": "/sermons/topic/mark-1013-16/",
+  "to": "/sermons/passage/mark-1013-16/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1013-16",
-  "to": "/sermons/topic/mark-1013-16/",
+  "to": "/sermons/passage/mark-1013-16/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1017-22",
-  "to": "/sermons/topic/mark-1017-22/",
+  "to": "/sermons/passage/mark-1017-22/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1017-22",
-  "to": "/sermons/topic/mark-1017-22/",
+  "to": "/sermons/passage/mark-1017-22/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1023-27",
-  "to": "/sermons/topic/mark-1023-27/",
+  "to": "/sermons/passage/mark-1023-27/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1023-27",
-  "to": "/sermons/topic/mark-1023-27/",
+  "to": "/sermons/passage/mark-1023-27/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1028-30",
-  "to": "/sermons/topic/mark-1028-30/",
+  "to": "/sermons/passage/mark-1028-30/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1028-30",
-  "to": "/sermons/topic/mark-1028-30/",
+  "to": "/sermons/passage/mark-1028-30/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1031-31",
-  "to": "/sermons/topic/mark-1031-31/",
+  "to": "/sermons/passage/mark-1031-31/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1031-31",
-  "to": "/sermons/topic/mark-1031-31/",
+  "to": "/sermons/passage/mark-1031-31/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1032-34",
-  "to": "/sermons/topic/mark-1032-34/",
+  "to": "/sermons/passage/mark-1032-34/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1032-34",
-  "to": "/sermons/topic/mark-1032-34/",
+  "to": "/sermons/passage/mark-1032-34/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1035-44",
-  "to": "/sermons/topic/mark-1035-44/",
+  "to": "/sermons/passage/mark-1035-44/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1035-44",
-  "to": "/sermons/topic/mark-1035-44/",
+  "to": "/sermons/passage/mark-1035-44/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1045",
-  "to": "/sermons/topic/mark-1045/",
+  "to": "/sermons/passage/mark-1045/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1045",
-  "to": "/sermons/topic/mark-1045/",
+  "to": "/sermons/passage/mark-1045/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1046-50",
-  "to": "/sermons/topic/mark-1046-50/",
+  "to": "/sermons/passage/mark-1046-50/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1046-50",
-  "to": "/sermons/topic/mark-1046-50/",
+  "to": "/sermons/passage/mark-1046-50/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1051-52",
-  "to": "/sermons/topic/mark-1051-52/",
+  "to": "/sermons/passage/mark-1051-52/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1051-52",
-  "to": "/sermons/topic/mark-1051-52/",
+  "to": "/sermons/passage/mark-1051-52/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-11",
-  "to": "/sermons/topic/mark-11/",
+  "to": "/sermons/passage/mark-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-11",
-  "to": "/sermons/topic/mark-11/",
+  "to": "/sermons/passage/mark-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-11-12",
-  "to": "/sermons/topic/mark-11-12/",
+  "to": "/sermons/passage/mark-11-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-11-12",
-  "to": "/sermons/topic/mark-11-12/",
+  "to": "/sermons/passage/mark-11-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1112-14",
-  "to": "/sermons/topic/mark-1112-14/",
+  "to": "/sermons/passage/mark-1112-14/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1112-14",
-  "to": "/sermons/topic/mark-1112-14/",
+  "to": "/sermons/passage/mark-1112-14/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1115-19",
-  "to": "/sermons/topic/mark-1115-19/",
+  "to": "/sermons/passage/mark-1115-19/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1115-19",
-  "to": "/sermons/topic/mark-1115-19/",
+  "to": "/sermons/passage/mark-1115-19/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-112-15",
-  "to": "/sermons/topic/mark-112-15/",
+  "to": "/sermons/passage/mark-112-15/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-112-15",
-  "to": "/sermons/topic/mark-112-15/",
+  "to": "/sermons/passage/mark-112-15/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1120-25",
-  "to": "/sermons/topic/mark-1120-25/",
+  "to": "/sermons/passage/mark-1120-25/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1120-25",
-  "to": "/sermons/topic/mark-1120-25/",
+  "to": "/sermons/passage/mark-1120-25/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1127-33",
-  "to": "/sermons/topic/mark-1127-33/",
+  "to": "/sermons/passage/mark-1127-33/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1127-33",
-  "to": "/sermons/topic/mark-1127-33/",
+  "to": "/sermons/passage/mark-1127-33/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-116-20",
-  "to": "/sermons/topic/mark-116-20/",
+  "to": "/sermons/passage/mark-116-20/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-116-20",
-  "to": "/sermons/topic/mark-116-20/",
+  "to": "/sermons/passage/mark-116-20/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-12-8",
-  "to": "/sermons/topic/mark-12-8/",
+  "to": "/sermons/passage/mark-12-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-12-8",
-  "to": "/sermons/topic/mark-12-8/",
+  "to": "/sermons/passage/mark-12-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-121-28",
-  "to": "/sermons/topic/mark-121-28/",
+  "to": "/sermons/passage/mark-121-28/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-121-28",
-  "to": "/sermons/topic/mark-121-28/",
+  "to": "/sermons/passage/mark-121-28/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-121-9",
-  "to": "/sermons/topic/mark-121-9/",
+  "to": "/sermons/passage/mark-121-9/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-121-9",
-  "to": "/sermons/topic/mark-121-9/",
+  "to": "/sermons/passage/mark-121-9/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1210-11",
-  "to": "/sermons/topic/mark-1210-11/",
+  "to": "/sermons/passage/mark-1210-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1210-11",
-  "to": "/sermons/topic/mark-1210-11/",
+  "to": "/sermons/passage/mark-1210-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1213-17",
-  "to": "/sermons/topic/mark-1213-17/",
+  "to": "/sermons/passage/mark-1213-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1213-17",
-  "to": "/sermons/topic/mark-1213-17/",
+  "to": "/sermons/passage/mark-1213-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1218-27",
-  "to": "/sermons/topic/mark-1218-27/",
+  "to": "/sermons/passage/mark-1218-27/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1218-27",
-  "to": "/sermons/topic/mark-1218-27/",
+  "to": "/sermons/passage/mark-1218-27/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1228-30",
-  "to": "/sermons/topic/mark-1228-30/",
+  "to": "/sermons/passage/mark-1228-30/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1228-30",
-  "to": "/sermons/topic/mark-1228-30/",
+  "to": "/sermons/passage/mark-1228-30/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1230",
-  "to": "/sermons/topic/mark-1230/",
+  "to": "/sermons/passage/mark-1230/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1230",
-  "to": "/sermons/topic/mark-1230/",
+  "to": "/sermons/passage/mark-1230/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1232-34",
-  "to": "/sermons/topic/mark-1232-34/",
+  "to": "/sermons/passage/mark-1232-34/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1232-34",
-  "to": "/sermons/topic/mark-1232-34/",
+  "to": "/sermons/passage/mark-1232-34/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1235-37",
-  "to": "/sermons/topic/mark-1235-37/",
+  "to": "/sermons/passage/mark-1235-37/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1235-37",
-  "to": "/sermons/topic/mark-1235-37/",
+  "to": "/sermons/passage/mark-1235-37/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1238-40",
-  "to": "/sermons/topic/mark-1238-40/",
+  "to": "/sermons/passage/mark-1238-40/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1238-40",
-  "to": "/sermons/topic/mark-1238-40/",
+  "to": "/sermons/passage/mark-1238-40/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1241-44",
-  "to": "/sermons/topic/mark-1241-44/",
+  "to": "/sermons/passage/mark-1241-44/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1241-44",
-  "to": "/sermons/topic/mark-1241-44/",
+  "to": "/sermons/passage/mark-1241-44/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-129-31",
-  "to": "/sermons/topic/mark-129-31/",
+  "to": "/sermons/passage/mark-129-31/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-129-31",
-  "to": "/sermons/topic/mark-129-31/",
+  "to": "/sermons/passage/mark-129-31/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-131-4",
-  "to": "/sermons/topic/mark-131-4/",
+  "to": "/sermons/passage/mark-131-4/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-131-4",
-  "to": "/sermons/topic/mark-131-4/",
+  "to": "/sermons/passage/mark-131-4/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1314",
-  "to": "/sermons/topic/mark-1314/",
+  "to": "/sermons/passage/mark-1314/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1314",
-  "to": "/sermons/topic/mark-1314/",
+  "to": "/sermons/passage/mark-1314/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1314-23",
-  "to": "/sermons/topic/mark-1314-23/",
+  "to": "/sermons/passage/mark-1314-23/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1314-23",
-  "to": "/sermons/topic/mark-1314-23/",
+  "to": "/sermons/passage/mark-1314-23/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-132-39",
-  "to": "/sermons/topic/mark-132-39/",
+  "to": "/sermons/passage/mark-132-39/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-132-39",
-  "to": "/sermons/topic/mark-132-39/",
+  "to": "/sermons/passage/mark-132-39/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1324-26",
-  "to": "/sermons/topic/mark-1324-26/",
+  "to": "/sermons/passage/mark-1324-26/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1324-26",
-  "to": "/sermons/topic/mark-1324-26/",
+  "to": "/sermons/passage/mark-1324-26/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1328-31",
-  "to": "/sermons/topic/mark-1328-31/",
+  "to": "/sermons/passage/mark-1328-31/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1328-31",
-  "to": "/sermons/topic/mark-1328-31/",
+  "to": "/sermons/passage/mark-1328-31/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1332-37",
-  "to": "/sermons/topic/mark-1332-37/",
+  "to": "/sermons/passage/mark-1332-37/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1332-37",
-  "to": "/sermons/topic/mark-1332-37/",
+  "to": "/sermons/passage/mark-1332-37/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-135-6",
-  "to": "/sermons/topic/mark-135-6/",
+  "to": "/sermons/passage/mark-135-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-135-6",
-  "to": "/sermons/topic/mark-135-6/",
+  "to": "/sermons/passage/mark-135-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-137-8",
-  "to": "/sermons/topic/mark-137-8/",
+  "to": "/sermons/passage/mark-137-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-137-8",
-  "to": "/sermons/topic/mark-137-8/",
+  "to": "/sermons/passage/mark-137-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-138",
-  "to": "/sermons/topic/mark-138/",
+  "to": "/sermons/passage/mark-138/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-138",
-  "to": "/sermons/topic/mark-138/",
+  "to": "/sermons/passage/mark-138/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-139-10",
-  "to": "/sermons/topic/mark-139-10/",
+  "to": "/sermons/passage/mark-139-10/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-139-10",
-  "to": "/sermons/topic/mark-139-10/",
+  "to": "/sermons/passage/mark-139-10/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-139-13",
-  "to": "/sermons/topic/mark-139-13/",
+  "to": "/sermons/passage/mark-139-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-139-13",
-  "to": "/sermons/topic/mark-139-13/",
+  "to": "/sermons/passage/mark-139-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-140-42",
-  "to": "/sermons/topic/mark-140-42/",
+  "to": "/sermons/passage/mark-140-42/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-140-42",
-  "to": "/sermons/topic/mark-140-42/",
+  "to": "/sermons/passage/mark-140-42/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-141-3",
-  "to": "/sermons/topic/mark-141-3/",
+  "to": "/sermons/passage/mark-141-3/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-141-3",
-  "to": "/sermons/topic/mark-141-3/",
+  "to": "/sermons/passage/mark-141-3/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1410-11",
-  "to": "/sermons/topic/mark-1410-11/",
+  "to": "/sermons/passage/mark-1410-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1410-11",
-  "to": "/sermons/topic/mark-1410-11/",
+  "to": "/sermons/passage/mark-1410-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1412-16",
-  "to": "/sermons/topic/mark-1412-16/",
+  "to": "/sermons/passage/mark-1412-16/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1412-16",
-  "to": "/sermons/topic/mark-1412-16/",
+  "to": "/sermons/passage/mark-1412-16/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1417-21",
-  "to": "/sermons/topic/mark-1417-21/",
+  "to": "/sermons/passage/mark-1417-21/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1417-21",
-  "to": "/sermons/topic/mark-1417-21/",
+  "to": "/sermons/passage/mark-1417-21/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1421",
-  "to": "/sermons/topic/mark-1421/",
+  "to": "/sermons/passage/mark-1421/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1421",
-  "to": "/sermons/topic/mark-1421/",
+  "to": "/sermons/passage/mark-1421/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1422-25",
-  "to": "/sermons/topic/mark-1422-25/",
+  "to": "/sermons/passage/mark-1422-25/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1422-25",
-  "to": "/sermons/topic/mark-1422-25/",
+  "to": "/sermons/passage/mark-1422-25/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1432-36",
-  "to": "/sermons/topic/mark-1432-36/",
+  "to": "/sermons/passage/mark-1432-36/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1432-36",
-  "to": "/sermons/topic/mark-1432-36/",
+  "to": "/sermons/passage/mark-1432-36/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1437-42",
-  "to": "/sermons/topic/mark-1437-42/",
+  "to": "/sermons/passage/mark-1437-42/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1437-42",
-  "to": "/sermons/topic/mark-1437-42/",
+  "to": "/sermons/passage/mark-1437-42/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-144-9",
-  "to": "/sermons/topic/mark-144-9/",
+  "to": "/sermons/passage/mark-144-9/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-144-9",
-  "to": "/sermons/topic/mark-144-9/",
+  "to": "/sermons/passage/mark-144-9/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1443-50",
-  "to": "/sermons/topic/mark-1443-50/",
+  "to": "/sermons/passage/mark-1443-50/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1443-50",
-  "to": "/sermons/topic/mark-1443-50/",
+  "to": "/sermons/passage/mark-1443-50/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1451-65",
-  "to": "/sermons/topic/mark-1451-65/",
+  "to": "/sermons/passage/mark-1451-65/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1451-65",
-  "to": "/sermons/topic/mark-1451-65/",
+  "to": "/sermons/passage/mark-1451-65/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1466-72",
-  "to": "/sermons/topic/mark-1466-72/",
+  "to": "/sermons/passage/mark-1466-72/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1466-72",
-  "to": "/sermons/topic/mark-1466-72/",
+  "to": "/sermons/passage/mark-1466-72/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1472",
-  "to": "/sermons/topic/mark-1472/",
+  "to": "/sermons/passage/mark-1472/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1472",
-  "to": "/sermons/topic/mark-1472/",
+  "to": "/sermons/passage/mark-1472/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-151-5",
-  "to": "/sermons/topic/mark-151-5/",
+  "to": "/sermons/passage/mark-151-5/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-151-5",
-  "to": "/sermons/topic/mark-151-5/",
+  "to": "/sermons/passage/mark-151-5/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1521-24",
-  "to": "/sermons/topic/mark-1521-24/",
+  "to": "/sermons/passage/mark-1521-24/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1521-24",
-  "to": "/sermons/topic/mark-1521-24/",
+  "to": "/sermons/passage/mark-1521-24/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1525-32",
-  "to": "/sermons/topic/mark-1525-32/",
+  "to": "/sermons/passage/mark-1525-32/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1525-32",
-  "to": "/sermons/topic/mark-1525-32/",
+  "to": "/sermons/passage/mark-1525-32/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1532",
-  "to": "/sermons/topic/mark-1532/",
+  "to": "/sermons/passage/mark-1532/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1532",
-  "to": "/sermons/topic/mark-1532/",
+  "to": "/sermons/passage/mark-1532/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1533-34",
-  "to": "/sermons/topic/mark-1533-34/",
+  "to": "/sermons/passage/mark-1533-34/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1533-34",
-  "to": "/sermons/topic/mark-1533-34/",
+  "to": "/sermons/passage/mark-1533-34/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1535-41",
-  "to": "/sermons/topic/mark-1535-41/",
+  "to": "/sermons/passage/mark-1535-41/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1535-41",
-  "to": "/sermons/topic/mark-1535-41/",
+  "to": "/sermons/passage/mark-1535-41/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-154-8",
-  "to": "/sermons/topic/mark-154-8/",
+  "to": "/sermons/passage/mark-154-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-154-8",
-  "to": "/sermons/topic/mark-154-8/",
+  "to": "/sermons/passage/mark-154-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1542-46",
-  "to": "/sermons/topic/mark-1542-46/",
+  "to": "/sermons/passage/mark-1542-46/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1542-46",
-  "to": "/sermons/topic/mark-1542-46/",
+  "to": "/sermons/passage/mark-1542-46/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-1547-163",
-  "to": "/sermons/topic/mark-1547-163/",
+  "to": "/sermons/passage/mark-1547-163/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-1547-163",
-  "to": "/sermons/topic/mark-1547-163/",
+  "to": "/sermons/passage/mark-1547-163/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-156-15",
-  "to": "/sermons/topic/mark-156-15/",
+  "to": "/sermons/passage/mark-156-15/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-156-15",
-  "to": "/sermons/topic/mark-156-15/",
+  "to": "/sermons/passage/mark-156-15/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-19-12",
-  "to": "/sermons/topic/mark-19-12/",
+  "to": "/sermons/passage/mark-19-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-19-12",
-  "to": "/sermons/topic/mark-19-12/",
+  "to": "/sermons/passage/mark-19-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-21-12",
-  "to": "/sermons/topic/mark-21-12/",
+  "to": "/sermons/passage/mark-21-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-21-12",
-  "to": "/sermons/topic/mark-21-12/",
+  "to": "/sermons/passage/mark-21-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-213-17",
-  "to": "/sermons/topic/mark-213-17/",
+  "to": "/sermons/passage/mark-213-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-213-17",
-  "to": "/sermons/topic/mark-213-17/",
+  "to": "/sermons/passage/mark-213-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-218-22",
-  "to": "/sermons/topic/mark-218-22/",
+  "to": "/sermons/passage/mark-218-22/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-218-22",
-  "to": "/sermons/topic/mark-218-22/",
+  "to": "/sermons/passage/mark-218-22/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-223-28",
-  "to": "/sermons/topic/mark-223-28/",
+  "to": "/sermons/passage/mark-223-28/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-223-28",
-  "to": "/sermons/topic/mark-223-28/",
+  "to": "/sermons/passage/mark-223-28/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-31-6",
-  "to": "/sermons/topic/mark-31-6/",
+  "to": "/sermons/passage/mark-31-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-31-6",
-  "to": "/sermons/topic/mark-31-6/",
+  "to": "/sermons/passage/mark-31-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-313-19",
-  "to": "/sermons/topic/mark-313-19/",
+  "to": "/sermons/passage/mark-313-19/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-313-19",
-  "to": "/sermons/topic/mark-313-19/",
+  "to": "/sermons/passage/mark-313-19/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-319",
-  "to": "/sermons/topic/mark-319/",
+  "to": "/sermons/passage/mark-319/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-319",
-  "to": "/sermons/topic/mark-319/",
+  "to": "/sermons/passage/mark-319/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-320-25",
-  "to": "/sermons/topic/mark-320-25/",
+  "to": "/sermons/passage/mark-320-25/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-320-25",
-  "to": "/sermons/topic/mark-320-25/",
+  "to": "/sermons/passage/mark-320-25/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-325-35",
-  "to": "/sermons/topic/mark-325-35/",
+  "to": "/sermons/passage/mark-325-35/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-325-35",
-  "to": "/sermons/topic/mark-325-35/",
+  "to": "/sermons/passage/mark-325-35/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-326-27",
-  "to": "/sermons/topic/mark-326-27/",
+  "to": "/sermons/passage/mark-326-27/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-326-27",
-  "to": "/sermons/topic/mark-326-27/",
+  "to": "/sermons/passage/mark-326-27/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-37-12",
-  "to": "/sermons/topic/mark-37-12/",
+  "to": "/sermons/passage/mark-37-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-37-12",
-  "to": "/sermons/topic/mark-37-12/",
+  "to": "/sermons/passage/mark-37-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-410-12",
-  "to": "/sermons/topic/mark-410-12/",
+  "to": "/sermons/passage/mark-410-12/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-410-12",
-  "to": "/sermons/topic/mark-410-12/",
+  "to": "/sermons/passage/mark-410-12/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-413-20",
-  "to": "/sermons/topic/mark-413-20/",
+  "to": "/sermons/passage/mark-413-20/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-413-20",
-  "to": "/sermons/topic/mark-413-20/",
+  "to": "/sermons/passage/mark-413-20/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-421-23",
-  "to": "/sermons/topic/mark-421-23/",
+  "to": "/sermons/passage/mark-421-23/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-421-23",
-  "to": "/sermons/topic/mark-421-23/",
+  "to": "/sermons/passage/mark-421-23/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-421-25",
-  "to": "/sermons/topic/mark-421-25/",
+  "to": "/sermons/passage/mark-421-25/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-421-25",
-  "to": "/sermons/topic/mark-421-25/",
+  "to": "/sermons/passage/mark-421-25/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-423-25",
-  "to": "/sermons/topic/mark-423-25/",
+  "to": "/sermons/passage/mark-423-25/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-423-25",
-  "to": "/sermons/topic/mark-423-25/",
+  "to": "/sermons/passage/mark-423-25/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-426-29",
-  "to": "/sermons/topic/mark-426-29/",
+  "to": "/sermons/passage/mark-426-29/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-426-29",
-  "to": "/sermons/topic/mark-426-29/",
+  "to": "/sermons/passage/mark-426-29/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-430-32",
-  "to": "/sermons/topic/mark-430-32/",
+  "to": "/sermons/passage/mark-430-32/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-430-32",
-  "to": "/sermons/topic/mark-430-32/",
+  "to": "/sermons/passage/mark-430-32/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-435-41",
-  "to": "/sermons/topic/mark-435-41/",
+  "to": "/sermons/passage/mark-435-41/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-435-41",
-  "to": "/sermons/topic/mark-435-41/",
+  "to": "/sermons/passage/mark-435-41/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-51-6",
-  "to": "/sermons/topic/mark-51-6/",
+  "to": "/sermons/passage/mark-51-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-51-6",
-  "to": "/sermons/topic/mark-51-6/",
+  "to": "/sermons/passage/mark-51-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-513-20",
-  "to": "/sermons/topic/mark-513-20/",
+  "to": "/sermons/passage/mark-513-20/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-513-20",
-  "to": "/sermons/topic/mark-513-20/",
+  "to": "/sermons/passage/mark-513-20/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-519-20",
-  "to": "/sermons/topic/mark-519-20/",
+  "to": "/sermons/passage/mark-519-20/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-519-20",
-  "to": "/sermons/topic/mark-519-20/",
+  "to": "/sermons/passage/mark-519-20/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-521-29",
-  "to": "/sermons/topic/mark-521-29/",
+  "to": "/sermons/passage/mark-521-29/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-521-29",
-  "to": "/sermons/topic/mark-521-29/",
+  "to": "/sermons/passage/mark-521-29/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-535-43",
-  "to": "/sermons/topic/mark-535-43/",
+  "to": "/sermons/passage/mark-535-43/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-535-43",
-  "to": "/sermons/topic/mark-535-43/",
+  "to": "/sermons/passage/mark-535-43/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-56-13",
-  "to": "/sermons/topic/mark-56-13/",
+  "to": "/sermons/passage/mark-56-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-56-13",
-  "to": "/sermons/topic/mark-56-13/",
+  "to": "/sermons/passage/mark-56-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-61-6",
-  "to": "/sermons/topic/mark-61-6/",
+  "to": "/sermons/passage/mark-61-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-61-6",
-  "to": "/sermons/topic/mark-61-6/",
+  "to": "/sermons/passage/mark-61-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-614-29",
-  "to": "/sermons/topic/mark-614-29/",
+  "to": "/sermons/passage/mark-614-29/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-614-29",
-  "to": "/sermons/topic/mark-614-29/",
+  "to": "/sermons/passage/mark-614-29/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-630-33",
-  "to": "/sermons/topic/mark-630-33/",
+  "to": "/sermons/passage/mark-630-33/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-630-33",
-  "to": "/sermons/topic/mark-630-33/",
+  "to": "/sermons/passage/mark-630-33/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-633-44",
-  "to": "/sermons/topic/mark-633-44/",
+  "to": "/sermons/passage/mark-633-44/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-633-44",
-  "to": "/sermons/topic/mark-633-44/",
+  "to": "/sermons/passage/mark-633-44/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-634-44",
-  "to": "/sermons/topic/mark-634-44/",
+  "to": "/sermons/passage/mark-634-44/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-634-44",
-  "to": "/sermons/topic/mark-634-44/",
+  "to": "/sermons/passage/mark-634-44/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-645-52",
-  "to": "/sermons/topic/mark-645-52/",
+  "to": "/sermons/passage/mark-645-52/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-645-52",
-  "to": "/sermons/topic/mark-645-52/",
+  "to": "/sermons/passage/mark-645-52/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-653-56",
-  "to": "/sermons/topic/mark-653-56/",
+  "to": "/sermons/passage/mark-653-56/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-653-56",
-  "to": "/sermons/topic/mark-653-56/",
+  "to": "/sermons/passage/mark-653-56/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-66-7",
-  "to": "/sermons/topic/mark-66-7/",
+  "to": "/sermons/passage/mark-66-7/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-66-7",
-  "to": "/sermons/topic/mark-66-7/",
+  "to": "/sermons/passage/mark-66-7/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-67-13",
-  "to": "/sermons/topic/mark-67-13/",
+  "to": "/sermons/passage/mark-67-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-67-13",
-  "to": "/sermons/topic/mark-67-13/",
+  "to": "/sermons/passage/mark-67-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-71-9",
-  "to": "/sermons/topic/mark-71-9/",
+  "to": "/sermons/passage/mark-71-9/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-71-9",
-  "to": "/sermons/topic/mark-71-9/",
+  "to": "/sermons/passage/mark-71-9/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-714-23",
-  "to": "/sermons/topic/mark-714-23/",
+  "to": "/sermons/passage/mark-714-23/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-714-23",
-  "to": "/sermons/topic/mark-714-23/",
+  "to": "/sermons/passage/mark-714-23/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-724-30",
-  "to": "/sermons/topic/mark-724-30/",
+  "to": "/sermons/passage/mark-724-30/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-724-30",
-  "to": "/sermons/topic/mark-724-30/",
+  "to": "/sermons/passage/mark-724-30/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-731-37",
-  "to": "/sermons/topic/mark-731-37/",
+  "to": "/sermons/passage/mark-731-37/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-731-37",
-  "to": "/sermons/topic/mark-731-37/",
+  "to": "/sermons/passage/mark-731-37/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-76-13",
-  "to": "/sermons/topic/mark-76-13/",
+  "to": "/sermons/passage/mark-76-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-76-13",
-  "to": "/sermons/topic/mark-76-13/",
+  "to": "/sermons/passage/mark-76-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-81-10",
-  "to": "/sermons/topic/mark-81-10/",
+  "to": "/sermons/passage/mark-81-10/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-81-10",
-  "to": "/sermons/topic/mark-81-10/",
+  "to": "/sermons/passage/mark-81-10/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-811-13",
-  "to": "/sermons/topic/mark-811-13/",
+  "to": "/sermons/passage/mark-811-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-811-13",
-  "to": "/sermons/topic/mark-811-13/",
+  "to": "/sermons/passage/mark-811-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-816-21",
-  "to": "/sermons/topic/mark-816-21/",
+  "to": "/sermons/passage/mark-816-21/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-816-21",
-  "to": "/sermons/topic/mark-816-21/",
+  "to": "/sermons/passage/mark-816-21/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-822-26",
-  "to": "/sermons/topic/mark-822-26/",
+  "to": "/sermons/passage/mark-822-26/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-822-26",
-  "to": "/sermons/topic/mark-822-26/",
+  "to": "/sermons/passage/mark-822-26/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-827-30",
-  "to": "/sermons/topic/mark-827-30/",
+  "to": "/sermons/passage/mark-827-30/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-827-30",
-  "to": "/sermons/topic/mark-827-30/",
+  "to": "/sermons/passage/mark-827-30/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-831-33",
-  "to": "/sermons/topic/mark-831-33/",
+  "to": "/sermons/passage/mark-831-33/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-831-33",
-  "to": "/sermons/topic/mark-831-33/",
+  "to": "/sermons/passage/mark-831-33/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-834",
-  "to": "/sermons/topic/mark-834/",
+  "to": "/sermons/passage/mark-834/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-834",
-  "to": "/sermons/topic/mark-834/",
+  "to": "/sermons/passage/mark-834/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-835-38",
-  "to": "/sermons/topic/mark-835-38/",
+  "to": "/sermons/passage/mark-835-38/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-835-38",
-  "to": "/sermons/topic/mark-835-38/",
+  "to": "/sermons/passage/mark-835-38/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-91-8",
-  "to": "/sermons/topic/mark-91-8/",
+  "to": "/sermons/passage/mark-91-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-91-8",
-  "to": "/sermons/topic/mark-91-8/",
+  "to": "/sermons/passage/mark-91-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-914-29",
-  "to": "/sermons/topic/mark-914-29/",
+  "to": "/sermons/passage/mark-914-29/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-914-29",
-  "to": "/sermons/topic/mark-914-29/",
+  "to": "/sermons/passage/mark-914-29/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-930-34",
-  "to": "/sermons/topic/mark-930-34/",
+  "to": "/sermons/passage/mark-930-34/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-930-34",
-  "to": "/sermons/topic/mark-930-34/",
+  "to": "/sermons/passage/mark-930-34/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-930-37",
-  "to": "/sermons/topic/mark-930-37/",
+  "to": "/sermons/passage/mark-930-37/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-930-37",
-  "to": "/sermons/topic/mark-930-37/",
+  "to": "/sermons/passage/mark-930-37/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-938-41",
-  "to": "/sermons/topic/mark-938-41/",
+  "to": "/sermons/passage/mark-938-41/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-938-41",
-  "to": "/sermons/topic/mark-938-41/",
+  "to": "/sermons/passage/mark-938-41/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-942",
-  "to": "/sermons/topic/mark-942/",
+  "to": "/sermons/passage/mark-942/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-942",
-  "to": "/sermons/topic/mark-942/",
+  "to": "/sermons/passage/mark-942/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-943-47",
-  "to": "/sermons/topic/mark-943-47/",
+  "to": "/sermons/passage/mark-943-47/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-943-47",
-  "to": "/sermons/topic/mark-943-47/",
+  "to": "/sermons/passage/mark-943-47/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-948",
-  "to": "/sermons/topic/mark-948/",
+  "to": "/sermons/passage/mark-948/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-948",
-  "to": "/sermons/topic/mark-948/",
+  "to": "/sermons/passage/mark-948/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-949-50",
-  "to": "/sermons/topic/mark-949-50/",
+  "to": "/sermons/passage/mark-949-50/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-949-50",
-  "to": "/sermons/topic/mark-949-50/",
+  "to": "/sermons/passage/mark-949-50/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=mark-99-13",
-  "to": "/sermons/topic/mark-99-13/",
+  "to": "/sermons/passage/mark-99-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/mark-99-13",
-  "to": "/sermons/topic/mark-99-13/",
+  "to": "/sermons/passage/mark-99-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=matthew-1344",
-  "to": "/sermons/topic/matthew-1344/",
+  "to": "/sermons/passage/matthew-1344/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/matthew-1344",
-  "to": "/sermons/topic/matthew-1344/",
+  "to": "/sermons/passage/matthew-1344/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=matthew-1624",
-  "to": "/sermons/topic/matthew-1624/",
+  "to": "/sermons/passage/matthew-1624/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/matthew-1624",
-  "to": "/sermons/topic/matthew-1624/",
+  "to": "/sermons/passage/matthew-1624/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=matthew-2018-20",
-  "to": "/sermons/topic/matthew-2018-20/",
+  "to": "/sermons/passage/matthew-2018-20/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/matthew-2018-20",
-  "to": "/sermons/topic/matthew-2018-20/",
+  "to": "/sermons/passage/matthew-2018-20/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=matthew-61-7",
-  "to": "/sermons/topic/matthew-61-7/",
+  "to": "/sermons/passage/matthew-61-7/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/matthew-61-7",
-  "to": "/sermons/topic/matthew-61-7/",
+  "to": "/sermons/passage/matthew-61-7/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=matthew-721-24",
-  "to": "/sermons/topic/matthew-721-24/",
+  "to": "/sermons/passage/matthew-721-24/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/matthew-721-24",
-  "to": "/sermons/topic/matthew-721-24/",
+  "to": "/sermons/passage/matthew-721-24/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-11-2",
-  "to": "/sermons/topic/philippians-11-2/",
+  "to": "/sermons/passage/philippians-11-2/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-11-2",
-  "to": "/sermons/topic/philippians-11-2/",
+  "to": "/sermons/passage/philippians-11-2/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-120-26",
-  "to": "/sermons/topic/philippians-120-26/",
+  "to": "/sermons/passage/philippians-120-26/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-120-26",
-  "to": "/sermons/topic/philippians-120-26/",
+  "to": "/sermons/passage/philippians-120-26/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-127-30",
-  "to": "/sermons/topic/philippians-127-30/",
+  "to": "/sermons/passage/philippians-127-30/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-127-30",
-  "to": "/sermons/topic/philippians-127-30/",
+  "to": "/sermons/passage/philippians-127-30/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-13-4",
-  "to": "/sermons/topic/philippians-13-4/",
+  "to": "/sermons/passage/philippians-13-4/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-13-4",
-  "to": "/sermons/topic/philippians-13-4/",
+  "to": "/sermons/passage/philippians-13-4/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-15-8",
-  "to": "/sermons/topic/philippians-15-8/",
+  "to": "/sermons/passage/philippians-15-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-15-8",
-  "to": "/sermons/topic/philippians-15-8/",
+  "to": "/sermons/passage/philippians-15-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-19-11",
-  "to": "/sermons/topic/philippians-19-11/",
+  "to": "/sermons/passage/philippians-19-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-19-11",
-  "to": "/sermons/topic/philippians-19-11/",
+  "to": "/sermons/passage/philippians-19-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-21-4",
-  "to": "/sermons/topic/philippians-21-4/",
+  "to": "/sermons/passage/philippians-21-4/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-21-4",
-  "to": "/sermons/topic/philippians-21-4/",
+  "to": "/sermons/passage/philippians-21-4/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-212-13",
-  "to": "/sermons/topic/philippians-212-13/",
+  "to": "/sermons/passage/philippians-212-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-212-13",
-  "to": "/sermons/topic/philippians-212-13/",
+  "to": "/sermons/passage/philippians-212-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-214-16",
-  "to": "/sermons/topic/philippians-214-16/",
+  "to": "/sermons/passage/philippians-214-16/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-214-16",
-  "to": "/sermons/topic/philippians-214-16/",
+  "to": "/sermons/passage/philippians-214-16/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-214-18",
-  "to": "/sermons/topic/philippians-214-18/",
+  "to": "/sermons/passage/philippians-214-18/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-214-18",
-  "to": "/sermons/topic/philippians-214-18/",
+  "to": "/sermons/passage/philippians-214-18/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-219-24",
-  "to": "/sermons/topic/philippians-219-24/",
+  "to": "/sermons/passage/philippians-219-24/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-219-24",
-  "to": "/sermons/topic/philippians-219-24/",
+  "to": "/sermons/passage/philippians-219-24/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-225-30",
-  "to": "/sermons/topic/philippians-225-30/",
+  "to": "/sermons/passage/philippians-225-30/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-225-30",
-  "to": "/sermons/topic/philippians-225-30/",
+  "to": "/sermons/passage/philippians-225-30/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-25-8",
-  "to": "/sermons/topic/philippians-25-8/",
+  "to": "/sermons/passage/philippians-25-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-25-8",
-  "to": "/sermons/topic/philippians-25-8/",
+  "to": "/sermons/passage/philippians-25-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-29-11",
-  "to": "/sermons/topic/philippians-29-11/",
+  "to": "/sermons/passage/philippians-29-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-29-11",
-  "to": "/sermons/topic/philippians-29-11/",
+  "to": "/sermons/passage/philippians-29-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-31-6",
-  "to": "/sermons/topic/philippians-31-6/",
+  "to": "/sermons/passage/philippians-31-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-31-6",
-  "to": "/sermons/topic/philippians-31-6/",
+  "to": "/sermons/passage/philippians-31-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-312-14",
-  "to": "/sermons/topic/philippians-312-14/",
+  "to": "/sermons/passage/philippians-312-14/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-312-14",
-  "to": "/sermons/topic/philippians-312-14/",
+  "to": "/sermons/passage/philippians-312-14/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-315-16",
-  "to": "/sermons/topic/philippians-315-16/",
+  "to": "/sermons/passage/philippians-315-16/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-315-16",
-  "to": "/sermons/topic/philippians-315-16/",
+  "to": "/sermons/passage/philippians-315-16/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-317-21",
-  "to": "/sermons/topic/philippians-317-21/",
+  "to": "/sermons/passage/philippians-317-21/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-317-21",
-  "to": "/sermons/topic/philippians-317-21/",
+  "to": "/sermons/passage/philippians-317-21/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-318-19",
-  "to": "/sermons/topic/philippians-318-19/",
+  "to": "/sermons/passage/philippians-318-19/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-318-19",
-  "to": "/sermons/topic/philippians-318-19/",
+  "to": "/sermons/passage/philippians-318-19/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-320-21",
-  "to": "/sermons/topic/philippians-320-21/",
+  "to": "/sermons/passage/philippians-320-21/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-320-21",
-  "to": "/sermons/topic/philippians-320-21/",
+  "to": "/sermons/passage/philippians-320-21/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-34-6",
-  "to": "/sermons/topic/philippians-34-6/",
+  "to": "/sermons/passage/philippians-34-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-34-6",
-  "to": "/sermons/topic/philippians-34-6/",
+  "to": "/sermons/passage/philippians-34-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-37-11",
-  "to": "/sermons/topic/philippians-37-11/",
+  "to": "/sermons/passage/philippians-37-11/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-37-11",
-  "to": "/sermons/topic/philippians-37-11/",
+  "to": "/sermons/passage/philippians-37-11/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-41",
-  "to": "/sermons/topic/philippians-41/",
+  "to": "/sermons/passage/philippians-41/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-41",
-  "to": "/sermons/topic/philippians-41/",
+  "to": "/sermons/passage/philippians-41/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-410-19",
-  "to": "/sermons/topic/philippians-410-19/",
+  "to": "/sermons/passage/philippians-410-19/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-410-19",
-  "to": "/sermons/topic/philippians-410-19/",
+  "to": "/sermons/passage/philippians-410-19/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-411-13",
-  "to": "/sermons/topic/philippians-411-13/",
+  "to": "/sermons/passage/philippians-411-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-411-13",
-  "to": "/sermons/topic/philippians-411-13/",
+  "to": "/sermons/passage/philippians-411-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-419-20",
-  "to": "/sermons/topic/philippians-419-20/",
+  "to": "/sermons/passage/philippians-419-20/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-419-20",
-  "to": "/sermons/topic/philippians-419-20/",
+  "to": "/sermons/passage/philippians-419-20/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-42-3",
-  "to": "/sermons/topic/philippians-42-3/",
+  "to": "/sermons/passage/philippians-42-3/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-42-3",
-  "to": "/sermons/topic/philippians-42-3/",
+  "to": "/sermons/passage/philippians-42-3/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-421-23",
-  "to": "/sermons/topic/philippians-421-23/",
+  "to": "/sermons/passage/philippians-421-23/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-421-23",
-  "to": "/sermons/topic/philippians-421-23/",
+  "to": "/sermons/passage/philippians-421-23/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-44-5",
-  "to": "/sermons/topic/philippians-44-5/",
+  "to": "/sermons/passage/philippians-44-5/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-44-5",
-  "to": "/sermons/topic/philippians-44-5/",
+  "to": "/sermons/passage/philippians-44-5/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-46-7",
-  "to": "/sermons/topic/philippians-46-7/",
+  "to": "/sermons/passage/philippians-46-7/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-46-7",
-  "to": "/sermons/topic/philippians-46-7/",
+  "to": "/sermons/passage/philippians-46-7/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=philippians-49",
-  "to": "/sermons/topic/philippians-49/",
+  "to": "/sermons/passage/philippians-49/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/philippians-49",
-  "to": "/sermons/topic/philippians-49/",
+  "to": "/sermons/passage/philippians-49/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=proverbs-2620",
-  "to": "/sermons/topic/proverbs-2620/",
+  "to": "/sermons/passage/proverbs-2620/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/proverbs-2620",
-  "to": "/sermons/topic/proverbs-2620/",
+  "to": "/sermons/passage/proverbs-2620/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=proverbs-612-19",
-  "to": "/sermons/topic/proverbs-612-19/",
+  "to": "/sermons/passage/proverbs-612-19/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/proverbs-612-19",
-  "to": "/sermons/topic/proverbs-612-19/",
+  "to": "/sermons/passage/proverbs-612-19/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-1",
-  "to": "/sermons/topic/psalms-1/",
+  "to": "/sermons/passage/psalms-1/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-1",
-  "to": "/sermons/topic/psalms-1/",
+  "to": "/sermons/passage/psalms-1/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-100",
-  "to": "/sermons/topic/psalms-100/",
+  "to": "/sermons/passage/psalms-100/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-100",
-  "to": "/sermons/topic/psalms-100/",
+  "to": "/sermons/passage/psalms-100/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-103",
-  "to": "/sermons/topic/psalms-103/",
+  "to": "/sermons/passage/psalms-103/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-103",
-  "to": "/sermons/topic/psalms-103/",
+  "to": "/sermons/passage/psalms-103/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-1031-5",
-  "to": "/sermons/topic/psalms-1031-5/",
+  "to": "/sermons/passage/psalms-1031-5/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-1031-5",
-  "to": "/sermons/topic/psalms-1031-5/",
+  "to": "/sermons/passage/psalms-1031-5/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-1191-2",
-  "to": "/sermons/topic/psalms-1191-2/",
+  "to": "/sermons/passage/psalms-1191-2/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-1191-2",
-  "to": "/sermons/topic/psalms-1191-2/",
+  "to": "/sermons/passage/psalms-1191-2/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-1191-8",
-  "to": "/sermons/topic/psalms-1191-8/",
+  "to": "/sermons/passage/psalms-1191-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-1191-8",
-  "to": "/sermons/topic/psalms-1191-8/",
+  "to": "/sermons/passage/psalms-1191-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-11944-45",
-  "to": "/sermons/topic/psalms-11944-45/",
+  "to": "/sermons/passage/psalms-11944-45/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-11944-45",
-  "to": "/sermons/topic/psalms-11944-45/",
+  "to": "/sermons/passage/psalms-11944-45/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-12-6",
-  "to": "/sermons/topic/psalms-12-6/",
+  "to": "/sermons/passage/psalms-12-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-12-6",
-  "to": "/sermons/topic/psalms-12-6/",
+  "to": "/sermons/passage/psalms-12-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-1211-8",
-  "to": "/sermons/topic/psalms-1211-8/",
+  "to": "/sermons/passage/psalms-1211-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-1211-8",
-  "to": "/sermons/topic/psalms-1211-8/",
+  "to": "/sermons/passage/psalms-1211-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-13",
-  "to": "/sermons/topic/psalms-13/",
+  "to": "/sermons/passage/psalms-13/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-13",
-  "to": "/sermons/topic/psalms-13/",
+  "to": "/sermons/passage/psalms-13/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-133",
-  "to": "/sermons/topic/psalms-133/",
+  "to": "/sermons/passage/psalms-133/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-133",
-  "to": "/sermons/topic/psalms-133/",
+  "to": "/sermons/passage/psalms-133/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-15",
-  "to": "/sermons/topic/psalms-15/",
+  "to": "/sermons/passage/psalms-15/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-15",
-  "to": "/sermons/topic/psalms-15/",
+  "to": "/sermons/passage/psalms-15/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-18",
-  "to": "/sermons/topic/psalms-18/",
+  "to": "/sermons/passage/psalms-18/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-18",
-  "to": "/sermons/topic/psalms-18/",
+  "to": "/sermons/passage/psalms-18/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-2",
-  "to": "/sermons/topic/psalms-2/",
+  "to": "/sermons/passage/psalms-2/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-2",
-  "to": "/sermons/topic/psalms-2/",
+  "to": "/sermons/passage/psalms-2/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-23",
-  "to": "/sermons/topic/psalms-23/",
+  "to": "/sermons/passage/psalms-23/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-23",
-  "to": "/sermons/topic/psalms-23/",
+  "to": "/sermons/passage/psalms-23/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-24",
-  "to": "/sermons/topic/psalms-24/",
+  "to": "/sermons/passage/psalms-24/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-24",
-  "to": "/sermons/topic/psalms-24/",
+  "to": "/sermons/passage/psalms-24/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-271-6",
-  "to": "/sermons/topic/psalms-271-6/",
+  "to": "/sermons/passage/psalms-271-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-271-6",
-  "to": "/sermons/topic/psalms-271-6/",
+  "to": "/sermons/passage/psalms-271-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-277-14",
-  "to": "/sermons/topic/psalms-277-14/",
+  "to": "/sermons/passage/psalms-277-14/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-277-14",
-  "to": "/sermons/topic/psalms-277-14/",
+  "to": "/sermons/passage/psalms-277-14/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-3",
-  "to": "/sermons/topic/psalms-3/",
+  "to": "/sermons/passage/psalms-3/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-3",
-  "to": "/sermons/topic/psalms-3/",
+  "to": "/sermons/passage/psalms-3/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-31",
-  "to": "/sermons/topic/psalms-31/",
+  "to": "/sermons/passage/psalms-31/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-31",
-  "to": "/sermons/topic/psalms-31/",
+  "to": "/sermons/passage/psalms-31/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-4",
-  "to": "/sermons/topic/psalms-4/",
+  "to": "/sermons/passage/psalms-4/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-4",
-  "to": "/sermons/topic/psalms-4/",
+  "to": "/sermons/passage/psalms-4/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-42",
-  "to": "/sermons/topic/psalms-42/",
+  "to": "/sermons/passage/psalms-42/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-42",
-  "to": "/sermons/topic/psalms-42/",
+  "to": "/sermons/passage/psalms-42/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-51",
-  "to": "/sermons/topic/psalms-51/",
+  "to": "/sermons/passage/psalms-51/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-51",
-  "to": "/sermons/topic/psalms-51/",
+  "to": "/sermons/passage/psalms-51/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-511-8",
-  "to": "/sermons/topic/psalms-511-8/",
+  "to": "/sermons/passage/psalms-511-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-511-8",
-  "to": "/sermons/topic/psalms-511-8/",
+  "to": "/sermons/passage/psalms-511-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-518-17",
-  "to": "/sermons/topic/psalms-518-17/",
+  "to": "/sermons/passage/psalms-518-17/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-518-17",
-  "to": "/sermons/topic/psalms-518-17/",
+  "to": "/sermons/passage/psalms-518-17/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-63",
-  "to": "/sermons/topic/psalms-63/",
+  "to": "/sermons/passage/psalms-63/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-63",
-  "to": "/sermons/topic/psalms-63/",
+  "to": "/sermons/passage/psalms-63/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-631-2",
-  "to": "/sermons/topic/psalms-631-2/",
+  "to": "/sermons/passage/psalms-631-2/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-631-2",
-  "to": "/sermons/topic/psalms-631-2/",
+  "to": "/sermons/passage/psalms-631-2/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-631-3",
-  "to": "/sermons/topic/psalms-631-3/",
+  "to": "/sermons/passage/psalms-631-3/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-631-3",
-  "to": "/sermons/topic/psalms-631-3/",
+  "to": "/sermons/passage/psalms-631-3/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-67",
-  "to": "/sermons/topic/psalms-67/",
+  "to": "/sermons/passage/psalms-67/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-67",
-  "to": "/sermons/topic/psalms-67/",
+  "to": "/sermons/passage/psalms-67/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-73",
-  "to": "/sermons/topic/psalms-73/",
+  "to": "/sermons/passage/psalms-73/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-73",
-  "to": "/sermons/topic/psalms-73/",
+  "to": "/sermons/passage/psalms-73/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-91",
-  "to": "/sermons/topic/psalms-91/",
+  "to": "/sermons/passage/psalms-91/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-91",
-  "to": "/sermons/topic/psalms-91/",
+  "to": "/sermons/passage/psalms-91/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=psalms-95",
-  "to": "/sermons/topic/psalms-95/",
+  "to": "/sermons/passage/psalms-95/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/psalms-95",
-  "to": "/sermons/topic/psalms-95/",
+  "to": "/sermons/passage/psalms-95/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=romans-114-18",
-  "to": "/sermons/topic/romans-114-18/",
+  "to": "/sermons/passage/romans-114-18/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/romans-114-18",
-  "to": "/sermons/topic/romans-114-18/",
+  "to": "/sermons/passage/romans-114-18/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=romans-121",
-  "to": "/sermons/topic/romans-121/",
+  "to": "/sermons/passage/romans-121/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/romans-121",
-  "to": "/sermons/topic/romans-121/",
+  "to": "/sermons/passage/romans-121/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=romans-122",
-  "to": "/sermons/topic/romans-122/",
+  "to": "/sermons/passage/romans-122/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/romans-122",
-  "to": "/sermons/topic/romans-122/",
+  "to": "/sermons/passage/romans-122/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=romans-123-5",
-  "to": "/sermons/topic/romans-123-5/",
+  "to": "/sermons/passage/romans-123-5/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/romans-123-5",
-  "to": "/sermons/topic/romans-123-5/",
+  "to": "/sermons/passage/romans-123-5/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=romans-123-6",
-  "to": "/sermons/topic/romans-123-6/",
+  "to": "/sermons/passage/romans-123-6/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/romans-123-6",
-  "to": "/sermons/topic/romans-123-6/",
+  "to": "/sermons/passage/romans-123-6/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=romans-126-8",
-  "to": "/sermons/topic/romans-126-8/",
+  "to": "/sermons/passage/romans-126-8/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/romans-126-8",
-  "to": "/sermons/topic/romans-126-8/",
+  "to": "/sermons/passage/romans-126-8/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=romans-128",
-  "to": "/sermons/topic/romans-128/",
+  "to": "/sermons/passage/romans-128/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/romans-128",
-  "to": "/sermons/topic/romans-128/",
+  "to": "/sermons/passage/romans-128/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=romans-129",
-  "to": "/sermons/topic/romans-129/",
+  "to": "/sermons/passage/romans-129/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/romans-129",
-  "to": "/sermons/topic/romans-129/",
+  "to": "/sermons/passage/romans-129/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=romans-89",
-  "to": "/sermons/topic/romans-89/",
+  "to": "/sermons/passage/romans-89/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/romans-89",
-  "to": "/sermons/topic/romans-89/",
+  "to": "/sermons/passage/romans-89/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
  {
   "from": "/sermons/?sermon_topics=selected-text",
-  "to": "/sermons/topic/selected-text/",
+  "to": "/sermons/passage/selected-text/",
   "match": "query",
   "note": "sermon filter"
  },
  {
   "from": "/sermons/?sermon_topics=/selected-text",
-  "to": "/sermons/topic/selected-text/",
+  "to": "/sermons/passage/selected-text/",
   "match": "query",
   "note": "sermon filter (leading slash form)"
  },
@@ -5551,7 +5551,7 @@
  },
  {
   "from": "/sermon_topics/",
-  "to": "/sermons/topic/",
+  "to": "/sermons/passage/",
   "match": "prefix",
   "note": "taxonomy archive base"
  },

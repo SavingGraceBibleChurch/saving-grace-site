@@ -86,7 +86,7 @@ export interface Sermon {
   speakers: string[];
   series: string[];
   books: string[];
-  topics: string[];
+  passages: string[];
   passage: string;
   youtubeId: string | null;
   sermonAudioId: string | null;
@@ -95,7 +95,7 @@ export interface Sermon {
   seo: Seo;
 }
 
-export type TaxonomyKind = "speaker" | "series" | "book" | "topic";
+export type TaxonomyKind = "speaker" | "series" | "book" | "passage";
 
 export interface TaxonomyTerm {
   kind: TaxonomyKind;

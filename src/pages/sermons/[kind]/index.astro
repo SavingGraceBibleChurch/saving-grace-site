@@ -1,16 +1,56 @@
 ---
+// Index pages: all speakers, all series, all Bible books, all passages.
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PageHead from "../../../components/PageHead.astro";
-import { termsOf, taxonomyLabels, SITE_NAME } from "../../../lib/content";
+import BookShelf from "../../../components/BookShelf.astro";
+import { termsOf, taxonomyLabels, sermonsFor, imageFor, SITE_NAME } from "../../../lib/content";
+import { allSeries, years, canonOrder, testamentOf } from "../../../lib/groups";
+import { bookGroup, groupLabel } from "../../../lib/books";
+import { canonBooks } from "../../../lib/canon";
 import type { TaxonomyKind } from "../../../lib/types";
 
 export function getStaticPaths() {
-  return (["speaker", "series", "book", "topic"] as TaxonomyKind[]).map((kind) => ({ params: { kind } }));
+  return (["speaker", "series", "book", "passage"] as TaxonomyKind[]).map((kind) => ({ params: { kind } }));
 }
 const kind = Astro.params.kind as TaxonomyKind;
 const label = taxonomyLabels[kind];
-const terms = termsOf(kind).sort((a, b) => (kind === "topic" ? a.name.localeCompare(b.name) : b.count - a.count));
 const path = label.path;
+const count = (n: number) => `${n} sermon${n === 1 ? "" : "s"}`;
+
+const series = kind === "series" ? allSeries() : [];
+const bookStudies = series.filter((s) => s.bookStudy).sort((a, b) => canonOrder(a.book!.slug) - canonOrder(b.book!.slug) || b.sermons.length - a.sermons.length);
+const topicalSeries = series.filter((s) => !s.bookStudy).sort((a, b) => b.sermons.length - a.sermons.length);
+
+const speakers = kind === "speaker"
+  ? termsOf("speaker").map((t) => ({ t, list: sermonsFor("speaker", t.slug) })).sort((a, b) => b.list.length - a.list.length)
+  : [];
+const portraitFor = (name: string) => (name === "Wesam Saad" ? imageFor("wesam") : name === "Ralph Gambardella" ? imageFor("ralph") : undefined);
+
+const books = kind === "book"
+  ? termsOf("book").filter((t) => t.slug !== "selected-text").map((t) => ({ t, list: sermonsFor("book", t.slug) })).sort((a, b) => canonOrder(a.t.slug) - canonOrder(b.t.slug))
+  : [];
+const testaments = ["Old Testament", "New Testament"].map((name) => ({ name, books: books.filter((b) => testamentOf(b.t.slug) === name) })).filter((t) => t.books.length);
+
+// Passages are grouped under their book, in canonical order.
+const passageGroups = kind === "passage"
+  ? canonBooks
+      .map((book) => ({
+        book,
+        refs: termsOf("passage")
+          .filter((t) => t.name.toLowerCase().startsWith(`${book.name.toLowerCase()} `) || (book.slug === "psalms" && /^psalms? /iu.test(t.name)))
+          .sort((a, b) => a.name.localeCompare(b.name, "en", { numeric: true })),
+      }))
+      .filter((g) => g.refs.length)
+  : [];
+const grouped = new Set(passageGroups.flatMap((g) => g.refs.map((t) => t.slug)));
+const otherPassages = kind === "passage" ? termsOf("passage").filter((t) => !grouped.has(t.slug)) : [];
+
+const ledes: Record<TaxonomyKind, string> = {
+  speaker: "Everyone who has preached at Saving Grace, with their sermons.",
+  series: "Sermon series, arranged as studies through books of the Bible and topical series.",
+  book: "Every book of the Bible we have preached from. Take one off the shelf.",
+  passage: "Find a sermon by the passage it was preached from.",
+};
 ---
 <BaseLayout
   title={`Sermons by ${label.singular.toLowerCase()} - ${SITE_NAME} - Bible-Based Worship in Melbourne`}
@@ -18,12 +58,97 @@ const path = label.path;
   canonical={path}
   breadcrumbs={[{ name: "Home", path: "/" }, { name: "Sermons", path: "/sermons/" }, { name: label.plural, path }]}
 >
-  <article class="page page--sermons">
-    <PageHead title={`Sermons by ${label.singular.toLowerCase()}`} trail={[{ label: "Home", href: "/" }, { label: "Sermons", href: "/sermons/" }]} />
-    <div class="page__body">
-      <ul class:list={["term-list", { "term-list--dense": kind === "topic" }]} role="list">
-        {terms.map((t) => <li><a href={t.path}>{t.name}</a> <span class="term-list__count">({t.count})</span></li>)}
-      </ul>
+  <article class="page page--listing" data-pagefind-ignore="all">
+    <PageHead title={`Sermons by ${label.singular.toLowerCase()}`} trail={[{ label: "Home", href: "/" }, { label: "Sermons", href: "/sermons/" }]} lede={ledes[kind]} />
+    <div class="wrap listing">
+      {kind === "series" && [{ title: "Through books of the Bible", note: "Series that work through one book", items: bookStudies }, { title: "Topical series", note: "Series gathered around a theme", items: topicalSeries }].filter((s) => s.items.length).map((section) => (
+        <section class="listing__section">
+          <header class="listing__head"><div><h2>{section.title}</h2><p>{section.note}</p></div><p class="listing__count">{section.items.length} series</p></header>
+          <table class="t-table">
+            <caption class="sr-only">{section.title}</caption>
+            <thead><tr><th scope="col">Series</th><th scope="col">Preached</th><th scope="col">Speaker</th><th scope="col" class="t-table__right">Sermons</th></tr></thead>
+            <tbody>
+              {section.items.map((s) => (
+                <tr class={`hue--${s.group}`}>
+                  <th scope="row"><a class="t-table__link" href={s.term.path}><span class="t-table__tab" aria-hidden="true"></span><span class="t-table__name">{s.term.name}</span>{s.book && s.book.name !== s.term.name && <span class="t-table__sub">{s.book.name}</span>}</a></th>
+                  <td data-label="Preached">{s.years}</td>
+                  <td data-label="Speaker">{s.speakers.slice(0, 2).join(", ")}{s.speakers.length > 2 && ` +${s.speakers.length - 2}`}</td>
+                  <td class="t-table__right"><span class="t-table__count">{s.sermons.length}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      ))}
+
+      {kind === "speaker" && (
+        <section class="listing__section">
+          <table class="t-table t-table--people">
+            <caption class="sr-only">Speakers</caption>
+            <thead><tr><th scope="col">Speaker</th><th scope="col">Preached</th><th scope="col" class="t-table__right">Sermons</th></tr></thead>
+            <tbody>
+              {speakers.map(({ t, list }) => {
+                const portrait = portraitFor(t.name);
+                return (
+                  <tr>
+                    <th scope="row"><a class="t-table__link" href={t.path}>
+                      {portrait
+                        ? <img class="t-table__portrait" src={portrait.src} width={portrait.width} height={portrait.height} alt="" loading="lazy" decoding="async" />
+                        : <span class="t-table__initials" aria-hidden="true">{t.name.split(" ").map((w) => w[0]).join("").slice(0, 2)}</span>}
+                      <span class="t-table__name">{t.name}</span>
+                    </a></th>
+                    <td data-label="Preached">{years(list)}</td>
+                    <td class="t-table__right"><span class="t-table__count">{list.length}</span></td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </section>
+      )}
+
+      {kind === "book" && (
+        <>
+          <div class="listing__shelf"><BookShelf open /></div>
+          {testaments.map((testament) => (
+            <section class="listing__section">
+              <header class="listing__head"><div><h2>{testament.name}</h2></div><p class="listing__count">{testament.books.length} book{testament.books.length === 1 ? "" : "s"} · {count(testament.books.reduce((n, b) => n + b.list.length, 0))}</p></header>
+              <table class="t-table">
+                <caption class="sr-only">{testament.name} books</caption>
+                <thead><tr><th scope="col">Book</th><th scope="col">Section</th><th scope="col">Preached</th><th scope="col" class="t-table__right">Sermons</th></tr></thead>
+                <tbody>
+                  {testament.books.map(({ t, list }) => (
+                    <tr class={`hue--${bookGroup(t.slug)}`}>
+                      <th scope="row"><a class="t-table__link" href={t.path}><span class="t-table__tab" aria-hidden="true"></span><span class="t-table__name">{t.name}</span></a></th>
+                      <td data-label="Section">{groupLabel(bookGroup(t.slug))}</td>
+                      <td data-label="Preached">{years(list)}</td>
+                      <td class="t-table__right"><span class="t-table__count">{list.length}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
+          ))}
+        </>
+      )}
+
+      {kind === "passage" && (
+        <>
+          <nav class="listing__jump" aria-label="Jump to a book"><ul class="browse__chips" role="list">{passageGroups.map((g) => <li><a class="chip" href={`#${g.book.slug}`}>{g.book.name}<span class="chip__count">{g.refs.length}</span></a></li>)}</ul></nav>
+          {passageGroups.map((g) => (
+            <section class={`listing__section hue--${g.book.group}`} id={g.book.slug}>
+              <header class="listing__head"><div class="listing__title"><span class="listing__tab" aria-hidden="true"></span><h2>{g.book.name}</h2></div><p class="listing__count">{g.refs.length} passage{g.refs.length === 1 ? "" : "s"}</p></header>
+              <ul class="ref-list" role="list">{g.refs.map((t) => <li><a href={t.path}>{t.name.replace(new RegExp(`^${g.book.name}\\s+`, "iu"), "").replace(/^psalms?\s+/iu, "")}</a></li>)}</ul>
+            </section>
+          ))}
+          {otherPassages.length > 0 && (
+            <section class="listing__section" id="other">
+              <header class="listing__head"><div><h2>Other</h2></div></header>
+              <ul class="ref-list ref-list--wide" role="list">{otherPassages.map((t) => <li><a href={t.path}>{t.name}</a></li>)}</ul>
+            </section>
+          )}
+        </>
+      )}
     </div>
   </article>
 </BaseLayout>

@@ -1,0 +1,55 @@
+/* Speaker, series, Bible book and passage pages: sectioned tables. */
+
+.listing { padding-top: clamp(2.5rem, 2rem + 2.5vw, 4.5rem); }
+.listing__jump { margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem); padding: 1.1rem 1.25rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.listing__section { scroll-margin-top: 7.5rem; }
+.listing__section + .listing__section { margin-top: clamp(3rem, 2.5rem + 2.5vw, 5rem); }
+.listing__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 0.5rem 2rem; margin-bottom: 1.25rem; }
+.listing__head h2 { font-size: var(--step-3); letter-spacing: -0.022em; }
+.listing__head h2 + p { margin-top: 0.3rem; color: var(--ink-mute); }
+.listing__title { display: flex; align-items: center; gap: 0.9rem; }
+.listing__tab { flex: none; width: 0.5rem; height: 2.5rem; border-radius: 2px; background: var(--hue, var(--navy)); }
+.listing__count { font-size: 0.9375rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+.listing__count a { color: var(--ember); }
+.listing__shelf { margin-bottom: clamp(3rem, 2.5rem + 2vw, 4.5rem); padding: clamp(1.25rem, 1rem + 1.5vw, 2.25rem); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-sm); }
+.shelf--open { margin-top: 0.5rem; }
+.listing .journal { margin-top: 0; }
+
+/* --------------------------------------------------- shared table chrome */
+.t-table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); font-size: 0.9688rem; }
+.t-table thead th { padding: 0.8rem 1.25rem; background: var(--navy); color: var(--on-navy-mute); text-align: left; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; }
+.t-table tbody tr { transition: background-color 0.2s; }
+.t-table tbody tr:hover, .t-table tbody tr:focus-within { background: var(--paper-deep); }
+.t-table tbody :is(th, td) { padding: 0.95rem 1.25rem; border-top: 1px solid var(--line); vertical-align: middle; text-align: left; font-weight: 400; }
+.t-table tbody tr:first-child :is(th, td) { border-top: 0; }
+.t-table__right { text-align: right !important; white-space: nowrap; }
+
+/* ------------------------------------------------------------ term table */
+.t-table__link { display: flex; align-items: center; gap: 1rem; min-height: 3.25rem; text-decoration: none; }
+.t-table__tab { flex: none; width: 0.5rem; height: 2.75rem; border-radius: 2px; background: var(--hue, var(--navy)); transition: transform 0.3s var(--ease); }
+.t-table tbody tr:hover .t-table__tab { transform: scaleY(1.15); }
+.t-table__name { font-family: var(--font-serif); font-size: 1.375rem; font-weight: 500; line-height: 1.2; letter-spacing: -0.012em; }
+.t-table tbody tr:hover .t-table__name { color: var(--ember); }
+.t-table__sub { font-size: 0.8125rem; color: var(--ink-mute); }
+.t-table td { color: var(--ink-soft); }
+.t-table__count { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; font-variant-numeric: tabular-nums; color: var(--ink); }
+.t-table__portrait { flex: none; width: 3.5rem; height: 3.75rem; object-fit: cover; object-position: center 22%; border-radius: 999px 999px 0.5rem 0.5rem; }
+.t-table__initials { flex: none; display: grid; place-items: center; width: 3.5rem; height: 3.75rem; border-radius: 999px 999px 0.5rem 0.5rem; background: var(--paper-deep); color: var(--ink-mute); font-family: var(--font-serif); font-size: 1.25rem; }
+
+/* --------------------------------------------------------- passage lists */
+.ref-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr)); gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.ref-list--wide { grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); }
+.ref-list a { display: flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0.4rem 0.75rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); font-weight: 600; font-variant-numeric: tabular-nums; text-decoration: none; color: var(--hue, var(--ink)); transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.3s var(--ease); }
+.ref-list a:hover { background: var(--hue, var(--navy)); border-color: var(--hue, var(--navy)); color: #fff; transform: translateY(-2px); }
+
+@media (max-width: 52rem) {
+  .t-table { border: 0; background: transparent; border-radius: 0; overflow: visible; }
+  .t-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .t-table tbody { display: grid; gap: 0.75rem; }
+  .t-table tbody tr { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1rem; padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .t-table tbody :is(th, td) { padding: 0; border: 0; width: auto; }
+  .t-table tbody th { flex: 1 1 100%; }
+  .t-table td { font-size: 0.875rem; }
+  .t-table td.t-table__right { margin-left: auto; }
+  .t-table td.t-table__right::after { content: " sermons"; font-size: 0.8125rem; color: var(--ink-mute); }
+}

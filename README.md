@@ -18,6 +18,14 @@ The site is not deployed, and WordPress is still the live site.
 Both branches use the same data, URLs, titles, descriptions and H1s, and both pass `scripts/verify-seo.mjs`.
 Switch with `git switch main` or `git switch redesign-fable`, then run `npm install` and `npm run build`.
 
+## What's on the redesign branch
+
+- **Sermons page:** the SermonsV5 layout from the old project (finder, Bible bookshelf, journal rows, series and speaker tables) in this site's colours, nine sermons per page with "More sermons".
+- **Speaker, series, Bible book and passage pages:** sectioned tables. WordPress's "topics" are Scripture passages, so they live under `/sermons/passage/`.
+- **Content pages:** on wide screens each main heading sits in a left column beside its section; on phones they stack.
+- **Tuesday Night Studies** at `/studies/`: 15 courses, 128 studies, each with its recording, description, study questions and transcript.
+- **Descriptions and recording lengths** for 426 sermons, plus all study content, come from the old local database through `python scripts/export_local_content.py` (read-only). 37 sermons have no description yet.
+
 ## Commands
 
 ```bash
@@ -86,7 +94,7 @@ Improvements over the live site:
 
 ## Not done yet
 
-- Sermon and Tuesday Night Studies content: transcripts, descriptions and Q&A. The sermon pages already have room for them, and the search index will grow once they're added.
+- Sermon transcripts and Q&A (descriptions are in for 426 of 463 sermons), and all content for the 37 sermons listed in the old project's missing-sermons file.
 - Editing for non-developers (admin/CMS).
 - Stripe/PayPal giving and a contact form. The giving and contact pages show the current content for now.
 - Choosing a host and implementing the redirects there.

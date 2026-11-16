@@ -175,3 +175,9 @@
 .term-list__count { font-size: 0.8125rem; font-weight: 600; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
 .term-list--dense a { font-family: var(--font-sans); font-size: 1rem; }
 .term-list--dense li { padding-block: 0.7rem; }
+
+.sermon__about { margin-top: clamp(2.5rem, 2rem + 2vw, 4rem); max-width: 44rem; }
+.sermon__about h2 { margin-bottom: 1.25rem; font-size: var(--step-3); }
+.sermon__about p { font-family: var(--font-serif); font-size: 1.1875rem; line-height: 1.72; color: var(--ink-soft); }
+.sermon__about p + p { margin-top: 1.1em; }
+.video, .audio { scroll-margin-top: 7.5rem; }

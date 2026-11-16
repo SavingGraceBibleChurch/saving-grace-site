@@ -1,0 +1,79 @@
+---
+// One sermon as a journal row: book tab, passage, length and date, title, description, speaker.
+import type { Sermon } from "../lib/types";
+import { term, imageFor } from "../lib/content";
+import { bookGroup } from "../lib/books";
+import { formatDate } from "../lib/events";
+import { extraFor, formatDuration, spokenDuration, paragraphs } from "../lib/extras";
+
+interface Props { sermon: Sermon; featured?: boolean; headingLevel?: 2 | 3 }
+const { sermon, featured = false, headingLevel = 3 } = Astro.props;
+const Heading = `h${headingLevel}` as "h2" | "h3";
+const bookSlug = sermon.books.find((slug) => slug !== "selected-text") ?? null;
+const book = bookSlug ? term("book", bookSlug) : undefined;
+const group = bookGroup(bookSlug);
+const speaker = sermon.speakers.map((slug) => term("speaker", slug)).find((t) => t !== undefined);
+const series = sermon.series.map((slug) => term("series", slug)).filter((t) => t !== undefined);
+// Portraits exist only for the two elders pictured on the Elders page.
+const portrait = speaker?.name === "Wesam Saad" ? imageFor("wesam") : speaker?.name === "Ralph Gambardella" ? imageFor("ralph") : undefined;
+const extra = extraFor(sermon);
+const duration = formatDuration(extra?.durationSeconds);
+const description = extra?.summary ? paragraphs(extra.summary) : [];
+const descriptionId = `description-${sermon.wpId}`;
+const isArabic = /[؀-ۿ]/u.test(sermon.title);
+---
+<li>
+  <article class:list={["journal__entry", { "journal__entry--featured": featured }, `hue--${group}`]} data-sermon-id={sermon.wpId}>
+    <div class="journal__tab">
+      {book
+        ? <a class={`tab hue--${group}`} href={book.path}><span class="tab__name" aria-hidden="true">{book.name}</span><span class="sr-only">Sermons from {book.name}</span></a>
+        : <span class="tab hue--topical"><span class="tab__name">Topical</span></span>}
+    </div>
+    <div class="journal__dateline">
+      <div class="journal__recording">
+        {sermon.passage && <p class="journal__passage"><span class="sr-only">Preached from </span>{sermon.passage}</p>}
+        <span class:list={["journal__duration", { "journal__duration--known": duration }]}>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6" /><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+          {duration
+            ? <time datetime={`PT${extra!.durationSeconds}S`} aria-label={`Recording length: ${spokenDuration(extra!.durationSeconds!)}`}>{duration}</time>
+            : <span>Duration unavailable</span>}
+        </span>
+      </div>
+      <span class="journal__date"><time datetime={sermon.date}>{formatDate(sermon.date)}</time></span>
+    </div>
+    <div class="journal__body">
+      <Heading class="journal__title" lang={isArabic ? "ar" : undefined} dir={isArabic ? "rtl" : undefined}><a href={sermon.path}>{sermon.title}</a></Heading>
+      {description.length > 0 && <div class="journal__description" id={descriptionId}>{description.map((text) => <p>{text}</p>)}</div>}
+      {series.length > 0 && <p class="journal__series"><span>Series</span> {series.map((item, index) => <>{index > 0 && ", "}<a href={item!.path}>{item!.name}</a></>)}</p>}
+      <div class="journal__tools">
+        <div class="journal__formats" aria-label="Sermon recordings">
+          {sermon.youtubeId && (
+            <a class="journal__format journal__format--youtube" href={`${sermon.path}#watch`} title="Watch the video" aria-label={`Watch the video: ${sermon.title}`}>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5.2 3L10 15Z" fill="currentColor" /></svg>
+            </a>
+          )}
+          {sermon.sermonAudioId && (
+            <a class="journal__format journal__format--audio" href={`${sermon.path}#listen`} title="Listen to the audio" aria-label={`Listen to the audio: ${sermon.title}`}>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z" stroke="currentColor" stroke-width="1.6" /><path d="M6 11a6 6 0 0 0 12 0M12 17v4m-3 0h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+            </a>
+          )}
+        </div>
+        {description.length > 0 && (
+          <button class="journal__toggle" type="button" aria-expanded="false" aria-controls={descriptionId}>
+            <span data-description-label>See more</span><span class="sr-only"> — description of {sermon.title}</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </button>
+        )}
+      </div>
+    </div>
+    <div class="journal__rail">
+      {speaker && (
+        <div class="journal__speaker">
+          {portrait && <img class="journal__portrait" src={portrait.src} width={portrait.width} height={portrait.height} alt="" loading="lazy" decoding="async" />}
+          <a href={speaker.path}>{speaker.name}</a>
+        </div>
+      )}
+      <a class="journal__open" href={sermon.path} aria-label={`Open sermon: ${sermon.title}`}>Open sermon <svg class="journal__arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+    </div>
+  </article>
+</li>

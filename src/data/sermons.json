@@ -15,7 +15,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-614"
   ],
   "passage": "Luke 6:14",
@@ -51,7 +51,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-615"
   ],
   "passage": "Luke 6:15",
@@ -87,7 +87,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-319-22"
   ],
   "passage": "1 peter 3:19-22",
@@ -125,7 +125,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-318"
   ],
   "passage": "1 Peter 3:18",
@@ -163,7 +163,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-615-16"
   ],
   "passage": "Luke 6:15-16",
@@ -201,7 +201,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-614"
   ],
   "passage": "Luke 6:14",
@@ -239,7 +239,7 @@
   "books": [
    "john"
   ],
-  "topics": [
+  "passages": [
    "john-211-14"
   ],
   "passage": "John 21:1-14",
@@ -277,7 +277,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-614"
   ],
   "passage": "Luke 6:14",
@@ -315,7 +315,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-614"
   ],
   "passage": "Luke 6:14",
@@ -353,7 +353,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-613"
   ],
   "passage": "Luke 6:13",
@@ -391,7 +391,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-313-17"
   ],
   "passage": "1 Peter 3:13-17",
@@ -429,7 +429,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-612-16"
   ],
   "passage": "Luke 6:12-16",
@@ -467,7 +467,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-66-11"
   ],
   "passage": "Luke 6:6-11",
@@ -505,7 +505,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-61-5"
   ],
   "passage": "Luke 6:1-5",
@@ -543,7 +543,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-38-12"
   ],
   "passage": "1 Peter 3:8-12",
@@ -581,7 +581,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-527-32"
   ],
   "passage": "Luke 5:27-32",
@@ -619,7 +619,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-521-26"
   ],
   "passage": "Luke 5:21-26",
@@ -657,7 +657,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-515-20"
   ],
   "passage": "Luke 5:15-20",
@@ -695,7 +695,7 @@
   "books": [
    "exodus"
   ],
-  "topics": [
+  "passages": [
    "ex-3414"
   ],
   "passage": "Exodus 34:14",
@@ -733,7 +733,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-37"
   ],
   "passage": "1 Peter 3:7",
@@ -771,7 +771,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-512-16"
   ],
   "passage": "Luke 5:12-16",
@@ -809,7 +809,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-511"
   ],
   "passage": "Luke 5:11",
@@ -847,7 +847,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-31-6"
   ],
   "passage": "1 Peter 3:1-6",
@@ -885,7 +885,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-511-12"
   ],
   "passage": "Luke 5:11-12",
@@ -923,7 +923,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-51-11"
   ],
   "passage": "Luke 5:1-11",
@@ -961,7 +961,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-443"
   ],
   "passage": "Luke 4:43",
@@ -999,7 +999,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-442-44"
   ],
   "passage": "Luke 4:42-44",
@@ -1037,7 +1037,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-221-25"
   ],
   "passage": "1 Peter 2:21-25",
@@ -1075,7 +1075,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-438-41"
   ],
   "passage": "Luke 4:38-41",
@@ -1113,7 +1113,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-431-37"
   ],
   "passage": "Luke 4:31-37",
@@ -1151,7 +1151,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-422-30"
   ],
   "passage": "Luke 4:22-30",
@@ -1189,7 +1189,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-218-21"
   ],
   "passage": "1 Peter 2:18-21",
@@ -1227,7 +1227,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-414-21"
   ],
   "passage": "Luke 4:14-21",
@@ -1265,7 +1265,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-215-17"
   ],
   "passage": "1 Peter 2:15-17",
@@ -1303,7 +1303,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-41-13"
   ],
   "passage": "Luke 4:1-13",
@@ -1341,7 +1341,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-213-17"
   ],
   "passage": "1 Peter 2:13-17",
@@ -1379,7 +1379,7 @@
   "books": [
    "proverbs"
   ],
-  "topics": [
+  "passages": [
    "proverbs-2620"
   ],
   "passage": "Proverbs 26:20",
@@ -1417,7 +1417,7 @@
   "books": [
    "proverbs"
   ],
-  "topics": [
+  "passages": [
    "proverbs-612-19"
   ],
   "passage": "Proverbs 6:12-19",
@@ -1455,7 +1455,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-1213-21"
   ],
   "passage": "Luke 12:13-21",
@@ -1493,7 +1493,7 @@
   "books": [
    "hebrews"
   ],
-  "topics": [
+  "passages": [
    "hebrews-111-3"
   ],
   "passage": "Hebrews 11:1-3",
@@ -1531,7 +1531,7 @@
   "books": [
    "romans"
   ],
-  "topics": [
+  "passages": [
    "romans-114-18"
   ],
   "passage": "Romans 1:14-18",
@@ -1569,7 +1569,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-128-29"
   ],
   "passage": "Colossians 1:28-29",
@@ -1607,7 +1607,7 @@
   "books": [
    "matthew"
   ],
-  "topics": [
+  "passages": [
    "matthew-2018-20"
   ],
   "passage": "Matthew 20:18-20",
@@ -1645,7 +1645,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-13"
   ],
   "passage": "Psalm 13",
@@ -1683,7 +1683,7 @@
   "books": [
    "matthew"
   ],
-  "topics": [
+  "passages": [
    "matthew-1624"
   ],
   "passage": "Matthew 16:24",
@@ -1721,7 +1721,7 @@
   "books": [
    "matthew"
   ],
-  "topics": [
+  "passages": [
    "matthew-1624"
   ],
   "passage": "Matthew 16:24",
@@ -1759,7 +1759,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-317-19"
   ],
   "passage": "Colossians 3:17-19",
@@ -1797,7 +1797,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-211-12"
   ],
   "passage": "1 Peter 2:11-12",
@@ -1835,7 +1835,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-318"
   ],
   "passage": "Colossians 3:18",
@@ -1873,7 +1873,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-323-38"
   ],
   "passage": "Luke 3:23-38",
@@ -1911,7 +1911,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-321-22"
   ],
   "passage": "Luke 3:21-22",
@@ -1949,7 +1949,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-318-20"
   ],
   "passage": "Luke 3:18-20",
@@ -1987,7 +1987,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-317"
   ],
   "passage": "",
@@ -2025,7 +2025,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-29-10"
   ],
   "passage": "1 Peter 2:4-10",
@@ -2063,7 +2063,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-314-16"
   ],
   "passage": "Luke 3:14-16",
@@ -2101,7 +2101,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-37-11"
   ],
   "passage": "Luke 3:7-11",
@@ -2139,7 +2139,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-24-10"
   ],
   "passage": "1 Peter 2:4-10",
@@ -2175,7 +2175,7 @@
    "topical"
   ],
   "books": [],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": "t_ZwD98nDdg",
   "sermonAudioId": "101225727594610",
@@ -2211,7 +2211,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-21-3"
   ],
   "passage": "1 Peter 2:1-3",
@@ -2249,7 +2249,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-122-25"
   ],
   "passage": "1 Peter 1:22-25",
@@ -2287,7 +2287,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-118-21"
   ],
   "passage": "1 Peter 1:18-21",
@@ -2325,7 +2325,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-251-luke-36"
   ],
   "passage": "Luke 2:51 - Luke 3:6",
@@ -2363,7 +2363,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-233-38"
   ],
   "passage": "Luke 2:33-38",
@@ -2401,7 +2401,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-225-32"
   ],
   "passage": "Luke 2:25-32",
@@ -2439,7 +2439,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-117"
   ],
   "passage": "1 Peter 1:17",
@@ -2477,7 +2477,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-28-20"
   ],
   "passage": "Luke 2:8-20",
@@ -2515,7 +2515,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-113-16"
   ],
   "passage": "1 Peter 1:13-16",
@@ -2553,7 +2553,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-113"
   ],
   "passage": "1 Peter 1:13",
@@ -2591,7 +2591,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-21-7"
   ],
   "passage": "Luke 2:1-7",
@@ -2629,7 +2629,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-178-80"
   ],
   "passage": "Luke 1:78-80",
@@ -2667,7 +2667,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-173-77"
   ],
   "passage": "Luke 1:73-77",
@@ -2705,7 +2705,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-172"
   ],
   "passage": "Luke 1:72",
@@ -2743,7 +2743,7 @@
   "books": [
    "exodus"
   ],
-  "topics": [
+  "passages": [
    "exodus-171-7"
   ],
   "passage": "Exodus 17:1-7",
@@ -2781,7 +2781,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-1-67-71"
   ],
   "passage": "Luke 1: 67-71",
@@ -2819,7 +2819,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-156-66"
   ],
   "passage": "Luke 1:56-66",
@@ -2857,7 +2857,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-151-55"
   ],
   "passage": "Luke 1:51-55",
@@ -2895,7 +2895,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-110-12"
   ],
   "passage": "1 Peter 1:10-12",
@@ -2933,7 +2933,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-146-50"
   ],
   "passage": "Luke 1:46-50",
@@ -2971,7 +2971,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-134-44"
   ],
   "passage": "Luke 1:34-44",
@@ -3009,7 +3009,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-126-33"
   ],
   "passage": "Luke 1:26-33",
@@ -3047,7 +3047,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-118-25"
   ],
   "passage": "Luke 1:18-25",
@@ -3085,7 +3085,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-18"
   ],
   "passage": "1 Peter 1:8",
@@ -3123,7 +3123,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-115-17"
   ],
   "passage": "Luke 1:15-17",
@@ -3161,7 +3161,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-15-14"
   ],
   "passage": "Luke 1:5-14",
@@ -3199,7 +3199,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-11-4"
   ],
   "passage": "Luke 1:1-4",
@@ -3237,7 +3237,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-16-7"
   ],
   "passage": "1 Peter 1:6-7",
@@ -3275,7 +3275,7 @@
   "books": [
    "exodus"
   ],
-  "topics": [
+  "passages": [
    "exodus-310-15"
   ],
   "passage": "Exodus 3:10-15",
@@ -3313,7 +3313,7 @@
   "books": [
    "isaiah"
   ],
-  "topics": [
+  "passages": [
    "isaiah-4216"
   ],
   "passage": "Isaiah 42:16",
@@ -3351,7 +3351,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-133"
   ],
   "passage": "Psalm 133",
@@ -3389,7 +3389,7 @@
   "books": [
    "1-corinthians"
   ],
-  "topics": [
+  "passages": [
    "1-corinthians-924-27"
   ],
   "passage": "1 Corinthians 9:24-27",
@@ -3427,7 +3427,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-100"
   ],
   "passage": "Psalm 100",
@@ -3465,7 +3465,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-518-17"
   ],
   "passage": "Psalms 51:8-17",
@@ -3503,7 +3503,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-13-5"
   ],
   "passage": "1 Peter 1:3-5",
@@ -3541,7 +3541,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-11-2"
   ],
   "passage": "1 Peter 1:1-2",
@@ -3579,7 +3579,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-511-8"
   ],
   "passage": "Psalm 51:1-8",
@@ -3617,7 +3617,7 @@
   "books": [
    "isaiah"
   ],
-  "topics": [
+  "passages": [
    "isaiah-710-14"
   ],
   "passage": "Isaiah 7:10-14",
@@ -3655,7 +3655,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-277-14"
   ],
   "passage": "Psalm 27:7-14",
@@ -3693,7 +3693,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-271-6"
   ],
   "passage": "Psalm 27:1-6",
@@ -3731,7 +3731,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-11-2"
   ],
   "passage": "1 Peter 1:1-2",
@@ -3769,7 +3769,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-103"
   ],
   "passage": "Psalm 103",
@@ -3807,7 +3807,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-67"
   ],
   "passage": "Psalm 67",
@@ -3845,7 +3845,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-3"
   ],
   "passage": "Psalm 3",
@@ -3883,7 +3883,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-24"
   ],
   "passage": "Psalm 24",
@@ -3921,7 +3921,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-11-2"
   ],
   "passage": "1 Peter 1:1-2",
@@ -3959,7 +3959,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-18"
   ],
   "passage": "Psalm 18",
@@ -3997,7 +3997,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-1"
   ],
   "passage": "",
@@ -4035,7 +4035,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-415-18"
   ],
   "passage": "Colossians 4:15-18",
@@ -4073,7 +4073,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-11"
   ],
   "passage": "1 Peter 1:1",
@@ -4111,7 +4111,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-414"
   ],
   "passage": "Colossians 4:14",
@@ -4149,7 +4149,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-414"
   ],
   "passage": "Colossians 4:14",
@@ -4187,7 +4187,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-4"
   ],
   "passage": "Psalm 4",
@@ -4225,7 +4225,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-411-13"
   ],
   "passage": "Colossians 4:11-13",
@@ -4263,7 +4263,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-1"
   ],
   "passage": "1 Pet 1",
@@ -4301,7 +4301,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-411"
   ],
   "passage": "Colossians 4:11",
@@ -4339,7 +4339,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-633-44"
   ],
   "passage": "Mark 6:33-44",
@@ -4377,7 +4377,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-410"
   ],
   "passage": "Colossians 4:10",
@@ -4415,7 +4415,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-42"
   ],
   "passage": "Psalm 42",
@@ -4453,7 +4453,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-49"
   ],
   "passage": "Colossians 4:9",
@@ -4491,7 +4491,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-47-8"
   ],
   "passage": "Colossians 4:7-8",
@@ -4529,7 +4529,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-421-23"
   ],
   "passage": "Philippians 4:21-23",
@@ -4567,7 +4567,7 @@
   "books": [
    "genesis"
   ],
-  "topics": [
+  "passages": [
    "genesis-320-24"
   ],
   "passage": "Genesis 3:20-24",
@@ -4605,7 +4605,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-45-6"
   ],
   "passage": "Colossians 4:5-6",
@@ -4643,7 +4643,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-42-4"
   ],
   "passage": "Colossians 4:2-4",
@@ -4681,7 +4681,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-322-41"
   ],
   "passage": "Colossians 3:22-4:1",
@@ -4719,7 +4719,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-631-2"
   ],
   "passage": "Psalm 63:1-2",
@@ -4757,7 +4757,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-419-20"
   ],
   "passage": "Philippians 4:19-20",
@@ -4795,7 +4795,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-321"
   ],
   "passage": "Colossians 3:21",
@@ -4833,7 +4833,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-320"
   ],
   "passage": "Colossians 3:20",
@@ -4871,7 +4871,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-317-19"
   ],
   "passage": "Colossians 3:17-19",
@@ -4909,7 +4909,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-411-13"
   ],
   "passage": "Philippians 4:11-13",
@@ -4947,7 +4947,7 @@
   "books": [
    "acts"
   ],
-  "topics": [
+  "passages": [
    "acts-41-4"
   ],
   "passage": "Acts 4:1-4",
@@ -4985,7 +4985,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-318"
   ],
   "passage": "Colossians 3:18",
@@ -5023,7 +5023,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-316-17"
   ],
   "passage": "Colossians 3:16-17",
@@ -5061,7 +5061,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-410-19"
   ],
   "passage": "Philippians 4:10-19",
@@ -5099,7 +5099,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-314-15"
   ],
   "passage": "Colossians 3:14-15",
@@ -5137,7 +5137,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-313"
   ],
   "passage": "Colossians 3:13",
@@ -5175,7 +5175,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-312-13"
   ],
   "passage": "Colossians 3:12-13",
@@ -5213,7 +5213,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-49"
   ],
   "passage": "Philippians 4:9",
@@ -5251,7 +5251,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-39-11"
   ],
   "passage": "Colossians 3:9-11",
@@ -5290,7 +5290,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [],
+  "passages": [],
   "passage": "Selected Text",
   "youtubeId": "BA9MIXwNOFg",
   "sermonAudioId": "22824212117350",
@@ -5326,7 +5326,7 @@
   "books": [
    "john"
   ],
-  "topics": [
+  "passages": [
    "john-171"
   ],
   "passage": "John 17:1",
@@ -5365,7 +5365,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [],
+  "passages": [],
   "passage": "Philippians 4:8",
   "youtubeId": "9oZ6_ZDB1Yo",
   "sermonAudioId": "2282425361",
@@ -5402,7 +5402,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [],
+  "passages": [],
   "passage": "Selected Text",
   "youtubeId": "N21Y52fU6y8",
   "sermonAudioId": "2424312168084",
@@ -5439,7 +5439,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [],
+  "passages": [],
   "passage": "Selected Text",
   "youtubeId": "N042APr1CZc",
   "sermonAudioId": "12924231103019",
@@ -5476,7 +5476,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [],
+  "passages": [],
   "passage": "Selected Text",
   "youtubeId": "gv0co6q5eKg",
   "sermonAudioId": "12924221182316",
@@ -5513,7 +5513,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [],
+  "passages": [],
   "passage": "Various Scripture",
   "youtubeId": "g4hN_wX70bQ",
   "sermonAudioId": "11424214477188",
@@ -5549,7 +5549,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-46-7"
   ],
   "passage": "",
@@ -5585,7 +5585,7 @@
    "our-call-to-the-local-church"
   ],
   "books": [],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": "r2hOq4F-Jkc",
   "sermonAudioId": "123123844207151",
@@ -5619,7 +5619,7 @@
    "topical"
   ],
   "books": [],
-  "topics": [],
+  "passages": [],
   "passage": "Various Scripture",
   "youtubeId": "w31d13bsL80",
   "sermonAudioId": "122423234485713",
@@ -5656,7 +5656,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-38"
   ],
   "passage": "Colossians 3:8",
@@ -5695,7 +5695,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-35-7"
   ],
   "passage": "Colossians 3:5-7",
@@ -5733,7 +5733,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-33-4"
   ],
   "passage": "Colossians 3:3-4",
@@ -5771,7 +5771,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-31-2"
   ],
   "passage": "Colossians 3:1-2",
@@ -5809,7 +5809,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-44-5"
   ],
   "passage": "Philippians 4:4-5",
@@ -5847,7 +5847,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-220-23"
   ],
   "passage": "Colossians 2:20-23",
@@ -5885,7 +5885,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-216-19"
   ],
   "passage": "Colossians 2:16-19",
@@ -5923,7 +5923,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-211-15"
   ],
   "passage": "Colossians 2:11-15",
@@ -5961,7 +5961,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-42-3"
   ],
   "passage": "Philippians 4:2-3",
@@ -5999,7 +5999,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-28-10"
   ],
   "passage": "Colossians 2:8-10",
@@ -6037,7 +6037,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-41"
   ],
   "passage": "Philippians 4:1",
@@ -6075,7 +6075,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-24-7"
   ],
   "passage": "Colossians 2:4-7",
@@ -6113,7 +6113,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-23"
   ],
   "passage": "Colossians 2:3",
@@ -6151,7 +6151,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-21-2"
   ],
   "passage": "Colossians 2:1-2",
@@ -6189,7 +6189,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-128-29"
   ],
   "passage": "Colossians 1:28-29",
@@ -6227,7 +6227,7 @@
   "books": [
    "isaiah"
   ],
-  "topics": [
+  "passages": [
    "isaiah-61-4"
   ],
   "passage": "Isaiah 6:1-4",
@@ -6265,7 +6265,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-128"
   ],
   "passage": "Colossians 1:28",
@@ -6303,7 +6303,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-126-27"
   ],
   "passage": "Colossians 1:26-27",
@@ -6341,7 +6341,7 @@
   "books": [
    "exodus"
   ],
-  "topics": [
+  "passages": [
    "ex-3414"
   ],
   "passage": "Ex 34:14",
@@ -6379,7 +6379,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-320-21"
   ],
   "passage": "Philippians 3:20-21",
@@ -6417,7 +6417,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -6455,7 +6455,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -6493,7 +6493,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -6531,7 +6531,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-11944-45"
   ],
   "passage": "Psalm 119:44-45",
@@ -6569,7 +6569,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-318-19"
   ],
   "passage": "Philippians 3:18-19",
@@ -6607,7 +6607,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-124-25"
   ],
   "passage": "Colossians 1:24-25",
@@ -6645,7 +6645,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-123"
   ],
   "passage": "Colossians 1:23",
@@ -6683,7 +6683,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-317-21"
   ],
   "passage": "Philippians 3:17-21",
@@ -6721,7 +6721,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-121-22"
   ],
   "passage": "Colossians 1:21-22",
@@ -6759,7 +6759,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-119-20"
   ],
   "passage": "Colossians 1:19-20",
@@ -6797,7 +6797,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-118"
   ],
   "passage": "Colossians 1:18",
@@ -6835,7 +6835,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-116-17"
   ],
   "passage": "Colossians 1:16-17",
@@ -6873,7 +6873,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-73"
   ],
   "passage": "Psalm 73",
@@ -6911,7 +6911,7 @@
   "books": [
    "romans"
   ],
-  "topics": [
+  "passages": [
    "romans-122"
   ],
   "passage": "Romans 12:2",
@@ -6949,7 +6949,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-13-5"
   ],
   "passage": "1 Peter 1:3-5",
@@ -6987,7 +6987,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-1191-8"
   ],
   "passage": "Psalm 119:1-8",
@@ -7025,7 +7025,7 @@
   "books": [
    "romans"
   ],
-  "topics": [
+  "passages": [
    "romans-121"
   ],
   "passage": "Romans 12:1",
@@ -7063,7 +7063,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-115"
   ],
   "passage": "Colossians 1:15",
@@ -7101,7 +7101,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-114"
   ],
   "passage": "Colossians 1:14",
@@ -7139,7 +7139,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-113"
   ],
   "passage": "Colossians 1:13",
@@ -7177,7 +7177,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-112"
   ],
   "passage": "Colossians 1:12",
@@ -7215,7 +7215,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-315-16"
   ],
   "passage": "Philippians 3:15-16",
@@ -7253,7 +7253,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-19-11"
   ],
   "passage": "Colossians 1:9-11",
@@ -7291,7 +7291,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-19"
   ],
   "passage": "Colossians 1:9",
@@ -7327,7 +7327,7 @@
    "topical"
   ],
   "books": [],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": "TzpF5KN2AV8",
   "sermonAudioId": "1923234306626",
@@ -7363,7 +7363,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-312-14"
   ],
   "passage": "Philippians 3:12-14",
@@ -7401,7 +7401,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-18"
   ],
   "passage": "Colossians 1:8",
@@ -7439,7 +7439,7 @@
   "books": [
    "john"
   ],
-  "topics": [
+  "passages": [
    "john-114-18"
   ],
   "passage": "John 1:14-18",
@@ -7477,7 +7477,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-37-11"
   ],
   "passage": "Philippians 3:7-11",
@@ -7515,7 +7515,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-34-6"
   ],
   "passage": "Philippians 3:4-6",
@@ -7553,7 +7553,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-17"
   ],
   "passage": "Colossians 1:7",
@@ -7591,7 +7591,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-16"
   ],
   "passage": "Colossians 1:6",
@@ -7629,7 +7629,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-15"
   ],
   "passage": "Colossians 1:5",
@@ -7667,7 +7667,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-31-6"
   ],
   "passage": "Philippians 3:1-6",
@@ -7705,7 +7705,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-13-4"
   ],
   "passage": "Colossians 1:3-4",
@@ -7743,7 +7743,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-11-2"
   ],
   "passage": "Colossians 1:1-2",
@@ -7781,7 +7781,7 @@
   "books": [
    "colossians"
   ],
-  "topics": [
+  "passages": [
    "colossians-11"
   ],
   "passage": "Colossians 1:1",
@@ -7819,7 +7819,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-225-30"
   ],
   "passage": "Philippians 2:25-30",
@@ -7857,7 +7857,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-219-24"
   ],
   "passage": "Philippians 2:19-24",
@@ -7895,7 +7895,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-1031-5"
   ],
   "passage": "Psalm 103:1-5",
@@ -7933,7 +7933,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-214-18"
   ],
   "passage": "Philippians 2:14-18",
@@ -7971,7 +7971,7 @@
   "books": [
    "1-corinthians"
   ],
-  "topics": [
+  "passages": [
    "1-corinthians-1123-30"
   ],
   "passage": "1 Corinthians 11:23-30",
@@ -8009,7 +8009,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-214-16"
   ],
   "passage": "Philippians 2:14-16",
@@ -8047,7 +8047,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "",
@@ -8085,7 +8085,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-154-8"
   ],
   "passage": "Mark 15:4-8",
@@ -8123,7 +8123,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1547-163"
   ],
   "passage": "Mark 15:47-16:3",
@@ -8161,7 +8161,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-212-13"
   ],
   "passage": "Philippians 2:12-13",
@@ -8199,7 +8199,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1542-46"
   ],
   "passage": "Mark 15:42-46",
@@ -8237,7 +8237,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1535-41"
   ],
   "passage": "Mark 15:35-41",
@@ -8275,7 +8275,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1533-34"
   ],
   "passage": "Mark 15:33-34",
@@ -8313,7 +8313,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1532"
   ],
   "passage": "Mark 15:32",
@@ -8351,7 +8351,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-29-11"
   ],
   "passage": "Philippians 2:9-11",
@@ -8389,7 +8389,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1525-32"
   ],
   "passage": "Mark 15:25-32",
@@ -8427,7 +8427,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1521-24"
   ],
   "passage": "Mark 15:21-24",
@@ -8465,7 +8465,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-25-8"
   ],
   "passage": "Philippians 2:5-8",
@@ -8503,7 +8503,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-156-15"
   ],
   "passage": "Mark 15:6-15",
@@ -8541,7 +8541,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-151-5"
   ],
   "passage": "Mark 15:1-5",
@@ -8579,7 +8579,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1472"
   ],
   "passage": "Mark 14:72",
@@ -8617,7 +8617,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1466-72"
   ],
   "passage": "Mark 14:66-72",
@@ -8655,7 +8655,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-21-4"
   ],
   "passage": "Philippians 2:1-4",
@@ -8693,7 +8693,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-127-30"
   ],
   "passage": "Philippians 1:27-30",
@@ -8731,7 +8731,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1451-65"
   ],
   "passage": "Mark 14:51-65",
@@ -8769,7 +8769,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1443-50"
   ],
   "passage": "Mark 14:43-50",
@@ -8807,7 +8807,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-127-30"
   ],
   "passage": "Philippians 1:27-30",
@@ -8845,7 +8845,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1437-42"
   ],
   "passage": "Mark 14:37-42",
@@ -8883,7 +8883,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1432-36"
   ],
   "passage": "Mark 14:32-36",
@@ -8921,7 +8921,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-120-26"
   ],
   "passage": "Philippians 1:20-26",
@@ -8959,7 +8959,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1422-25"
   ],
   "passage": "Mark 14:22-25",
@@ -8997,7 +8997,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1421"
   ],
   "passage": "Mark 14:21",
@@ -9035,7 +9035,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1417-21"
   ],
   "passage": "Mark 14:17-21",
@@ -9073,7 +9073,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-19-11"
   ],
   "passage": "Philippians 1:9-11",
@@ -9111,7 +9111,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-15"
   ],
   "passage": "Psalm 15",
@@ -9149,7 +9149,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1412-16"
   ],
   "passage": "Mark 14:12-16",
@@ -9187,7 +9187,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-15-8"
   ],
   "passage": "Philippians 1:5-8",
@@ -9225,7 +9225,7 @@
   "books": [
    "isaiah"
   ],
-  "topics": [
+  "passages": [
    "isaiah-96"
   ],
   "passage": "Isaiah 9:6",
@@ -9263,7 +9263,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1410-11"
   ],
   "passage": "Mark 14:10-11",
@@ -9301,7 +9301,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1410-11"
   ],
   "passage": "Mark 14:10-11",
@@ -9339,7 +9339,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-13-4"
   ],
   "passage": "Philippians 1:3-4",
@@ -9377,7 +9377,7 @@
   "books": [
    "philippians"
   ],
-  "topics": [
+  "passages": [
    "philippians-11-2"
   ],
   "passage": "Philippians 1:1-2",
@@ -9415,7 +9415,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-144-9"
   ],
   "passage": "Mark 14:4-9",
@@ -9453,7 +9453,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-141-3"
   ],
   "passage": "Mark 14:1-3",
@@ -9491,7 +9491,7 @@
   "books": [
    "james"
   ],
-  "topics": [
+  "passages": [
    "james-413-17"
   ],
   "passage": "James 4:13-17",
@@ -9529,7 +9529,7 @@
   "books": [
    "james"
   ],
-  "topics": [
+  "passages": [
    "james-46-10"
   ],
   "passage": "James 4:6-10",
@@ -9567,7 +9567,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1332-37"
   ],
   "passage": "Mark 13:32-37",
@@ -9605,7 +9605,7 @@
   "books": [
    "james"
   ],
-  "topics": [
+  "passages": [
    "james-41-6"
   ],
   "passage": "James 4:1-6",
@@ -9643,7 +9643,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1328-31"
   ],
   "passage": "Mark 13:28-31",
@@ -9681,7 +9681,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-326-27"
   ],
   "passage": "Mark 3:26-27",
@@ -9719,7 +9719,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1324-26"
   ],
   "passage": "Mark 13:24-26",
@@ -9757,7 +9757,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1314-23"
   ],
   "passage": "Mark 13:14-23",
@@ -9795,7 +9795,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1314"
   ],
   "passage": "Mark 13:14",
@@ -9833,7 +9833,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-139-13"
   ],
   "passage": "Mark 13:9-13",
@@ -9871,7 +9871,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-139-10"
   ],
   "passage": "Mark 13:9-10",
@@ -9909,7 +9909,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "james-313-18"
   ],
   "passage": "James 3:13-18",
@@ -9947,7 +9947,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-138"
   ],
   "passage": "Mark 13:8",
@@ -9985,7 +9985,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-137-8"
   ],
   "passage": "Mark 13:7-8",
@@ -10023,7 +10023,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-1211-8"
   ],
   "passage": "Psalm 121:1-8",
@@ -10061,7 +10061,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-135-6"
   ],
   "passage": "Mark 13:5-6",
@@ -10099,7 +10099,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-131-4"
   ],
   "passage": "Mark 13:1-4",
@@ -10137,7 +10137,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -10175,7 +10175,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -10211,7 +10211,7 @@
   "books": [
    "matthew"
   ],
-  "topics": [
+  "passages": [
    "matthew-721-24"
   ],
   "passage": "Matthew 7:21-24",
@@ -10249,7 +10249,7 @@
   "books": [
    "isaiah"
   ],
-  "topics": [
+  "passages": [
    "isaiah-65-8"
   ],
   "passage": "Isaiah 6:5-8",
@@ -10285,7 +10285,7 @@
   "books": [
    "matthew"
   ],
-  "topics": [
+  "passages": [
    "matthew-61-7"
   ],
   "passage": "Matthew 6:1-7",
@@ -10323,7 +10323,7 @@
   "books": [
    "isaiah"
   ],
-  "topics": [
+  "passages": [
    "isaiah-61-4"
   ],
   "passage": "Isaiah 6:1-4",
@@ -10361,7 +10361,7 @@
   "books": [
    "james"
   ],
-  "topics": [
+  "passages": [
    "james-31-12"
   ],
   "passage": "James 3:1-12",
@@ -10399,7 +10399,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1241-44"
   ],
   "passage": "Mark 12:41-44",
@@ -10437,7 +10437,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1238-40"
   ],
   "passage": "Mark 12:38-40",
@@ -10475,7 +10475,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1235-37"
   ],
   "passage": "Mark 12:35-37",
@@ -10513,7 +10513,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1232-34"
   ],
   "passage": "Mark 12:32-34",
@@ -10551,7 +10551,7 @@
   "books": [
    "james"
   ],
-  "topics": [
+  "passages": [
    "james-214-26"
   ],
   "passage": "James 2:14-26",
@@ -10589,7 +10589,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1230"
   ],
   "passage": "Mark 12:30",
@@ -10627,7 +10627,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1228-30"
   ],
   "passage": "Mark 12:28-30",
@@ -10665,7 +10665,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1218-27"
   ],
   "passage": "Mark 12:18-27",
@@ -10703,7 +10703,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1213-17"
   ],
   "passage": "Mark 12:13-17",
@@ -10741,7 +10741,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1210-11"
   ],
   "passage": "Mark 12:10-11",
@@ -10779,7 +10779,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1210-11"
   ],
   "passage": "Mark 12:10-11",
@@ -10817,7 +10817,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-95"
   ],
   "passage": "Psalm 95",
@@ -10855,7 +10855,7 @@
   "books": [
    "james"
   ],
-  "topics": [
+  "passages": [
    "james-118-27"
   ],
   "passage": "James 1:18-27",
@@ -10893,7 +10893,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-121-9"
   ],
   "passage": "Mark 12:1-9",
@@ -10931,7 +10931,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1127-33"
   ],
   "passage": "Mark 11:27-33",
@@ -10969,7 +10969,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-91"
   ],
   "passage": "Psalm 91",
@@ -11007,7 +11007,7 @@
   "books": [
    "romans"
   ],
-  "topics": [
+  "passages": [
    "romans-129"
   ],
   "passage": "Romans 12:9",
@@ -11045,7 +11045,7 @@
   "books": [
    "romans"
   ],
-  "topics": [
+  "passages": [
    "romans-128"
   ],
   "passage": "Romans 12:8",
@@ -11083,7 +11083,7 @@
   "books": [
    "romans"
   ],
-  "topics": [
+  "passages": [
    "romans-126-8"
   ],
   "passage": "Romans 12:6-8",
@@ -11121,7 +11121,7 @@
   "books": [
    "james"
   ],
-  "topics": [
+  "passages": [
    "james-11-12"
   ],
   "passage": "James 1:1-12",
@@ -11159,7 +11159,7 @@
   "books": [
    "romans"
   ],
-  "topics": [
+  "passages": [
    "romans-123-6"
   ],
   "passage": "Romans 12:3-6",
@@ -11197,7 +11197,7 @@
   "books": [
    "romans"
   ],
-  "topics": [
+  "passages": [
    "romans-123-5"
   ],
   "passage": "Romans 12:3-5",
@@ -11235,7 +11235,7 @@
   "books": [
    "romans"
   ],
-  "topics": [
+  "passages": [
    "romans-122"
   ],
   "passage": "Romans 12:2",
@@ -11273,7 +11273,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-2"
   ],
   "passage": "Psalm 2",
@@ -11311,7 +11311,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -11347,7 +11347,7 @@
   "books": [
    "2-timothy"
   ],
-  "topics": [
+  "passages": [
    "2-timothy-1"
   ],
   "passage": "2 Timothy 1",
@@ -11385,7 +11385,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -11423,7 +11423,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -11461,7 +11461,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -11499,7 +11499,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-51"
   ],
   "passage": "Psalm 51",
@@ -11537,7 +11537,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -11575,7 +11575,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -11613,7 +11613,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -11651,7 +11651,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-23"
   ],
   "passage": "Psalm 23",
@@ -11689,7 +11689,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -11725,7 +11725,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -11763,7 +11763,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1120-25"
   ],
   "passage": "Mark 11:20-25",
@@ -11801,7 +11801,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1115-19"
   ],
   "passage": "Mark 11:15-19",
@@ -11839,7 +11839,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-1191-2"
   ],
   "passage": "Psalm 119:1-2",
@@ -11877,7 +11877,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1112-14"
   ],
   "passage": "Mark 11:12-14",
@@ -11915,7 +11915,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -11953,7 +11953,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -11991,7 +11991,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "",
@@ -12029,7 +12029,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-514-21"
   ],
   "passage": "1 John 5:14-21",
@@ -12067,7 +12067,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-513"
   ],
   "passage": "1 John 5:13",
@@ -12105,7 +12105,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-56-12"
   ],
   "passage": "1 John 5:6-12",
@@ -12141,7 +12141,7 @@
   "books": [
    "isaiah"
   ],
-  "topics": [],
+  "passages": [],
   "passage": "Isaiah 55:1-2",
   "youtubeId": "--U52ZfBC48",
   "sermonAudioId": "11206290351",
@@ -12177,7 +12177,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1051-52"
   ],
   "passage": "Mark 10:51-52",
@@ -12215,7 +12215,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1046-50"
   ],
   "passage": "Mark 10:46-50",
@@ -12253,7 +12253,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1045"
   ],
   "passage": "Mark 10:45",
@@ -12291,7 +12291,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-51-5"
   ],
   "passage": "1 John 5:1-5",
@@ -12329,7 +12329,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1035-44"
   ],
   "passage": "Mark 10:35-44",
@@ -12367,7 +12367,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1032-34"
   ],
   "passage": "Mark 10:32-34",
@@ -12403,7 +12403,7 @@
   "books": [
    "hebrews"
   ],
-  "topics": [
+  "passages": [
    "hebrews-1125-26"
   ],
   "passage": "Hebrews 11:25-26",
@@ -12441,7 +12441,7 @@
   "books": [
    "job"
   ],
-  "topics": [
+  "passages": [
    "job-21-10"
   ],
   "passage": "Job 2:1-10",
@@ -12479,7 +12479,7 @@
   "books": [
    "job"
   ],
-  "topics": [
+  "passages": [
    "job-113-22"
   ],
   "passage": "Job 1:13-22",
@@ -12517,7 +12517,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1031-31"
   ],
   "passage": "Mark 10:31-31",
@@ -12555,7 +12555,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1028-30"
   ],
   "passage": "Mark 10:28-30",
@@ -12593,7 +12593,7 @@
   "books": [
    "job"
   ],
-  "topics": [
+  "passages": [
    "job-16-12"
   ],
   "passage": "Job 1:6-12",
@@ -12631,7 +12631,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1023-27"
   ],
   "passage": "Mark 10:23-27",
@@ -12669,7 +12669,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1017-22"
   ],
   "passage": "Mark 10:17-22",
@@ -12707,7 +12707,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-1013-16"
   ],
   "passage": "Mark 10:13-16",
@@ -12745,7 +12745,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-101-9"
   ],
   "passage": "Mark 10:1-9",
@@ -12783,7 +12783,7 @@
   "books": [
    "job"
   ],
-  "topics": [
+  "passages": [
    "job-11-5"
   ],
   "passage": "Job 1:1-5",
@@ -12819,7 +12819,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-631-3"
   ],
   "passage": "Psalm 63:1-3",
@@ -12857,7 +12857,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-101-12"
   ],
   "passage": "Mark 10:1-12",
@@ -12895,7 +12895,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-101-12"
   ],
   "passage": "Mark 10:1-12",
@@ -12933,7 +12933,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-949-50"
   ],
   "passage": "Mark 9:49-50",
@@ -12969,7 +12969,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-47-21"
   ],
   "passage": "1 John 4:7-21",
@@ -13007,7 +13007,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-948"
   ],
   "passage": "Mark 9:48",
@@ -13045,7 +13045,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-943-47"
   ],
   "passage": "Mark 9:43-47",
@@ -13081,7 +13081,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-41-6"
   ],
   "passage": "1 John 4:1-6",
@@ -13119,7 +13119,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-942"
   ],
   "passage": "Mark 9:42",
@@ -13157,7 +13157,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-938-41"
   ],
   "passage": "Mark 9:38-41",
@@ -13195,7 +13195,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-930-37"
   ],
   "passage": "Mark 9:30-37",
@@ -13233,7 +13233,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-930-34"
   ],
   "passage": "Mark 9:30-34",
@@ -13271,7 +13271,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-311-18"
   ],
   "passage": "1 John 3:11-18",
@@ -13309,7 +13309,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-914-29"
   ],
   "passage": "Mark 9:14-29",
@@ -13347,7 +13347,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-99-13"
   ],
   "passage": "Mark 9:9-13",
@@ -13383,7 +13383,7 @@
   "books": [
    "genesis"
   ],
-  "topics": [
+  "passages": [
    "genesis-37-50"
   ],
   "passage": "Genesis 37-50",
@@ -13421,7 +13421,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-91-8"
   ],
   "passage": "Mark 9:1-8",
@@ -13457,7 +13457,7 @@
   "books": [
    "isaiah"
   ],
-  "topics": [
+  "passages": [
    "isaiah-53"
   ],
   "passage": "Isaiah 53",
@@ -13495,7 +13495,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-835-38"
   ],
   "passage": "Mark 8:35-38",
@@ -13533,7 +13533,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-34-10"
   ],
   "passage": "1 John 3:4-10",
@@ -13571,7 +13571,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-834"
   ],
   "passage": "Mark 8:34",
@@ -13609,7 +13609,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-831-33"
   ],
   "passage": "Mark 8:31-33",
@@ -13647,7 +13647,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-827-30"
   ],
   "passage": "Mark 8:27-30",
@@ -13685,7 +13685,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-822-26"
   ],
   "passage": "Mark 8:22-26",
@@ -13723,7 +13723,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-34-10"
   ],
   "passage": "1 John 3:4-10",
@@ -13761,7 +13761,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-816-21"
   ],
   "passage": "Mark 8:16-21",
@@ -13799,7 +13799,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -13837,7 +13837,7 @@
   "books": [
    "1-peter"
   ],
-  "topics": [
+  "passages": [
    "1-peter-48-11"
   ],
   "passage": "1 Peter 4:8-11",
@@ -13875,7 +13875,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-228-33"
   ],
   "passage": "1 John 2:28-3:3",
@@ -13913,7 +13913,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-228-33"
   ],
   "passage": "1 John 2:28-3:3",
@@ -13951,7 +13951,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-228-33"
   ],
   "passage": "1 John 2:28-3:3",
@@ -13987,7 +13987,7 @@
   "books": [
    "matthew"
   ],
-  "topics": [
+  "passages": [
    "matthew-1344"
   ],
   "passage": "Matthew 13:44",
@@ -14025,7 +14025,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -14061,7 +14061,7 @@
   "books": [
    "2-corinthians"
   ],
-  "topics": [
+  "passages": [
    "2-corinthians-38"
   ],
   "passage": "2 Corinthians 3:8",
@@ -14099,7 +14099,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -14137,7 +14137,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-228-33"
   ],
   "passage": "1 John 2:28-3:3",
@@ -14175,7 +14175,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -14213,7 +14213,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -14251,7 +14251,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-811-13"
   ],
   "passage": "Mark 8:11-13",
@@ -14289,7 +14289,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-81-10"
   ],
   "passage": "Mark 8:1-10",
@@ -14325,7 +14325,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-218-28"
   ],
   "passage": "1 John 2:18-28",
@@ -14363,7 +14363,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-731-37"
   ],
   "passage": "Mark 7:31-37",
@@ -14401,7 +14401,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-724-30"
   ],
   "passage": "Mark 7:24-30",
@@ -14439,7 +14439,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-724-30"
   ],
   "passage": "Mark 7:24-30",
@@ -14477,7 +14477,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-714-23"
   ],
   "passage": "Mark 7:14-23",
@@ -14515,7 +14515,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-76-13"
   ],
   "passage": "Mark 7:6-13",
@@ -14553,7 +14553,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-71-9"
   ],
   "passage": "Mark 7:1-9",
@@ -14591,7 +14591,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-653-56"
   ],
   "passage": "Mark 6:53-56",
@@ -14625,7 +14625,7 @@
   ],
   "series": [],
   "books": [],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": null,
   "sermonAudioId": "55191036217957",
@@ -14661,7 +14661,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-645-52"
   ],
   "passage": "Mark 6:45-52",
@@ -14699,7 +14699,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-634-44"
   ],
   "passage": "Mark 6:34-44",
@@ -14737,7 +14737,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-630-33"
   ],
   "passage": "Mark 6:30-33",
@@ -14773,7 +14773,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-215-17"
   ],
   "passage": "1 John 2:15-17",
@@ -14811,7 +14811,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-614-29"
   ],
   "passage": "Mark 6:14-29",
@@ -14849,7 +14849,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-67-13"
   ],
   "passage": "Mark 6:7-13",
@@ -14887,7 +14887,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-66-7"
   ],
   "passage": "Mark 6:6-7",
@@ -14925,7 +14925,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-61-6"
   ],
   "passage": "Mark 6:1-6",
@@ -14963,7 +14963,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-212-14"
   ],
   "passage": "1 John 2:12-14",
@@ -15001,7 +15001,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-535-43"
   ],
   "passage": "Mark 5:35-43",
@@ -15039,7 +15039,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-521-29"
   ],
   "passage": "Mark 5:21-29",
@@ -15077,7 +15077,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-27-11"
   ],
   "passage": "1 John 2:7-11",
@@ -15115,7 +15115,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-519-20"
   ],
   "passage": "Mark 5:19-20",
@@ -15153,7 +15153,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-513-20"
   ],
   "passage": "Mark 5:13-20",
@@ -15191,7 +15191,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-56-13"
   ],
   "passage": "Mark 5:6-13",
@@ -15229,7 +15229,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-23-6"
   ],
   "passage": "1 John 2:3-6",
@@ -15267,7 +15267,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-51-6"
   ],
   "passage": "Mark 5:1-6",
@@ -15305,7 +15305,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-435-41"
   ],
   "passage": "Mark 4:35-41",
@@ -15343,7 +15343,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-63"
   ],
   "passage": "Psalm 63",
@@ -15381,7 +15381,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-17-22"
   ],
   "passage": "1 John 1:7-2:2",
@@ -15419,7 +15419,7 @@
   "books": [
    "isaiah"
   ],
-  "topics": [
+  "passages": [
    "isaiah-53"
   ],
   "passage": "Isaiah 53",
@@ -15457,7 +15457,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-430-32"
   ],
   "passage": "Mark 4:30-32",
@@ -15495,7 +15495,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-426-29"
   ],
   "passage": "Mark 4:26-29",
@@ -15533,7 +15533,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-421-25"
   ],
   "passage": "Mark 4:21-25",
@@ -15571,7 +15571,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-31"
   ],
   "passage": "Psalm 31",
@@ -15609,7 +15609,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": null,
   "sermonAudioId": "82422155102731",
@@ -15645,7 +15645,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-423-25"
   ],
   "passage": "Mark 4:23-25",
@@ -15683,7 +15683,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-421-23"
   ],
   "passage": "Mark 4:21-23",
@@ -15721,7 +15721,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-410-12"
   ],
   "passage": "Mark 4:10-12",
@@ -15759,7 +15759,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -15793,7 +15793,7 @@
   ],
   "series": [],
   "books": [],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": null,
   "sermonAudioId": "21720114244451",
@@ -15829,7 +15829,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-11-4"
   ],
   "passage": "1 John 1:1-4",
@@ -15867,7 +15867,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [
+  "passages": [
    "1-john-11-4"
   ],
   "passage": "1 John 1:1-4",
@@ -15905,7 +15905,7 @@
   "books": [
    "isaiah"
   ],
-  "topics": [
+  "passages": [
    "isaiah-556-7"
   ],
   "passage": "Isaiah 55:6-7",
@@ -15943,7 +15943,7 @@
   "books": [
    "selected-text"
   ],
-  "topics": [
+  "passages": [
    "selected-text"
   ],
   "passage": "Selected Text",
@@ -15981,7 +15981,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-413-20"
   ],
   "passage": "Mark 4:13-20",
@@ -16019,7 +16019,7 @@
   "books": [
    "1-john"
   ],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": null,
   "sermonAudioId": "21720120363197",
@@ -16055,7 +16055,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-325-35"
   ],
   "passage": "Mark 3:25-35",
@@ -16093,7 +16093,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-320-25"
   ],
   "passage": "Mark 3:20-25",
@@ -16131,7 +16131,7 @@
   "books": [
    "romans"
   ],
-  "topics": [
+  "passages": [
    "romans-89"
   ],
   "passage": "Romans 8:9",
@@ -16167,7 +16167,7 @@
    "the-gospel-of-mark"
   ],
   "books": [],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": null,
   "sermonAudioId": "217201219307300",
@@ -16203,7 +16203,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-319"
   ],
   "passage": "Mark 3:19",
@@ -16239,7 +16239,7 @@
   "books": [
    "isaiah"
   ],
-  "topics": [
+  "passages": [
    "isaiah-555-7"
   ],
   "passage": "Isaiah 55:5-7",
@@ -16277,7 +16277,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-313-19"
   ],
   "passage": "Mark 3:13-19",
@@ -16315,7 +16315,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-313-19"
   ],
   "passage": "Mark 3:13-19",
@@ -16353,7 +16353,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-313-19"
   ],
   "passage": "Mark 3:13-19",
@@ -16387,7 +16387,7 @@
   ],
   "series": [],
   "books": [],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": null,
   "sermonAudioId": "631912622836",
@@ -16423,7 +16423,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-313-19"
   ],
   "passage": "Mark 3:13-19",
@@ -16461,7 +16461,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-313-19"
   ],
   "passage": "Mark 3:13-19",
@@ -16497,7 +16497,7 @@
    "the-gospel-of-mark"
   ],
   "books": [],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": null,
   "sermonAudioId": "6319122341926",
@@ -16533,7 +16533,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-313-19"
   ],
   "passage": "Mark 3:13-19",
@@ -16571,7 +16571,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-313-19"
   ],
   "passage": "Mark 3:13-19",
@@ -16609,7 +16609,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-313-19"
   ],
   "passage": "Mark 3:13-19",
@@ -16645,7 +16645,7 @@
   "books": [
    "luke"
   ],
-  "topics": [
+  "passages": [
    "luke-84-14"
   ],
   "passage": "Luke 8:4-14",
@@ -16683,7 +16683,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-12-6"
   ],
   "passage": "Psalm 1:2-6",
@@ -16721,7 +16721,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-313-19"
   ],
   "passage": "Mark 3:13-19",
@@ -16759,7 +16759,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-313-19"
   ],
   "passage": "Mark 3:13-19",
@@ -16797,7 +16797,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-37-12"
   ],
   "passage": "Mark 3:7-12",
@@ -16836,7 +16836,7 @@
   "books": [
    "psalms"
   ],
-  "topics": [
+  "passages": [
    "psalms-1"
   ],
   "passage": "Psalm 1",
@@ -16874,7 +16874,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-31-6"
   ],
   "passage": "Mark 3:1-6",
@@ -16912,7 +16912,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-223-28"
   ],
   "passage": "Mark 2:23-28",
@@ -16950,7 +16950,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-218-22"
   ],
   "passage": "Mark 2:18-22",
@@ -16988,7 +16988,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-213-17"
   ],
   "passage": "Mark 2:13-17",
@@ -17026,7 +17026,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-11-12"
   ],
   "passage": "Mark 1:1-12",
@@ -17064,7 +17064,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-21-12"
   ],
   "passage": "Mark 2:1-12",
@@ -17098,7 +17098,7 @@
   ],
   "series": [],
   "books": [],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": null,
   "sermonAudioId": "52519146325690",
@@ -17134,7 +17134,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-140-42"
   ],
   "passage": "Mark 1:40-42",
@@ -17172,7 +17172,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-132-39"
   ],
   "passage": "Mark 1:32-39",
@@ -17210,7 +17210,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-129-31"
   ],
   "passage": "Mark 1:29-31",
@@ -17248,7 +17248,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-121-28"
   ],
   "passage": "Mark 1:21-28",
@@ -17286,7 +17286,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-116-20"
   ],
   "passage": "Mark 1:16-20",
@@ -17324,7 +17324,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-19-12"
   ],
   "passage": "Mark 1:9-12",
@@ -17362,7 +17362,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-12-8"
   ],
   "passage": "Mark 1:2-8",
@@ -17400,7 +17400,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-11"
   ],
   "passage": "Mark 1:1",
@@ -17438,7 +17438,7 @@
   "books": [
    "mark"
   ],
-  "topics": [
+  "passages": [
    "mark-112-15"
   ],
   "passage": "Mark 1:12-15",
@@ -17476,7 +17476,7 @@
   "books": [
    "mark"
   ],
-  "topics": [],
+  "passages": [],
   "passage": "",
   "youtubeId": null,
   "sermonAudioId": "525191335427427",

@@ -23,12 +23,12 @@ ROOT = Path(__file__).resolve().parent.parent
 INPUTS = ROOT / "private" / "inputs"
 OUT = ROOT / "src" / "data"
 HOSTS = {"savinggrace.org.au", "www.savinggrace.org.au"}
-ARCHIVE_PAGE_SIZE = 12
+ARCHIVE_PAGE_SIZE = 9
 TAXONOMIES = {
     "sermon_speaker": "speaker",
     "sermon_series": "series",
     "sermon_book": "book",
-    "sermon_topics": "topic",
+    "sermon_topics": "passage",
 }
 warnings = []
 
@@ -255,7 +255,7 @@ for row in sorted(sermon_rows, key=lambda r: r["post_date"], reverse=True):
         "speakers": groups["speaker"],
         "series": groups["series"],
         "books": groups["book"],
-        "topics": groups["topic"],
+        "passages": groups["passage"],
         "passage": text(m.get("asp_sermon_bible_passage")),
         "youtubeId": youtube_id(m.get("asp_sermon_youtube")),
         "sermonAudioId": sermonaudio_id(m.get("asp_sermon_audio_embed")),

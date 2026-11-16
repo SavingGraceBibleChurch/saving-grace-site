@@ -1,0 +1,20 @@
+---
+// A list of sermons as journal rows. Long lists show the first few with a
+// "Show all" button; without JavaScript every row is visible.
+import type { Sermon } from "../lib/types";
+import JournalEntry from "./JournalEntry.astro";
+
+interface Props { sermons: Sermon[]; limit?: number; headingLevel?: 2 | 3 }
+const { sermons, limit = 8, headingLevel = 3 } = Astro.props;
+const first = sermons.slice(0, limit);
+const rest = sermons.slice(limit);
+---
+<ul class="journal" role="list">{first.map((sermon) => <JournalEntry sermon={sermon} headingLevel={headingLevel} />)}</ul>
+{rest.length > 0 && (
+  <div class="journal-more" data-journal-more>
+    <ul class="journal journal--rest" role="list">{rest.map((sermon) => <JournalEntry sermon={sermon} headingLevel={headingLevel} />)}</ul>
+    <p class="journal-more__action">
+      <button class="button button--outline" type="button" data-journal-show>Show all {sermons.length} sermons <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M12 4v15m-6-6 6 6 6-6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
+    </p>
+  </div>
+)}

@@ -1,0 +1,108 @@
+---
+// One study: description, recording, transcript and study questions.
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import CourseCover from "../../../components/CourseCover.astro";
+import Video from "../../../components/Video.astro";
+import { allSessions, seriesOf, courseOf, sessionsOf, contentFor, seriesPath, sessionPath, studiesPath } from "../../../lib/studies";
+import type { StudySession } from "../../../lib/studies";
+import { SITE, SITE_NAME } from "../../../lib/content";
+import { formatDuration, spokenDuration, excerpt, paragraphs } from "../../../lib/extras";
+import { formatDate } from "../../../lib/events";
+
+export function getStaticPaths() {
+  return allSessions.map((session) => ({ params: { slug: session.slug }, props: { session } }));
+}
+const { session } = Astro.props as { session: StudySession };
+const series = seriesOf(session);
+const course = courseOf(series);
+const content = contentFor(session);
+const siblings = sessionsOf(series);
+const index = siblings.findIndex((s) => s.slug === session.slug);
+const previous = siblings[index - 1];
+const next = siblings[index + 1];
+const path = sessionPath(session);
+const length = formatDuration(session.durationSeconds);
+const description = paragraphs(content.description);
+const transcript = paragraphs(content.transcript);
+const words = content.transcript.split(/\s+/u).filter(Boolean).length;
+const summary = content.description ? excerpt(content.description) : `${session.title}, a Tuesday night study at Saving Grace Bible Church.`;
+const crumbs = [{ name: "Home", path: "/" }, { name: "Tuesday Night Studies", path: studiesPath }, ...(course !== series ? [{ name: course.title, path: seriesPath(course) }] : []), { name: series.title, path: seriesPath(series) }, { name: session.title, path }];
+const jsonLd: Record<string, unknown>[] = session.youtubeId ? [{
+  "@context": "https://schema.org", "@type": "VideoObject", name: session.title, description: summary,
+  thumbnailUrl: [`https://i.ytimg.com/vi/${session.youtubeId}/hqdefault.jpg`],
+  uploadDate: session.date ? `${session.date}T19:00:00+10:00` : undefined,
+  duration: session.durationSeconds ? `PT${session.durationSeconds}S` : undefined,
+  embedUrl: `https://www.youtube.com/embed/${session.youtubeId}`, contentUrl: `https://www.youtube.com/watch?v=${session.youtubeId}`,
+  inLanguage: "en-AU", publisher: { "@type": "Organization", name: SITE_NAME, logo: { "@type": "ImageObject", url: `${SITE}/brand/saving-grace-logo.png` } },
+}] : [];
+---
+<BaseLayout
+  title={`${session.title} - Tuesday Night Studies - ${SITE_NAME}`}
+  description={summary}
+  canonical={path}
+  ogType="article"
+  ogImage={session.youtubeId ? `https://i.ytimg.com/vi/${session.youtubeId}/hqdefault.jpg` : undefined}
+  breadcrumbs={crumbs}
+  jsonLd={jsonLd}
+>
+  <div class="wrap studies">
+    <header class="studies__opening studies__opening--session">
+      <nav aria-label="Study collection" data-pagefind-ignore><ol class="trail" role="list"><li><a href={studiesPath}>Tuesday Night Studies</a></li>{course !== series && <li><a href={seriesPath(course)}>{course.title}</a></li>}<li><a href={seriesPath(series)}>{series.title}</a></li></ol></nav>
+      <h1>{session.title}</h1>
+      <p class="studies__metadata dots">
+        {session.teacher && <span>{session.teacher}</span>}
+        {session.date && <time datetime={session.date}>{formatDate(session.date)}</time>}
+        {length && <time datetime={`PT${session.durationSeconds}S`} aria-label={`Recording length: ${spokenDuration(session.durationSeconds!)}`}>{length}</time>}
+        <span>Session {index + 1} of {siblings.length}</span>
+      </p>
+    </header>
+    <div class="studies__reader">
+      <article class="studies__body">
+        {description.length > 0 && <section class="studies__description" id="about-study" aria-label="About this study">{description.map((text) => <p>{text}</p>)}</section>}
+        {content.scripture.length > 0 && <section class="studies__scripture"><h2>Scripture references</h2><p>{content.scripture.join("; ")}</p></section>}
+        {(session.youtubeId || session.sermonAudioId) && (
+          <section id="study-recording">
+            <h2>Watch or listen</h2>
+            {session.youtubeId && <Video youtubeId={session.youtubeId} title={session.title} label="Watch the study" priority />}
+            {session.sermonAudioId && <div class="audio" id="listen"><iframe src={`https://embed.sermonaudio.com/player/a/${session.sermonAudioId}/?mini=true`} title={`Listen to ${session.title} on SermonAudio`} loading="lazy" height="60"></iframe></div>}
+            {session.youtubeId && <p class="media-links"><a class="link-arrow" href={`https://www.youtube.com/watch?v=${session.youtubeId}`} rel="noopener">Watch on YouTube<span class="sr-only"> (external site)</span></a></p>}
+          </section>
+        )}
+        {content.questions.length > 0 && (
+          <section id="study-questions">
+            <h2>Study questions</h2>
+            <p class="studies__note">Study questions and answers — generated from the teaching; not a record of audience questions.</p>
+            <ol class="studies__questions">
+              {content.questions.map((item) => (
+                <li><h3>{item.question}</h3>{paragraphs(item.answer).map((text) => <p>{text}</p>)}</li>
+              ))}
+            </ol>
+          </section>
+        )}
+        {transcript.length > 0 && (
+          <details class="studies__transcript" id="study-transcript">
+            <summary><span><span class="studies__disclosure" aria-hidden="true">+</span>Complete transcript</span><span class="studies__transcript-length">{words.toLocaleString("en-AU")} words</span></summary>
+            <div class="studies__transcript-body">{transcript.map((text) => <p>{text}</p>)}</div>
+          </details>
+        )}
+        <nav class="studies__next" aria-label="More in this section" data-pagefind-ignore>
+          {previous && <a href={sessionPath(previous)} rel="prev"><span>← Previous study</span>{previous.title}</a>}
+          {next && <a class="studies__next-forward" href={sessionPath(next)} rel="next"><span>Next study →</span>{next.title}</a>}
+        </nav>
+      </article>
+      <aside class="studies__reader-aside" aria-label="Continue studying" data-pagefind-ignore>
+        <CourseCover course={course} compact />
+        <nav class="studies__outline-nav" aria-label="On this page">
+          <h2>In this study</h2>
+          <ul role="list">
+            {description.length > 0 && <li><a href="#about-study">About this study</a></li>}
+            {(session.youtubeId || session.sermonAudioId) && <li><a href="#study-recording">Watch or listen</a></li>}
+            {content.questions.length > 0 && <li><a href="#study-questions">Study questions</a></li>}
+            {transcript.length > 0 && <li><a href="#study-transcript">Complete transcript</a></li>}
+          </ul>
+        </nav>
+        <a class="link-arrow studies__back" href={seriesPath(series)}>View all sessions</a>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

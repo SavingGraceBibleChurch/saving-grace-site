@@ -3,7 +3,7 @@ import type { Block } from "../lib/types";
 import { inline, isExternal } from "../lib/markup";
 import { eventById, nextOccurrence, formatLongDate, formatTimeRange, melbourneToday } from "../lib/events";
 import Picture from "./Picture.astro";
-import SermonCard from "./SermonCard.astro";
+import JournalList from "./JournalList.astro";
 import EventsCalendar from "./EventsCalendar.astro";
 import BlogList from "./BlogList.astro";
 import SitemapList from "./SitemapList.astro";
@@ -128,7 +128,7 @@ const ext = (href: string) => (isExternal(href) ? { rel: "noopener" } : {});
         <section class="page__sermons" aria-labelledby="page-sermons-heading">
           <h2 id="page-sermons-heading" class="page__h2">{block.heading}</h2>
           {block.text && <p set:html={inline(block.text)} />}
-          <ul class="cards" role="list">{sermons.slice(0, block.limit ?? 3).map((sermon) => <SermonCard sermon={sermon} headingLevel={3} />)}</ul>
+          <JournalList sermons={sermons.slice(0, block.limit ?? 3)} />
           <p class="page__sermons-link"><a class="button" href="/sermons/">{block.linkLabel}</a></p>
         </section>
       );

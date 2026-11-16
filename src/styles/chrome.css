@@ -19,9 +19,9 @@
 }
 .site-header[data-scrolled] { border-bottom-color: var(--line); box-shadow: 0 10px 30px -22px rgb(20 36 45 / 0.5); }
 .site-header[data-open] { background: var(--paper); }
-.site-header__inner { display: flex; align-items: center; gap: 1.25rem; min-height: 5.25rem; }
+.site-header__inner { display: flex; align-items: center; gap: 1.25rem; min-height: 6.25rem; }
 .brand { flex: none; display: inline-flex; border-radius: 0.5rem; }
-.brand img { width: auto; height: 3.5rem; }
+.brand img { width: auto; height: 5rem; }
 .site-header__actions { display: flex; align-items: center; gap: 0.5rem; margin-left: auto; }
 
 .nav { margin-inline: auto; }
@@ -29,7 +29,7 @@
 .nav__item { position: relative; }
 .nav__link {
   display: inline-flex; align-items: center; gap: 0.4rem;
-  padding: 0.6rem 0.9rem; border-radius: 999px;
+  padding: 0.6rem 0.8rem; white-space: nowrap; border-radius: 999px;
   font-size: 0.9688rem; font-weight: 550; line-height: 1.2; color: var(--ink-soft);
   text-decoration: none; cursor: pointer; list-style: none; user-select: none;
   transition: background-color 0.2s, color 0.2s;
@@ -73,9 +73,9 @@ summary.nav__link::-webkit-details-marker { display: none; }
 .menu-toggle[aria-expanded="true"] .menu-toggle__bars::before { transform: rotate(45deg); }
 .menu-toggle[aria-expanded="true"] .menu-toggle__bars::after { transform: rotate(-45deg); }
 
-@media (max-width: 66rem) {
-  .site-header__inner { min-height: 4.5rem; }
-  .brand img { height: 3rem; }
+@media (max-width: 78rem) {
+  .site-header__inner { min-height: 5.25rem; }
+  .brand img { height: 4rem; }
   .js .menu-toggle { display: inline-flex; }
   .site-header__give { display: none; }
   .js .nav {
@@ -125,7 +125,7 @@ summary.nav__link::-webkit-details-marker { display: none; }
   position: relative; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 2.5rem;
   padding-block: clamp(2.5rem, 2rem + 2vw, 4rem);
 }
-.site-footer__logo img { width: auto; height: 4.5rem; }
+.site-footer__logo img { width: auto; height: 6rem; }
 .site-footer__blurb { margin-top: 1.25rem; max-width: 22rem; color: var(--on-navy-mute); font-size: 0.9688rem; }
 .site-footer__title { font: 600 0.75rem / 1.2 var(--font-sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
 .site-footer__list { display: grid; gap: 0.6rem; margin: 0; padding: 0; list-style: none; color: var(--on-navy); }

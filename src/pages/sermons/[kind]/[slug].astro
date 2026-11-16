@@ -1,9 +1,12 @@
 ---
+// One speaker, series, Bible book or passage, with its sermons in sections.
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PageHead from "../../../components/PageHead.astro";
-import SermonList from "../../../components/SermonList.astro";
+import JournalList from "../../../components/JournalList.astro";
 import { taxonomyTerms, taxonomyLabels, sermonsFor, SITE } from "../../../lib/content";
-import type { TaxonomyTerm } from "../../../lib/types";
+import { byBook, byYear, inPassageOrder, oldestFirst, seriesInfo, years } from "../../../lib/groups";
+import { bookGroup } from "../../../lib/books";
+import type { Sermon, TaxonomyTerm } from "../../../lib/types";
 
 export function getStaticPaths() {
   return taxonomyTerms.map((t) => ({ params: { kind: t.kind, slug: t.slug }, props: { t } }));
@@ -11,12 +14,29 @@ export function getStaticPaths() {
 const { t } = Astro.props as { t: TaxonomyTerm };
 const label = taxonomyLabels[t.kind];
 const list = sermonsFor(t.kind, t.slug);
+const count = (n: number) => `${n} sermon${n === 1 ? "" : "s"}`;
 const intro = {
-  speaker: `${list.length} sermon${list.length === 1 ? "" : "s"} preached by ${t.name} at Saving Grace Bible Church.`,
-  series: `${list.length} sermon${list.length === 1 ? "" : "s"} in the ${t.name} series.`,
-  book: `${list.length} sermon${list.length === 1 ? "" : "s"} preached from ${t.name}.`,
-  topic: `${list.length} sermon${list.length === 1 ? "" : "s"} on ${t.name}.`,
+  speaker: `${count(list.length)} preached by ${t.name} at Saving Grace Bible Church.`,
+  series: `${count(list.length)} in the ${t.name} series.`,
+  book: `${count(list.length)} preached from ${t.name}.`,
+  passage: `${count(list.length)} on ${t.name}.`,
 }[t.kind];
+
+interface Section { id: string; title: string; group: string; note: string; sermons: Sermon[]; more?: { href: string; label: string } }
+let sections: Section[] = [];
+if (t.kind === "speaker") {
+  sections = byBook(list).map((s) => ({ id: s.id, title: s.title, group: s.group, note: `${count(s.sermons.length)} · ${years(s.sermons)}`, sermons: s.sermons, more: s.book ? { href: s.book.path, label: `All sermons from ${s.book.name}` } : undefined }));
+} else if (t.kind === "series") {
+  const info = seriesInfo(t);
+  if (info.bookStudy) {
+    sections = [{ id: "sermons", title: "In preaching order", group: info.group, note: `${count(list.length)} · ${info.years}`, sermons: oldestFirst(list) }];
+  } else {
+    sections = byYear(list).map((y) => ({ id: `y${y.year}`, title: y.year, group: "topical", note: count(y.sermons.length), sermons: y.sermons }));
+  }
+} else if (t.kind === "book") {
+  sections = [{ id: "sermons", title: `Through ${t.name}`, group: bookGroup(t.slug), note: `${count(list.length)} in passage order · ${years(list)}`, sermons: inPassageOrder(list) }];
+}
+const group = t.kind === "book" ? bookGroup(t.slug) : t.kind === "series" ? seriesInfo(t).group : undefined;
 ---
 <BaseLayout
   title={t.seo.title}
@@ -26,10 +46,30 @@ const intro = {
   breadcrumbs={[{ name: "Home", path: "/" }, { name: "Sermons", path: "/sermons/" }, { name: label.plural, path: label.path }, { name: t.name, path: t.path }]}
   jsonLd={[{ "@context": "https://schema.org", "@type": "CollectionPage", url: `${SITE}${t.path}`, name: t.name, inLanguage: "en-AU", isPartOf: { "@id": `${SITE}/#website` } }]}
 >
-  <article class="page page--sermons">
-    <PageHead title={t.name} trail={[{ label: "Home", href: "/" }, { label: "Sermons", href: "/sermons/" }, { label: label.plural, href: label.path }]} eyebrow={label.singular} lede={intro} />
-    <div class="page__body">
-      <SermonList sermons={list} showSpeaker={t.kind !== "speaker"} />
+  <article class:list={["page", "page--listing", group && `hue--${group}`]} data-pagefind-ignore="all">
+    <PageHead
+      title={t.name}
+      trail={[{ label: "Home", href: "/" }, { label: "Sermons", href: "/sermons/" }, { label: label.plural, href: label.path }]}
+      eyebrow={label.singular}
+      lede={intro}
+      hero={t.name === "Wesam Saad" ? { media: "wesam" } : t.name === "Ralph Gambardella" ? { media: "ralph" } : null}
+    />
+    <div class="wrap listing">
+      {sections.length > 1 && (
+        <nav class="listing__jump" aria-label="Jump to a section">
+          <ul class="browse__chips" role="list">{sections.map((s) => <li><a class="chip" href={`#${s.id}`}>{s.title}<span class="chip__count">{s.sermons.length}</span></a></li>)}</ul>
+        </nav>
+      )}
+      {sections.map((s) => (
+        <section class={`listing__section hue--${s.group}`} id={s.id}>
+          <header class="listing__head">
+            <div class="listing__title"><span class="listing__tab" aria-hidden="true"></span><h2>{s.title}</h2></div>
+            <p class="listing__count">{s.note}{s.more && <> · <a href={s.more.href}>{s.more.label}</a></>}</p>
+          </header>
+          <JournalList sermons={s.sermons} limit={sections.length > 1 ? 5 : 12} />
+        </section>
+      ))}
+      {t.kind === "passage" && <JournalList sermons={list} headingLevel={2} />}
     </div>
   </article>
 </BaseLayout>

@@ -53,7 +53,7 @@ export const primaryNav: NavItem[] = [
       { label: "By Speaker", href: "/sermons/speaker/" },
       { label: "By Series", href: "/sermons/series/" },
       { label: "By Bible Book", href: "/sermons/book/" },
-      { label: "By Topic", href: "/sermons/topic/" },
+      { label: "By Passage", href: "/sermons/passage/" },
       { label: "Archived Sermons", href: "/archived-sermons/" },
     ],
   },
@@ -72,6 +72,7 @@ export const primaryNav: NavItem[] = [
       { label: "Resources | Downloads", href: "/forms/" },
     ],
   },
+  { label: "Tuesday Night Studies", href: "/studies/" },
   { label: "News & Events", href: "/events/" },
   { label: "Contact Us", href: "/contact-us-2/" },
 ];
@@ -86,6 +87,7 @@ export const footerLinks: NavLink[] = [
 
 export const footerImprintLinks: NavLink[] = [
   { label: "Sermons", href: "/sermons/" },
+  { label: "Tuesday Night Studies", href: "/studies/" },
   { label: "News & Events", href: "/events/" },
   { label: "Contact Us", href: "/contact-us-2/" },
   { label: "Sitemap", href: "/pages/sitemap/" },

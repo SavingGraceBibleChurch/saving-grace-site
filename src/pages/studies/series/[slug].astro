@@ -1,0 +1,63 @@
+---
+// One course (or one section of a course) with its sessions.
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import CourseCover from "../../../components/CourseCover.astro";
+import StudySessionList from "../../../components/StudySessionList.astro";
+import { allSeries, sectionsOf, sessionsOf, courseOf, courseSessions, seriesPath, studiesPath, quantity } from "../../../lib/studies";
+import type { StudySeries } from "../../../lib/studies";
+import { SITE, SITE_NAME } from "../../../lib/content";
+
+export function getStaticPaths() {
+  return allSeries.map((series) => ({ params: { slug: series.slug }, props: { series } }));
+}
+const { series } = Astro.props as { series: StudySeries };
+const course = courseOf(series);
+const sections = sectionsOf(series);
+const direct = sessionsOf(series);
+const total = courseSessions(series).length;
+const path = seriesPath(series);
+const crumbs = [{ name: "Home", path: "/" }, { name: "Tuesday Night Studies", path: studiesPath }, ...(course !== series ? [{ name: course.title, path: seriesPath(course) }] : []), { name: series.title, path }];
+---
+<BaseLayout
+  title={`${series.title} - Tuesday Night Studies - ${SITE_NAME}`}
+  description={`${series.title}: ${quantity(total, "session")} from the Tuesday night Bible study at Saving Grace Bible Church, with recordings, transcripts and study questions.`}
+  canonical={path}
+  breadcrumbs={crumbs}
+  jsonLd={[{ "@context": "https://schema.org", "@type": "CollectionPage", url: `${SITE}${path}`, name: series.title, inLanguage: "en-AU", isPartOf: { "@id": `${SITE}/#website` } }]}
+>
+  <div class="wrap studies" data-pagefind-ignore="all">
+    <header class="studies__opening">
+      <nav aria-label="Study collection"><ol class="trail" role="list"><li><a href={studiesPath}>Tuesday Night Studies</a></li>{course !== series && <li><a href={seriesPath(course)}>{course.title}</a></li>}</ol></nav>
+      <h1>{series.title}</h1>
+      <p>{quantity(total, "session")} to watch, read and return to.</p>
+    </header>
+    <div class="studies__layout">
+      <aside class="studies__aside" aria-label="Course overview">
+        <CourseCover course={course} compact />
+        {sections.length > 0 ? (
+          <nav class="studies__outline-nav" aria-label="Sections in this course">
+            <h2>In this course</h2>
+            <ul role="list">
+              {direct.length > 0 && <li><a href="#course-sessions">Course sessions <span>{direct.length}</span></a></li>}
+              {sections.map((section) => <li><a href={`#section-${section.slug}`}>{section.title}<span>{sessionsOf(section).length}</span></a></li>)}
+            </ul>
+          </nav>
+        ) : <a class="link-arrow studies__back" href={course !== series ? seriesPath(course) : studiesPath}>{course !== series ? `All of ${course.title}` : "All courses"}</a>}
+      </aside>
+      <div class="studies__outline">
+        {direct.length > 0 && (
+          <section id="course-sessions">
+            <div class="studies__section-heading"><h2>{sections.length ? "Course sessions" : "Sessions"}</h2><span>{quantity(direct.length, "session")}</span></div>
+            <StudySessionList sessions={direct} />
+          </section>
+        )}
+        {sections.map((section) => (
+          <section id={`section-${section.slug}`}>
+            <div class="studies__section-heading"><h2><a href={seriesPath(section)}>{section.title}</a></h2><span>{quantity(sessionsOf(section).length, "session")}</span></div>
+            <StudySessionList sessions={sessionsOf(section)} />
+          </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

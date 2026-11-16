@@ -7,6 +7,9 @@ import "../styles/chrome.css";
 import "../styles/home.css";
 import "../styles/pages.css";
 import "../styles/sermons.css";
+import "../styles/journal.css";
+import "../styles/listing.css";
+import "../styles/studies.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE, SITE_NAME } from "../lib/content";
@@ -108,6 +111,27 @@ const robots = indexable ? "index, follow, max-image-preview:large, max-snippet:
         }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
         items.forEach(function (el) { observer.observe(el); });
       })();
+      // Sermon rows: "See more" opens a description; "Show all" reveals the rest of a long list.
+      document.addEventListener("click", function (event) {
+        var toggle = event.target.closest(".journal__toggle");
+        if (toggle) {
+          var description = document.getElementById(toggle.getAttribute("aria-controls"));
+          if (!description) return;
+          var open = toggle.getAttribute("aria-expanded") !== "true";
+          toggle.setAttribute("aria-expanded", String(open));
+          description.classList.toggle("is-open", open);
+          var label = toggle.querySelector("[data-description-label]");
+          if (label) label.textContent = open ? "See less" : "See more";
+          return;
+        }
+        var show = event.target.closest("[data-journal-show]");
+        if (show) {
+          var box = show.closest("[data-journal-more]");
+          box.classList.add("is-open");
+          var first = box.querySelector(".journal--rest .journal__title a");
+          if (first) first.focus({ preventScroll: true });
+        }
+      });
     </script>
   </body>
 </html>

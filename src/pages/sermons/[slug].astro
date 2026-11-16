@@ -1,9 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import SermonCard from "../../components/SermonCard.astro";
+import JournalList from "../../components/JournalList.astro";
+import Video from "../../components/Video.astro";
 import { sermons, term, speakerName, sermonSummary, youtubeThumbnail, SITE, SITE_NAME } from "../../lib/content";
 import { bookGroup } from "../../lib/books";
 import { formatDate } from "../../lib/events";
+import { extraFor, formatDuration, paragraphs, excerpt } from "../../lib/extras";
 import type { Sermon } from "../../lib/types";
 
 export function getStaticPaths() {
@@ -14,9 +16,11 @@ const { sermon } = Astro.props as { sermon: Sermon };
 const speakers = sermon.speakers.map((slug) => term("speaker", slug)).filter((t) => t !== undefined);
 const series = sermon.series.map((slug) => term("series", slug)).filter((t) => t !== undefined);
 const books = sermon.books.map((slug) => term("book", slug)).filter((t) => t !== undefined);
-const topics = sermon.topics.map((slug) => term("topic", slug)).filter((t) => t !== undefined);
 const mainBook = sermon.books.find((slug) => slug !== "selected-text");
-const description = sermon.seo.description || sermonSummary(sermon);
+const extra = extraFor(sermon);
+const duration = formatDuration(extra?.durationSeconds);
+const about = extra?.summary ? paragraphs(extra.summary) : [];
+const description = sermon.seo.description || (extra?.summary ? excerpt(extra.summary) : sermonSummary(sermon));
 
 // Related: the rest of the same series first, then the same book, newest first.
 const related: Sermon[] = [];
@@ -75,25 +79,9 @@ if (sermon.youtubeId) {
         <div class="sermon__main">
           <section id="watch" aria-labelledby="watch-heading">
             <h2 id="watch-heading" class="sr-only">Watch or listen</h2>
-            {sermon.youtubeId && (
-              <a class="video" href={`https://www.youtube.com/watch?v=${sermon.youtubeId}`} rel="noopener" data-youtube={sermon.youtubeId} data-title={`${sermon.title} — ${speakerName(sermon)}`}>
-                <img
-                  src={`https://i.ytimg.com/vi/${sermon.youtubeId}/maxresdefault.jpg`}
-                  data-fallback={`https://i.ytimg.com/vi/${sermon.youtubeId}/hqdefault.jpg`}
-                  onload="if(this.naturalWidth<200&&this.dataset.fallback){this.src=this.dataset.fallback;delete this.dataset.fallback}"
-                  onerror="this.remove()"
-                  alt=""
-                  width="1280"
-                  height="720"
-                  fetchpriority="high"
-                  decoding="async"
-                />
-                <span class="video__play" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor" /></svg></span>
-                <span class="video__label">Watch the sermon<span class="sr-only">: {sermon.title}</span></span>
-              </a>
-            )}
+            {sermon.youtubeId && <Video youtubeId={sermon.youtubeId} title={`${sermon.title} — ${speakerName(sermon)}`} label="Watch the sermon" priority />}
             {sermon.sermonAudioId && (
-              <div class="audio">
+              <div class="audio" id="listen">
                 <iframe src={`https://embed.sermonaudio.com/player/a/${sermon.sermonAudioId}/?mini=true`} title={`Listen to ${sermon.title} on SermonAudio`} loading="lazy" height="60"></iframe>
               </div>
             )}
@@ -102,6 +90,12 @@ if (sermon.youtubeId) {
               {sermon.sermonAudioId && <a class="link-arrow" href={`https://www.sermonaudio.com/sermons/${sermon.sermonAudioId}`} rel="noopener">Listen on SermonAudio<span class="sr-only"> (external site)</span></a>}
             </p>
           </section>
+          {about.length > 0 && (
+            <section class="sermon__about" id="about" aria-labelledby="about-heading">
+              <h2 id="about-heading">About this sermon</h2>
+              {about.map((text) => <p>{text}</p>)}
+            </section>
+          )}
         </div>
 
         <aside class="details-card" aria-label="Sermon details">
@@ -111,7 +105,7 @@ if (sermon.youtubeId) {
             {series.length > 0 && <div><dt>Series</dt><dd>{series.map((s, i) => <>{i > 0 && ", "}<a href={s!.path}>{s!.name}</a></>)}</dd></div>}
             {sermon.passage && <div><dt>Passage</dt><dd>{sermon.passage}</dd></div>}
             {books.length > 0 && <div><dt>Bible book</dt><dd>{books.map((b, i) => <>{i > 0 && ", "}<a href={b!.path}>{b!.name}</a></>)}</dd></div>}
-            {topics.length > 0 && <div><dt>Topics</dt><dd>{topics.map((t, i) => <>{i > 0 && ", "}<a href={t!.path}>{t!.name}</a></>)}</dd></div>}
+            {duration && <div><dt>Recording length</dt><dd>{duration}</dd></div>}
           </dl>
         </aside>
       </div>
@@ -119,7 +113,7 @@ if (sermon.youtubeId) {
       {related.length > 0 && (
         <section class="sermon__section" id="related" aria-labelledby="related-heading">
           <h2 id="related-heading">Related sermons</h2>
-          <ul class="cards" role="list">{related.map((s) => <SermonCard sermon={s} />)}</ul>
+          <JournalList sermons={related} />
         </section>
       )}
 
@@ -129,24 +123,4 @@ if (sermon.youtubeId) {
       </nav>
     </div>
   </article>
-  <script is:inline>
-    // Swap the video still for the YouTube player only when someone presses play.
-    document.querySelectorAll("a[data-youtube]").forEach(function (link) {
-      link.addEventListener("click", function (event) {
-        if (event.metaKey || event.ctrlKey || event.shiftKey) return;
-        event.preventDefault();
-        var frame = document.createElement("iframe");
-        frame.src = "https://www.youtube-nocookie.com/embed/" + link.dataset.youtube + "?autoplay=1&rel=0";
-        frame.title = link.dataset.title || "Sermon video";
-        frame.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen";
-        frame.allowFullscreen = true;
-        frame.referrerPolicy = "strict-origin-when-cross-origin";
-        var holder = document.createElement("div");
-        holder.className = "video";
-        holder.setAttribute("data-playing", "");
-        holder.appendChild(frame);
-        link.replaceWith(holder);
-      });
-    });
-  </script>
 </BaseLayout>

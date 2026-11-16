@@ -16,7 +16,7 @@ export const home = homeData as unknown as { seo: Page["seo"]; copy: Record<stri
 
 export const SITE = "https://www.savinggrace.org.au";
 export const SITE_NAME = "Saving Grace Bible Church";
-export const ARCHIVE_PAGE_SIZE = 12;
+export const ARCHIVE_PAGE_SIZE = 9;
 
 export const pageById = (id: string) => pages.find((page) => page.id === id);
 export const imageFor = (id?: string | null) => (id ? images[id] : undefined);
@@ -29,11 +29,11 @@ export const taxonomyLabels: Record<TaxonomyKind, { singular: string; plural: st
   speaker: { singular: "Speaker", plural: "Speakers", path: "/sermons/speaker/" },
   series: { singular: "Series", plural: "Series", path: "/sermons/series/" },
   book: { singular: "Bible book", plural: "Bible books", path: "/sermons/book/" },
-  topic: { singular: "Topic", plural: "Topics", path: "/sermons/topic/" },
+  passage: { singular: "Passage", plural: "Passages", path: "/sermons/passage/" },
 };
 
 export function sermonsFor(kind: TaxonomyKind, slug: string): Sermon[] {
-  const field = { speaker: "speakers", series: "series", book: "books", topic: "topics" }[kind] as "speakers" | "series" | "books" | "topics";
+  const field = { speaker: "speakers", series: "series", book: "books", passage: "passages" }[kind] as "speakers" | "series" | "books" | "passages";
   return sermons.filter((sermon) => sermon[field].includes(slug));
 }
 
