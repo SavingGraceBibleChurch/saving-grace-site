@@ -1,0 +1,25 @@
+---
+import Picture from "./Picture.astro";
+import { inline } from "../lib/markup";
+
+export interface Trail { label: string; href: string }
+interface Props {
+  title: string;
+  trail?: Trail[];
+  eyebrow?: string | null;
+  lede?: string | null;
+  hero?: { media: string; treatment?: string; alt?: string; enabled?: boolean } | null;
+}
+const { title, trail = [], eyebrow, lede, hero } = Astro.props;
+const showHero = hero && hero.enabled !== false;
+---
+<header class:list={["page__head", { "page__head--aside": showHero }]}>
+  <div class="page__head-text">
+    {trail.length > 0 && <nav aria-label="Breadcrumb"><ol class="trail" role="list">{trail.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ol></nav>}
+    <h1 class:list={["page__title", { "page__title--long": title.length > 32 }]}>{title}</h1>
+    {eyebrow && eyebrow !== title && <p class="page__category">{eyebrow}</p>}
+    {lede && <p class="lede page__lede" set:html={inline(lede)} />}
+    <slot />
+  </div>
+  {showHero && <div class="page__head-picture"><Picture id={hero!.media} class="page__head-image" alt={hero!.alt ?? ""} eager /></div>}
+</header>

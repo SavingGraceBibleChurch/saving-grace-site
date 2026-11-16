@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHead from "../../components/PageHead.astro";
+import { events, venues, occurrencesBetween, scheduleLabel, isRecurring, formatLongDate, formatTimeRange, melbourneToday, addDays } from "../../lib/events";
+import { pageById, imageFor, SITE, SITE_NAME } from "../../lib/content";
+import { inline, plainText } from "../../lib/markup";
+import type { ChurchEvent } from "../../lib/types";
+
+export function getStaticPaths() {
+  return events.map((event) => ({ params: { slug: event.path.split("/")[2] }, props: { event } }));
+}
+const { event } = Astro.props as { event: ChurchEvent };
+const today = melbourneToday();
+const next = occurrencesBetween(event, today, addDays(today, 366), 6);
+const venue = venues[event.venue];
+const ministry = event.page ? pageById(event.page) : undefined;
+const image = imageFor(event.media);
+const description = plainText(event.description[0] ?? `${event.title} at ${SITE_NAME}. ${scheduleLabel(event)}.`).slice(0, 300);
+const firstDate = next[0]?.date ?? (event.schedule.kind === "single" ? event.schedule.date : null);
+const jsonLd = firstDate && venue ? [{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: event.title,
+  description,
+  startDate: `${firstDate}T${event.start}:00+10:00`,
+  endDate: `${firstDate}T${event.end}:00+10:00`,
+  eventStatus: "https://schema.org/EventScheduled",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  location: { "@type": "Place", name: venue.name, address: `${venue.address}, ${venue.locality}` },
+  organizer: { "@type": "Organization", name: SITE_NAME, url: `${SITE}/` },
+  image: image ? `${SITE}${image.src}` : `${SITE}/brand/saving-grace-logo.png`,
+  url: `${SITE}${event.path}`,
+}] : [];
+---
+<BaseLayout
+  title={`${event.title} - ${SITE_NAME} - Bible-Based Worship in Melbourne`}
+  description={description}
+  canonical={event.path}
+  ogImage={image?.src}
+  breadcrumbs={[{ name: "Home", path: "/" }, { name: "Events", path: "/events/" }, { name: event.title, path: event.path }]}
+  jsonLd={jsonLd}
+>
+  <article class="page page--event">
+    <PageHead title={event.title} trail={[{ label: "Home", href: "/" }, { label: "News & Events", href: "/events/" }]} eyebrow={isRecurring(event) ? "Regular gathering" : "Event"} lede={scheduleLabel(event)} hero={event.media ? { media: event.media, treatment: "aside" } : null} />
+    <div class="page__body">
+      <div class="event-detail">
+        <section class="event-detail__dates" aria-labelledby="dates-heading">
+          <h2 id="dates-heading" class="page__h2">{next.length > 1 ? "Next dates" : "When"}</h2>
+          {next.length
+            ? <ul class="page__list" role="list">{next.map((o) => <li><time datetime={`${o.date}T${o.start}`}>{formatLongDate(o.date)}</time>, {formatTimeRange(o.start, o.end)}</li>)}</ul>
+            : <p>{event.schedule.kind === "single" ? `This event took place on ${formatLongDate(event.schedule.date)}, ${formatTimeRange(event.start, event.end)}.` : "No upcoming date is scheduled."}</p>}
+        </section>
+        {venue && (
+          <section class="event-detail__venue" aria-labelledby="venue-heading">
+            <h2 id="venue-heading" class="page__h2">Where</h2>
+            <address class="contact-panel__address"><strong>{venue.name}</strong><span>{venue.address}</span><span>{venue.locality}</span>{venue.phone && <span><a href={`tel:+61${venue.phone.replace(/\D/g, "").replace(/^0/, "")}`}>{venue.phone}</a></span>}</address>
+            {venue.mapHref && <p><a href={venue.mapHref} rel="noopener">Get directions →<span class="sr-only"> (external site)</span></a></p>}
+          </section>
+        )}
+      </div>
+      {event.description.map((text) => <p set:html={inline(text)} />)}
+      {ministry && <p><a class="button button--outline" href={ministry.path}>More about {ministry.navTitle}</a></p>}
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import type { Occurrence } from "../lib/events";
+import { formatLongDate, formatTimeRange, monthAbbreviation, dayOfMonth, isRecurring, venues } from "../lib/events";
+
+interface Props { occurrence: Occurrence }
+const { occurrence } = Astro.props;
+const venue = venues[occurrence.event.venue];
+---
+<li class="event">
+  <span class="event__date"><span class="event__month">{monthAbbreviation(occurrence.date)}</span><span class="event__day">{dayOfMonth(occurrence.date)}</span></span>
+  <span class="event__body">
+    <span class="event__time"><time datetime={`${occurrence.date}T${occurrence.start}`}>{formatLongDate(occurrence.date)}, {formatTimeRange(occurrence.start, occurrence.end)}</time>{isRecurring(occurrence.event) && <span class="sr-only"> (recurring)</span>}</span>
+    <span class="event__title"><a href={occurrence.event.path}>{occurrence.event.title}</a></span>
+    {venue && <span class="event__venue">{venue.name}, {venue.address}, {venue.locality}</span>}
+  </span>
+</li>

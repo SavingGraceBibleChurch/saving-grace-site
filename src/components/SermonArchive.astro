@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHead from "./PageHead.astro";
+import SermonCard from "./SermonCard.astro";
+import Pagination from "./Pagination.astro";
+import { sermons, termsOf, taxonomyLabels, ARCHIVE_PAGE_SIZE, chunk, SITE } from "../lib/content";
+
+interface Props { page: number }
+const { page } = Astro.props;
+const pages = chunk(sermons, ARCHIVE_PAGE_SIZE);
+const items = pages[page - 1] ?? [];
+const base = "/sermons/";
+const path = page === 1 ? base : `${base}page/${page}/`;
+const title = page === 1
+  ? "Sermons - Saving Grace Bible Church - Bible-Based Worship in Melbourne"
+  : `Sermons - Saving Grace Bible Church - Bible-Based Worship in Melbourne - Page ${page}`;
+const speakers = termsOf("speaker").sort((a, b) => b.count - a.count);
+const books = termsOf("book").filter((b) => b.slug !== "selected-text").sort((a, b) => b.count - a.count);
+const series = termsOf("series").sort((a, b) => b.count - a.count).slice(0, 12);
+---
+<BaseLayout
+  title={title}
+  description={page === 1 ? "Watch and listen to Christ-centred, expository sermons preached at Saving Grace Bible Church in Westmeadows, Melbourne. Browse by speaker, series, Bible book or topic." : ""}
+  canonical={path}
+  indexable={page === 1}
+  breadcrumbs={[{ name: "Home", path: "/" }, { name: "Sermons", path: "/sermons/" }]}
+  jsonLd={page === 1 ? [{ "@context": "https://schema.org", "@type": "CollectionPage", "@id": `${SITE}/sermons/#webpage`, url: `${SITE}/sermons/`, name: "Sermons", inLanguage: "en-AU", isPartOf: { "@id": `${SITE}/#website` } }] : []}
+>
+  <article class="page page--sermons">
+    <PageHead title={page === 1 ? "Sermons" : `Sermons — page ${page}`} trail={[{ label: "Home", href: "/" }]} eyebrow={`${sermons.length} sermons`}>
+      <form class="sermon-search" method="get" action="/search/" role="search" aria-label="Search sermons" id="sermon-search">
+        <label class="sr-only" for="sermon-search-input">Search sermons</label>
+        <input id="sermon-search-input" class="control" type="search" name="q" placeholder="Search titles, passages and topics" maxlength="120" />
+        <button class="button" type="submit">Search</button>
+      </form>
+    </PageHead>
+    {page === 1 && (
+      <nav class="sermon-browse" aria-label="Browse sermons">
+        <div class="sermon-browse__group"><h2 class="sermon-browse__title"><a href={taxonomyLabels.speaker.path}>Speakers</a></h2><ul role="list">{speakers.map((t) => <li><a href={t.path}>{t.name}</a></li>)}</ul></div>
+        <div class="sermon-browse__group"><h2 class="sermon-browse__title"><a href={taxonomyLabels.book.path}>Bible books</a></h2><ul role="list">{books.map((t) => <li><a href={t.path}>{t.name}</a></li>)}</ul></div>
+        <div class="sermon-browse__group"><h2 class="sermon-browse__title"><a href={taxonomyLabels.series.path}>Series</a></h2><ul role="list">{series.map((t) => <li><a href={t.path}>{t.name}</a></li>)}<li><a href={taxonomyLabels.series.path}>All series…</a></li></ul></div>
+        <div class="sermon-browse__group"><h2 class="sermon-browse__title"><a href={taxonomyLabels.topic.path}>Topics</a></h2><p><a href={taxonomyLabels.topic.path}>Browse {termsOf("topic").length} topics</a></p></div>
+      </nav>
+    )}
+    <section class="section" aria-labelledby="results-heading" id="results">
+      <h2 id="results-heading" class="section__title">{page === 1 ? "Latest sermons" : `Sermons ${(page - 1) * ARCHIVE_PAGE_SIZE + 1}–${(page - 1) * ARCHIVE_PAGE_SIZE + items.length}`}</h2>
+      <ul class="cards" role="list">{items.map((sermon, index) => <SermonCard sermon={sermon} latest={page === 1 && index === 0} />)}</ul>
+      <Pagination current={page} total={pages.length} base={base} />
+    </section>
+  </article>
+</BaseLayout>

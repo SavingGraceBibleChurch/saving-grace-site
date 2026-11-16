@@ -1,0 +1,11 @@
+---
+import SermonArchive from "../../../components/SermonArchive.astro";
+import { sermons, ARCHIVE_PAGE_SIZE } from "../../../lib/content";
+
+export function getStaticPaths() {
+  const total = Math.ceil(sermons.length / ARCHIVE_PAGE_SIZE);
+  return Array.from({ length: total - 1 }, (_, i) => ({ params: { n: String(i + 2) } }));
+}
+const page = Number(Astro.params.n);
+---
+<SermonArchive page={page} />

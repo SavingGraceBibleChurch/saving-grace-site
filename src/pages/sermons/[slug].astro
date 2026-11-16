@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SermonCard from "../../components/SermonCard.astro";
+import { sermons, term, speakerName, sermonSummary, youtubeThumbnail, SITE, SITE_NAME } from "../../lib/content";
+import { bookGroup } from "../../lib/books";
+import { formatDate } from "../../lib/events";
+import type { Sermon } from "../../lib/types";
+
+export function getStaticPaths() {
+  return sermons.map((sermon) => ({ params: { slug: sermon.slug }, props: { sermon } }));
+}
+
+const { sermon } = Astro.props as { sermon: Sermon };
+const speakers = sermon.speakers.map((slug) => term("speaker", slug)).filter((t) => t !== undefined);
+const series = sermon.series.map((slug) => term("series", slug)).filter((t) => t !== undefined);
+const books = sermon.books.map((slug) => term("book", slug)).filter((t) => t !== undefined);
+const topics = sermon.topics.map((slug) => term("topic", slug)).filter((t) => t !== undefined);
+const mainBook = sermon.books.find((slug) => slug !== "selected-text");
+const description = sermon.seo.description || sermonSummary(sermon);
+
+// Related: the rest of the same series first, then the same book, newest first.
+const related: Sermon[] = [];
+const add = (list: Sermon[]) => {
+  for (const s of list) if (s.slug !== sermon.slug && !related.includes(s) && related.length < 3) related.push(s);
+};
+add(sermons.filter((s) => s.series.some((x) => sermon.series.includes(x) && x !== "topical")));
+if (mainBook) add(sermons.filter((s) => s.books.includes(mainBook)));
+add(sermons.filter((s) => s.speakers.some((x) => sermon.speakers.includes(x))));
+
+const index = sermons.indexOf(sermon);
+const newer = sermons[index - 1];
+const older = sermons[index + 1];
+
+const jsonLd: Record<string, unknown>[] = [];
+if (sermon.youtubeId) {
+  jsonLd.push({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: sermon.title,
+    description,
+    thumbnailUrl: [youtubeThumbnail(sermon.youtubeId)],
+    uploadDate: `${sermon.date}T10:30:00+10:00`,
+    embedUrl: `https://www.youtube.com/embed/${sermon.youtubeId}`,
+    contentUrl: `https://www.youtube.com/watch?v=${sermon.youtubeId}`,
+    inLanguage: "en-AU",
+    publisher: { "@type": "Organization", name: SITE_NAME, logo: { "@type": "ImageObject", url: `${SITE}/brand/saving-grace-logo.png` } },
+  });
+}
+---
+<BaseLayout
+  title={sermon.seo.title}
+  description={description}
+  canonical={sermon.seo.canonical ?? sermon.path}
+  indexable={sermon.seo.indexable}
+  ogType="article"
+  ogTitle={sermon.seo.ogTitle}
+  ogImage={sermon.youtubeId ? youtubeThumbnail(sermon.youtubeId) : undefined}
+  breadcrumbs={[{ name: "Home", path: "/" }, { name: sermon.title, path: sermon.path }]}
+  jsonLd={jsonLd}
+>
+  <article class={`sermon hue--${bookGroup(mainBook)}`} data-pagefind-meta={`date:${sermon.date}`}>
+
+    <aside class="sermon__rail" aria-label="Sermon details">
+      <div class="rail">
+        <dl class="rail__meta">
+          <dt>Preached</dt><dd>{formatDate(sermon.date)}</dd>
+          {speakers.length > 0 && <><dt>Speaker</dt><dd>{speakers.map((s, i) => <>{i > 0 && ", "}<a href={s!.path}>{s!.name}</a></>)}</dd></>}
+          {series.length > 0 && <><dt>Series</dt><dd>{series.map((s, i) => <>{i > 0 && ", "}<a href={s!.path}>{s!.name}</a></>)}</dd></>}
+          {sermon.passage && <><dt>Passage</dt><dd>{sermon.passage}</dd></>}
+          {books.length > 0 && <><dt>Bible book</dt><dd>{books.map((b, i) => <>{i > 0 && ", "}<a href={b!.path}>{b!.name}</a></>)}</dd></>}
+          {topics.length > 0 && <><dt>Topics</dt><dd>{topics.map((t, i) => <>{i > 0 && ", "}<a href={t!.path}>{t!.name}</a></>)}</dd></>}
+        </dl>
+      </div>
+    </aside>
+
+    <div class="sermon__body">
+      <header class="sermon__head">
+        <nav aria-label="Breadcrumb"><ol class="trail" role="list"><li><a href="/">Home</a></li><li><a href="/sermons/">Sermons</a></li>{books[0] && <li><a href={books[0].path}>{books[0].name}</a></li>}</ol></nav>
+        {sermon.passage && <p class="sermon__stamp">{sermon.passage}</p>}
+        <h1 class:list={["sermon__title", { "is-long": sermon.title.length > 40 }]}>{sermon.seo.h1 ?? sermon.title}</h1>
+        <p class="sermon__meta">
+          <span><time datetime={sermon.date}>{formatDate(sermon.date)}</time></span>
+          {speakers.map((s) => <span><a href={s!.path}>{s!.name}</a></span>)}
+          {series.map((s) => <span><a href={s!.path}>{s!.name}</a></span>)}
+        </p>
+      </header>
+      <section class="sermon-section sermon-section--media" id="watch" aria-labelledby="watch-heading">
+        <h2 id="watch-heading" class="sr-only">Watch or listen</h2>
+        {sermon.youtubeId && (
+          <figure class="video-embed">
+            <iframe src={`https://www.youtube-nocookie.com/embed/${sermon.youtubeId}`} title={`${sermon.title} — ${speakerName(sermon)}`} loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </figure>
+        )}
+        {sermon.sermonAudioId && (
+          <div class="audio-embed">
+            <iframe src={`https://embed.sermonaudio.com/player/a/${sermon.sermonAudioId}/?mini=true`} title={`Listen to ${sermon.title} on SermonAudio`} loading="lazy" height="60"></iframe>
+          </div>
+        )}
+        <p class="media-links">
+          {sermon.youtubeId && <a href={`https://www.youtube.com/watch?v=${sermon.youtubeId}`} rel="noopener">Watch on YouTube<span class="sr-only"> (external site)</span></a>}
+          {sermon.sermonAudioId && <a href={`https://www.sermonaudio.com/sermons/${sermon.sermonAudioId}`} rel="noopener">Listen on SermonAudio<span class="sr-only"> (external site)</span></a>}
+        </p>
+      </section>
+
+      {related.length > 0 && (
+        <section class="sermon-section" id="related" aria-labelledby="related-heading">
+          <h2 id="related-heading" class="section__title">Related sermons</h2>
+          <ul class="cards" role="list">{related.map((s) => <SermonCard sermon={s} />)}</ul>
+        </section>
+      )}
+
+      <nav class="sermon-step" aria-label="More sermons">
+        {newer && <a class="sermon-step__link" href={newer.path} rel="prev"><span class="sermon-step__label">Newer sermon</span>{newer.title}</a>}
+        {older && <a class="sermon-step__link sermon-step__link--older" href={older.path} rel="next"><span class="sermon-step__label">Older sermon</span>{older.title}</a>}
+      </nav>
+    </div>
+  </article>
+</BaseLayout>

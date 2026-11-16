@@ -1,0 +1,272 @@
+{
+ "entrance": {
+  "src": "/media/entrance.jpg",
+  "width": 289,
+  "height": 510,
+  "alt": "The entrance to Saving Grace Bible Church at Unit 5/217-219 Mickleham Road, Westmeadows, with the church sign above the glass doors."
+ },
+ "congregation": {
+  "src": "/media/congregation.jpg",
+  "width": 1600,
+  "height": 1204,
+  "alt": "The congregation seated for a Lord's Day service, seen from the back of the hall."
+ },
+ "fellowship": {
+  "src": "/media/fellowship.jpg",
+  "width": 1400,
+  "height": 788,
+  "alt": "A collage of church life at Saving Grace Bible Church: fellowship, meals, Bible study and worship."
+ },
+ "lords-day": {
+  "src": "/media/lords-day.jpg",
+  "width": 1400,
+  "height": 933,
+  "alt": "Lord's Day Services: the congregation gathered under the church hall's roof beams."
+ },
+ "merge": {
+  "src": "/media/merge.jpg",
+  "width": 1400,
+  "height": 647,
+  "alt": "The merged congregation of Saving Grace Bible Church and East Keilor Evangelical Christian Church photographed together outside the church."
+ },
+ "early-church": {
+  "src": "/media/early-church.jpg",
+  "width": 1600,
+  "height": 452,
+  "alt": "The early congregation of Saving Grace Bible Church gathered in a hall in 2017."
+ },
+ "wesam": {
+  "src": "/media/wesam.jpg",
+  "width": 640,
+  "height": 666,
+  "alt": "Pastor Wesam Saad."
+ },
+ "ralph": {
+  "src": "/media/ralph.jpg",
+  "width": 640,
+  "height": 663,
+  "alt": "Elder Ralph Gambardella."
+ },
+ "ralph-music": {
+  "src": "/media/ralph-music.jpg",
+  "width": 200,
+  "height": 240,
+  "alt": "Ralph Gambardella, Music Ministry leader."
+ },
+ "elders": {
+  "src": "/media/elders.jpg",
+  "width": 1200,
+  "height": 675,
+  "alt": "Pastor Wesam Saad and Elder Ralph Gambardella standing together."
+ },
+ "tulips": {
+  "src": "/media/tulips.png",
+  "width": 408,
+  "height": 612,
+  "alt": "A bunch of white tulips, a reminder of the TULIP summary of Reformed doctrine."
+ },
+ "books": {
+  "src": "/media/books.jpg",
+  "width": 1200,
+  "height": 798,
+  "alt": ""
+ },
+ "cross-sunset": {
+  "src": "/media/cross-sunset.jpg",
+  "width": 1600,
+  "height": 429,
+  "alt": ""
+ },
+ "bible-rose": {
+  "src": "/media/bible-rose.jpg",
+  "width": 640,
+  "height": 960,
+  "alt": "An open Bible with a white rose resting on its pages."
+ },
+ "baptism-water": {
+  "src": "/media/baptism-water.jpg",
+  "width": 600,
+  "height": 338,
+  "alt": "Water, the element of believer's baptism."
+ },
+ "open-bible": {
+  "src": "/media/open-bible.jpg",
+  "width": 1000,
+  "height": 750,
+  "alt": "An open Bible resting on stones."
+ },
+ "cross-field": {
+  "src": "/media/cross-field.jpg",
+  "width": 1443,
+  "height": 349,
+  "alt": ""
+ },
+ "pen": {
+  "src": "/media/pen.jpg",
+  "width": 1000,
+  "height": 659,
+  "alt": "A fountain pen resting on handwritten pages."
+ },
+ "bible-shelf": {
+  "src": "/media/bible-shelf.jpg",
+  "width": 1600,
+  "height": 333,
+  "alt": ""
+ },
+ "bible-study-invitation": {
+  "src": "/media/bible-study-invitation.jpg",
+  "width": 300,
+  "height": 200,
+  "alt": "Saving Grace Bible Church Bible Study, Tuesdays at 7:00 PM: an open Bible beside a lantern."
+ },
+ "end-times": {
+  "src": "/media/end-times.jpg",
+  "width": 720,
+  "height": 720,
+  "alt": "Biblical End Times: join us at Saving Grace Bible Church every Tuesday at 7:00 p.m."
+ },
+ "child-reading": {
+  "src": "/media/child-reading.jpg",
+  "width": 1000,
+  "height": 668,
+  "alt": "A laughing child sitting on a bench with a book."
+ },
+ "good-news": {
+  "src": "/media/good-news.jpg",
+  "width": 675,
+  "height": 675,
+  "alt": "A poster on a wall reading Good News Is Coming."
+ },
+ "mens-ministry": {
+  "src": "/media/mens-ministry.jpg",
+  "width": 1000,
+  "height": 668,
+  "alt": "A man walking with a Bible and a leather bag."
+ },
+ "womens-ministry": {
+  "src": "/media/womens-ministry.jpg",
+  "width": 1000,
+  "height": 667,
+  "alt": "Two women walking arm in arm carrying flowers."
+ },
+ "mens-bible-study": {
+  "src": "/media/mens-bible-study.jpg",
+  "width": 800,
+  "height": 533,
+  "alt": "Men studying open Bibles together around a wooden table."
+ },
+ "womens-prayer": {
+  "src": "/media/womens-prayer.jpg",
+  "width": 600,
+  "height": 400,
+  "alt": "Women praying together with joined hands around a table."
+ },
+ "teaching": {
+  "src": "/media/teaching.jpg",
+  "width": 1000,
+  "height": 563,
+  "alt": "A man in a suit holding an open Bible."
+ },
+ "worship-team": {
+  "src": "/media/worship-team.jpg",
+  "width": 1200,
+  "height": 600,
+  "alt": "The Saving Grace Bible Church worship team singing and playing guitar during a service."
+ },
+ "music-sheet": {
+  "src": "/media/music-sheet.jpg",
+  "width": 800,
+  "height": 534,
+  "alt": "Sheet music."
+ },
+ "membership-roll": {
+  "src": "/media/membership-roll.jpg",
+  "width": 700,
+  "height": 933,
+  "alt": "An old church membership roll book."
+ },
+ "hands": {
+  "src": "/media/hands.jpg",
+  "width": 640,
+  "height": 960,
+  "alt": "Several hands joined together in the centre."
+ },
+ "evening-blossom": {
+  "src": "/media/evening-blossom.jpg",
+  "width": 1000,
+  "height": 667,
+  "alt": "Blossom on a branch against an evening sky."
+ },
+ "sunset": {
+  "src": "/media/sunset.jpg",
+  "width": 1600,
+  "height": 480,
+  "alt": ""
+ },
+ "old-book": {
+  "src": "/media/old-book.jpg",
+  "width": 900,
+  "height": 600,
+  "alt": "A well-worn old book."
+ },
+ "grace": {
+  "src": "/media/grace.jpg",
+  "width": 1000,
+  "height": 667,
+  "alt": "Wooden letter tiles spelling the word GRACE beside a bouquet of dried flowers."
+ },
+ "lit-cross": {
+  "src": "/media/lit-cross.jpg",
+  "width": 600,
+  "height": 800,
+  "alt": "A cross lit against a blue wall."
+ },
+ "welcome-door": {
+  "src": "/media/welcome-door.jpg",
+  "width": 900,
+  "height": 1200,
+  "alt": "Members of the congregation greeting one another at the church door."
+ },
+ "fight-like-a-man": {
+  "src": "/media/fight-like-a-man.jpg",
+  "width": 302,
+  "height": 466,
+  "alt": "Book cover: Fight Like a Man, a bold, biblical battle plan for personal purity, by Emeal Zwayne."
+ },
+ "blessing-of-humility": {
+  "src": "/media/blessing-of-humility.jpg",
+  "width": 420,
+  "height": 630,
+  "alt": "Book cover: The Blessing of Humility by Jerry Bridges."
+ },
+ "preaching-and-preachers": {
+  "src": "/media/preaching-and-preachers.jpg",
+  "width": 328,
+  "height": 500,
+  "alt": "Book cover: Preaching and Preachers by Dr Martyn Lloyd-Jones."
+ },
+ "called-to-preach": {
+  "src": "/media/called-to-preach.jpg",
+  "width": 400,
+  "height": 618,
+  "alt": "Book cover: Called to Preach, fulfilling the high calling of expository preaching, by Steven J. Lawson."
+ },
+ "logo-white": {
+  "src": "/media/logo-white.png",
+  "width": 300,
+  "height": 178,
+  "alt": "Saving Grace Bible Church"
+ },
+ "favicon-32": {
+  "src": "/media/favicon-32.png",
+  "width": 32,
+  "height": 32,
+  "alt": ""
+ },
+ "icon-192": {
+  "src": "/media/icon-192.png",
+  "width": 192,
+  "height": 192,
+  "alt": ""
+ }
+}

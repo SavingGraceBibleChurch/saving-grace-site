@@ -1,0 +1,30 @@
+---
+import type { Sermon } from "../lib/types";
+import { term, speakerName } from "../lib/content";
+import { bookGroup, groupLabel } from "../lib/books";
+import { formatDate } from "../lib/events";
+
+interface Props { sermon: Sermon; headingLevel?: 2 | 3; latest?: boolean }
+const { sermon, headingLevel = 3, latest = false } = Astro.props;
+const Heading = `h${headingLevel}` as "h2" | "h3";
+const bookSlug = sermon.books.find((slug) => slug !== "selected-text") ?? null;
+const book = bookSlug ? term("book", bookSlug) : undefined;
+const group = bookGroup(bookSlug);
+const series = sermon.series.map((slug) => term("series", slug)).filter(Boolean)[0];
+const titleSize = sermon.title.length >= 64 ? " is-longest" : sermon.title.length >= 48 ? " is-long" : "";
+---
+<li>
+  <article class:list={["card", `hue--${group}`, { "card--latest": latest }]}>
+    <div class="card__plate" aria-hidden="true">
+      <span class="card__group">{groupLabel(group)}</span>
+      <span class="card__bookname">{book?.name ?? "Topical"}</span>
+      {sermon.passage && <span class="card__ref">{sermon.passage}</span>}
+    </div>
+    <div class="card__body">
+      <p class="card__top"><time datetime={sermon.date}>{formatDate(sermon.date)}</time>{series && <span class="card__series"> · {series.name}</span>}</p>
+      <Heading class={`card__title${titleSize}`}><a href={sermon.path}>{sermon.title}</a></Heading>
+      <p class="card__meta">{speakerName(sermon)}{sermon.passage && <span> · {sermon.passage}</span>}</p>
+    </div>
+    <p class="card__foot"><span class="card__cta" aria-hidden="true">Watch the sermon</span>{book && <a class="card__booklink" href={book.path}><span class="sr-only">Book: </span>{book.name}</a>}</p>
+  </article>
+</li>

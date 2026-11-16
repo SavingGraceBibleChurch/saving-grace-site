@@ -1,0 +1,77 @@
+---
+import { primaryNav, notice, givingPath } from "../lib/site";
+
+interface Props { currentPath: string; search?: boolean }
+const { currentPath, search = true } = Astro.props;
+const active = (href: string) => href !== "/" && currentPath.startsWith(href);
+---
+<aside class="notice" aria-label="Church notice" data-pagefind-ignore><div class="notice__inner"><span class="notice__pin" aria-hidden="true"></span><p>{notice}</p></div></aside>
+<header class="masthead" id="top" data-site-header data-pagefind-ignore>
+  <div class="masthead__inner">
+    <a class="brand" href="/"><img class="brand__logo" src="/brand/saving-grace-logo.png" width="300" height="178" alt="Saving Grace Bible Church" decoding="async" /><span class="sr-only">, Home</span></a>
+    <button class="masthead__mobile-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" data-site-toggle hidden>Menu<span class="masthead__chevron" aria-hidden="true"></span></button>
+    <nav class="masthead__nav" id="primary-navigation" aria-label="Primary">
+      <ul class="masthead__links">
+        {primaryNav.map((item) =>
+          item.menu ? (
+            <li class="masthead__links-menu">
+              <details class="masthead__menu" data-menu>
+                <summary class:list={["masthead__menu-toggle", { "is-active": active(item.href) || item.menu.some((link) => link.href === currentPath) }]} aria-controls={`menu-${item.label.toLowerCase().replace(/\W+/g, "-")}`}>{item.label}<span class="masthead__chevron" aria-hidden="true"></span></summary>
+                <ul class="masthead__dropdown masthead__dropdown--wide" id={`menu-${item.label.toLowerCase().replace(/\W+/g, "-")}`}>
+                  {item.menu.map((link) => (
+                    <li class:list={{ "masthead__dropdown-sub": link.sub }}>
+                      <a href={link.href} aria-current={link.href === currentPath ? "page" : undefined}>{link.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
+          ) : (
+            <li><a href={item.href} aria-current={item.href === currentPath ? "page" : undefined}>{item.label}</a></li>
+          )
+        )}
+      </ul>
+    </nav>
+    <div class="masthead__actions">
+      {search && (
+        <form class="masthead__search" method="get" action="/search/" role="search" aria-label="Search the website">
+          <label class="sr-only" for="masthead-search">Search sermons and pages</label>
+          <input id="masthead-search" class="control" name="q" type="search" maxlength="120" placeholder="Search sermons" autocomplete="off" />
+          <button class="button button--outline" type="submit">Search</button>
+        </form>
+      )}
+      <a class="masthead__search-link" href="/search/">Search</a>
+      <a class="button masthead__give" href={givingPath}>Give</a>
+    </div>
+  </div>
+</header>
+<script is:inline>
+(function () {
+  var header = document.querySelector('[data-site-header]');
+  var toggle = document.querySelector('[data-site-toggle]');
+  if (!header || !toggle) return;
+  header.classList.add('masthead--compact');
+  toggle.hidden = false;
+  var nav = header.querySelector('[aria-label="Primary"]');
+  var compact = window.matchMedia('(max-width: 76rem)');
+  function fitPanel() { header.style.setProperty('--nav-header-bottom', Math.max(0, header.getBoundingClientRect().bottom) + 'px'); }
+  function setOpen(open, returnFocus) {
+    if (open) fitPanel();
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) header.setAttribute('data-nav-open', ''); else header.removeAttribute('data-nav-open');
+    if (!open && nav) nav.querySelectorAll('details[open]').forEach(function (menu) { menu.open = false; });
+    if (returnFocus) toggle.focus();
+  }
+  toggle.addEventListener('click', function () { setOpen(toggle.getAttribute('aria-expanded') !== 'true', false); });
+  header.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { event.preventDefault(); setOpen(false, true); }
+  });
+  document.addEventListener('click', function (event) {
+    if (!header.contains(event.target)) setOpen(false, false);
+    if (nav) nav.querySelectorAll('details[open]').forEach(function (menu) { if (!menu.contains(event.target)) menu.open = false; });
+  });
+  header.addEventListener('focusout', function (event) { if (event.relatedTarget && !header.contains(event.relatedTarget)) setOpen(false, false); });
+  window.addEventListener('resize', fitPanel);
+  compact.addEventListener('change', function () { setOpen(false, compact.matches && nav && nav.contains(document.activeElement)); });
+})();
+</script>

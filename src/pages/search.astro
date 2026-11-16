@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHead from "../components/PageHead.astro";
+---
+<BaseLayout title="Search - Saving Grace Bible Church - Bible-Based Worship in Melbourne" description="Search sermons and pages on the Saving Grace Bible Church website." canonical="/search/" indexable={false} search={false}>
+  <link slot="head" href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <article class="page page--search" data-pagefind-ignore>
+    <PageHead title="Search" trail={[{ label: "Home", href: "/" }]} lede="Search every sermon, page and article." />
+    <div class="page__body">
+      <div id="search"></div>
+      <noscript><p>Search needs JavaScript. You can still <a href="/sermons/">browse all sermons</a> or <a href="/pages/sitemap/">see every page</a>.</p></noscript>
+    </div>
+  </article>
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener("DOMContentLoaded", function () {
+      var ui = new PagefindUI({ element: "#search", showSubResults: true, showImages: false, resetStyles: false });
+      var q = new URLSearchParams(location.search).get("q") || new URLSearchParams(location.search).get("s");
+      if (q) ui.triggerSearch(q);
+    });
+  </script>
+</BaseLayout>

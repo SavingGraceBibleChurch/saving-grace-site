@@ -1,0 +1,28 @@
+{
+ "pages": 28,
+ "posts": 3,
+ "sermons": 463,
+ "taxonomyPages": {
+  "speaker": 7,
+  "series": 29,
+  "book": 22,
+  "topic": 384
+ },
+ "events": 10,
+ "redirects": 2391,
+ "wordpressRedirectionKept": 14,
+ "wordpressRedirectionDropped": {
+  "external or staging destination": 759,
+  "destination no longer exists": 7
+ },
+ "sermonsWithoutCapture": [
+  "/sermons/angry-little-johnny/",
+  "/sermons/thomas-the-brave-2/"
+ ],
+ "warnings": [
+  "no live capture for /sermons/angry-little-johnny/; using fallback SEO",
+  "no live capture for /sermons/thomas-the-brave-2/; using fallback SEO",
+  "unlinked unpublished target /events/calendar.ics",
+  "unlinked unpublished target /what-we-teach/lordship-salvation/"
+ ]
+}

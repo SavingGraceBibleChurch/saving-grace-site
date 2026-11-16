@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHead from "../../components/PageHead.astro";
+import Blocks from "../../components/Blocks.astro";
+import { pageById, SITE } from "../../lib/content";
+import liveCapture from "../../data/events-seo.json";
+
+// The live /events/ archive keeps its title; its content comes from the church's Events page.
+const page = pageById("events")!;
+const seo = liveCapture as { title: string; description: string };
+---
+<BaseLayout
+  title={seo.title}
+  description={seo.description || page.seo.description}
+  canonical="/events/"
+  breadcrumbs={[{ name: "Home", path: "/" }, { name: "Events", path: "/events/" }]}
+  jsonLd={[{ "@context": "https://schema.org", "@type": "CollectionPage", url: `${SITE}/events/`, name: "News & Events", inLanguage: "en-AU" }]}
+>
+  <article class="page page--events">
+    <PageHead title="News & Events" trail={[{ label: "Home", href: "/" }]} eyebrow={page.eyebrow} lede={page.lede} hero={page.hero} />
+    <Blocks blocks={page.blocks} />
+  </article>
+</BaseLayout>

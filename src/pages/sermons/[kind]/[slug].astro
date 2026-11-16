@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PageHead from "../../../components/PageHead.astro";
+import SermonList from "../../../components/SermonList.astro";
+import { taxonomyTerms, taxonomyLabels, sermonsFor, SITE } from "../../../lib/content";
+import type { TaxonomyTerm } from "../../../lib/types";
+
+export function getStaticPaths() {
+  return taxonomyTerms.map((t) => ({ params: { kind: t.kind, slug: t.slug }, props: { t } }));
+}
+const { t } = Astro.props as { t: TaxonomyTerm };
+const label = taxonomyLabels[t.kind];
+const list = sermonsFor(t.kind, t.slug);
+const intro = {
+  speaker: `${list.length} sermon${list.length === 1 ? "" : "s"} preached by ${t.name} at Saving Grace Bible Church.`,
+  series: `${list.length} sermon${list.length === 1 ? "" : "s"} in the ${t.name} series.`,
+  book: `${list.length} sermon${list.length === 1 ? "" : "s"} preached from ${t.name}.`,
+  topic: `${list.length} sermon${list.length === 1 ? "" : "s"} on ${t.name}.`,
+}[t.kind];
+---
+<BaseLayout
+  title={t.seo.title}
+  description={t.seo.description || intro}
+  canonical={t.path}
+  indexable={list.length > 0}
+  breadcrumbs={[{ name: "Home", path: "/" }, { name: "Sermons", path: "/sermons/" }, { name: label.plural, path: label.path }, { name: t.name, path: t.path }]}
+  jsonLd={[{ "@context": "https://schema.org", "@type": "CollectionPage", url: `${SITE}${t.path}`, name: t.name, inLanguage: "en-AU", isPartOf: { "@id": `${SITE}/#website` } }]}
+>
+  <article class="page page--sermons">
+    <PageHead title={t.name} trail={[{ label: "Home", href: "/" }, { label: "Sermons", href: "/sermons/" }, { label: label.plural, href: label.path }]} eyebrow={label.singular} lede={intro} />
+    <div class="page__body">
+      <SermonList sermons={list} showSpeaker={t.kind !== "speaker"} />
+    </div>
+  </article>
+</BaseLayout>

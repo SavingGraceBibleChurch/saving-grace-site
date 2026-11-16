@@ -1,0 +1,51 @@
+/* Additions for the rebuilt site, using the Astra + Impeccable design tokens. */
+
+.arrive__eyebrow { display: block; font-size: var(--size-lede); font-weight: 400; letter-spacing: 0; margin-bottom: var(--space-2); }
+
+.video-embed { margin: 0 0 var(--space-5); }
+.video-embed iframe { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; border-radius: var(--radius-card, .5rem); background: var(--colour-ink); }
+.video-embed__caption { margin-top: var(--space-2); font-size: var(--size-ui); color: var(--colour-ink-muted); }
+.audio-embed { margin: 0 0 var(--space-4); }
+.audio-embed iframe { display: block; width: 100%; min-width: 150px; height: 60px; border: 0; }
+.media-links { display: flex; flex-wrap: wrap; gap: var(--space-4); font-size: var(--size-ui); }
+
+.sermon-search { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-5); max-width: 36rem; }
+.sermon-search .control { flex: 1 1 16rem; }
+
+.sermon-browse { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--space-5); margin: 0 auto var(--space-6); padding: var(--space-5); background: var(--colour-recessed); border-radius: var(--radius-card, .5rem); max-width: var(--measure-page, 80rem); }
+.sermon-browse__title { font-size: var(--size-reading); margin: 0 0 var(--space-2); }
+.sermon-browse ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); font-size: var(--size-ui); }
+
+.sermon-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--colour-rule); }
+.sermon-list__item { display: grid; gap: var(--space-1); padding: var(--space-3) 0; border-bottom: 1px solid var(--colour-rule); }
+.sermon-list__title { font-weight: 700; font-size: var(--size-reading); }
+.sermon-list__meta { color: var(--colour-ink-muted); font-size: var(--size-ui); }
+
+.term-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: var(--space-2) var(--space-5); }
+.term-list--dense { grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); font-size: var(--size-ui); }
+.term-list__count { color: var(--colour-ink-muted); }
+
+.pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-3); margin-top: var(--space-6); }
+.pagination__pages { list-style: none; display: flex; gap: var(--space-2); margin: 0; padding: 0; }
+.pagination__pages a, .pagination__pages span[aria-current] { display: inline-grid; place-items: center; min-width: 2.75rem; min-height: 2.75rem; border: 1px solid var(--colour-rule-strong); border-radius: .25rem; text-decoration: none; }
+.pagination__pages span[aria-current] { background: var(--colour-ink); color: var(--colour-on-ink); border-color: var(--colour-ink); }
+.pagination__gap { align-self: center; }
+
+.sermon-step { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--space-4); margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--colour-rule); }
+.sermon-step__link { display: grid; gap: var(--space-1); text-decoration: none; font-weight: 700; }
+.sermon-step__link--older { text-align: right; }
+.sermon-step__label { font-weight: 400; font-size: var(--size-small); text-transform: uppercase; letter-spacing: .06em; color: var(--colour-ink-muted); }
+
+.sitemap-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--space-5); }
+
+/* Sermon detail: content column and a details rail (no bookshelf tab column). */
+.sermon { grid-template-columns: minmax(0, 46rem) 15rem; justify-content: space-between; max-width: var(--measure-page); }
+.sermon__body { grid-column: 1; order: 1; }
+.sermon__rail { grid-column: 2; order: 2; }
+@media (max-width: 60rem) {
+  .sermon { grid-template-columns: minmax(0, 1fr); }
+  .sermon__body { order: 1; grid-column: auto; }
+  .sermon__rail { order: 2; grid-column: auto; position: static; }
+}
+
+.sermon .cards { grid-template-columns: repeat(auto-fill, minmax(14.5rem, 1fr)); }

@@ -1,0 +1,300 @@
+{
+ "events": [
+  {
+   "id": "sunday-evening-service",
+   "title": "Sunday Evening Service",
+   "path": "/event/sunday-evening-service/",
+   "schedule": {
+    "kind": "weekly",
+    "weekday": 0,
+    "from": "2026-05-24",
+    "exclusions": [
+     "2026-05-31"
+    ]
+   },
+   "start": "17:30",
+   "end": "19:00",
+   "venue": "church",
+   "description": [
+    "Join us at Saving Grace Bible Church for our Christ-centered Sunday Evening Service starting at 5:30 p.m. Dive deeper into the day's teachings, exploring the Word of God and its application in our lives. Delve into the Psalms, discovering their profound reflections of faith and their alignment with our walk with Christ.",
+    "Witness the transformative power of Christ through personal testimonies of His grace. Our service focuses on equipping all believers for evangelism, passionately sharing the Gospel's message.",
+    "In unity, we gather for heartfelt prayer, seeking divine guidance and the presence of Christ among us. Following this sacred time, join in fellowship over a shared meal, strengthening our bond as a body of believers. Experience an evening devoted to worship, Scripture, and the remarkable grace of our Lord Jesus Christ in a warm and inviting setting."
+   ],
+   "page": "evening-service",
+   "media": "evening-blossom",
+   "legacyPaths": [
+    "/event/sunday-evening-service/",
+    "/event/sunday-evening-service-2/",
+    "/series/sunday-evening-service/"
+   ],
+   "sourceIds": [
+    27911,
+    30083,
+    27914
+   ],
+   "tag": "#ES"
+  },
+  {
+   "id": "tuesday-bible-study",
+   "title": "Tuesday Bible Study",
+   "path": "/event/tuesday-bible-study/",
+   "schedule": {
+    "kind": "weekly",
+    "weekday": 2,
+    "from": "2026-06-30",
+    "exclusions": [
+     "2026-06-30",
+     "2026-07-07"
+    ]
+   },
+   "start": "19:00",
+   "end": "20:30",
+   "venue": "church",
+   "description": [
+    "Join us at Saving Grace Bible Church every Tuesday at 7:00 p.m. for an engaging Bible Study on the topic of Biblical End Times.",
+    "Together, we’ll walk through what Scripture teaches about the return of Christ, the final judgment, and the hope of the new heavens and new earth. Grounded in sound doctrine and a high view of God’s sovereignty. This study will help us understand how the end of the story shapes how we live today.",
+    "As always, God’s Word is our authority (2 Timothy 3:16), and through it, we are encouraged, challenged, and equipped to stand firm in faith (1 Thessalonians 5:6–11).",
+    "Everyone is welcome—no registration needed. Whether you’re new to Bible prophecy or looking to deepen your understanding, we’d love for you to join the conversation."
+   ],
+   "page": "bible-studies",
+   "media": "end-times",
+   "legacyPaths": [
+    "/event/tuesday-bible-study-2-2/",
+    "/event/tuesday-bible-study-2-2-2/",
+    "/series/tuesday-bible-study/"
+   ],
+   "sourceIds": [
+    30031,
+    30102,
+    27923
+   ],
+   "tag": "#TB"
+  },
+  {
+   "id": "mens-theological-study",
+   "title": "Men’s Theological Study",
+   "path": "/event/mens-theological-study/",
+   "schedule": {
+    "kind": "weekly",
+    "weekday": 0,
+    "from": "2026-06-07"
+   },
+   "start": "16:30",
+   "end": "17:30",
+   "venue": "church",
+   "description": [
+    "Join us for an enriching session at our Men’s Theological Study, a journey into the depths of theological exploration. This gathering, dedicated to the study of God’s Word and understanding the complexities of the end times, aims to deepen our faith and guide us in our roles as men of God. Engage in thought-provoking discussions and insights every Sunday from 4:30 PM to 5:30 PM"
+   ],
+   "page": "mens-ministry",
+   "media": "mens-bible-study",
+   "legacyPaths": [
+    "/event/mens-theological-study-2/",
+    "/series/mens-theological-study/"
+   ],
+   "sourceIds": [
+    29966,
+    27984
+   ],
+   "tag": "#TS"
+  },
+  {
+   "id": "womans-study",
+   "title": "Woman's Study",
+   "path": "/event/womans-study/",
+   "schedule": {
+    "kind": "monthly-first",
+    "weekday": 6,
+    "from": "2026-06-06"
+   },
+   "start": "15:30",
+   "end": "17:00",
+   "venue": "church",
+   "description": [
+    "Come join us for our monthly Women’s Study as we read The Blessing of Humility by Jerry Bridges.",
+    "Together, we’ll take a closer look at what true humility looks like in our everyday lives. Through the Beatitudes, we’ll see how Jesus calls us to live with hearts that are poor in spirit, merciful, meek, and hungry for righteousness — and how God meets us with grace every step of the way.",
+    "We meet on the first Saturday of every month from 3:30 PM to 5:00 PM"
+   ],
+   "page": "womens-ministry",
+   "media": "blessing-of-humility",
+   "legacyPaths": [
+    "/event/womans-study-2-2-2/",
+    "/series/womans-study/"
+   ],
+   "sourceIds": [
+    30027,
+    28009
+   ],
+   "tag": "#WS"
+  },
+  {
+   "id": "mens-study",
+   "title": "Men’s Study",
+   "path": "/event/mens-study/",
+   "schedule": {
+    "kind": "monthly-first",
+    "weekday": 6,
+    "from": "2026-06-06"
+   },
+   "start": "15:30",
+   "end": "17:00",
+   "venue": "church",
+   "description": [
+    "Join us for our monthly Men’s Purity Study as we delve into Fight Like a Man! Together, we’ll explore biblical truths and practical strategies to stand firm in holiness and overcome the challenges of sexual immorality. Meet us on the first Saturday of every month from 3:30 PM to 5:00 PM"
+   ],
+   "page": "mens-ministry",
+   "media": "fight-like-a-man",
+   "legacyPaths": [
+    "/event/mens-leadership-study-2-2/",
+    "/series/mens-leadership-study/"
+   ],
+   "sourceIds": [
+    30029,
+    27990
+   ],
+   "tag": "#MS"
+  },
+  {
+   "id": "mens-teaching-and-preaching-study",
+   "title": "Men’s Teaching and Preaching Study",
+   "path": "/event/mens-teaching-and-preaching-study/",
+   "schedule": {
+    "kind": "weekly",
+    "weekday": 2,
+    "from": "2026-06-30",
+    "exclusions": [
+     "2026-06-30",
+     "2026-07-07"
+    ]
+   },
+   "start": "18:00",
+   "end": "19:00",
+   "venue": "church",
+   "description": [
+    "Join us every Tuesday, 6-7 PM, for our Men’s Teaching and Preaching Study. Explore expository preaching principles, grow in your ability to handle God's Word faithfully, and fulfil your calling in ministry."
+   ],
+   "page": "teaching-preaching-ministry",
+   "media": "preaching-and-preachers",
+   "legacyPaths": [
+    "/event/mens-teaching-and-preaching-study/",
+    "/event/mens-teaching-and-preaching-study-2/",
+    "/event/mens-teaching-and-preaching-study-2-2/"
+   ],
+   "sourceIds": [
+    29593,
+    29964,
+    30104
+   ],
+   "tag": "#TAP"
+  },
+  {
+   "id": "street-evangelism-outreach",
+   "title": "Street Evangelism | Outreach",
+   "path": "/event/street-evangelism-outreach/",
+   "schedule": {
+    "kind": "single",
+    "date": "2026-05-31"
+   },
+   "start": "14:00",
+   "end": "17:00",
+   "venue": "state-library",
+   "description": [
+    "Join us at Saving Grace Bible Church for our Christ-centered Sunday Evening Service starting at 5:30 p.m. Dive deeper into the day's teachings, exploring the Word of God and its application in our lives. Delve into the Psalms, discovering their profound reflections of faith and their alignment with our walk with Christ.",
+    "Witness the transformative power of Christ through personal testimonies of His grace. Our service focuses on equipping all believers for evangelism, passionately sharing the Gospel's message.",
+    "In unity, we gather for heartfelt prayer, seeking divine guidance and the presence of Christ among us. Following this sacred time, join in fellowship over a shared meal, strengthening our bond as a body of believers. Experience an evening devoted to worship, Scripture, and the remarkable grace of our Lord Jesus Christ in a warm and inviting setting."
+   ],
+   "page": "local-outreach",
+   "media": "good-news",
+   "legacyPaths": [
+    "/event/street-evangelism-outreach/"
+   ],
+   "sourceIds": [
+    30090
+   ]
+  },
+  {
+   "id": "music-team-meeting",
+   "title": "Music Team Meeting",
+   "path": "/event/music-team-meeting/",
+   "schedule": {
+    "kind": "single",
+    "date": "2024-02-25"
+   },
+   "start": "12:30",
+   "end": "13:30",
+   "venue": "church",
+   "description": [],
+   "page": "music-ministry",
+   "legacyPaths": [
+    "/event/music-team-meeting/"
+   ],
+   "sourceIds": [
+    29099
+   ]
+  },
+  {
+   "id": "sgbc-members-meeting",
+   "title": "SGBC Members Meeting",
+   "path": "/event/sgbc-members-meeting/",
+   "schedule": {
+    "kind": "single",
+    "date": "2024-03-10"
+   },
+   "start": "16:30",
+   "end": "17:30",
+   "venue": "church",
+   "description": [],
+   "page": "church-membership",
+   "legacyPaths": [
+    "/event/sgbc-members-meeting/"
+   ],
+   "sourceIds": [
+    29101
+   ]
+  },
+  {
+   "id": "sgbc-picnic-rye",
+   "title": "SGBC Picnic - Rye",
+   "path": "/event/sgbc-picnic-rye/",
+   "schedule": {
+    "kind": "single",
+    "date": "2024-03-23"
+   },
+   "start": "08:00",
+   "end": "17:00",
+   "venue": "rye-civic-hall",
+   "description": [],
+   "legacyPaths": [
+    "/event/sgbc-picnic-rye/"
+   ],
+   "sourceIds": [
+    29103
+   ]
+  }
+ ],
+ "venues": {
+  "church": {
+   "id": "church",
+   "name": "Saving Grace Bible Church",
+   "address": "Unit 5/217-219 Mickleham Rd",
+   "locality": "Westmeadows, Victoria 3049",
+   "phone": "0450 545 589",
+   "mapHref": "https://goo.gl/maps/gL2hcbXG3Ci9zqRVA",
+   "legacyPath": "/venue/saving-grace-bible-church/"
+  },
+  "rye-civic-hall": {
+   "id": "rye-civic-hall",
+   "name": "Rye Civic Hall",
+   "address": "12 Napier Street",
+   "locality": "Rye, VIC 3941",
+   "href": "https://www.mornpen.vic.gov.au/Image-Galleries/Rye-Civic-Hall",
+   "legacyPath": "/venue/rye-civic-hall/"
+  },
+  "state-library": {
+   "id": "state-library",
+   "name": "State Library",
+   "address": "328 Swanston St",
+   "locality": "Melbourne, VIC 3000",
+   "legacyPath": "/venue/state-library/"
+  }
+ }
+}

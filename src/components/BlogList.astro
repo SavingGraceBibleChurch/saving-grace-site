@@ -1,0 +1,25 @@
+---
+import { posts } from "../lib/content";
+import { formatDate } from "../lib/events";
+import { plainText } from "../lib/markup";
+
+interface Props { heading?: string }
+const { heading } = Astro.props;
+const sorted = [...posts].sort((a, b) => b.date.localeCompare(a.date));
+const excerpt = (post: (typeof posts)[number]) => {
+  const first = post.blocks.find((block) => block.kind === "paragraph");
+  const text = first && first.kind === "paragraph" ? plainText(first.text) : post.seo.description;
+  return text.length > 220 ? `${text.slice(0, 217).replace(/\s+\S*$/u, "")}…` : text;
+};
+---
+{heading && <h2 class="page__h2">{heading}</h2>}
+<ul class="index-grid" role="list">
+  {sorted.map((post) => (
+    <li class="index-grid__item">
+      <a class="index-grid__link" href={post.path}>
+        <span class="index-grid__title">{post.title}</span>
+        <span class="index-grid__text"><time datetime={post.date}>{formatDate(post.date)}</time> — {excerpt(post)}</span>
+      </a>
+    </li>
+  ))}
+</ul>

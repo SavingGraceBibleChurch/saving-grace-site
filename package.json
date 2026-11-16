@@ -1,0 +1,25 @@
+{
+  "name": "saving-grace-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview --host 127.0.0.1",
+    "check": "astro check",
+    "import:wordpress": "node scripts/import-wordpress.mjs",
+    "verify:seo": "node scripts/verify-seo.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "pagefind": "1.6.0",
+    "typescript": "6.0.3"
+  }
+}

@@ -1,0 +1,19 @@
+---
+import { imageFor } from "../lib/content";
+
+interface Props { id?: string | null; class?: string; alt?: string; eager?: boolean }
+const { id, class: className, alt, eager = false } = Astro.props;
+const image = imageFor(id);
+---
+{image && (
+  <img
+    class={className}
+    src={image.src}
+    width={image.width}
+    height={image.height}
+    alt={alt ?? image.alt}
+    loading={eager ? undefined : "lazy"}
+    fetchpriority={eager ? "high" : undefined}
+    decoding="async"
+  />
+)}

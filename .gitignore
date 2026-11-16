@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+
+# WordPress backups, database dumps and anything private never go in Git
+private/
+*.sql
+*.zip

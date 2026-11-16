@@ -1,0 +1,141 @@
+---
+// Every church page and blog post at its live WordPress URL, plus the blog's date archives.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHead from "../components/PageHead.astro";
+import Blocks from "../components/Blocks.astro";
+import Related from "../components/Related.astro";
+import Picture from "../components/Picture.astro";
+import BlogList from "../components/BlogList.astro";
+import { pages, posts, pageById, SITE, SITE_NAME, imageFor } from "../lib/content";
+import { formatDate } from "../lib/events";
+import type { Page, Post } from "../lib/types";
+
+type Entry =
+  | { type: "page"; page: Page }
+  | { type: "post"; post: Post }
+  | { type: "archive"; label: string; posts: Post[] };
+
+export function getStaticPaths() {
+  const special = new Set(["/church-events/"]);
+  const entries: { params: { path: string }; props: { entry: Entry } }[] = [];
+  for (const page of pages) {
+    if (special.has(page.path)) continue;
+    entries.push({ params: { path: page.path.slice(1, -1) }, props: { entry: { type: "page", page } } });
+  }
+  for (const post of posts) {
+    entries.push({ params: { path: post.path.slice(1, -1) }, props: { entry: { type: "post", post } } });
+  }
+  const months = new Map<string, Post[]>();
+  const years = new Map<string, Post[]>();
+  for (const post of posts) {
+    const [year, month] = post.date.split("-") as [string, string];
+    months.set(`${year}/${month}`, [...(months.get(`${year}/${month}`) ?? []), post]);
+    years.set(year, [...(years.get(year) ?? []), post]);
+  }
+  for (const [key, list] of [...months, ...years]) {
+    entries.push({ params: { path: key }, props: { entry: { type: "archive", label: key, posts: list } } });
+  }
+  return entries;
+}
+
+const { entry } = Astro.props as { entry: Entry };
+const path = Astro.url.pathname;
+
+function trailFor(page: Page) {
+  const items = [{ label: "Home", href: "/" }];
+  const parent = page.parent ? pageById(page.parent) : undefined;
+  if (parent && parent.path !== page.path) items.push({ label: parent.navTitle, href: parent.path });
+  return items;
+}
+
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+---
+{entry.type === "page" && (() => {
+  const page = entry.page;
+  const crumbs = [...trailFor(page).map((t) => ({ name: t.label, path: t.href })), { name: page.navTitle, path: page.path }];
+  const heroImage = imageFor(page.hero?.media);
+  return (
+    <BaseLayout
+      title={page.seo.title}
+      description={page.seo.description}
+      canonical={page.seo.canonical ?? page.path}
+      indexable={page.seo.indexable}
+      ogType={page.seo.ogType}
+      ogTitle={page.seo.ogTitle}
+      ogDescription={page.seo.ogDescription}
+      ogImage={heroImage?.src}
+      breadcrumbs={crumbs}
+      jsonLd={[{ "@context": "https://schema.org", "@type": "WebPage", "@id": `${SITE}${page.path}#webpage`, url: `${SITE}${page.path}`, name: page.seo.title, description: page.seo.description || undefined, inLanguage: "en-AU", isPartOf: { "@id": `${SITE}/#website` }, dateModified: page.seo.modified ?? undefined }]}
+    >
+      <article class={`page page--${page.section}`}>
+        <PageHead title={page.h1} trail={trailFor(page)} eyebrow={page.eyebrow} lede={page.lede} hero={page.hero} />
+        <div class="page__body">
+          <Blocks blocks={page.blocks} />
+          {page.aside.length > 0 && <Blocks blocks={page.aside} />}
+        </div>
+        <Related ids={page.related} />
+      </article>
+    </BaseLayout>
+  );
+})()}
+
+{entry.type === "post" && (() => {
+  const post = entry.post;
+  const image = imageFor(post.media);
+  return (
+    <BaseLayout
+      title={post.seo.title}
+      description={post.seo.description}
+      canonical={post.seo.canonical ?? post.path}
+      indexable={post.seo.indexable}
+      ogType="article"
+      ogTitle={post.seo.ogTitle}
+      ogDescription={post.seo.ogDescription}
+      ogImage={image?.src}
+      breadcrumbs={[{ name: "Home", path: "/" }, { name: "Blogs", path: "/blogs/" }, { name: post.title, path: post.path }]}
+      jsonLd={[{
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": `${SITE}${post.path}#article`,
+        headline: post.title,
+        url: `${SITE}${post.path}`,
+        mainEntityOfPage: `${SITE}${post.path}`,
+        inLanguage: "en-AU",
+        datePublished: post.seo.published ?? post.date,
+        dateModified: post.seo.modified ?? post.modified ?? post.date,
+        image: image ? `${SITE}${image.src}` : `${SITE}/brand/saving-grace-logo.png`,
+        author: { "@type": "Organization", name: SITE_NAME, url: `${SITE}/` },
+        publisher: { "@type": "Organization", name: SITE_NAME, logo: { "@type": "ImageObject", url: `${SITE}/brand/saving-grace-logo.png` } },
+        description: post.seo.description || undefined,
+      }]}
+    >
+      <article class="page page--blog">
+        <PageHead title={post.h1} trail={[{ label: "Home", href: "/" }, { label: "Blogs", href: "/blogs/" }]} eyebrow="Blog">
+          <p class="page__category"><time datetime={post.date}>{formatDate(post.date)}</time></p>
+        </PageHead>
+        <div class="page__body">
+          {image && <figure class="figure figure--full"><Picture id={post.media} class="figure__image" eager /></figure>}
+          <Blocks blocks={post.blocks} />
+        </div>
+      </article>
+    </BaseLayout>
+  );
+})()}
+
+{entry.type === "archive" && (() => {
+  const [year, month] = entry.label.split("/");
+  const label = month ? `${MONTHS[Number(month) - 1]} ${year}` : year;
+  return (
+    <BaseLayout
+      title={`${label} - ${SITE_NAME} - Bible-Based Worship in Melbourne`}
+      description={`Articles published by Saving Grace Bible Church in ${label}.`}
+      canonical={path}
+      breadcrumbs={[{ name: "Home", path: "/" }, { name: "Blogs", path: "/blogs/" }, { name: label!, path }]}
+    >
+      <article class="page page--blog">
+        <PageHead title={label!} trail={[{ label: "Home", href: "/" }, { label: "Blogs", href: "/blogs/" }]} eyebrow="Blog archive" />
+        <div class="page__body"><BlogList /></div>
+      </article>
+    </BaseLayout>
+  );
+})()}

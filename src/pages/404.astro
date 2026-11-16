@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHead from "../components/PageHead.astro";
+---
+<BaseLayout title="Page not found - Saving Grace Bible Church" indexable={false} canonical="/404/">
+  <article class="page" data-pagefind-ignore>
+    <PageHead title="We couldn’t find that page" trail={[{ label: "Home", href: "/" }]} lede="The page may have moved. Try one of these instead." />
+    <div class="page__body">
+      <ul class="page__list">
+        <li><a href="/sermons/">Sermons</a></li>
+        <li><a href="/pages/lordsdayservice/">Lord’s Day Service</a></li>
+        <li><a href="/events/">News &amp; Events</a></li>
+        <li><a href="/contact-us-2/">Contact Us</a></li>
+        <li><a href="/search/">Search the website</a></li>
+      </ul>
+    </div>
+  </article>
+</BaseLayout>

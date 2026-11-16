@@ -1,0 +1,170 @@
+---
+import type { Block } from "../lib/types";
+import { inline, isExternal } from "../lib/markup";
+import { eventById, nextOccurrence, formatLongDate, formatTimeRange, melbourneToday } from "../lib/events";
+import Picture from "./Picture.astro";
+import SermonCard from "./SermonCard.astro";
+import EventsCalendar from "./EventsCalendar.astro";
+import BlogList from "./BlogList.astro";
+import SitemapList from "./SitemapList.astro";
+import { sermons } from "../lib/content";
+
+interface Props { blocks: Block[] }
+const { blocks } = Astro.props;
+const today = melbourneToday();
+const ext = (href: string) => (isExternal(href) ? { rel: "noopener" } : {});
+---
+{blocks.map((block) => {
+  switch (block.kind) {
+    case "paragraph":
+      return <p class={block.lede ? "lede page__lede" : undefined} set:html={inline(block.text)} />;
+    case "heading": {
+      const Tag = `h${block.level}` as "h2" | "h3" | "h4";
+      return <Tag class={`page__h${block.level}`} id={block.id}>{block.text}</Tag>;
+    }
+    case "list":
+      return block.ordered
+        ? <ol class="page__list">{block.items.map((item) => <li set:html={inline(item)} />)}</ol>
+        : <ul class="page__list">{block.items.map((item) => <li set:html={inline(item)} />)}</ul>;
+    case "quote":
+      return <blockquote class="verse"><p set:html={inline(block.text)} />{block.cite && <footer class="verse__cite">{block.cite}</footer>}</blockquote>;
+    case "figure":
+      return <figure class={`figure figure--${block.size ?? "inset"}`}><Picture id={block.media} class="figure__image" alt={block.alt} />{block.caption && <figcaption class="figure__caption" set:html={inline(block.caption)} />}</figure>;
+    case "callout":
+      return <aside class="callout">{block.title && <h2 class="callout__title">{block.title}</h2>}<p set:html={inline(block.text)} /></aside>;
+    case "panel":
+      return <div class={`panel${block.columns ? ` cms-panel-columns cms-panel-columns--${block.columns}` : ""}`}>{block.title && <h3 class="panel__title">{block.title}</h3>}<Astro.self blocks={block.blocks} /></div>;
+    case "tiles":
+      return (
+        <ul class={`tiles tiles--${block.columns ?? 3}`} role="list">
+          {block.items.map((tile) => (
+            <li class:list={["tile", { "tile--pictured": tile.media, "tile--linked": tile.href }]}>
+              {tile.media && <div class="tile__picture"><Picture id={tile.media} class="tile__image" alt={tile.mediaAlt ?? ""} /></div>}
+              <div class="tile__body">
+                <h3 class="tile__title">{tile.href ? <a href={tile.href}>{tile.title}</a> : tile.title}</h3>
+                {tile.eyebrow && tile.eyebrow !== tile.title && <p class="tile__metadata">{tile.eyebrow}</p>}
+                {tile.text && <p class="tile__text" set:html={inline(tile.text)} />}
+                {tile.linkLabel && tile.href && <a class="tile__more" href={tile.href}>{tile.linkLabel}<span class="sr-only"> about {tile.title}</span></a>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      );
+    case "people":
+      return (
+        <ul class="people" role="list">
+          {block.items.map((person) => (
+            <li class="person">
+              {person.media && <div class="person__picture"><Picture id={person.media} class="person__image" alt={person.mediaAlt} /></div>}
+              <div class="person__body">
+                <h3 class="person__name">{person.name}</h3>
+                <p class="person__role">{person.role}</p>
+                {person.text.map((text) => <p class="person__text" set:html={inline(text)} />)}
+                {person.email && <p class="person__contact"><a href={`mailto:${person.email}`}>{person.email}</a></p>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      );
+    case "timeline":
+      return (
+        <ol class="timeline" role="list">
+          {block.items.map((item) => (
+            <li class="timeline__item"><span class="timeline__when">{item.when}</span><div class="timeline__body"><h3 class="timeline__title">{item.title}</h3><p class="timeline__text" set:html={inline(item.text)} /></div></li>
+          ))}
+        </ol>
+      );
+    case "next-event": {
+      const event = eventById(block.event);
+      if (!event) return null;
+      const next = nextOccurrence(block.event, today);
+      return (
+        <p class="next-event"><span class="next-event__label">{block.label}</span>{" "}
+          {next
+            ? <a class="next-event__link" href={event.path}><time datetime={next.date}>{formatLongDate(next.date)}</time>, {formatTimeRange(next.start, next.end)}</a>
+            : <a class="next-event__link" href={event.path}>{event.title}</a>}
+        </p>
+      );
+    }
+    case "video":
+    case "playlist": {
+      const isVideo = block.kind === "video";
+      const src = isVideo
+        ? `https://www.youtube-nocookie.com/embed/${block.videoId}`
+        : `https://www.youtube-nocookie.com/embed/videoseries?list=${block.listId}`;
+      return (
+        <figure class="video-embed">
+          <iframe src={src} title={block.title} loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <figcaption class="video-embed__caption">{block.title}</figcaption>
+        </figure>
+      );
+    }
+    case "downloads":
+      return (
+        <ul class="downloads" role="list">
+          {block.items.map((item) => (
+            <li class="download"><h3 class="download__title">{item.title}</h3><p class="download__text" set:html={inline(item.text)} /><p class="download__link"><a class="button button--outline" href={item.href} {...ext(item.href)}>{item.label}<span aria-hidden="true"> ↗</span></a></p></li>
+          ))}
+        </ul>
+      );
+    case "hymns":
+      return (
+        <ul class="hymns" role="list">
+          {block.items.map((item) => (
+            <li class="hymn"><h3 class="hymn__title">{item.title}</h3><p class="hymn__text" set:html={inline(item.text)} /><p><a class="hymn__link" href={item.href} {...ext(item.href)}>Play &amp; Lyrics<span aria-hidden="true"> →</span></a></p></li>
+          ))}
+        </ul>
+      );
+    case "index":
+      return (
+        <ol class="index-grid" role="list">
+          {block.items.map((item) => (
+            <li class="index-grid__item"><a class="index-grid__link" href={item.href}><span class="index-grid__title">{item.title}</span><span class="index-grid__text" set:html={inline(item.text)} /></a></li>
+          ))}
+        </ol>
+      );
+    case "sermon-cards":
+      return (
+        <section class="page__sermons" aria-labelledby="page-sermons-heading">
+          <h2 id="page-sermons-heading" class="page__h2">{block.heading}</h2>
+          {block.text && <p set:html={inline(block.text)} />}
+          <ul class="cards" role="list">{sermons.slice(0, block.limit ?? 3).map((sermon) => <SermonCard sermon={sermon} headingLevel={3} />)}</ul>
+          <p class="page__sermons-link"><a class="button" href="/sermons/">{block.linkLabel}</a></p>
+        </section>
+      );
+    case "external-plate":
+      return (
+        <div class="plate plate--church plate--external"><div class="plate__consent"><p class="plate__title">{block.title}</p><p class="plate__note" set:html={inline(block.text)} /><p class="plate__actions"><a class="button button--onink" href={block.href} rel="noopener">{block.label}<span aria-hidden="true"> ↗</span></a></p></div></div>
+      );
+    case "book":
+      return <div class="book"><Picture id={block.media} class="book__cover" alt={block.mediaAlt} /><div class="book__text">{block.text.split(/\n\s*\n/u).map((text) => <p set:html={inline(text)} />)}</div></div>;
+    case "contact-panel":
+      return (
+        <div class="contact-panel">
+          <address class="contact-panel__address"><strong class="contact-panel__name">{block.name}</strong>{block.addressLines.map((line) => <span>{line}</span>)}<span><a href={block.telephone.href}>{block.telephone.label}</a></span><span><a href={`mailto:${block.email}`}>{block.email}</a></span></address>
+          <p class="contact-panel__actions"><a class="button" href={`mailto:${block.email}`}>Send us an email</a> <a class="button button--outline" href={block.map.href} rel="noopener">{block.map.label}<span aria-hidden="true"> →</span><span class="sr-only"> (external site)</span></a></p>
+        </div>
+      );
+    case "giving-methods":
+      return (
+        <div class="giving">
+          <h2 class="page__h2">{block.heading ?? "Ways to make an offering"}</h2>
+          <p class="giving__intro" set:html={inline(block.intro)} />
+          <p class="giving__cta"><a class="button" href={block.button.href} {...ext(block.button.href)}>{block.button.label}<span aria-hidden="true"> ↗</span></a></p>
+          <ul class="giving__methods" role="list">{block.methods.map((method) => <li class="giving__method"><h3 class="giving__method-title">{method.title}</h3><p set:html={inline(method.text)} /></li>)}</ul>
+          <div class="giving__details">
+            <section class="giving__bank" aria-labelledby="giving-bank-heading"><h3 id="giving-bank-heading" class="giving__method-title">{block.bank.title}</h3><p><strong>{block.bank.account}</strong></p>{block.bank.lines.map((line) => <p class="tabular">{line}</p>)}</section>
+            <section class="giving__online" aria-labelledby="giving-online-heading"><h3 id="giving-online-heading" class="giving__method-title">{block.online.title}</h3><ul class="page__list">{block.online.links.map((link) => <li><a href={link.href} {...ext(link.href)}>{link.label}<span aria-hidden="true"> ↗</span></a></li>)}</ul></section>
+          </div>
+        </div>
+      );
+    case "events-calendar":
+      return <EventsCalendar block={block} />;
+    case "blog-list":
+      return <BlogList heading={block.heading} />;
+    case "sitemap-list":
+      return <SitemapList />;
+    default:
+      return null;
+  }
+})}

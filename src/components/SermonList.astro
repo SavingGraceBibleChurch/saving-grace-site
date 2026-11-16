@@ -1,0 +1,21 @@
+---
+// A compact, crawlable list of sermons for taxonomy pages.
+import type { Sermon } from "../lib/types";
+import { speakerName } from "../lib/content";
+import { formatDate } from "../lib/events";
+
+interface Props { sermons: Sermon[]; showSpeaker?: boolean }
+const { sermons, showSpeaker = true } = Astro.props;
+---
+<ol class="sermon-list" role="list">
+  {sermons.map((sermon) => (
+    <li class="sermon-list__item">
+      <a class="sermon-list__title" href={sermon.path}>{sermon.title}</a>
+      <span class="sermon-list__meta">
+        <time datetime={sermon.date}>{formatDate(sermon.date)}</time>
+        {showSpeaker && <span> · {speakerName(sermon)}</span>}
+        {sermon.passage && <span> · {sermon.passage}</span>}
+      </span>
+    </li>
+  ))}
+</ol>

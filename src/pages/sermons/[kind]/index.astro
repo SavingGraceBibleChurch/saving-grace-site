@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PageHead from "../../../components/PageHead.astro";
+import { termsOf, taxonomyLabels, SITE_NAME } from "../../../lib/content";
+import type { TaxonomyKind } from "../../../lib/types";
+
+export function getStaticPaths() {
+  return (["speaker", "series", "book", "topic"] as TaxonomyKind[]).map((kind) => ({ params: { kind } }));
+}
+const kind = Astro.params.kind as TaxonomyKind;
+const label = taxonomyLabels[kind];
+const terms = termsOf(kind).sort((a, b) => (kind === "topic" ? a.name.localeCompare(b.name) : b.count - a.count));
+const path = label.path;
+---
+<BaseLayout
+  title={`Sermons by ${label.singular.toLowerCase()} - ${SITE_NAME} - Bible-Based Worship in Melbourne`}
+  description={`Browse every sermon preached at Saving Grace Bible Church by ${label.singular.toLowerCase()}.`}
+  canonical={path}
+  breadcrumbs={[{ name: "Home", path: "/" }, { name: "Sermons", path: "/sermons/" }, { name: label.plural, path }]}
+>
+  <article class="page page--sermons">
+    <PageHead title={`Sermons by ${label.singular.toLowerCase()}`} trail={[{ label: "Home", href: "/" }, { label: "Sermons", href: "/sermons/" }]} />
+    <div class="page__body">
+      <ul class:list={["term-list", { "term-list--dense": kind === "topic" }]} role="list">
+        {terms.map((t) => <li><a href={t.path}>{t.name}</a> <span class="term-list__count">({t.count})</span></li>)}
+      </ul>
+    </div>
+  </article>
+</BaseLayout>

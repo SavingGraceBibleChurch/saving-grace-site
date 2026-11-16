@@ -1,0 +1,50 @@
+---
+import { contact, footerLinks, footerImprintLinks, services } from "../lib/site";
+
+const socials = [
+  { name: "Facebook", href: "https://www.facebook.com/Saving-Grace-Bible-Church-Preston-139937276610219/", path: "M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5H16.6V4.4a20 20 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3Z" },
+  { name: "YouTube", href: "https://www.youtube.com/channel/UCzknLApowBjwBzTRBfUE_WA", path: "M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5.2 3L10 15Z" },
+  { name: "Instagram", href: "https://www.instagram.com/savinggracebiblechurch/", path: "M12 7.4a4.6 4.6 0 1 0 0 9.2 4.6 4.6 0 0 0 0-9.2Zm0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm5.9-7.8a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM21 8.3c-.1-1.5-.4-2.8-1.5-3.8S17.2 3.1 15.7 3c-1.5-.1-5.9-.1-7.4 0-1.5.1-2.8.4-3.8 1.5S3.1 6.8 3 8.3c-.1 1.5-.1 5.9 0 7.4.1 1.5.4 2.8 1.5 3.8s2.3 1.4 3.8 1.5c1.5.1 5.9.1 7.4 0 1.5-.1 2.8-.4 3.8-1.5s1.4-2.3 1.5-3.8c.1-1.5.1-5.9 0-7.4Zm-2 9.1a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.3.4s-4.1.1-5.3-.4A3 3 0 0 1 5 17.4c-.5-1.2-.4-4-.4-5.4s-.1-4.1.4-5.3A3 3 0 0 1 6.7 5c1.2-.5 4-.4 5.3-.4s4.1-.1 5.3.4A3 3 0 0 1 19 6.7c.5 1.2.4 4 .4 5.3s.1 4.2-.4 5.4Z" },
+  { name: "SermonAudio", href: "https://www.sermonaudio.com/solo/savinggrace/", path: "M12 3a9 9 0 0 0-9 9v5a3 3 0 0 0 3 3h1v-7H5v-1a7 7 0 0 1 14 0v1h-2v7h1a3 3 0 0 0 3-3v-5a9 9 0 0 0-9-9Z" },
+];
+---
+<footer class="site-footer" data-pagefind-ignore>
+  <div class="site-footer__band">
+    <div class="site-footer__inner">
+      <div class="footer-columns">
+        <section class="footer-col" id="contact" aria-labelledby="footer-contact-heading">
+          <h2 class="footer-col__title" id="footer-contact-heading">Contact Us</h2>
+          <address class="footer-col__address">
+            <span>{contact.name}</span><span>{contact.street}</span><span>{contact.locality}</span>
+            <span><a href={contact.phoneHref}>Tel: {contact.phone}</a></span>
+            <span><a href={`mailto:${contact.email}`}>E-mail: {contact.email}</a></span>
+          </address>
+          <p class="footer-col__directions"><a href={contact.map} rel="noopener">Get directions on the map →<span class="sr-only"> (external site)</span></a></p>
+        </section>
+        <nav class="footer-col" aria-labelledby="footer-involved-heading">
+          <h2 class="footer-col__title" id="footer-involved-heading">Get Involved</h2>
+          <ul class="footer-col__list" role="list">{footerLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul>
+        </nav>
+        <section class="footer-col" aria-labelledby="footer-services-heading">
+          <h2 class="footer-col__title" id="footer-services-heading">Lord's Day Services</h2>
+          <ul class="footer-col__list" role="list">{services.map((line) => <li>{line}</li>)}</ul>
+          <p class="footer-col__more"><a href="/pages/lordsdayservice/">Lord’s Day Service</a> · <a href="/evening-service/">Evening Service</a></p>
+        </section>
+      </div>
+      <div class="footer-bar">
+        <p class="footer-bar__copyright">© {new Date().getFullYear()} Saving Grace Bible Church</p>
+        <a class="footer-bar__top" href="#top"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 5l-7 7h4.5v7h5v-7H19z" fill="currentColor" /></svg><span class="sr-only">Back to top</span></a>
+        <p class="footer-bar__follow">
+          <span class="footer-bar__label">Follow us:</span>
+          {socials.map((social) => (
+            <a class="footer-bar__glyph footer-bar__glyph--link" href={social.href} rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d={social.path} fill="currentColor" /></svg><span class="sr-only">{social.name} (external site)</span></a>
+          ))}
+        </p>
+      </div>
+      <div class="site-footer__imprint">
+        <a class="brand" href="/"><img class="brand__logo brand__logo--inverse" src="/brand/logo-white.png" width="300" height="178" alt="Saving Grace Bible Church" loading="lazy" decoding="async" /><span class="sr-only">, Home</span></a>
+        <nav aria-label="Footer"><ul class="site-footer__links">{footerImprintLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul></nav>
+      </div>
+    </div>
+  </div>
+</footer>

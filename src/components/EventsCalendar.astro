@@ -1,0 +1,51 @@
+---
+import type { Block } from "../lib/types";
+import { events, upcoming, pastEvents, isRecurring, occurrencesBetween, scheduleLabel, melbourneToday, addDays, formatLongDate } from "../lib/events";
+import EventRow from "./EventRow.astro";
+import Picture from "./Picture.astro";
+import { inline } from "../lib/markup";
+
+interface Props { block: Extract<Block, { kind: "events-calendar" }> }
+const { block } = Astro.props;
+const today = melbourneToday();
+const limit = block.limit ?? 6;
+const soon = block.showUpcoming === false ? [] : upcoming(today, block.days ?? 35);
+const regular = block.showRegular === false ? [] : events.filter((e) => isRecurring(e) && occurrencesBetween(e, today, addDays(today, 366), 1).length > 0);
+const past = block.showPast === false ? [] : pastEvents(today);
+---
+{soon.length > 0 && (
+  <section class="section" aria-labelledby="upcoming-heading">
+    <div class="section__head"><h2 id="upcoming-heading" class="section__title">{block.upcomingHeading ?? "Upcoming"}</h2><div class="section__aside"><a class="button button--outline" href="/events/calendar.ics">Subscribe to the calendar</a></div></div>
+    <ol class="events" role="list">{soon.slice(0, limit).map((occurrence) => <EventRow occurrence={occurrence} />)}</ol>
+    {soon.length > limit && (
+      <details class="events-more"><summary class="events-more__summary">More upcoming dates <span class="events-more__count">({soon.length - limit})</span></summary>
+        <ol class="events" role="list">{soon.slice(limit).map((occurrence) => <EventRow occurrence={occurrence} />)}</ol>
+      </details>
+    )}
+  </section>
+)}
+{regular.length > 0 && (
+  <section class="section" aria-labelledby="regular-heading">
+    <div class="section__head"><h2 id="regular-heading" class="section__title">{block.regularHeading ?? "Regular gatherings"}</h2></div>
+    <ul class="tiles tiles--3" role="list">
+      {regular.map((event) => (
+        <li class:list={["tile", "tile--linked", { "tile--pictured": event.media }]}>
+          {event.media && <div class="tile__picture"><Picture id={event.media} class="tile__image" alt="" /></div>}
+          <div class="tile__body">
+            <h3 class="tile__title"><a href={event.path}>{event.title}</a></h3>
+            <p class="tile__metadata">{scheduleLabel(event)}</p>
+            {event.description[0] && <p class="tile__text tile__text--clamp" set:html={inline(event.description[0])} />}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+{past.length > 0 && (
+  <section class="section" aria-labelledby="past-heading">
+    <div class="section__head"><h2 id="past-heading" class="section__title">{block.pastHeading ?? "Past events"}</h2></div>
+    <ul class="past-events" role="list">
+      {past.map((event) => <li><a href={event.path}>{event.title}</a> <span class="past-events__when">{event.schedule.kind === "single" ? formatLongDate(event.schedule.date) : scheduleLabel(event)}</span></li>)}
+    </ul>
+  </section>
+)}
