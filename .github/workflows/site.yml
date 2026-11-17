@@ -59,6 +59,9 @@ jobs:
       - run: npm run check
       - run: npm run build
 
+      - name: Check the redirect rules have the shape the server accepts
+        run: python3 -I deploy/staging/update.py --check-rules dist/_nginx/redirect-maps.conf
+
       - name: Package the build
         run: |
           commit=$(git rev-parse HEAD)

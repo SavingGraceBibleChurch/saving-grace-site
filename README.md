@@ -5,8 +5,8 @@ Every page is generated ahead of time with [Astro](https://astro.build), so ther
 WordPress, PHP, plugins, database or server to patch. Search is built at the same time
 by [Pagefind](https://pagefind.app).
 
-**Status:** the pages, sermons, events and SEO layer are built and verified locally.
-The site is not deployed, and WordPress is still the live site.
+**Status:** the pages, sermons, events and SEO layer are built, verified, and running on public staging behind
+the nginx setup planned for production. WordPress is still the live site.
 
 ## Design history
 
@@ -132,7 +132,7 @@ HTTPS, updates, switch-over, rollback, security checks). The points below are wh
   4. `prefix`: 301 when no file exists and the path starts with `from`. The longest prefix wins.
 
   `/?s=…` and `/?q=…` go to `/search/`. Every build turns these into nginx rules (`dist/_nginx/redirect-maps.conf`,
-  from `scripts/nginx-redirects.mjs`), which the server's updater installs.
+  from `scripts/nginx-redirects.mjs`), which the server's updater installs after checking they are only redirects.
 - **Uploads:** WordPress files that old URLs point at (452 files, 1.16 GB, mostly sermon MP3s) are uploaded from `private/uploads/` to `/wp-content/uploads/…`. Create that folder with `python scripts/collect_uploads.py <backup.zip>`.
 - **Daily rebuild:** "next service" and upcoming-event dates are worked out at build time. `site.yml` already rebuilds every day; the production host should take its builds the same way staging does.
 - **Rollback:** keep WordPress running, untouched, for about a month after the switch.
@@ -140,6 +140,6 @@ HTTPS, updates, switch-over, rollback, security checks). The points below are wh
 ## Not done yet
 
 - Sermon Q&A, descriptions for the 8 sermons without a transcript, and transcripts for those 8.
-- Editing content pages (About, ministries) in the admin, image uploads, and deleting sermons.
+- Image uploads and deleting sermons in the admin; editing the home page visually (it is edited as a form).
 - Stripe/PayPal giving and a contact form. The giving and contact pages show the current content for now.
-- Choosing a host and implementing the redirects there.
+- Setting up the production server (`deploy/production/README.md`; the same nginx setup already runs on staging).

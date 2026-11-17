@@ -1,0 +1,14 @@
+# /etc/logrotate.d/savinggrace-nginx: the staging nginx logs, rotated daily and kept for a week.
+# USR1 tells that nginx (savinggrace-nginx.service) to reopen its log files after they are moved.
+/var/log/nginx/savinggrace-staging/*.log {
+    daily
+    rotate 7
+    missingok
+    notifempty
+    compress
+    delaycompress
+    sharedscripts
+    postrotate
+        /bin/kill -USR1 $(cat /run/savinggrace-nginx.pid 2>/dev/null) 2>/dev/null || true
+    endscript
+}

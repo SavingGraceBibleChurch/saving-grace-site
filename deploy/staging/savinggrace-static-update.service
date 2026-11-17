@@ -5,14 +5,14 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/python3 -I /srv/savinggrace-static/update.py
+ExecStart=/usr/bin/python3 -I /srv/savinggrace-static/update.py --nginx-unit savinggrace-nginx --nginx-conf /etc/nginx/savinggrace-staging.conf
 NoNewPrivileges=yes
 ProtectSystem=strict
-ReadWritePaths=/srv/savinggrace-static
+# nginx -t opens its logs, pid file and temporary folders; systemctl reload talks to systemd.
+ReadWritePaths=/srv/savinggrace-static /var/log/nginx /var/lib/nginx /run
 ProtectHome=yes
 PrivateTmp=yes
 PrivateDevices=yes
 RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
-CapabilityBoundingSet=
 MemoryMax=256M
 TimeoutStartSec=10min

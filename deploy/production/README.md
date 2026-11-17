@@ -13,7 +13,11 @@ How a change reaches the site:
    build it downloads it, **verifies the SHA-256**, unpacks it into `/srv/savinggrace-static/releases/<commit>`
    and switches `/srv/savinggrace-static/current` to it in one atomic step (keeping the last 3 builds).
 4. If the build's redirect rules changed, the updater installs them, runs `nginx -t`, and reloads nginx. If the
-   check fails, it puts the previous rules back and nginx keeps running unchanged.
+   check fails, it puts the previous rules back and nginx keeps running unchanged. It accepts only redirect maps
+   from a build, never other nginx settings, so a push to the repository cannot change the server's configuration.
+
+Staging already runs this setup (same nginx rules, same updater) and it was tested there: see
+`deploy/staging/README.md`.
 
 Nothing is pushed **to** the server: it pulls from the public repository, so no passwords or SSH keys are
 stored in GitHub, and the server needs no inbound access other than the website itself.
