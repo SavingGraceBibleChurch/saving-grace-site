@@ -20,6 +20,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_header("Cache-Control", "no-cache")
         super().end_headers()
 
+    def send_head(self):
+        # Build-time files (the nginx redirect rules) are never served, as on production.
+        if self.path.split("?", 1)[0].startswith("/_nginx/"):
+            self.send_error(404)
+            return None
+        return super().send_head()
+
     def list_directory(self, path):
         self.send_error(404)
         return None

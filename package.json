@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
-    "build": "astro build && pagefind --site dist",
+    "build": "astro build && pagefind --site dist && node scripts/nginx-redirects.mjs",
     "preview": "astro preview --host 127.0.0.1",
     "check": "astro check",
     "import:wordpress": "node scripts/import-wordpress.mjs",

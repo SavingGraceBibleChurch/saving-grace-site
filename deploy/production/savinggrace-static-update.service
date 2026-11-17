@@ -1,0 +1,18 @@
+[Unit]
+Description=Update the Saving Grace site to the latest build
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -I /srv/savinggrace-static/update.py --nginx-unit nginx
+NoNewPrivileges=yes
+ProtectSystem=strict
+# nginx -t writes to its logs and temporary folders; systemctl reload talks to systemd.
+ReadWritePaths=/srv/savinggrace-static /var/log/nginx /var/lib/nginx /run
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+MemoryMax=256M
+TimeoutStartSec=10min

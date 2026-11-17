@@ -1,0 +1,16 @@
+[Unit]
+Description=nginx for the Saving Grace staging site (127.0.0.1:8084)
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/savinggrace-nginx.pid
+ExecStartPre=/usr/sbin/nginx -t -q -c /etc/nginx/savinggrace-staging.conf
+ExecStart=/usr/sbin/nginx -c /etc/nginx/savinggrace-staging.conf
+ExecReload=/usr/sbin/nginx -t -q -c /etc/nginx/savinggrace-staging.conf
+ExecReload=/usr/sbin/nginx -s reload -c /etc/nginx/savinggrace-staging.conf
+ExecStop=/usr/sbin/nginx -s quit -c /etc/nginx/savinggrace-staging.conf
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -119,7 +119,10 @@ Improvements over the live site:
 - **Sermon filter pages:** each speaker, series, book and topic gets a real page instead of a `?sermon_…=` query URL. The old query URLs 301 there.
 - **Demo page removed:** `/pages/im-new-here/` (2013 theme placeholder text) 301s to the Lord's Day Service page.
 
-## Deployment requirements (host not chosen yet)
+## Deployment requirements
+
+The production plan is a plain Linux server with nginx: see `deploy/production/README.md` (server, firewall,
+HTTPS, updates, switch-over, rollback, security checks). The points below are what any host must do.
 
 - **Canonical host is `www.savinggrace.org.au`.** `savinggrace.org.au` must 301 to `www`.
 - **Redirects:** `src/data/redirects.json` must be implemented at the host. It has 2,400+ rules of four kinds, applied in this order:
@@ -128,7 +131,8 @@ Improvements over the live site:
   3. `exact`: 301 when no file exists at the path.
   4. `prefix`: 301 when no file exists and the path starts with `from`. The longest prefix wins.
 
-  `/?s=…` and `/?q=…` go to `/search/`. A CloudFront Function or a Cloudflare Worker can do all of this; plain S3 rules cannot.
+  `/?s=…` and `/?q=…` go to `/search/`. Every build turns these into nginx rules (`dist/_nginx/redirect-maps.conf`,
+  from `scripts/nginx-redirects.mjs`), which the server's updater installs.
 - **Uploads:** WordPress files that old URLs point at (452 files, 1.16 GB, mostly sermon MP3s) are uploaded from `private/uploads/` to `/wp-content/uploads/…`. Create that folder with `python scripts/collect_uploads.py <backup.zip>`.
 - **Daily rebuild:** "next service" and upcoming-event dates are worked out at build time. `site.yml` already rebuilds every day; the production host should take its builds the same way staging does.
 - **Rollback:** keep WordPress running, untouched, for about a month after the switch.
