@@ -2,7 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHead from "../components/PageHead.astro";
 ---
-<BaseLayout title="Page not found - Saving Grace Bible Church" indexable={false} canonical="/404/">
+<BaseLayout
+  search={{ type: null }} title="Page not found - Saving Grace Bible Church" indexable={false} canonical="/404/">
   <article class="page" data-pagefind-ignore>
     <PageHead title="We couldn’t find that page" trail={[{ label: "Home", href: "/" }]} lede="The page may have moved. Try one of these instead." />
     <div class="page__body">

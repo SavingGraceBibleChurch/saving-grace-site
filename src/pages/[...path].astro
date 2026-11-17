@@ -81,6 +81,7 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July", 
   const image = imageFor(post.media);
   return (
     <BaseLayout
+      search={{ type: "Page", label: "Article" }}
       title={post.seo.title}
       description={post.seo.description}
       canonical={post.seo.canonical ?? post.path}
@@ -122,6 +123,7 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July", 
   const label = month ? `${MONTHS[Number(month) - 1]} ${year}` : year;
   return (
     <BaseLayout
+      search={{ type: null }}
       title={`${label} - ${SITE_NAME} - Bible-Based Worship in Melbourne`}
       description={`Articles published by Saving Grace Bible Church in ${label}.`}
       canonical={path}

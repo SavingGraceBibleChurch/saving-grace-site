@@ -10,7 +10,7 @@
   "eyebrow": "About Us",
   "lede": "At Saving Grace Bible Church, we aim to exalt the name of our Lord Jesus Christ and magnify the truths of Scripture in the heart of Melbourne, Victoria. We stand as a steadfast lighthouse of Christ-centered reformed theology, embracing the principles of Calvinism and the profound beauty of TULIP with unwavering devotion.",
   "hero": {
-   "media": "elders",
+   "media": "pastor-wesam",
    "treatment": "banner"
   },
   "blocks": [
@@ -993,13 +993,13 @@
   ],
   "seo": {
    "title": "What We Teach | The Scriptures, God, Man, Salvation &Church",
-   "description": "Discover our teachings on the Bible, God, salvation andthe church. Join us to explore the Word of God, grow in faith, and experience true Christian fellowship.",
+   "description": "Discover our teachings on the Bible, God, salvation and the church. Join us to explore the Word of God, grow in faith, and experience true Christian fellowship.",
    "canonical": "/what-we-teach/",
    "indexable": true,
    "h1": "What We Teach",
    "ogType": "article",
    "ogTitle": "What We Teach | The Scriptures, God, Man, Salvation &Church",
-   "ogDescription": "Discover our teachings on the Bible, God, salvation andthe church. Join us to explore the Word of God, grow in faith, and experience true Christian fellowship.",
+   "ogDescription": "Discover our teachings on the Bible, God, salvation and the church. Join us to explore the Word of God, grow in faith, and experience true Christian fellowship.",
    "published": "2023-07-06T13:54:02.000Z",
    "modified": "2025-09-12T05:32:44.000Z",
    "captured": true
@@ -1529,7 +1529,7 @@
   "eyebrow": "About Us",
   "lede": "Jesus' commitment to building His church, as stated in Matthew 16:18, establishes Him as its cornerstone. Ephesians 4:8–11 underscores the role of church leaders as instruments of God in preparing and empowering the saints for their ministry.",
   "hero": {
-   "media": "elders",
+   "media": "pastor-wesam",
    "treatment": "banner"
   },
   "blocks": [
@@ -1639,29 +1639,9 @@
     "kind": "timeline",
     "items": [
      {
-      "when": "1945",
-      "title": "The Essendon Christian Fellowship",
-      "text": "Inception in 1945 at Cidwood Hall, Moonee Ponds, as \"The Essendon Christian Fellowship"
-     },
-     {
-      "when": "1977",
-      "title": "A New Home in East Keilor",
-      "text": "The move to East Keilor Community Hall in 1970, adopting the name \"East Keilor Evangelical Christian Church."
-     },
-     {
-      "when": "1995",
-      "title": "Journey of Growth and Change",
-      "text": "Relocation to Keilor Heights High School in 1977 and East Keilor Primary School in 1990"
-     },
-     {
-      "when": "Since 1995",
-      "title": "A Permanent Home in East Keilor",
-      "text": "The church's joyous move to its own building at 97 Quinn Grove, East Keilor in June 1995"
-     },
-     {
       "when": "2017",
       "title": "The Birth of Saving Grace Bible Church",
-      "text": "Founded in 2017 with three families in Preston under Pastor Wessam Saad's leadership."
+      "text": "Founded in 2017 with three families in Preston under Pastor Wesam Saad's leadership."
      },
      {
       "when": "2021",
@@ -2499,13 +2479,13 @@
   ],
   "seo": {
    "title": "Men’s Ministry - Saving Grace Bible Church - Bible-Based Worship in Melbourne",
-   "description": "Men’s Theological StudyOur next study:Engage in thought-provoking theological studies, including a dedicated exploration of the end times. This study aims to provide a deeper understanding of eschatology and its significance in shaping our faith and daily lives as men of God.Men’s Leadership StudyOur next Study: Fight Like a Man is a powerful resource that challenges",
+   "description": "Men’s Ministry at Saving Grace Bible Church: theological studies, including the end times, and a Men’s Leadership Study to help us grow as men of God.",
    "canonical": "/mens-ministry/",
    "indexable": true,
    "h1": "Men’s Ministry",
    "ogType": "article",
    "ogTitle": "Men’s Ministry - Saving Grace Bible Church - Bible-Based Worship in Melbourne",
-   "ogDescription": "Men’s Theological StudyOur next study:Engage in thought-provoking theological studies, including a dedicated exploration of the end times. This study aims to provide a deeper understanding of eschatology and its significance in shaping our faith and daily lives as men of God.Men’s Leadership StudyOur next Study: Fight Like a Man is a powerful resource that challenges",
+   "ogDescription": "Men’s Ministry at Saving Grace Bible Church: theological studies, including the end times, and a Men’s Leadership Study to help us grow as men of God.",
    "published": "2023-12-01T00:23:28.000Z",
    "modified": "2025-01-02T03:00:52.000Z",
    "captured": true
@@ -2714,13 +2694,13 @@
   ],
   "seo": {
    "title": "Teaching & Preaching Ministry - Saving Grace Bible Church - Bible-Based Worship in Melbourne",
-   "description": "Men’s Teaching and Preaching StudyOur next study:Join us every Tuesday, 6-7 PM, for our \"Called to Preach\" study. Led by experienced pastors, explore expository preaching principles from Dr. Steven J. Lawson's book. Grow in your ability to handle God's Word faithfully and fulfil your calling in ministry.Current Study: \"Preaching and Preachers by Dr. Martyn Lloyd-Jones\" In",
+   "description": "Men’s Teaching and Preaching Study at Saving Grace Bible Church, every Tuesday 6–7 pm: learning expository preaching to handle God’s Word faithfully.",
    "canonical": "/teaching-preaching-ministry/",
    "indexable": true,
    "h1": "Teaching & Preaching Ministry",
    "ogType": "article",
    "ogTitle": "Teaching & Preaching Ministry - Saving Grace Bible Church - Bible-Based Worship in Melbourne",
-   "ogDescription": "Men’s Teaching and Preaching StudyOur next study:Join us every Tuesday, 6-7 PM, for our \"Called to Preach\" study. Led by experienced pastors, explore expository preaching principles from Dr. Steven J. Lawson's book. Grow in your ability to handle God's Word faithfully and fulfil your calling in ministry.Current Study: \"Preaching and Preachers by Dr. Martyn Lloyd-Jones\" In",
+   "ogDescription": "Men’s Teaching and Preaching Study at Saving Grace Bible Church, every Tuesday 6–7 pm: learning expository preaching to handle God’s Word faithfully.",
    "published": "2024-06-12T01:58:15.000Z",
    "modified": "2024-12-18T00:33:36.000Z",
    "captured": true
@@ -3287,7 +3267,7 @@
   "related": [],
   "seo": {
    "title": "Sitemap - Saving Grace Bible Church - Bible-Based Worship in Melbourne",
-   "description": "",
+   "description": "Every page on the Saving Grace Bible Church website: sermons, Tuesday Night Studies, ministries, what we teach, events and how to contact us.",
    "canonical": "/pages/sitemap/",
    "indexable": true,
    "h1": "Sitemap",

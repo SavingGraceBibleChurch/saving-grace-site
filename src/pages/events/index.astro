@@ -10,6 +10,7 @@ const page = pageById("events")!;
 const seo = liveCapture as { title: string; description: string };
 ---
 <BaseLayout
+  search={{ type: null }}
   title={seo.title}
   description={seo.description || page.seo.description}
   canonical="/events/"

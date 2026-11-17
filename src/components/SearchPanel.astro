@@ -1,0 +1,68 @@
+---
+// A search box with plain results underneath (src/scripts/site-search.ts). Without JavaScript the form
+// still goes to the search page. `scope` limits it to sermons, Tuesday Night Studies or pages;
+// `scopes` adds the choice of which to search (on the search page).
+interface Props {
+  id: string;
+  label: string;
+  placeholder?: string;
+  scope?: "all" | "Sermon" | "Study" | "Page";
+  scopes?: boolean;
+  /** Read the query (and type) from the address and keep it there as the visitor types. */
+  syncUrl?: boolean;
+}
+const { id, label, placeholder = "", scope = "all", scopes = false, syncUrl = false } = Astro.props;
+const choices: [string, string][] = [["all", "Everything"], ["Sermon", "Sermons"], ["Study", "Tuesday Night Studies"], ["Page", "Pages and events"]];
+---
+<section class="search-panel" data-search-panel data-scope={scope} data-sync={syncUrl ? "1" : undefined} aria-label={label}>
+  <form class="search-panel__form" method="get" action="/search/" role="search">
+    <label class="field__label" for={`${id}-q`}>{label}</label>
+    <div class="search-panel__row">
+      <input id={`${id}-q`} class="control search-panel__input" name="q" type="search" maxlength="120" autocomplete="off" spellcheck="false" placeholder={placeholder} />
+      {!scopes && scope !== "all" && <input type="hidden" name="type" value={scope} />}
+      <button class="button" type="submit">Search</button>
+    </div>
+    {scopes && (
+      <fieldset class="search-panel__scopes">
+        <legend class="sr-only">Search in</legend>
+        {choices.map(([value, text]) => (
+          <label class="scope"><input type="radio" name="type" value={value} checked={value === scope} /><span>{text}</span></label>
+        ))}
+      </fieldset>
+    )}
+  </form>
+  <p class="search-panel__status" role="status" aria-live="polite"></p>
+  <div class="search-panel__results"></div>
+</section>
+
+<script>
+  import { attachSearch, type Scope } from "../scripts/site-search";
+  document.querySelectorAll<HTMLElement>("[data-search-panel]").forEach((panel) => {
+    const form = panel.querySelector("form")!;
+    const input = panel.querySelector<HTMLInputElement>(".search-panel__input")!;
+    const radios = [...panel.querySelectorAll<HTMLInputElement>('input[name="type"][type="radio"]')];
+    const fixed = (panel.dataset.scope ?? "all") as Scope;
+    const scope = (): Scope => (radios.find((r) => r.checked)?.value as Scope | undefined) ?? fixed;
+    const sync = panel.dataset.sync === "1";
+    const search = attachSearch({
+      form, input, scope,
+      results: panel.querySelector<HTMLElement>(".search-panel__results")!,
+      status: panel.querySelector<HTMLElement>(".search-panel__status")!,
+      onSearch(query) {
+        if (!sync) return;
+        const params = new URLSearchParams({ q: query });
+        if (scope() !== "all") params.set("type", scope());
+        history.replaceState(null, "", `${location.pathname}?${params}`);
+      },
+    });
+    radios.forEach((r) => r.addEventListener("change", () => { if (input.value.trim()) void search.run(input.value); }));
+    if (sync) {
+      const params = new URLSearchParams(location.search);
+      const type = params.get("type");
+      const match = radios.find((r) => r.value === type);
+      if (match) match.checked = true;
+      const q = params.get("q") ?? params.get("s");
+      if (q) void search.run(q);
+    }
+  });
+</script>

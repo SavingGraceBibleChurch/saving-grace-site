@@ -3,7 +3,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PageHead from "../../../components/PageHead.astro";
 import JournalList from "../../../components/JournalList.astro";
-import { taxonomyTerms, taxonomyLabels, sermonsFor, SITE } from "../../../lib/content";
+import { taxonomyTerms, taxonomyLabels, sermonsFor, term, sermons, imageFor, SITE, SITE_NAME } from "../../../lib/content";
 import { byBook, byYear, inPassageOrder, oldestFirst, seriesInfo, years } from "../../../lib/groups";
 import { bookGroup } from "../../../lib/books";
 import type { Sermon, TaxonomyTerm } from "../../../lib/types";
@@ -37,14 +37,50 @@ if (t.kind === "speaker") {
   sections = [{ id: "sermons", title: `Through ${t.name}`, group: bookGroup(t.slug), note: `${count(list.length)} in passage order · ${years(list)}`, sermons: inPassageOrder(list) }];
 }
 const group = t.kind === "book" ? bookGroup(t.slug) : t.kind === "series" ? seriesInfo(t).group : undefined;
+
+// The meta description, where the live site had none: what the page holds, then why it is worth opening.
+const where = "at Saving Grace Bible Church, Melbourne";
+const metaDescription = t.seo.description || {
+  speaker: `${count(list.length)} preached by ${t.name} ${where}. Watch or listen online and read the descriptions and transcripts.`,
+  series: `${count(list.length)} in the ${t.name} series ${where}. Watch or listen online and read the descriptions and transcripts.`,
+  book: `${count(list.length)} preached from ${t.name} ${where}, in passage order. Watch or listen online and read the transcripts.`,
+  passage: `${count(list.length)} on ${t.name} ${where}. Watch or listen online and read the description and transcript.`,
+}[t.kind];
+
+// A series that shares its name with a Bible book or a sermon ("Luke", "The Heart of Pride") had the same
+// title tag as that page. Its title now says it is the series; custom titles are left alone.
+const SUFFIX = " - Saving Grace Bible Church - Bible-Based Worship in Melbourne";
+const clashes = t.kind === "series" && (term("book", t.slug) !== undefined || sermons.some((s) => s.title === t.name));
+const title = clashes && t.seo.title === `${t.name}${SUFFIX}` ? `${t.name} Sermon Series${SUFFIX}` : t.seo.title;
+
+// Who the speaker is, for search engines and AI answers. Roles are those given on the Elders page.
+const roles: Record<string, { jobTitle: string; image: string }> = {
+  "wesam-saad": { jobTitle: "Pastor", image: "wesam" },
+  "ralph-gambardella": { jobTitle: "Elder", image: "ralph" },
+};
+const role = t.kind === "speaker" ? roles[t.slug] : undefined;
+const portrait = role ? imageFor(role.image) : undefined;
+const jsonLd: Record<string, unknown>[] = [{ "@context": "https://schema.org", "@type": "CollectionPage", url: `${SITE}${t.path}`, name: t.name, description: metaDescription, inLanguage: "en-AU", isPartOf: { "@id": `${SITE}/#website` } }];
+if (t.kind === "speaker") {
+  jsonLd.push({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE}${t.path}#person`,
+    name: t.name,
+    url: `${SITE}${t.path}`,
+    ...(role ? { jobTitle: role.jobTitle, affiliation: { "@type": "Church", "@id": `${SITE}/#church`, name: SITE_NAME, url: `${SITE}/` } } : {}),
+    ...(portrait ? { image: `${SITE}${portrait.src}` } : {}),
+  });
+}
 ---
 <BaseLayout
-  title={t.seo.title}
-  description={t.seo.description || intro}
+  search={{ type: null }}
+  title={title}
+  description={metaDescription}
   canonical={t.path}
   indexable={list.length > 0}
   breadcrumbs={[{ name: "Home", path: "/" }, { name: "Sermons", path: "/sermons/" }, { name: label.plural, path: label.path }, { name: t.name, path: t.path }]}
-  jsonLd={[{ "@context": "https://schema.org", "@type": "CollectionPage", url: `${SITE}${t.path}`, name: t.name, inLanguage: "en-AU", isPartOf: { "@id": `${SITE}/#website` } }]}
+  jsonLd={jsonLd}
 >
   <article class:list={["page", "page--listing", group && `hue--${group}`]} data-pagefind-ignore="all">
     <PageHead

@@ -10,6 +10,7 @@ import "../styles/sermons.css";
 import "../styles/journal.css";
 import "../styles/listing.css";
 import "../styles/studies.css";
+import "../styles/search.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE, SITE_NAME } from "../lib/content";
@@ -30,6 +31,11 @@ interface Props {
   breadcrumbs?: Crumb[];
   jsonLd?: Record<string, unknown>[];
   currentPath?: string;
+  /**
+   * How site search sees this page: its type ("Sermon", "Study" or "Page"; null leaves the page out of
+   * search, as for lists and the home page) and plain details shown with the result instead of a snippet.
+   */
+  search?: { type: "Sermon" | "Study" | "Page" | null; label?: string; meta?: Record<string, string | null | undefined> };
 }
 
 const {
@@ -44,7 +50,20 @@ const {
   breadcrumbs = [],
   jsonLd = [],
   currentPath = Astro.url.pathname,
+  search = { type: "Page" },
 } = Astro.props;
+
+// Search details travel as data attributes, so commas and quotes in a summary cannot break them.
+const searchMeta = Object.entries({ label: search.label ?? (search.type === "Study" ? "Tuesday Night Study" : search.type), summary: description, ...search.meta })
+  .filter((entry): entry is [string, string] => Boolean(entry[1]));
+const searchAttributes: Record<string, string> = search.type
+  ? {
+      "data-pagefind-body": "",
+      "data-pagefind-filter": `type:${search.type}`,
+      ...(searchMeta.length ? { "data-pagefind-meta": searchMeta.map(([key]) => `${key}[data-search-${key}]`).join(", ") } : {}),
+      ...Object.fromEntries(searchMeta.map(([key, value]) => [`data-search-${key}`, value])),
+    }
+  : {};
 
 const absolute = (path: string) => (path.startsWith("http") ? path : `${SITE}${path}`);
 const canonicalUrl = absolute(canonical);
@@ -96,7 +115,7 @@ const robots = indexable ? "index, follow, max-image-preview:large, max-snippet:
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <Header currentPath={currentPath} />
-    <main id="main-content" data-pagefind-body>
+    <main id="main-content" {...searchAttributes}>
       <slot />
     </main>
     <Footer />

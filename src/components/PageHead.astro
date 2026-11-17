@@ -28,9 +28,9 @@ const upright = image ? image.width / image.height < 0.9 : false;
         {lede && <p class="page-head__lede" set:html={inline(lede)} />}
         <slot />
       </div>
-      {aside && upright && <figure class="page-head__arch"><div class="arch"><Picture id={hero!.media} alt={hero!.alt ?? ""} eager /></div></figure>}
-      {aside && !upright && <figure class="page-head__frame"><Picture id={hero!.media} alt={hero!.alt ?? ""} eager /></figure>}
+      {aside && upright && <figure class="page-head__arch"><div class="arch"><Picture id={hero!.media} alt={hero!.alt} eager /></div></figure>}
+      {aside && !upright && <figure class="page-head__frame"><Picture id={hero!.media} alt={hero!.alt} eager /></figure>}
     </div>
-    {banner && <figure class="page-head__banner"><Picture id={hero!.media} alt={hero!.alt ?? ""} eager /></figure>}
+    {banner && <figure class="page-head__banner"><Picture id={hero!.media} alt={hero!.alt} eager /></figure>}
   </div>
 </header>

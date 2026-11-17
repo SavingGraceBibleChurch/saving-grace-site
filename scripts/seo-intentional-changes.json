@@ -1,0 +1,17 @@
+[
+ {
+  "path": "/what-we-teach/",
+  "field": "description",
+  "reason": "The live meta description had a typo (\"andthe church\"); fixed on 2026-11-17, wording otherwise unchanged."
+ },
+ {
+  "path": "/mens-ministry/",
+  "field": "description",
+  "reason": "The live meta description was run-together page text (\"StudyOur next study:…\", 380+ characters); replaced on 2026-11-17 with a clean 150-character summary of the same page."
+ },
+ {
+  "path": "/teaching-preaching-ministry/",
+  "field": "description",
+  "reason": "The live meta description was run-together page text (\"StudyOur next study:…\", 380+ characters); replaced on 2026-11-17 with a clean summary of the same page."
+ }
+]

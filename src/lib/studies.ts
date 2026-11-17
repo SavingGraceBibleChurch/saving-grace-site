@@ -23,6 +23,8 @@ export const seriesOf = (session: StudySession) => byId.get(session.seriesId)!;
 export function courseSessions(s: StudySeries): StudySession[] {
   return [...sessionsOf(s), ...sectionsOf(s).flatMap((section) => sessionsOf(section))];
 }
+/** Every study on the site in reading order: course by course, section by section. */
+export const readingOrder: StudySession[] = courses.flatMap((course) => courseSessions(course));
 /** A course keeps one cover colour on its outline and session pages. */
 export const toneOf = (s: StudySeries) => ["ink", "ember", "sand", "slate"][Math.max(0, courses.indexOf(courseOf(s))) % 4]!;
 

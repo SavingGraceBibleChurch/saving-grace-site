@@ -53,11 +53,11 @@
   "height": 240,
   "alt": "Ralph Gambardella, Music Ministry leader."
  },
- "elders": {
-  "src": "/media/elders.jpg",
-  "width": 1200,
-  "height": 675,
-  "alt": "Pastor Wesam Saad and Elder Ralph Gambardella standing together."
+ "pastor-wesam": {
+  "src": "/media/pastor-wesam.jpg",
+  "width": 480,
+  "height": 600,
+  "alt": "Pastor Wesam Saad."
  },
  "tulips": {
   "src": "/media/tulips.png",

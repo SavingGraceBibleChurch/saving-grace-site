@@ -19,6 +19,7 @@ const path = seriesPath(series);
 const crumbs = [{ name: "Home", path: "/" }, { name: "Tuesday Night Studies", path: studiesPath }, ...(course !== series ? [{ name: course.title, path: seriesPath(course) }] : []), { name: series.title, path }];
 ---
 <BaseLayout
+  search={{ type: null }}
   title={`${series.title} - Tuesday Night Studies - ${SITE_NAME}`}
   description={`${series.title}: ${quantity(total, "session")} from the Tuesday night Bible study at Saving Grace Bible Church, with recordings, transcripts and study questions.`}
   canonical={path}

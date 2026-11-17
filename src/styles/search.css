@@ -1,0 +1,33 @@
+/* Site search: the search box and its plain results (title, details, summary — no highlighted snippets). */
+.search-panel { display: grid; gap: 0.75rem; }
+.search-panel__form { display: grid; gap: 0.4rem; }
+.search-panel__form .field__label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+.search-panel__row { display: flex; gap: 0.5rem; }
+.search-panel__input { flex: 1; min-width: 0; min-height: 3rem; padding: 0.55rem 0.9rem; border: 1px solid var(--line-strong); border-radius: 0.5rem; background: var(--surface); color: var(--ink); font: inherit; font-size: 1.0625rem; }
+.search-panel__input:focus { outline: 0; border-color: var(--navy-3); box-shadow: 0 0 0 4px rgb(31 80 104 / 0.14); }
+.search-panel__row .button { min-height: 3rem; border-radius: 0.5rem; }
+.search-panel__scopes { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.35rem 0 0; padding: 0; border: 0; }
+.scope { position: relative; cursor: pointer; }
+.scope input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.scope span { display: inline-block; padding: 0.4rem 0.9rem; border: 1px solid var(--line-strong); border-radius: 999px; font-size: 0.9375rem; color: var(--ink-soft); transition: background 0.15s, color 0.15s, border-color 0.15s; }
+.scope input:checked + span { background: var(--navy); border-color: var(--navy); color: var(--on-navy); }
+.scope input:focus-visible + span { box-shadow: 0 0 0 3px rgb(213 106 51 / 0.45); }
+.search-panel__status:empty { display: none; }
+.search-panel__status { font-size: 0.9375rem; color: var(--ink-soft); }
+
+.hits-group + .hits-group { margin-top: 2rem; }
+.hits-group__title { margin: 0.5rem 0 0.25rem; font-family: var(--font-serif); font-size: 1.35rem; font-weight: 500; }
+.hits { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.hit { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.hit__label { margin-bottom: 0.25rem; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ember); }
+.hit__title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 500; line-height: 1.25; }
+.hit__title a { color: var(--ink); text-decoration: none; }
+.hit__title a:hover { color: var(--ember); text-decoration: underline; text-underline-offset: 0.18em; }
+.hit__meta { margin-top: 0.25rem; font-size: 0.9rem; color: var(--ink-mute); }
+.hit__summary { margin-top: 0.4rem; max-width: 70ch; color: var(--ink-soft); }
+.hits__more { margin-top: 1rem; }
+
+/* The sermons page finder shows its results under the form; the studies library has its own box. */
+.finder-results { margin-top: 1rem; }
+.finder-results:has(.search-panel__status:empty) { margin-top: 0; }
+.studies__search { max-width: 48rem; margin: 0 0 clamp(2.5rem, 2rem + 2vw, 4rem); }

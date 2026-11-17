@@ -2,10 +2,12 @@
 // Tuesday Night Studies: the course library.
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CourseCover from "../../components/CourseCover.astro";
+import SearchPanel from "../../components/SearchPanel.astro";
 import { courses, allSessions, quantity, studiesPath } from "../../lib/studies";
 import { SITE, SITE_NAME } from "../../lib/content";
 ---
 <BaseLayout
+  search={{ type: null }}
   title={`Tuesday Night Studies - ${SITE_NAME} - Bible-Based Worship in Melbourne`}
   description={`${quantity(courses.length, "course")} and ${quantity(allSessions.length, "study")} from the Tuesday night Bible study at Saving Grace Bible Church, each with its recording, transcript and study questions.`}
   canonical={studiesPath}
@@ -21,6 +23,9 @@ import { SITE, SITE_NAME } from "../../lib/content";
         <a class="link-arrow" href="#courses">Explore the courses</a>
       </div>
     </header>
+    <div class="studies__search">
+      <SearchPanel id="study-search" label="Search the studies" placeholder="A topic, a question, a Bible book…" scope="Study" />
+    </div>
     <section id="courses" aria-labelledby="study-courses-heading">
       <div class="studies__catalogue-heading"><h2 id="study-courses-heading">The course library</h2><p>{quantity(courses.length, "course")}<span aria-hidden="true"> / </span>{quantity(allSessions.length, "study")}</p></div>
       <div class="studies__covers">{courses.map((course) => <article aria-label={course.title}><CourseCover course={course} /></article>)}</div>

@@ -28,6 +28,7 @@ const shown = Math.min(page * ARCHIVE_PAGE_SIZE, sermons.length);
 const portraitFor = (name: string) => (name === "Wesam Saad" ? imageFor("wesam") : name === "Ralph Gambardella" ? imageFor("ralph") : undefined);
 ---
 <BaseLayout
+  search={{ type: null }}
   title={title}
   description={page === 1 ? "Browse sermons from Saving Grace Bible Church by speaker, series, Scripture, Bible book, or service date." : ""}
   canonical={path}
@@ -54,6 +55,10 @@ const portraitFor = (name: string) => (name === "Wesam Saad" ? imageFor("wesam")
           </div>
         </details>
       </form>
+      <div class="finder-results" data-finder-results>
+        <p class="search-panel__status" role="status" aria-live="polite"></p>
+        <div class="search-panel__results"></div>
+      </div>
     </section>
 
     <BookShelf />
@@ -118,9 +123,26 @@ const portraitFor = (name: string) => (name === "Wesam Saad" ? imageFor("wesam")
     </div>
   </div>
 
+  <script>
+    // Typing in the finder shows matching sermons right here (src/scripts/site-search.ts).
+    import { attachSearch } from "../scripts/site-search";
+    const finder = document.querySelector<HTMLFormElement>("[data-finder]");
+    const area = document.querySelector<HTMLElement>("[data-finder-results]");
+    if (finder && area) {
+      attachSearch({
+        form: finder,
+        input: finder.querySelector<HTMLInputElement>('input[name="q"]')!,
+        scope: () => "Sermon",
+        results: area.querySelector<HTMLElement>(".search-panel__results")!,
+        status: area.querySelector<HTMLElement>(".search-panel__status")!,
+      });
+    }
+  </script>
+
   <script is:inline>
   (function () {
-    // Finder: a search term goes to the site search; otherwise the chosen filter opens its page.
+    // Finder: with an empty search box, the chosen filter opens its page. (A search term is handled above;
+    // without JavaScript it goes to the search page.)
     var form = document.querySelector("[data-finder]");
     if (form) {
       var selects = form.querySelectorAll("select[data-go]");

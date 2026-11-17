@@ -1,7 +1,8 @@
 ---
 // The shelf of all 66 books. Books with sermons are solid spines that link to their
-// sermons; the rest are outlines. Folded by default ("Browse by Bible book"), or
-// always open on the Bible books page.
+// sermons; the rest are outlines. Choosing a spine opens the book's chapters and verses, with the ones
+// preached from filled in (src/scripts/bible-picker.ts). Open when the sermons page loads, and always
+// open on the Bible books page.
 import { canon, canonBooks, isBook, chapters } from "../lib/canon";
 import { termsOf, sermons, speakerName } from "../lib/content";
 import { formatDate } from "../lib/events";
@@ -27,6 +28,7 @@ const spines = canon.map((item) => {
 const summary = `Sermons have been preached from ${preached.length} of the 66 books: ${preached.map((book) => `${book.name} (${books.get(book.slug)!.count})`).join(", ")}. Books without sermons are shown as outlines and are not links.`;
 ---
 {open ? (
+  <div class="shelf-wrap" data-shelf>
   <nav class="shelf shelf--settle shelf--open" aria-label="Bible books">
     <p class="sr-only">{summary}</p>
     <ol class="shelf__row" role="list">
@@ -43,9 +45,11 @@ const summary = `Sermons have been preached from ${preached.length} of the 66 bo
       )}
     </ol>
   </nav>
+  <div class="picker" data-picker hidden aria-labelledby="picker-title"></div>
+  </div>
 ) : (
   <section class="fold-section" aria-labelledby="shelf-heading">
-    <details class="fold" id="shelf" data-fold>
+    <details class="fold" id="shelf" data-fold open>
       <summary class="fold__summary">
         <span class="fold__chevron" aria-hidden="true"></span>
         <span class="fold__label"><span class="fold__title" id="shelf-heading">Browse by Bible book</span><span class="fold__hint">{preached.length} books with sermons · take one off the shelf</span></span>
@@ -55,7 +59,7 @@ const summary = `Sermons have been preached from ${preached.length} of the 66 bo
           </svg>
         </span>
       </summary>
-      <div class="fold__body">
+      <div class="fold__body" data-shelf>
         <nav class="shelf shelf--settle" aria-labelledby="shelf-heading">
           <p class="sr-only">{summary}</p>
           <ol class="shelf__row" role="list">
@@ -72,6 +76,7 @@ const summary = `Sermons have been preached from ${preached.length} of the 66 bo
             )}
           </ol>
         </nav>
+        <div class="picker" data-picker hidden aria-labelledby="picker-title"></div>
       </div>
     </details>
     {topical.length > 0 && (
@@ -92,3 +97,8 @@ const summary = `Sermons have been preached from ${preached.length} of the 66 bo
     )}
   </section>
 )}
+
+<script>
+  import { attachPicker } from "../scripts/bible-picker";
+  document.querySelectorAll<HTMLElement>("[data-shelf]").forEach((shelf) => attachPicker(shelf));
+</script>

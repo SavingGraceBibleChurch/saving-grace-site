@@ -69,6 +69,10 @@ const toPath = (url) => { const u = new URL(url); return u.pathname + u.search; 
 // ----------------------------------------------------- 1. every live URL
 const results = { page: 0, redirect: 0, missing: [], brokenRedirect: [], chains: 0 };
 const metaIssues = [];
+// Reviewed, deliberate departures from the live metadata (each with its reason) are reported, not failed.
+const intentional = JSON.parse(readFileSync(join(ROOT, "scripts/seo-intentional-changes.json"), "utf8"));
+const intentionalChanges = [];
+const isIntentional = (path, issue) => intentional.some((c) => c.path === path && issue.startsWith(c.field));
 const indexableKinds = new Set(["page", "post", "sermon"]);
 for (const route of capture) {
   const r = resolve(route.path);
@@ -92,7 +96,10 @@ for (const route of capture) {
   if (m.canonical !== expectCanonical) issues.push(`canonical ${m.canonical} ≠ ${expectCanonical}`);
   if (!m.robots?.startsWith("index")) issues.push(`robots ${m.robots}`);
   if (route.p.heading && norm(m.h1) !== norm(route.p.heading)) issues.push(`h1: "${m.h1}" ≠ live "${route.p.heading}"`);
-  if (issues.length) metaIssues.push({ path: route.path, kind: route.p.kind, issues });
+  const accepted = issues.filter((issue) => isIntentional(route.path, issue));
+  if (accepted.length) intentionalChanges.push({ path: route.path, issues: accepted });
+  const remaining = issues.filter((issue) => !isIntentional(route.path, issue));
+  if (remaining.length) metaIssues.push({ path: route.path, kind: route.p.kind, issues: remaining });
 }
 
 // ------------------------------------------- 2. Search Console traffic URLs
@@ -146,6 +153,7 @@ const report = {
   missingIndexable: results.missing.filter((m) => m.indexable).length,
   redirectsToNowhere: results.brokenRedirect.length,
   metadataMismatches: metaIssues.length,
+  intentionalChanges: intentionalChanges.length,
   metadataMismatchesByKind: byKind(metaIssues),
   searchConsole: { urls: gsc.length, clicksCovered: gscClicksCovered, clicksTotal: gscClicksTotal, uncoveredUrls: gscMissing.length },
   internalLinksChecked: linkCount,
@@ -153,7 +161,7 @@ const report = {
   internalLinksThroughRedirect: results.chains,
 };
 console.log(JSON.stringify(report, null, 1));
-const out = { chainLinks: Object.fromEntries(results.chainLinks ?? []), report, missing: results.missing, brokenRedirects: results.brokenRedirect, metaIssues, gscMissing, brokenLinks: Object.fromEntries(brokenLinks) };
+const out = { intentionalChanges, chainLinks: Object.fromEntries(results.chainLinks ?? []), report, missing: results.missing, brokenRedirects: results.brokenRedirect, metaIssues, gscMissing, brokenLinks: Object.fromEntries(brokenLinks) };
 writeFileSync(join(ROOT, "private/seo-verification.json"), JSON.stringify(out, null, 1));
 if (details) {
   console.log("\nmissing (sample):", results.missing.slice(0, 25));

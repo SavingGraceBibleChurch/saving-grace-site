@@ -101,6 +101,19 @@ export function scheduleLabel(event: ChurchEvent): string {
 }
 
 /** Today's date in Melbourne at build time. Scheduled rebuilds keep "next" dates current. */
+/** Melbourne's UTC offset on a day at a local time: "+11:00" in daylight saving, "+10:00" otherwise. */
+export function melbourneOffset(iso: string, time = "12:00"): string {
+  const probe = new Date(`${iso}T${time}:00+10:00`);
+  const name = new Intl.DateTimeFormat("en-AU", { timeZone: "Australia/Melbourne", timeZoneName: "shortOffset" }).formatToParts(probe).find((part) => part.type === "timeZoneName")?.value ?? "GMT+10";
+  const match = /GMT([+-])(\d{1,2})(?::(\d{2}))?/u.exec(name);
+  return match ? `${match[1]}${match[2]!.padStart(2, "0")}:${match[3] ?? "00"}` : "+10:00";
+}
+/** ISO 8601 duration for structured data: 3326 → "PT55M26S". */
+export function isoDuration(seconds: number): string {
+  const h = Math.floor(seconds / 3600), m = Math.floor((seconds % 3600) / 60), s = seconds % 60;
+  return `PT${h ? `${h}H` : ""}${m ? `${m}M` : ""}${s || (!h && !m) ? `${s}S` : ""}`;
+}
+
 export function melbourneToday(now: Date = new Date()): string {
   const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "Australia/Melbourne", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
   const value = (type: string) => parts.find((part) => part.type === type)?.value ?? "";

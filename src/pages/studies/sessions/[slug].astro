@@ -3,11 +3,11 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import CourseCover from "../../../components/CourseCover.astro";
 import Video from "../../../components/Video.astro";
-import { allSessions, seriesOf, courseOf, sessionsOf, contentFor, seriesPath, sessionPath, studiesPath } from "../../../lib/studies";
+import { allSessions, seriesOf, courseOf, sessionsOf, readingOrder, contentFor, seriesPath, sessionPath, studiesPath } from "../../../lib/studies";
 import type { StudySession } from "../../../lib/studies";
 import { SITE, SITE_NAME } from "../../../lib/content";
 import { formatDuration, spokenDuration, excerpt, paragraphs } from "../../../lib/extras";
-import { formatDate } from "../../../lib/events";
+import { formatDate, melbourneOffset, isoDuration } from "../../../lib/events";
 
 export function getStaticPaths() {
   return allSessions.map((session) => ({ params: { slug: session.slug }, props: { session } }));
@@ -16,10 +16,20 @@ const { session } = Astro.props as { session: StudySession };
 const series = seriesOf(session);
 const course = courseOf(series);
 const content = contentFor(session);
+// Previous and next follow the whole library in reading order, so the last study of a section
+// leads straight into the first of the next section (and the last of a course into the next course).
 const siblings = sessionsOf(series);
-const index = siblings.findIndex((s) => s.slug === session.slug);
-const previous = siblings[index - 1];
-const next = siblings[index + 1];
+const position = siblings.findIndex((s) => s.slug === session.slug);
+const index = readingOrder.findIndex((s) => s.slug === session.slug);
+const previous = readingOrder[index - 1];
+const next = readingOrder[index + 1];
+const stepLabel = (other: typeof session | undefined, forward: boolean) => {
+  if (!other) return "";
+  const otherSeries = seriesOf(other);
+  if (courseOf(otherSeries) !== course) return forward ? `Next course: ${courseOf(otherSeries).title}` : `Previous course: ${courseOf(otherSeries).title}`;
+  if (otherSeries !== series) return forward ? `Next section: ${otherSeries.title}` : `Previous section: ${otherSeries.title}`;
+  return forward ? "Next study" : "Previous study";
+};
 const path = sessionPath(session);
 const length = formatDuration(session.durationSeconds);
 const description = paragraphs(content.description);
@@ -30,10 +40,12 @@ const crumbs = [{ name: "Home", path: "/" }, { name: "Tuesday Night Studies", pa
 const jsonLd: Record<string, unknown>[] = session.youtubeId ? [{
   "@context": "https://schema.org", "@type": "VideoObject", name: session.title, description: summary,
   thumbnailUrl: [`https://i.ytimg.com/vi/${session.youtubeId}/hqdefault.jpg`],
-  uploadDate: session.date ? `${session.date}T19:00:00+10:00` : undefined,
-  duration: session.durationSeconds ? `PT${session.durationSeconds}S` : undefined,
+  uploadDate: session.date ? `${session.date}T19:00:00${melbourneOffset(session.date, "19:00")}` : undefined,
+  duration: session.durationSeconds ? isoDuration(session.durationSeconds) : undefined,
+  ...(session.teacher ? { author: { "@type": "Person", name: session.teacher } } : {}),
+  isPartOf: { "@type": "CreativeWorkSeries", name: `${course.title} — Tuesday Night Studies`, url: `${SITE}${seriesPath(course)}` },
   embedUrl: `https://www.youtube.com/embed/${session.youtubeId}`, contentUrl: `https://www.youtube.com/watch?v=${session.youtubeId}`,
-  inLanguage: "en-AU", publisher: { "@type": "Organization", name: SITE_NAME, logo: { "@type": "ImageObject", url: `${SITE}/brand/saving-grace-logo.png` } },
+  inLanguage: "en-AU", publisher: { "@type": "Organization", "@id": `${SITE}/#church`, name: SITE_NAME, url: `${SITE}/`, logo: { "@type": "ImageObject", url: `${SITE}/brand/saving-grace-logo.png` } },
 }] : [];
 ---
 <BaseLayout
@@ -44,6 +56,7 @@ const jsonLd: Record<string, unknown>[] = session.youtubeId ? [{
   ogImage={session.youtubeId ? `https://i.ytimg.com/vi/${session.youtubeId}/hqdefault.jpg` : undefined}
   breadcrumbs={crumbs}
   jsonLd={jsonLd}
+  search={{ type: "Study", meta: { course: course.title, section: series !== course ? series.title : null, teacher: session.teacher, date: session.date ? formatDate(session.date) : null } }}
 >
   <div class="wrap studies">
     <header class="studies__opening studies__opening--session">
@@ -53,7 +66,7 @@ const jsonLd: Record<string, unknown>[] = session.youtubeId ? [{
         {session.teacher && <span>{session.teacher}</span>}
         {session.date && <time datetime={session.date}>{formatDate(session.date)}</time>}
         {length && <time datetime={`PT${session.durationSeconds}S`} aria-label={`Recording length: ${spokenDuration(session.durationSeconds!)}`}>{length}</time>}
-        <span>Session {index + 1} of {siblings.length}</span>
+        <span>Session {position + 1} of {siblings.length}</span>
       </p>
     </header>
     <div class="studies__reader">
@@ -65,7 +78,6 @@ const jsonLd: Record<string, unknown>[] = session.youtubeId ? [{
             <h2>Watch or listen</h2>
             {session.youtubeId && <Video youtubeId={session.youtubeId} title={session.title} label="Watch the study" priority />}
             {session.sermonAudioId && <div class="audio" id="listen"><iframe src={`https://embed.sermonaudio.com/player/a/${session.sermonAudioId}/?mini=true`} title={`Listen to ${session.title} on SermonAudio`} loading="lazy" height="60"></iframe></div>}
-            {session.youtubeId && <p class="media-links"><a class="link-arrow" href={`https://www.youtube.com/watch?v=${session.youtubeId}`} rel="noopener">Watch on YouTube<span class="sr-only"> (external site)</span></a></p>}
           </section>
         )}
         {content.questions.length > 0 && (
@@ -80,14 +92,14 @@ const jsonLd: Record<string, unknown>[] = session.youtubeId ? [{
           </section>
         )}
         {transcript.length > 0 && (
-          <details class="studies__transcript" id="study-transcript">
+          <details class="studies__transcript" id="study-transcript" data-pagefind-ignore="all">
             <summary><span><span class="studies__disclosure" aria-hidden="true">+</span>Complete transcript</span><span class="studies__transcript-length">{words.toLocaleString("en-AU")} words</span></summary>
             <div class="studies__transcript-body">{transcript.map((text) => <p>{text}</p>)}</div>
           </details>
         )}
-        <nav class="studies__next" aria-label="More in this section" data-pagefind-ignore>
-          {previous && <a href={sessionPath(previous)} rel="prev"><span>← Previous study</span>{previous.title}</a>}
-          {next && <a class="studies__next-forward" href={sessionPath(next)} rel="next"><span>Next study →</span>{next.title}</a>}
+        <nav class="studies__next" aria-label="Previous and next study" data-pagefind-ignore>
+          {previous && <a href={sessionPath(previous)} rel="prev"><span>← {stepLabel(previous, false)}</span>{previous.title}</a>}
+          {next && <a class="studies__next-forward" href={sessionPath(next)} rel="next"><span>{stepLabel(next, true)} →</span>{next.title}</a>}
         </nav>
       </article>
       <aside class="studies__reader-aside" aria-label="Continue studying" data-pagefind-ignore>

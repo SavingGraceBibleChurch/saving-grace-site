@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHead from "../../components/PageHead.astro";
-import { events, venues, occurrencesBetween, scheduleLabel, isRecurring, formatLongDate, formatTimeRange, melbourneToday, addDays } from "../../lib/events";
+import { events, venues, occurrencesBetween, scheduleLabel, isRecurring, formatLongDate, formatTimeRange, melbourneToday, melbourneOffset, addDays } from "../../lib/events";
+import { excerpt } from "../../lib/extras";
 import { pageById, imageFor, SITE, SITE_NAME } from "../../lib/content";
 import { inline, plainText } from "../../lib/markup";
 import type { ChurchEvent } from "../../lib/types";
@@ -15,15 +16,16 @@ const next = occurrencesBetween(event, today, addDays(today, 366), 6);
 const venue = venues[event.venue];
 const ministry = event.page ? pageById(event.page) : undefined;
 const image = imageFor(event.media);
-const description = plainText(event.description[0] ?? `${event.title} at ${SITE_NAME}. ${scheduleLabel(event)}.`).slice(0, 300);
+// What, when and where first (so each event reads differently in search results), then its own words.
+const description = excerpt(`${event.title}: ${scheduleLabel(event)}${venue ? ` at ${venue.name}` : ""}. ${plainText(event.description[0] ?? "")}`, 158);
 const firstDate = next[0]?.date ?? (event.schedule.kind === "single" ? event.schedule.date : null);
 const jsonLd = firstDate && venue ? [{
   "@context": "https://schema.org",
   "@type": "Event",
   name: event.title,
   description,
-  startDate: `${firstDate}T${event.start}:00+10:00`,
-  endDate: `${firstDate}T${event.end}:00+10:00`,
+  startDate: `${firstDate}T${event.start}:00${melbourneOffset(firstDate, event.start)}`,
+  endDate: `${firstDate}T${event.end}:00${melbourneOffset(firstDate, event.end)}`,
   eventStatus: "https://schema.org/EventScheduled",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   location: { "@type": "Place", name: venue.name, address: `${venue.address}, ${venue.locality}` },
@@ -33,6 +35,7 @@ const jsonLd = firstDate && venue ? [{
 }] : [];
 ---
 <BaseLayout
+  search={{ type: "Page", label: "Event" }}
   title={`${event.title} - ${SITE_NAME} - Bible-Based Worship in Melbourne`}
   description={description}
   canonical={event.path}

@@ -100,7 +100,9 @@
 .studies__next a { display: grid; gap: 0.5rem; align-content: start; font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.25; text-decoration: none; }
 .studies__next a:hover { color: var(--ember); }
 .studies__next a > span { font: 600 0.6875rem / 1 var(--font-sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); }
-.studies__next-forward { grid-column: 2; text-align: right; }
+.studies__next-forward { grid-column: 2; text-align: right; padding: 1.15rem 1.4rem; border-radius: var(--radius); background: var(--navy); color: var(--on-navy); box-shadow: var(--shadow-md); transition: background 0.2s var(--ease), transform 0.2s var(--ease); }
+.studies__next a.studies__next-forward:hover { color: var(--on-navy); background: var(--navy-2); transform: translateY(-2px); }
+.studies__next a.studies__next-forward > span { color: var(--on-navy-mute); }
 
 @media (max-width: 60rem) {
   .studies__covers { grid-template-columns: repeat(2, minmax(0, 1fr)); }

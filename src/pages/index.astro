@@ -25,8 +25,13 @@ const jsonLd = [
     "@id": `${SITE}/#church`,
     name: SITE_NAME,
     url: `${SITE}/`,
+    description: seo.description,
     logo: `${SITE}/brand/saving-grace-logo.png`,
     image: `${SITE}/media/congregation.jpg`,
+    // From the Our History and Elders pages.
+    foundingDate: "2017",
+    founder: { "@type": "Person", name: "Wesam Saad", jobTitle: "Pastor", url: `${SITE}/sermons/speaker/wesam-saad/` },
+    hasMap: contact.map,
     telephone: "+61450545589",
     email: contact.email,
     address: {
@@ -56,6 +61,7 @@ const jsonLd = [
 ];
 ---
 <BaseLayout
+  search={{ type: null }}
   title={seo.title}
   description={seo.description}
   canonical="/"

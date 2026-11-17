@@ -4,7 +4,7 @@ import JournalList from "../../components/JournalList.astro";
 import Video from "../../components/Video.astro";
 import { sermons, term, speakerName, sermonSummary, youtubeThumbnail, SITE, SITE_NAME } from "../../lib/content";
 import { bookGroup } from "../../lib/books";
-import { formatDate } from "../../lib/events";
+import { formatDate, melbourneOffset, isoDuration } from "../../lib/events";
 import { extraFor, formatDuration, paragraphs, excerpt } from "../../lib/extras";
 import { transcriptFor } from "../../lib/transcripts";
 import type { Sermon } from "../../lib/types";
@@ -42,14 +42,19 @@ if (sermon.youtubeId) {
   jsonLd.push({
     "@context": "https://schema.org",
     "@type": "VideoObject",
+    "@id": `${SITE}${sermon.path}#video`,
     name: sermon.title,
     description,
     thumbnailUrl: [youtubeThumbnail(sermon.youtubeId)],
-    uploadDate: `${sermon.date}T10:30:00+10:00`,
+    uploadDate: `${sermon.date}T10:30:00${melbourneOffset(sermon.date, "10:30")}`,
+    ...(extra?.durationSeconds ? { duration: isoDuration(extra.durationSeconds) } : {}),
     embedUrl: `https://www.youtube.com/embed/${sermon.youtubeId}`,
     contentUrl: `https://www.youtube.com/watch?v=${sermon.youtubeId}`,
     inLanguage: "en-AU",
-    publisher: { "@type": "Organization", name: SITE_NAME, logo: { "@type": "ImageObject", url: `${SITE}/brand/saving-grace-logo.png` } },
+    // Who preached it, and the passage it is about: the facts search engines and AI answers cite.
+    ...(speakers.length ? { author: speakers.map((s) => ({ "@type": "Person", name: s!.name, url: `${SITE}${s!.path}` })) } : {}),
+    ...(sermon.passage && sermon.passage !== "Selected Text" ? { about: sermon.passage } : {}),
+    publisher: { "@type": "Organization", "@id": `${SITE}/#church`, name: SITE_NAME, url: `${SITE}/`, logo: { "@type": "ImageObject", url: `${SITE}/brand/saving-grace-logo.png` } },
   });
 }
 ---
@@ -61,16 +66,17 @@ if (sermon.youtubeId) {
   ogType="article"
   ogTitle={sermon.seo.ogTitle}
   ogImage={sermon.youtubeId ? youtubeThumbnail(sermon.youtubeId) : undefined}
-  breadcrumbs={[{ name: "Home", path: "/" }, { name: sermon.title, path: sermon.path }]}
+  breadcrumbs={[{ name: "Home", path: "/" }, { name: "Sermons", path: "/sermons/" }, { name: sermon.title, path: sermon.path }]}
   jsonLd={jsonLd}
+  search={{ type: "Sermon", meta: { date: formatDate(sermon.date), speaker: speakerName(sermon), passage: sermon.passage, series: series.map((s) => s!.name).join(", ") } }}
 >
-  <article class={`sermon hue--${bookGroup(mainBook)}`} data-pagefind-meta={`date:${sermon.date}`}>
+  <article class={`sermon hue--${bookGroup(mainBook)}`}>
     <div class="wrap">
       <header class="sermon__head">
-        <nav aria-label="Breadcrumb"><ol class="trail" role="list"><li><a href="/">Home</a></li><li><a href="/sermons/">Sermons</a></li>{books[0] && <li><a href={books[0].path}>{books[0].name}</a></li>}</ol></nav>
-        {sermon.passage && <p class="sermon__passage">{sermon.passage}</p>}
+        <nav aria-label="Breadcrumb" data-pagefind-ignore><ol class="trail" role="list"><li><a href="/">Home</a></li><li><a href="/sermons/">Sermons</a></li>{books[0] && <li><a href={books[0].path}>{books[0].name}</a></li>}</ol></nav>
+        {sermon.passage && <p class="sermon__passage" data-pagefind-weight="5">{sermon.passage}</p>}
         <h1 class:list={["sermon__title", { "is-long": sermon.title.length > 44 }]}>{sermon.seo.h1 ?? sermon.title}</h1>
-        <p class="sermon__meta dots">
+        <p class="sermon__meta dots" data-pagefind-weight="2">
           <time datetime={sermon.date}>{formatDate(sermon.date)}</time>
           {speakers.map((s) => <a href={s!.path}>{s!.name}</a>)}
           {series.map((s) => <a href={s!.path}>{s!.name}</a>)}
@@ -87,10 +93,6 @@ if (sermon.youtubeId) {
                 <iframe src={`https://embed.sermonaudio.com/player/a/${sermon.sermonAudioId}/?mini=true`} title={`Listen to ${sermon.title} on SermonAudio`} loading="lazy" height="60"></iframe>
               </div>
             )}
-            <p class="media-links">
-              {sermon.youtubeId && <a class="link-arrow" href={`https://www.youtube.com/watch?v=${sermon.youtubeId}`} rel="noopener">Watch on YouTube<span class="sr-only"> (external site)</span></a>}
-              {sermon.sermonAudioId && <a class="link-arrow" href={`https://www.sermonaudio.com/sermons/${sermon.sermonAudioId}`} rel="noopener">Listen on SermonAudio<span class="sr-only"> (external site)</span></a>}
-            </p>
           </section>
           {about.length > 0 && (
             <section class="sermon__about" id="about" aria-labelledby="about-heading">
@@ -125,13 +127,13 @@ if (sermon.youtubeId) {
       </div>
 
       {related.length > 0 && (
-        <section class="sermon__section" id="related" aria-labelledby="related-heading">
+        <section class="sermon__section" id="related" aria-labelledby="related-heading" data-pagefind-ignore="all">
           <h2 id="related-heading">Related sermons</h2>
           <JournalList sermons={related} />
         </section>
       )}
 
-      <nav class="sermon-step" aria-label="More sermons">
+      <nav class="sermon-step" aria-label="More sermons" data-pagefind-ignore="all">
         {newer && <a class="sermon-step__link" href={newer.path} rel="prev"><span class="sermon-step__label">← Newer sermon</span>{newer.title}</a>}
         {older && <a class="sermon-step__link sermon-step__link--older" href={older.path} rel="next"><span class="sermon-step__label">Older sermon →</span>{older.title}</a>}
       </nav>

@@ -127,7 +127,6 @@
 .video__label { position: absolute; left: 1.5rem; bottom: 1.25rem; z-index: 1; font-weight: 600; font-size: 0.9375rem; }
 .audio { margin-top: 1.25rem; padding: 0.75rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 .audio iframe { width: 100%; min-width: 150px; height: 60px; border: 0; }
-.media-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.75rem; margin-top: 1.25rem; font-size: 0.9375rem; }
 
 .details-card { position: sticky; top: 7.5rem; padding: 1.6rem 1.6rem 1.75rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 .details-card dl { display: grid; gap: 1.15rem; margin: 0; }
