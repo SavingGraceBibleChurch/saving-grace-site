@@ -3,8 +3,12 @@
 import { API, REPO } from "./config";
 
 export class GitHubError extends Error {
-  constructor(message: string, readonly status: number) { super(message); }
+  constructor(message: string, readonly status: number, readonly rateLimited = false) { super(message); }
 }
+/** What stops a token being used to edit; sign-in turns each into steps the editor can follow. */
+export type EditProblem = "repository" | "access" | "save" | "builds";
+/** The text of the one blob the sign-in check writes. Nothing points to it, so no branch, page or build changes. */
+const CHECK_BLOB = "Saving Grace admin: this token can save.\n";
 /** Someone else saved after we read the branch; the caller re-reads and tries again. */
 export class NotFastForward extends Error {}
 
@@ -29,10 +33,12 @@ export class GitHub {
     });
     if (!response.ok && response.status !== 404 && response.status !== 422) {
       const text = await response.text().catch(() => "");
+      const limited = response.status === 429 || (response.status === 403 && /rate limit/i.test(text));
       const message = response.status === 401 ? "Your GitHub token was not accepted. It may have expired; sign out and add a new one."
-        : response.status === 403 ? `GitHub refused the request${/rate limit/i.test(text) ? " (rate limit — wait a few minutes)" : " — check the token has Contents: Read and write and Actions: Read for this repository"}.`
+        : limited ? "GitHub is limiting how fast this account can work. Wait a few minutes and try again."
+        : response.status === 403 ? "GitHub refused the request. Copy anything you haven't saved, then sign out and sign in again: signing in checks your token and says what to fix."
         : `GitHub error ${response.status}.`;
-      throw new GitHubError(message, response.status);
+      throw new GitHubError(message, response.status, limited);
     }
     return response;
   }
@@ -49,6 +55,30 @@ export class GitHub {
   async canAccessRepo(): Promise<boolean> {
     const response = await this.request(this.repoPath);
     return response.ok;
+  }
+  /**
+   * Checked at sign-in, so nobody writes for twenty minutes before finding out they can't save. The
+   * repository is public, so any token can read it: only a write shows this one may change it. The write
+   * is the same small blob every time, which nothing points to.
+   */
+  async editProblem(): Promise<EditProblem | null> {
+    const repo = await this.request(this.repoPath);
+    if (!repo.ok) return "repository";
+    const info = (await repo.json()) as { permissions?: { push?: boolean } };
+    if (info.permissions?.push === false) return "access";
+    const blob = { method: "POST", body: JSON.stringify({ content: CHECK_BLOB, encoding: "utf-8" }) };
+    if (!(await this.allowed(`${this.repoPath}/git/blobs`, blob))) return "save";
+    if (!(await this.allowed(`${this.repoPath}/actions/runs?per_page=1`))) return "builds";
+    return null;
+  }
+  /** Whether GitHub lets this token make the request. A refusal is false; anything else (rate limit, outage) is thrown. */
+  private async allowed(path: string, init: RequestInit = {}): Promise<boolean> {
+    try {
+      return (await this.request(path, init)).ok;
+    } catch (error) {
+      if (error instanceof GitHubError && error.status === 403 && !error.rateLimited) return false;
+      throw error;
+    }
   }
   async headSha(): Promise<string> {
     return (await this.json<{ object: { sha: string } }>(`${this.repoPath}/git/ref/heads/${REPO.branch}`)).object.sha;

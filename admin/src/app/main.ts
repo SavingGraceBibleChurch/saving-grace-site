@@ -1,7 +1,7 @@
 // Starts the admin: sign-in, the top bar, and hash routing between pages.
 import { REPO, STAGING, TOKEN_KEY, isLocalTest } from "./config";
 import { makeCtx, type Ctx } from "./context";
-import { GitHub, GitHubError } from "./github";
+import { GitHub, GitHubError, type EditProblem } from "./github";
 import { Store } from "./store";
 import { confirmLeave, external, h, mount, setDirty, toast } from "./ui";
 import { homePage } from "./views/home";
@@ -57,7 +57,7 @@ async function start() {
   } catch (error) {
     if (error instanceof GitHubError && (error.status === 401 || error.status === 404)) {
       try { localStorage.removeItem(TOKEN_KEY); } catch { /* ignore */ }
-      return loginPage(error.message);
+      return loginPage(error.status === 401 ? "Your saved token no longer works; it may have expired. Make a new one with the steps below and sign in again." : error.message);
     }
     mount(app, h("div", { class: "fatal" }, h("h1", { text: "The admin could not load" }), h("p", { text: error instanceof Error ? error.message : String(error) }), h("button", { class: "btn btn--primary", attrs: { type: "button" }, on: { click: () => location.reload() }, text: "Try again" })));
     return;
@@ -125,6 +125,14 @@ function signOut() {
   location.reload();
 }
 
+/** What sign-in says when a token can't be used to edit yet, and how to fix it. */
+const EDIT_PROBLEMS: Record<EditProblem, string> = {
+  repository: `This token can't see ${REPO.owner}/${REPO.name}. Make a new one with the steps below, choosing ${REPO.owner} as the resource owner and ${REPO.name} as the repository.`,
+  access: `GitHub says your account can't make changes to ${REPO.name} yet. Ask Samuel to give you Write access (and to approve your token, if GitHub said it needs approval), then sign in again.`,
+  save: "This token can't save changes yet. If GitHub said it needs approval, ask Samuel to approve it, then sign in again. Otherwise make a new one with the steps below, with Contents set to Read and write.",
+  builds: "This token can save but can't see the website's build progress. Make a new one with the steps below, with Actions set to Read-only.",
+};
+
 function loginPage(message?: string) {
   const tokenInput = h("input", { class: "input", attrs: { id: "token", type: "password", autocomplete: "off", spellcheck: "false", required: true, placeholder: "github_pat_…" } });
   const error = h("p", { class: "login__error", attrs: { role: "alert" } }, message ?? "");
@@ -139,11 +147,13 @@ function loginPage(message?: string) {
     try {
       const gh = new GitHub(token);
       await gh.user();
-      if (!(await gh.canAccessRepo())) throw new Error(`This token cannot see ${REPO.owner}/${REPO.name}. Choose that repository when you make the token.`);
+      const problem = await gh.editProblem();
+      if (problem) throw new Error(EDIT_PROBLEMS[problem]);
       localStorage.setItem(TOKEN_KEY, token);
       location.reload();
     } catch (e) {
-      error.textContent = e instanceof Error ? e.message : "That did not work.";
+      error.textContent = e instanceof GitHubError && e.status === 401 ? "GitHub didn't accept this token. Check you copied all of it, or make a new one with the steps below."
+        : e instanceof Error ? e.message : "That did not work.";
       submit.disabled = false;
       submit.textContent = "Sign in";
     }
@@ -159,13 +169,13 @@ function loginPage(message?: string) {
       h("details", { class: "login__help" },
         h("summary", { text: "How do I get a token? (one-time setup, about 2 minutes)" }),
         h("ol", null,
-          h("li", null, "You need a GitHub account that has been given access to the ", h("strong", { text: `${REPO.owner}/${REPO.name}` }), " repository."),
+          h("li", null, "Accept your invitation to the ", h("strong", { text: REPO.owner }), " organisation on GitHub (it comes by email). Samuel gives you Write access to ", h("strong", { text: REPO.name }), "."),
           h("li", null, "Open ", external("GitHub → New fine-grained token", "https://github.com/settings/personal-access-tokens/new"), "."),
           h("li", null, "Name it ", h("em", { text: "Saving Grace admin" }), " and pick an expiry (90 days is sensible; you'll make a new one when it runs out)."),
           h("li", null, "Resource owner: ", h("strong", { text: REPO.owner }), ". Repository access: ", h("strong", { text: "Only select repositories" }), " → ", h("strong", { text: REPO.name }), "."),
-          h("li", null, "Permissions → Repository: set ", h("strong", { text: "Contents" }), " to ", h("em", { text: "Read and write" }), " and ", h("strong", { text: "Actions" }), " to ", h("em", { text: "Read-only" }), "."),
-          h("li", null, "Generate the token, copy it and paste it above.")),
-        h("p", { class: "login__note", text: `Not the owner of ${REPO.owner}/${REPO.name}? GitHub's fine-grained tokens can't reach a repository that belongs to someone else's personal account, so your token will be refused. Ask Samuel to move the repository into a (free) GitHub organisation and add you to it; the steps above then work with that organisation as the resource owner.` })),
+          h("li", null, "Under Permissions (click ", h("em", { text: "Add permissions" }), " if GitHub shows that button), set ", h("strong", { text: "Contents" }), " to ", h("em", { text: "Read and write" }), " and ", h("strong", { text: "Actions" }), " to ", h("em", { text: "Read-only" }), ". GitHub adds Metadata by itself."),
+          h("li", null, "Generate the token, copy it (GitHub shows it only once) and paste it above. If GitHub says the token needs approval, ask Samuel to approve it first.")),
+        h("p", { class: "login__note", text: "Signing in checks that the token can save changes, and says what to fix if it can't." })),
       h("p", { class: "login__note", text: "The token stays in this browser only. On a shared computer, use Sign out when you finish." }))));
   tokenInput.focus();
 }

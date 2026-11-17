@@ -70,10 +70,12 @@ Contents read/write, Actions read); there is no server, password store or databa
 - **Undo** on the Changes page reverses one change item by item (`admin/src/app/undo.ts`), keeping later changes
   to other items, and refuses if the same item changed again since. Only content files can be undone there.
 - **Editors:** the repository belongs to the SavingGraceBibleChurch organisation on GitHub. Invite editors to the
-  organisation, give them Write access to this repository, and each makes a fine-grained token with the
-  organisation as resource owner (approve it under the organisation's pending token requests if approval is on).
+  organisation and give them Write access to this repository (an "Editors" team with the Write role makes that one
+  step per person). Each makes a fine-grained token with the organisation as resource owner; if the organisation
+  requires approval, approve it under Settings → Personal access tokens → Pending requests. Signing in checks that
+  the token can save (it writes one small blob that nothing points to) and says what to fix if it can't.
 - To try the admin without touching GitHub: `node admin/dev/mock-github.mjs`, `npm run admin:dev`, then in the
-  browser console `localStorage.setItem("sg-admin-api", "http://127.0.0.1:8790")` and sign in with `test-token`.
+  browser console `localStorage.setItem("sg-admin-api", "http://127.0.0.1:8790")` and sign in with `test-token` (the mock's other test tokens show each sign-in problem).
 
 ## How the content got here
 

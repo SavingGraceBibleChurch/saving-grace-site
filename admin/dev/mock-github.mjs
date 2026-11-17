@@ -3,6 +3,9 @@
 // is written to disk. Listens on 127.0.0.1 only.
 //
 //   node admin/dev/mock-github.mjs            (port 8790, token "test-token")
+//   other tokens act like an editor who is not set up yet, to try the sign-in check:
+//   test-token-no-write (account without Write access), test-token-pending (token awaiting the
+//   organisation's approval, or without Contents: write), test-token-no-actions (without Actions: read)
 //   then in the admin's browser console:      localStorage.setItem("sg-admin-api", "http://127.0.0.1:8790")
 //
 // Test helpers: POST /__mock/commit {path, content, message} makes a commit "by someone else";
@@ -15,6 +18,8 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const PORT = Number(process.env.MOCK_PORT ?? 8790);
 const TOKEN = "test-token";
+const TOKENS = new Set([TOKEN, "test-token-no-write", "test-token-pending", "test-token-no-actions"]);
+const REFUSED = { message: "Resource not accessible by personal access token" };
 const ORIGINS = new Set(["http://127.0.0.1:4330", "http://localhost:4330"]);
 
 let counter = 0;
@@ -71,10 +76,14 @@ const server = createServer(async (req, res) => {
     return send(res, 200, { sha });
   }
 
-  if (req.headers.authorization !== `Bearer ${TOKEN}`) return send(res, 401, { message: "Bad credentials" });
+  const token = (req.headers.authorization ?? "").replace(/^Bearer /, "");
+  if (!TOKENS.has(token)) return send(res, 401, { message: "Bad credentials" });
+  // GitHub hides a repository you cannot write to behind 404 on writes, and refuses an unapproved token with 403.
+  if (req.method !== "GET" && token === "test-token-no-write") return send(res, 404, { message: "Not Found" });
+  if (req.method !== "GET" && token === "test-token-pending") return send(res, 403, REFUSED);
   let m;
   if (path === "/user") return send(res, 200, { login: "test-editor" });
-  if ((m = /^\/repos\/([^/]+)\/([^/]+)$/.exec(path))) return send(res, 200, { full_name: `${m[1]}/${m[2]}`, permissions: { push: true } });
+  if ((m = /^\/repos\/([^/]+)\/([^/]+)$/.exec(path))) return send(res, 200, { full_name: `${m[1]}/${m[2]}`, permissions: { pull: true, push: token !== "test-token-no-write" } });
   if ((m = /^\/repos\/[^/]+\/[^/]+\/git\/ref\/heads\/(.+)$/.exec(path))) return send(res, 200, { object: { sha: head } });
   if ((m = /^\/repos\/[^/]+\/[^/]+\/git\/commits\/([^/]+)$/.exec(path)) && req.method === "GET") {
     const c = commits.get(m[1]);
@@ -86,6 +95,7 @@ const server = createServer(async (req, res) => {
     const text = readAt(c.tree, decodeURIComponent(m[1]));
     return text === null ? send(res, 404, { message: "Not Found" }) : send(res, 200, text, "text/plain; charset=utf-8");
   }
+  if (/^\/repos\/[^/]+\/[^/]+\/git\/blobs$/.test(path) && req.method === "POST") return send(res, 201, { sha: "b-sign-in-check" });
   if (/^\/repos\/[^/]+\/[^/]+\/git\/trees$/.test(path) && req.method === "POST") {
     const b = await body(req);
     if (!trees.has(b.base_tree)) return send(res, 422, { message: "base_tree not found" });
@@ -120,6 +130,7 @@ const server = createServer(async (req, res) => {
     return send(res, 200, list);
   }
   if (/^\/repos\/[^/]+\/[^/]+\/actions\/runs$/.test(path)) {
+    if (token === "test-token-no-actions") return send(res, 403, REFUSED);
     const c = commits.get(url.searchParams.get("head_sha"));
     if (!c || c.sha === "c0") return send(res, 200, { workflow_runs: [] });
     const age = Date.now() - c.created;
