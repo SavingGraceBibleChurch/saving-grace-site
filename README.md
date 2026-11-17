@@ -135,6 +135,8 @@ HTTPS, updates, switch-over, rollback, security checks). The points below are wh
 
   `/?s=…` and `/?q=…` go to `/search/`. Every build turns these into nginx rules (`dist/_nginx/redirect-maps.conf`,
   from `scripts/nginx-redirects.mjs`), which the server's updater installs after checking they are only redirects.
+- **Blocking:** the WordPress server's bot, probe and address rules carry over (`deploy/nginx/savinggrace-blocking-maps.conf`,
+  `savinggrace-ip-deny.conf`). What was left out, and why, is in section 9 of `deploy/production/README.md`.
 - **Uploads:** WordPress files that old URLs point at (452 files, 1.16 GB, mostly sermon MP3s) are uploaded from `private/uploads/` to `/wp-content/uploads/…`. Create that folder with `python scripts/collect_uploads.py <backup.zip>`.
 - **Daily rebuild:** "next service" and upcoming-event dates are worked out at build time. `site.yml` already rebuilds every day; the production host should take its builds the same way staging does.
 - **Rollback:** keep WordPress running, untouched, for about a month after the switch.

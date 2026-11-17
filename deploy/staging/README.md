@@ -7,6 +7,7 @@ caching are tested here before launch.
 | File | Installed at | Purpose |
 | --- | --- | --- |
 | `../nginx/savinggrace-site.conf`, `../nginx/savinggrace-headers.conf` | `/etc/nginx/snippets/` | The site rules and security headers, shared with production |
+| `../nginx/savinggrace-blocking-maps.conf`, `../nginx/savinggrace-ip-deny.conf` | `/etc/nginx/snippets/` | The bots, probes and addresses refused with 403, carried over from the WordPress server. Only the bot and probe rules take effect here: every request reaches this nginx from 127.0.0.1. Curl is refused too, so test with `curl -A "Mozilla/5.0"` |
 | `../nginx/staging-nginx.conf` | `/etc/nginx/savinggrace-staging.conf` | A separate nginx on 127.0.0.1:8084 only, with `X-Robots-Tag: noindex` and no HTTPS |
 | `savinggrace-nginx.service` | `/etc/systemd/system/` | Runs that nginx (the system `nginx.service` stays disabled) |
 | `savinggrace-nginx.logrotate` | `/etc/logrotate.d/savinggrace-nginx` | Rotates its logs in `/var/log/nginx/savinggrace-staging/` daily, keeping a week |
@@ -36,6 +37,19 @@ Tested on staging on 17 Nov 2026:
 - A rule removed by hand was put back and nginx reloaded by the updater.
 - A build adding a `server` block was refused.
 - A build that nginx rejected was rolled back.
+
+## Blocking rules
+
+`savinggrace-blocking-maps.conf` and `savinggrace-ip-deny.conf` were installed on 18 Nov 2026. They are carried
+over from the WordPress server; see section 9 of `deploy/production/README.md`.
+
+- **Same answers for browsers:** before and after, all 11,011 site addresses gave the same answers to a browser. That covers every page, feed and redirect, and every URL from the live site and Search Console.
+- **Refused:** bots on the list, curl's own user agent and probes such as `/.env` now get 403.
+- **Address rules:** these can't take effect here, because every visitor reaches this nginx as 127.0.0.1. They were tested in a copy of this nginx that trusted `X-Forwarded-For`.
+- **To undo:** the previous files are in `/root/savinggrace-backups/2026-11-18-blocking-rules/`.
+  1. Copy `savinggrace-site.conf` back to `/etc/nginx/snippets/` and `savinggrace-staging.conf` back to `/etc/nginx/`.
+  2. Delete the two new snippets.
+  3. Run `sudo systemctl reload savinggrace-nginx`.
 
 ## Rolling back
 
