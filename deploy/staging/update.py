@@ -21,7 +21,7 @@ import tempfile
 import urllib.error
 import urllib.request
 
-REPO = "samuelsaad/saving-grace-site"
+REPO = "SavingGraceBibleChurch/saving-grace-site"
 BASE = "/srv/savinggrace-static"
 RELEASES = os.path.join(BASE, "releases")
 CURRENT = os.path.join(BASE, "current")

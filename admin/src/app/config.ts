@@ -6,7 +6,7 @@ const read = (key: string) => {
   try { return localStorage.getItem(key); } catch { return null; }
 };
 
-export const REPO = { owner: "samuelsaad", name: "saving-grace-site", branch: (local && read("sg-admin-branch")) || "main" };
+export const REPO = { owner: "SavingGraceBibleChurch", name: "saving-grace-site", branch: (local && read("sg-admin-branch")) || "main" };
 export const API = (local && read("sg-admin-api")) || "https://api.github.com";
 export const STAGING = "http://54.253.237.138:8080";
 export const SITE_WORKFLOW = "Site";

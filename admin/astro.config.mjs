@@ -3,7 +3,7 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://samuelsaad.github.io",
+  site: "https://savinggracebiblechurch.github.io",
   base: "/saving-grace-site",
   outDir: "./dist",
   trailingSlash: "ignore",
