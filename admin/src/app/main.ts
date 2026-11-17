@@ -158,7 +158,8 @@ function loginPage(message?: string) {
           h("li", null, "Name it ", h("em", { text: "Saving Grace admin" }), " and pick an expiry (90 days is sensible; you'll make a new one when it runs out)."),
           h("li", null, "Resource owner: ", h("strong", { text: REPO.owner }), ". Repository access: ", h("strong", { text: "Only select repositories" }), " → ", h("strong", { text: REPO.name }), "."),
           h("li", null, "Permissions → Repository: set ", h("strong", { text: "Contents" }), " to ", h("em", { text: "Read and write" }), " and ", h("strong", { text: "Actions" }), " to ", h("em", { text: "Read-only" }), "."),
-          h("li", null, "Generate the token, copy it and paste it above."))),
+          h("li", null, "Generate the token, copy it and paste it above.")),
+        h("p", { class: "login__note", text: `Not the owner of ${REPO.owner}/${REPO.name}? GitHub's fine-grained tokens can't reach a repository that belongs to someone else's personal account, so your token will be refused. Ask Samuel to move the repository into a (free) GitHub organisation and add you to it; the steps above then work with that organisation as the resource owner.` })),
       h("p", { class: "login__note", text: "The token stays in this browser only. On a shared computer, use Sign out when you finish." }))));
   tokenInput.focus();
 }
