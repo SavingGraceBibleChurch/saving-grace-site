@@ -1,0 +1,50 @@
+{
+ "about": "The pages that bring in most of the site’s Google search visits (Search Console, 12 months to Nov 2026). Their search title, description and main heading may only change through the admin’s SEO unlock, which records the reason in scripts/seo-intentional-changes.json. The build fails if these drift any other way.",
+ "pages": {
+  "/": {
+   "title": "Saving Grace Bible Church | Bible Based Worship in Melbourne",
+   "description": "Join us in unwavering worship exalting God! Sundays, 10:30 am: Christ-centred sermons, fellowship, and unity in the powerful embrace of the Gospel.",
+   "h1": "Welcome to Saving Grace Bible Church"
+  },
+  "/evening-service/": {
+   "title": "Sunday Evening Service | Saving Grace Bible Church - Bible-Based Worship in Melbourne",
+   "description": "Join us for Sunday Evening Worship, a warm and welcoming environment for deep spiritual reflection, Bible study, testimonies, evangelism, and corporate prayer.",
+   "h1": "Evening Service"
+  },
+  "/pages/biblestudies/": {
+   "title": "Bible Studies | Saving Grace Bible Church - Bible-Based Worship in Melbourne",
+   "description": "Join our Bible Studies at Saving Grace Bible Church. Grow in faith through God's Word.",
+   "h1": "Bible Studies"
+  },
+  "/2024/01/saving-grace-meaning-what-does-it-mean-to-be-saved-by-grace/": {
+   "title": "Saving Grace Meaning – What does it mean to be saved by Grace - Saving Grace Bible Church - Bible-Based Worship in Melbourne",
+   "description": "Discover 'Saving Grace' Meaning at Saving Grace Bible Church. Explore biblical and Reformed insights on this transformative concept.",
+   "h1": "Saving Grace Meaning – What does it mean to be saved by Grace"
+  },
+  "/about/": {
+   "title": "About | Saving Grace Bible Church",
+   "description": "Saving Grace Bible Church, Melbourne: Rooted in Reformed Truths. Join a fellowship cherishing reformed theology with reverence for God's teachings.",
+   "h1": "Embrace Reformed Truths at Saving Grace Bible Church, Melbourne"
+  },
+  "/elders/": {
+   "title": "Elders | Saving Grace Bible Church - Bible-Based Worship in Melbourne",
+   "description": "Get to know our passionate elders, who lead Saving Grace Bible Church in preaching, teaching, and equipping believers to grow in their faith.",
+   "h1": "Elders"
+  },
+  "/womens-ministry/": {
+   "title": "Women’s Ministry - Saving Grace Bible Church - Bible-Based Worship in Melbourne",
+   "description": "Seek faith and sisterhood at our Women’s Ministry. Dive into Scripture, worship, and fellowship, nurturing devotion to Jesus Christ.",
+   "h1": "Women’s Ministry"
+  },
+  "/pages/local-outreach/": {
+   "title": "Local Outreach | Saving Grace Bible Church - Bible-Based Worship in Melbourne",
+   "description": "Join us in proclaiming God's excellencies locally through Keilor East Outreach Ministry. Engage with our community events and outreach efforts.",
+   "h1": "Local Outreach"
+  },
+  "/ministries/": {
+   "title": "Ministries | Saving Grace Bible Church - Bible-Based Worship in Melbourne",
+   "description": "Explore our Bible study sessions and ministries, including Men's and Women's Bible Studies, Evangelism Ministry, Children's Ministry, and Church Membership.",
+   "h1": "Ministries"
+  }
+ }
+}

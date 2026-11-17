@@ -10,6 +10,8 @@ import { sermonEditPage } from "./views/sermon-edit";
 import { eventListPage, eventEditPage } from "./views/events";
 import { studiesPage, studyEditPage, seriesEditPage } from "./views/studies";
 import { changesPage } from "./views/changes";
+import { pagesListPage, homeEditPage, detailsPage } from "./views/pages";
+import { pageEditPage } from "./views/page-edit";
 
 const app = document.getElementById("app")!;
 const getToken = () => { try { return localStorage.getItem(TOKEN_KEY); } catch { return null; } };
@@ -28,6 +30,10 @@ const routes: [RegExp, View, string][] = [
   [/^\/events$/u, eventListPage, "events"],
   [/^\/events\/new$/u, (ctx) => eventEditPage(ctx, null), "events"],
   [/^\/events\/([^/]+)$/u, (ctx, m) => eventEditPage(ctx, decodeURIComponent(m[1]!)), "events"],
+  [/^\/pages$/u, pagesListPage, "pages"],
+  [/^\/pages\/details$/u, detailsPage, "pages"],
+  [/^\/pages\/home$/u, homeEditPage, "pages"],
+  [/^\/pages\/(page|post)\/([^/]+)$/u, (ctx, m) => pageEditPage(ctx, m[1] as "page" | "post", decodeURIComponent(m[2]!)), "pages"],
   [/^\/changes$/u, changesPage, "changes"],
 ];
 
@@ -70,7 +76,7 @@ async function start() {
       h("div", { class: "topbar__inner" },
         h("a", { class: "brand", attrs: { href: "#/" } }, h("span", { class: "brand__name", text: "Saving Grace" }), h("span", { class: "brand__tag", text: "Admin" })),
         h("nav", { class: "nav", attrs: { "aria-label": "Admin sections" } },
-          nav("Home", "#/", "home"), nav("Sermons", "#/sermons", "sermons"), nav("Studies", "#/studies", "studies"), nav("Events", "#/events", "events"), nav("Changes", "#/changes", "changes")),
+          nav("Home", "#/", "home"), nav("Sermons", "#/sermons", "sermons"), nav("Studies", "#/studies", "studies"), nav("Events", "#/events", "events"), nav("Pages", "#/pages", "pages"), nav("Changes", "#/changes", "changes")),
         h("div", { class: "topbar__end" },
           h("div", { attrs: { id: "build-status" } }),
           h("details", { class: "account" },

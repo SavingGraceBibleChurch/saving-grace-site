@@ -7,24 +7,23 @@ export interface NavItem { label: string; href: string; menu?: NavLink[] }
 /** The banner above the header, edited in the admin. Empty when switched off. */
 export const notice = settings.notice.show ? settings.notice.text.trim() : "";
 
+// Address, phone, email and service times are edited in the admin (Church details).
+const details = settings.contact;
 export const contact = {
   name: "Saving Grace Bible Church",
-  street: "Unit 5/217-219 Mickleham Rd,",
-  locality: "Westmeadows VIC 3049",
-  addressLocality: "Westmeadows",
-  addressRegion: "VIC",
-  postalCode: "3049",
-  streetAddress: "Unit 5/217-219 Mickleham Rd",
-  phone: "0450545589",
-  phoneHref: "tel:+61450545589",
-  email: "info@savinggrace.org.au",
-  map: "https://goo.gl/maps/gL2hcbXG3Ci9zqRVA",
+  street: `${details.streetAddress},`,
+  locality: `${details.addressLocality} ${details.addressRegion} ${details.postalCode}`,
+  addressLocality: details.addressLocality,
+  addressRegion: details.addressRegion,
+  postalCode: details.postalCode,
+  streetAddress: details.streetAddress,
+  phone: details.phone,
+  phoneHref: `tel:+61${details.phone.replace(/\D/gu, "").replace(/^0/u, "")}`,
+  email: details.email,
+  map: details.map,
 };
 
-export const services = [
-  "Morning Worship: 10:30 am – 12:30 pm",
-  "Evening Service: 5:30 pm – 7:00 pm",
-];
+export const services: string[] = settings.services;
 
 export const primaryNav: NavItem[] = [
   { label: "Home", href: "/" },

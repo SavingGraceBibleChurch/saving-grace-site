@@ -16,6 +16,51 @@ export const isSlug = (value) => typeof value === "string" && SLUG.test(value);
 export const isYoutubeId = (value) => typeof value === "string" && YOUTUBE.test(value);
 export const isSermonAudioId = (value) => typeof value === "string" && SERMONAUDIO.test(value);
 
+export const BLOCK_KINDS = new Set(["paragraph", "heading", "list", "quote", "figure", "callout", "panel", "tiles", "people", "timeline", "next-event", "video", "playlist", "downloads", "hymns", "index", "sermon-cards", "external-plate", "book", "contact-panel", "giving-methods", "events-calendar", "blog-list", "sitemap-list"]);
+
+/** Every piece of inline-markup text in a block (paragraphs, list items, captions, bios…). */
+export function markupOf(b) {
+  const out = [];
+  const add = (v) => { if (typeof v === "string") out.push(v); };
+  switch (b.kind) {
+    case "paragraph": case "quote": case "book": add(b.text); break;
+    case "callout": add(b.text); break;
+    case "list": (b.items ?? []).forEach(add); break;
+    case "figure": add(b.caption); break;
+    case "tiles": case "index": case "hymns": case "timeline": (b.items ?? []).forEach((x) => add(x.text)); break;
+    case "people": (b.items ?? []).forEach((x) => (x.text ?? []).forEach(add)); break;
+    case "downloads": (b.items ?? []).forEach((x) => add(x.text)); break;
+    case "external-plate": add(b.text); break;
+    case "sermon-cards": add(b.text); break;
+    case "giving-methods": add(b.intro); (b.methods ?? []).forEach((m) => add(m.text)); break;
+    default: break;
+  }
+  return out;
+}
+
+/** Addresses the built site serves, so links in page text can be checked; null when not enough is known. */
+function knownPaths(d) {
+  if (!d.pages || !d.sermons || !d.taxonomies) return null;
+  const set = new Set(["/", "/sermons/", "/studies/", "/events/", "/search/", "/feed/", "/sermons/feed/", "/events/calendar.ics", "/sitemap.xml", "/llms.txt"]);
+  for (const k of Object.values(TERM_PATHS)) set.add(k);
+  for (const p of d.pages) set.add(safeDecode(p.path));
+  for (const p of d.posts ?? []) set.add(safeDecode(p.path));
+  for (const s of d.sermons) set.add(safeDecode(s.path));
+  for (const t of d.taxonomies) set.add(safeDecode(t.path));
+  for (const e of d.events?.events ?? []) set.add(e.path);
+  if (d.studies) {
+    for (const s of d.studies.series) set.add(`/studies/series/${s.slug}/`);
+    for (const s of d.studies.sessions) set.add(`/studies/sessions/${s.slug}/`);
+  }
+  for (const r of d.redirects ?? []) if (r.match === "exact" || r.match === "rewrite") set.add(safeDecode(r.from));
+  return set;
+}
+function isKnownPath(href, known) {
+  const path = safeDecode(href.split(/[?#]/u)[0]);
+  if (/^\/(wp-content|media|brand|files|_astro|pagefind)\//u.test(path)) return true;
+  return known.has(path) || known.has(path.endsWith("/") ? path : `${path}/`);
+}
+
 function safeDecode(path) {
   try { return decodeURIComponent(path ?? ""); } catch { return path; }
 }
@@ -43,6 +88,9 @@ function duplicates(values) {
  * @param {Record<string, object>} [d.images]
  * @param {object[]} [d.pages]
  * @param {object[]} [d.redirects]
+ * @param {object[]} [d.posts]
+ * @param {object} [d.home]
+ * @param {{pages: Record<string, {title: string, description: string, h1: string}>}} [d.protectedSeo]
  */
 export function validateData(d) {
   const problems = [];
@@ -177,6 +225,72 @@ export function validateData(d) {
     const n = d.settings.notice;
     if (!n || typeof n.show !== "boolean" || typeof n.text !== "string") fail("Site settings: the notice needs show (true/false) and text");
     else if (n.show && !n.text.trim()) fail("Site settings: the notice is switched on but has no text");
+    const c = d.settings.contact;
+    if (c) {
+      if (!c.streetAddress?.trim() || !c.addressLocality?.trim()) fail("Church details: the street address and suburb are needed");
+      if (!/^[A-Z]{2,3}$/u.test(c.addressRegion ?? "")) fail("Church details: the state should be like VIC");
+      if (!/^\d{4}$/u.test(c.postalCode ?? "")) fail("Church details: the postcode should be four digits");
+      if (!/^0\d{9}$/u.test((c.phone ?? "").replace(/\s/gu, ""))) fail("Church details: the phone number should be ten digits starting with 0");
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/u.test(c.email ?? "")) fail("Church details: the email address is not valid");
+      if (!/^https:\/\/\S+$/u.test(c.map ?? "")) fail("Church details: the map link should start with https://");
+    }
+    if (d.settings.services !== undefined && (!Array.isArray(d.settings.services) || !d.settings.services.length || d.settings.services.some((s) => typeof s !== "string" || !s.trim()))) fail("Church details: list at least one service time, one per line");
+  }
+
+  // ------------------------------------------------------------ pages, articles and the home page
+  if (d.pages || d.posts) {
+    const known = knownPaths(d);
+    const checkMarkup = (label, text) => {
+      if (typeof text !== "string") return;
+      for (const m of text.matchAll(/\[([^\]]*)\]\(([^)\s]*)\)/gu)) {
+        const href = m[2];
+        if (!m[1].trim()) fail(`${label}: a link has no text`);
+        if (!/^(\/|#|https?:\/\/|mailto:|tel:)/iu.test(href)) { fail(`${label}: the link "${href}" should start with /, https://, mailto: or tel:`); continue; }
+        if (known && href.startsWith("/") && !isKnownPath(href, known)) fail(`${label}: the link "${href}" goes to a page that does not exist`);
+      }
+    };
+    const walk = (label, blocks) => {
+      if (!Array.isArray(blocks)) { fail(`${label}: blocks must be a list`); return; }
+      blocks.forEach((b, i) => {
+        const where = `${label}, block ${i + 1} (${b?.kind ?? "?"})`;
+        if (!BLOCK_KINDS.has(b?.kind)) { fail(`${where}: unknown kind of block`); return; }
+        if (b.kind === "paragraph" && !b.text?.trim()) fail(`${where}: the paragraph is empty`);
+        if (b.kind === "heading" && (!b.text?.trim() || ![2, 3, 4].includes(b.level))) fail(`${where}: a heading needs text and a level of 2, 3 or 4`);
+        if (b.kind === "list" && (!Array.isArray(b.items) || !b.items.length || b.items.some((x) => typeof x !== "string" || !x.trim()))) fail(`${where}: every list item needs text`);
+        if ((b.kind === "quote" || b.kind === "callout") && !b.text?.trim()) fail(`${where}: the text is empty`);
+        if (b.kind === "timeline" && b.items.some((x) => !x.when?.trim() || !x.title?.trim())) fail(`${where}: every timeline entry needs a date and a title`);
+        for (const text of markupOf(b)) checkMarkup(where, text);
+        if (b.kind === "panel") walk(`${where} panel`, b.blocks);
+      });
+    };
+    for (const p of [...(d.pages ?? []), ...(d.posts ?? [])]) {
+      const label = `Page ${p.path}`;
+      if (!p.h1?.trim()) fail(`${label}: needs a main heading`);
+      if (!p.seo?.title?.trim()) fail(`${label}: needs a search title`);
+      checkMarkup(label, p.lede);
+      walk(label, p.blocks);
+      if (p.aside) walk(`${label} sidebar`, p.aside);
+    }
+  }
+
+  // The search title, description and main heading of the pages that bring in most Google visits only
+  // change through the admin's SEO unlock, which updates seo-protected.json and records the reason.
+  if (d.protectedSeo) {
+    for (const [path, expected] of Object.entries(d.protectedSeo.pages ?? {})) {
+      let actual;
+      if (path === "/") {
+        if (!d.home) continue;
+        const h = d.home.copy.heroCopy;
+        actual = { title: d.home.seo.title, description: d.home.seo.description, h1: [h.eyebrow, h.nameLine1, h.nameLine2].join(" ") };
+      } else {
+        const p = (d.pages ?? []).find((x) => x.path === path) ?? (d.posts ?? []).find((x) => x.path === path);
+        if (!p) { if (d.pages && d.posts) fail(`Protected page ${path} no longer exists`); continue; }
+        actual = { title: p.seo.title, description: p.seo.description, h1: p.h1 };
+      }
+      for (const field of ["title", "description", "h1"]) {
+        if (actual[field] !== expected[field]) fail(`${path}: its search ${field === "h1" ? "main heading" : field} changed without the SEO unlock (it brings in Google visits)`);
+      }
+    }
   }
   if (d.redirects) {
     for (const r of d.redirects) if (!r.from?.startsWith("/") || typeof r.to !== "string" || !["exact", "prefix", "query", "rewrite"].includes(r.match)) fail(`Redirect from "${r.from}" is malformed`);

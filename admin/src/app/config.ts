@@ -25,6 +25,10 @@ export const DATA = {
   images: "src/data/images.json",
   canon: "src/data/canon.json",
   pages: "src/data/pages.json",
+  posts: "src/data/posts.json",
+  home: "src/data/home.json",
+  protectedSeo: "src/data/seo-protected.json",
+  intentional: "scripts/seo-intentional-changes.json",
   redirects: "src/data/redirects.json",
 } as const;
 export const transcriptPath = (id: number | string) => `src/data/sermon-transcripts/${id}.txt`;
@@ -33,3 +37,9 @@ export const studyContentPath = (slug: string) => `src/data/study-content/${slug
 export const SEO_SUFFIX = " - Saving Grace Bible Church - Bible-Based Worship in Melbourne";
 /** New sermons get IDs above every WordPress ID. */
 export const FIRST_NEW_ID = 1_000_001;
+
+/** Pages that set out what the church believes: saving one needs the elders' approval ticked. */
+export const DOCTRINAL = new Set([
+  "/what-we-teach/", "/what-we-teach/the-gospel/", "/what-we-teach/the-sufficiency-of-scripture/",
+  "/what-we-teach/believers-baptism/", "/what-we-teach/mandated-church/", "/doctrinal-statement/", "/pages/church-covenant/",
+]);

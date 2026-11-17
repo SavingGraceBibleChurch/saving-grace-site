@@ -90,6 +90,11 @@ export class GitHub {
     );
     return list.map((c) => ({ sha: c.sha, message: c.commit.message.split("\n")[0]!, author: c.author?.login ?? c.commit.author.name, date: c.commit.author.date, url: c.html_url }));
   }
+  /** The commit's parent(s) and the files it changed. */
+  async commitDetails(sha: string): Promise<{ parents: string[]; files: { path: string; status: string }[] }> {
+    const c = await this.json<{ parents: { sha: string }[]; files?: { filename: string; status: string }[] }>(`${this.repoPath}/commits/${sha}`);
+    return { parents: c.parents.map((p) => p.sha), files: (c.files ?? []).map((f) => ({ path: f.filename, status: f.status })) };
+  }
   async runsFor(sha: string): Promise<Run[]> {
     const data = await this.json<{ workflow_runs: { name: string; status: string; conclusion: string | null; html_url: string }[] }>(`${this.repoPath}/actions/runs?head_sha=${sha}&per_page=10`);
     return data.workflow_runs.map((r) => ({ name: r.name, status: r.status, conclusion: r.conclusion, url: r.html_url }));

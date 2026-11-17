@@ -26,7 +26,8 @@ let head = "c0";
 function readAt(treeSha, path) {
   for (let t = trees.get(treeSha); t; t = trees.get(t.base)) if (t.changes.has(path)) return t.changes.get(path);
   const file = normalize(join(ROOT, path));
-  if (!file.startsWith(normalize(ROOT)) || !path.startsWith("src/data/") || !existsSync(file)) return null;
+  const readable = path.startsWith("src/data/") || path === "scripts/seo-intentional-changes.json";
+  if (!file.startsWith(normalize(ROOT)) || !readable || !existsSync(file)) return null;
   return readFileSync(file, "utf8").replace(/\r\n/g, "\n");
 }
 function changedPaths(sha) {
@@ -105,6 +106,11 @@ const server = createServer(async (req, res) => {
     if (c.parent !== head && !b.force) return send(res, 422, { message: "Update is not a fast forward" });
     head = b.sha;
     return send(res, 200, { object: { sha: head } });
+  }
+  if ((m = /^\/repos\/[^/]+\/[^/]+\/commits\/([^/]+)$/.exec(path))) {
+    const c = commits.get(m[1]);
+    if (!c) return send(res, 404, { message: "Not Found" });
+    return send(res, 200, { sha: c.sha, parents: c.parent ? [{ sha: c.parent }] : [], files: c.parent ? changedPaths(c.sha).map((filename) => ({ filename, status: "modified" })) : [] });
   }
   if (/^\/repos\/[^/]+\/[^/]+\/commits$/.test(path)) {
     const list = [];

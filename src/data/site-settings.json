@@ -2,5 +2,18 @@
  "notice": {
   "show": true,
   "text": "Church Notice: No tuesday night study during the school holiday."
- }
+ },
+ "contact": {
+  "streetAddress": "Unit 5/217-219 Mickleham Rd",
+  "addressLocality": "Westmeadows",
+  "addressRegion": "VIC",
+  "postalCode": "3049",
+  "phone": "0450545589",
+  "email": "info@savinggrace.org.au",
+  "map": "https://goo.gl/maps/gL2hcbXG3Ci9zqRVA"
+ },
+ "services": [
+  "Morning Worship: 10:30 am – 12:30 pm",
+  "Evening Service: 5:30 pm – 7:00 pm"
+ ]
 }

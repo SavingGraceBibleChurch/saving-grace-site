@@ -25,6 +25,9 @@ const problems = validateData({
   settings: json("site-settings.json"),
   images: json("images.json"),
   pages: json("pages.json"),
+  posts: json("posts.json"),
+  home: json("home.json"),
+  protectedSeo: json("seo-protected.json"),
   redirects: json("redirects.json"),
 });
 

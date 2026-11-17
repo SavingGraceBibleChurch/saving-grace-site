@@ -16,7 +16,8 @@ export interface StudySession {
 export interface StudyContent { description: string; scripture: string[]; questions: { question: string; answer: string }[]; transcript: string }
 export interface CanonBook { slug: string; name: string; abbr: string }
 export interface Redirect { from: string; to: string; match: string; note?: string }
-export interface Settings { notice: { show: boolean; text: string } }
+export interface Contact { streetAddress: string; addressLocality: string; addressRegion: string; postalCode: string; phone: string; email: string; map: string }
+export interface Settings { notice: { show: boolean; text: string }; contact: Contact; services: string[] }
 export type Source = "sermonaudio" | "captions" | "church";
 
 export interface SiteData {
@@ -158,6 +159,12 @@ export class Store {
       const text = next.get(DATA[key]);
       return text === undefined ? fallback : text === null ? fallback : (JSON.parse(text) as T);
     };
+    // Files loaded only for some pages (pages, articles, home, redirects) are checked when they are at hand.
+    const extra = <T>(key: keyof typeof DATA): T | undefined => {
+      const text = next.get(DATA[key]);
+      if (typeof text === "string") return JSON.parse(text) as T;
+      return (this.extra.get(DATA[key]) as T | null | undefined) ?? undefined;
+    };
     const studyContent: Record<string, object> = {};
     for (const [path, text] of next) {
       const match = /^src\/data\/study-content\/(.+)\.json$/u.exec(path);
@@ -175,7 +182,11 @@ export class Store {
       studyContent,
       settings: pick("settings", d.settings),
       images: d.images,
-      redirects: next.has(DATA.redirects) ? pick<Redirect[]>("redirects", []) : undefined,
+      redirects: extra<Redirect[]>("redirects"),
+      pages: extra<object[]>("pages"),
+      posts: extra<object[]>("posts"),
+      home: extra<object>("home"),
+      protectedSeo: extra<{ pages: Record<string, { title: string; description: string; h1: string }> }>("protectedSeo"),
     });
     if (problems.length) throw new ValidationError(problems);
   }
@@ -184,7 +195,7 @@ export class Store {
     for (const key of Object.keys(DATA) as (keyof typeof DATA)[]) {
       const text = next.get(DATA[key]);
       if (text === undefined || text === null) continue;
-      if (key === "pages" || key === "redirects") this.extra.set(DATA[key], JSON.parse(text));
+      if (["pages", "posts", "home", "protectedSeo", "intentional", "redirects"].includes(key)) this.extra.set(DATA[key], JSON.parse(text));
       else if (key !== "canon") (this.data as unknown as Record<string, unknown>)[key] = JSON.parse(text);
     }
     for (const [path, text] of next) if (path.includes("/study-content/")) this.extra.set(path, text === null ? null : JSON.parse(text));

@@ -54,6 +54,21 @@ Contents read/write, Actions read); there is no server, password store or databa
   2 minutes (see `deploy/staging/README.md`).
 - **`.github/workflows/admin.yml`** publishes the admin to GitHub Pages (Settings → Pages → Source: GitHub Actions).
 - Sermons added in the admin get IDs from 1,000,001 up; web addresses of published items are locked.
+- **Pages** edits the wording of every page and article, the home page, and the church details (address,
+  phone, email, service times in `site-settings.json`; saving them also updates the copies on the home page,
+  the contact page and the church venue). Text blocks can be added, moved and deleted; structured blocks keep
+  their shape.
+- **SEO lock:** `src/data/seo-protected.json` holds the search title, description and main heading of the pages
+  that bring in most Google visits. The validator fails the build if they drift; the admin's unlock (with a
+  reason) updates that file and records the change in `scripts/seo-intentional-changes.json`, which
+  `verify-seo.mjs` accepts as reviewed. Any page's search settings need a reason to change.
+- **Doctrinal pages** (What We Teach and its subpages, Doctrinal Statement, Church Covenant) need "the elders
+  have approved this change" ticked; the commit message records it.
+- **Undo** on the Changes page reverses one change item by item (`admin/src/app/undo.ts`), keeping later changes
+  to other items, and refuses if the same item changed again since. Only content files can be undone there.
+- **Other editors:** GitHub's fine-grained tokens can't reach a repository owned by someone else's personal
+  account. Move the repository into a free GitHub organisation, add editors to it, and update `REPO.owner` in
+  `admin/src/app/config.ts` and `REPO` in `deploy/staging/update.py`.
 - To try the admin without touching GitHub: `node admin/dev/mock-github.mjs`, `npm run admin:dev`, then in the
   browser console `localStorage.setItem("sg-admin-api", "http://127.0.0.1:8790")` and sign in with `test-token`.
 
