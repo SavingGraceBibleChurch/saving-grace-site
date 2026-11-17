@@ -9,15 +9,22 @@ grouped into paragraphs. Words are never added, removed or reordered. A SermonAu
 recording title does not match the sermon is treated as a wrong recording and skipped in favour of the
 captions, and identical transcripts on two sermons are reported; both point at a wrong audio embed.
 
-Also writes src/data/sermon-transcript-sources.json and src/data/sermon-durations-added.json.
-Run: python scripts/clean_transcripts.py
+Also writes src/data/sermon-transcript-sources.json and adds missing lengths to src/data/sermon-durations.json.
+Transcripts saved in the admin (source "church") are always kept as they are.
+One-time migration: new sermons' transcripts are fetched by scripts/fetch_new_transcripts.mjs in CI.
+Run: python scripts/clean_transcripts.py --overwrite-admin-edits
 """
 import hashlib
 import json
 import re
+import sys
 from difflib import SequenceMatcher
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+from migration_guard import require_overwrite_flag  # noqa: E402
+
+require_overwrite_flag("every machine transcript")
 ROOT = Path(__file__).resolve().parent.parent
 SA = ROOT / "private" / "sermonaudio"
 DB = ROOT / "private" / "db-transcripts"
@@ -53,12 +60,18 @@ def title_match(meta_path: Path, title: str) -> float:
 
 
 sermons = json.loads((ROOT / "src/data/sermons.json").read_text(encoding="utf-8"))
+SOURCES = ROOT / "src" / "data" / "sermon-transcript-sources.json"
+previous = json.loads(SOURCES.read_text(encoding="utf-8")) if SOURCES.exists() else {}
+church = {wp for wp, source in previous.items() if source == "church"}
 for old in OUT.glob("*.txt"):
-    old.unlink()
+    if old.stem not in church:
+        old.unlink()
 
-sources, durations, mismatched, seen = {}, {}, [], {}
+sources, durations, mismatched, seen = {wp: "church" for wp in church}, {}, [], {}
 for sermon in sermons:
     wp = str(sermon["wpId"])
+    if wp in church:
+        continue
     sa_path, db_path = SA / f"{wp}.transcript", DB / f"{wp}.txt"
     sa = sa_path.read_text(encoding="utf-8") if sa_path.exists() else ""
     db = db_path.read_text(encoding="utf-8") if db_path.exists() else ""
@@ -83,7 +96,9 @@ for sermon in sermons:
 
 data = ROOT / "src" / "data"
 (data / "sermon-transcript-sources.json").write_text(json.dumps(dict(sorted(sources.items(), key=lambda kv: int(kv[0]))), indent=1) + "\n", encoding="utf-8")
-(data / "sermon-durations-added.json").write_text(json.dumps(dict(sorted(durations.items(), key=lambda kv: int(kv[0]))), indent=1) + "\n", encoding="utf-8")
+existing = json.loads((data / "sermon-durations.json").read_text(encoding="utf-8"))
+merged = {**durations, **existing}  # lengths already on record win
+(data / "sermon-durations.json").write_text(json.dumps(dict(sorted(merged.items(), key=lambda kv: int(kv[0]))), indent=1) + "\n", encoding="utf-8")
 print(json.dumps({
     "sermons": len(sermons), "transcripts": len(sources), "fromSermonAudio": sum(1 for s in sources.values() if s == "sermonaudio"),
     "fromCaptions": sum(1 for s in sources.values() if s == "captions"), "durations": len(durations),

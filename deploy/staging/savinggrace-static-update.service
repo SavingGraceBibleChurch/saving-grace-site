@@ -1,0 +1,18 @@
+[Unit]
+Description=Update public staging to the latest Saving Grace site build
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -I /srv/savinggrace-static/update.py
+NoNewPrivileges=yes
+ProtectSystem=strict
+ReadWritePaths=/srv/savinggrace-static
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CapabilityBoundingSet=
+MemoryMax=256M
+TimeoutStartSec=10min

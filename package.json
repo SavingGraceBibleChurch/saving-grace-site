@@ -12,7 +12,10 @@
     "preview": "astro preview --host 127.0.0.1",
     "check": "astro check",
     "import:wordpress": "node scripts/import-wordpress.mjs",
-    "verify:seo": "node scripts/verify-seo.mjs"
+    "verify:seo": "node scripts/verify-seo.mjs",
+    "validate": "node scripts/validate-data.mjs",
+    "admin:dev": "astro dev --root admin --host 127.0.0.1 --port 4330",
+    "admin:build": "astro build --root admin"
   },
   "dependencies": {
     "@fontsource-variable/instrument-sans": "5.3.0",

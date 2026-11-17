@@ -1,7 +1,11 @@
 """Read-only export from the local PostgreSQL database used during the Codex project.
 
+One-time migration: content is now edited in the admin, so this refuses to run without
+--overwrite-admin-edits. Database values replace the admin's for every sermon they cover.
+
 Writes:
-  src/data/sermon-extras.json        description and recording length per sermon (keyed by WordPress ID)
+  src/data/sermon-descriptions.json  description per sermon (keyed by WordPress ID)
+  src/data/sermon-durations.json     recording length in seconds per sermon
   src/data/studies.json              Tuesday Night Studies courses, sections and session index
   src/data/study-content/<slug>.json description, transcript, questions and Scripture references per study
   private/db-transcripts/<wpId>.txt  caption transcripts per sermon, the fallback used by scripts/clean_transcripts.py
@@ -16,6 +20,10 @@ import subprocess
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+from migration_guard import require_overwrite_flag  # noqa: E402
+
+require_overwrite_flag("sermon descriptions, lengths and all Tuesday Night Studies")
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "src" / "data"
 PSQL = os.environ.get("PSQL", r"C:\Program Files\PostgreSQL\16\bin\psql.exe")
@@ -74,7 +82,15 @@ for row in rows:
         "durationSeconds": pick["seconds"] if pick else None,
         "durationProvider": pick["provider"] if pick else None,
     }
-write(DATA / "sermon-extras.json", dict(sorted(extras.items(), key=lambda kv: int(kv[0]))))
+descriptions = json.loads((DATA / "sermon-descriptions.json").read_text(encoding="utf-8"))
+durations = json.loads((DATA / "sermon-durations.json").read_text(encoding="utf-8"))
+for key, extra in extras.items():
+    if extra["summary"]:
+        descriptions[key] = extra["summary"]
+    if extra["durationSeconds"]:
+        durations[key] = int(extra["durationSeconds"])
+write(DATA / "sermon-descriptions.json", dict(sorted(descriptions.items(), key=lambda kv: int(kv[0]))))
+write(DATA / "sermon-durations.json", dict(sorted(durations.items(), key=lambda kv: int(kv[0]))))
 
 # ---------------------------------------------------------------- studies
 series = query("select id::text, slug, title, parent_id::text as \"parentId\", display_order as \"order\" from study_series")

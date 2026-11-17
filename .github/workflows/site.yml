@@ -1,0 +1,82 @@
+# Builds the public site on every change to main (including saves from the admin) and once a day,
+# then publishes the build to the rolling "staging" release. The staging server checks that release
+# every 2 minutes and switches to a new build only after verifying its SHA-256.
+# A build that fails any check is never published, so staging keeps the last good version.
+name: Site
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["admin/**", ".github/workflows/admin.yml", "**/*.md"]
+  schedule:
+    - cron: "17 20 * * *" # about 7am in Melbourne: retry transcripts SermonAudio did not have yet
+  workflow_dispatch:
+
+concurrency:
+  group: site
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch new SermonAudio transcripts
+        env:
+          SERMONAUDIO_API_KEY: ${{ secrets.SERMONAUDIO_API_KEY }}
+        run: node scripts/fetch_new_transcripts.mjs
+
+      - name: Save fetched transcripts to main
+        run: |
+          if [ -n "$(git status --porcelain src/data)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/data
+            git commit -m "Add new SermonAudio transcripts"
+            for attempt in 1 2 3; do
+              git pull --rebase origin main && git push origin HEAD:main && break
+              sleep 5
+            done
+          fi
+
+      - name: Check the data
+        run: node scripts/validate-data.mjs
+
+      - run: npm run check
+      - run: npm run build
+
+      - name: Package the build
+        run: |
+          commit=$(git rev-parse HEAD)
+          file="site-${commit}.tar.gz"
+          tar -czf "$file" -C dist .
+          sha=$(sha256sum "$file" | cut -d' ' -f1)
+          printf '{"commit":"%s","file":"%s","sha256":"%s","builtAt":"%s"}\n' "$commit" "$file" "$sha" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > latest.json
+          echo "FILE=$file" >> "$GITHUB_ENV"
+
+      - name: Publish to the staging release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view staging >/dev/null 2>&1 || gh release create staging --prerelease --target main \
+            --title "Staging build" --notes "The latest build of main. The staging server pulls it automatically; do not edit."
+          # The build goes up first and latest.json last, so the server never sees a half-published build.
+          gh release upload staging "$FILE" --clobber
+          gh release upload staging latest.json --clobber
+          # Keep the three newest builds.
+          gh release view staging --json assets --jq '.assets | map(select(.name | startswith("site-"))) | sort_by(.createdAt) | reverse | .[3:] | .[].name' |
+            while read -r old; do gh release delete-asset staging "$old" --yes; done

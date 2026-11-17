@@ -104,7 +104,7 @@ if (sermon.youtubeId) {
               <details class="studies__transcript" id="transcript">
                 <summary><span><span class="studies__disclosure" aria-hidden="true">+</span>Complete transcript</span><span class="studies__transcript-length">{transcript.words.toLocaleString("en-AU")} words</span></summary>
                 <div class="studies__transcript-body">
-                  <p class="sermon__transcript-note">{transcript.source === "sermonaudio" ? "Machine transcript from SermonAudio." : "Machine transcript from the video captions."} It has not been checked against the recording and may contain errors.</p>
+                  {transcript.source !== "church" && <p class="sermon__transcript-note">{transcript.source === "sermonaudio" ? "Machine transcript from SermonAudio." : "Machine transcript from the video captions."} It has not been checked against the recording and may contain errors.</p>}
                   {paragraphs(transcript.text).map((text) => <p>{text}</p>)}
                 </div>
               </details>

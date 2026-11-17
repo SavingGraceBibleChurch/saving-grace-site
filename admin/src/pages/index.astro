@@ -1,0 +1,39 @@
+---
+import "@fontsource-variable/instrument-sans";
+import "@fontsource-variable/newsreader";
+import "../styles/admin.css";
+
+// Only the GitHub API is ever contacted; YouTube thumbnails check pasted video links.
+const csp = [
+  "default-src 'self'",
+  "connect-src https://api.github.com",
+  "img-src 'self' data: https://i.ytimg.com",
+  "style-src 'self'",
+  "font-src 'self'",
+  "script-src 'self'",
+  "base-uri 'none'",
+  "form-action 'none'",
+  "frame-ancestors 'none'",
+].join("; ");
+---
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    {import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={csp} />}
+    <title>Saving Grace admin</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <div id="app">
+      <noscript><p class="fatal">The admin needs JavaScript switched on.</p></noscript>
+    </div>
+    <div id="toasts" class="toasts" aria-live="polite"></div>
+    <script>
+      import "../app/main";
+    </script>
+  </body>
+</html>

@@ -6,7 +6,8 @@ Inputs (private/inputs/, never committed):
   old-frontend/*.json  cleaned page copy from the Astra + Impeccable redesign
 
 Rules: every public URL keeps its live path, title, description and H1.
-Run: python scripts/import_sources.py
+One-time migration: content is now edited in the admin, so this refuses to run without
+--overwrite-admin-edits. Run: python scripts/import_sources.py --overwrite-admin-edits
 """
 import html
 import json
@@ -18,6 +19,9 @@ from urllib.parse import unquote, urlsplit
 
 sys.path.insert(0, str(Path(__file__).parent))
 from wpsql import read_tables  # noqa: E402
+from migration_guard import require_overwrite_flag  # noqa: E402
+
+require_overwrite_flag("sermons, taxonomies, events, pages and redirects")
 
 ROOT = Path(__file__).resolve().parent.parent
 INPUTS = ROOT / "private" / "inputs"

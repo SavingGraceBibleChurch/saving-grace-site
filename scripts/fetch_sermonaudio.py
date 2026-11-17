@@ -19,8 +19,8 @@ API = "https://api.sermonaudio.com/v2/node/sermons/"
 
 key = Path(sys.argv[1]).read_text(encoding="utf-8").strip()
 sermons = json.loads((ROOT / "src/data/sermons.json").read_text(encoding="utf-8"))
-extras = json.loads((ROOT / "src/data/sermon-extras.json").read_text(encoding="utf-8"))
-targets = sermons if "--all" in sys.argv[2:] else [s for s in sermons if not extras.get(str(s["wpId"]), {}).get("summary")]
+descriptions = json.loads((ROOT / "src/data/sermon-descriptions.json").read_text(encoding="utf-8"))
+targets = sermons if "--all" in sys.argv[2:] else [s for s in sermons if not descriptions.get(str(s["wpId"]))]
 OUT.mkdir(parents=True, exist_ok=True)
 
 

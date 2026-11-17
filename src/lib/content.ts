@@ -10,7 +10,15 @@ export const pages = pagesData as unknown as Page[];
 export const posts = postsData as unknown as Post[];
 /** Newest first. */
 export const sermons = sermonsData as unknown as Sermon[];
-export const taxonomyTerms = taxonomiesData as unknown as TaxonomyTerm[];
+// Counts are worked out from the sermons at build time, so sermons added in the admin are counted.
+const termField = { speaker: "speakers", series: "series", book: "books", passage: "passages" } as const;
+const termCounts = new Map<string, number>();
+for (const sermon of sermons) {
+  for (const [kind, field] of Object.entries(termField)) {
+    for (const slug of sermon[field]) termCounts.set(`${kind}:${slug}`, (termCounts.get(`${kind}:${slug}`) ?? 0) + 1);
+  }
+}
+export const taxonomyTerms = (taxonomiesData as unknown as TaxonomyTerm[]).map((t) => ({ ...t, count: termCounts.get(`${t.kind}:${t.slug}`) ?? 0 }));
 export const images = imagesData as unknown as Record<string, Image>;
 export const home = homeData as unknown as { seo: Page["seo"]; copy: Record<string, any> };
 

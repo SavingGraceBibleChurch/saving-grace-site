@@ -1,27 +1,19 @@
-// Sermon descriptions and recording lengths. The base set comes from the local database
-// (scripts/export_local_content.py); descriptions written from SermonAudio transcripts
-// (scripts/add_description.py) and SermonAudio recording lengths fill the gaps.
-import extrasData from "../data/sermon-extras.json";
-import addedDescriptions from "../data/sermon-descriptions-added.json";
-import addedDurations from "../data/sermon-durations-added.json";
+// Sermon descriptions and recording lengths, keyed by sermon ID (wpId). Both files are edited
+// through the admin; descriptions are written by people, lengths come from the recordings.
+import descriptionsData from "../data/sermon-descriptions.json";
+import durationsData from "../data/sermon-durations.json";
 import type { Sermon } from "./types";
 
-interface Extra { summary: string; durationSeconds: number | null; durationProvider: string | null }
-const extras = extrasData as Record<string, Extra>;
-const descriptions = addedDescriptions as Record<string, string>;
-const durations = addedDurations as Record<string, number>;
+interface Extra { summary: string; durationSeconds: number | null }
+const descriptions = descriptionsData as Record<string, string>;
+const durations = durationsData as Record<string, number>;
 
 export function extraFor(sermon: Sermon): Extra | undefined {
   const key = String(sermon.wpId);
-  const base = extras[key];
-  const summary = base?.summary || descriptions[key] || "";
-  const durationSeconds = base?.durationSeconds ?? durations[key] ?? null;
+  const summary = descriptions[key]?.trim() || "";
+  const durationSeconds = durations[key] || null;
   if (!summary && !durationSeconds) return undefined;
-  return {
-    summary,
-    durationSeconds,
-    durationProvider: base?.durationSeconds ? base.durationProvider : durations[key] ? "sermonaudio" : null,
-  };
+  return { summary, durationSeconds };
 }
 
 /** "55:26" or "1:00:16". */

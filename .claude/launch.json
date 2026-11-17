@@ -6,6 +6,18 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["astro", "preview", "--host", "127.0.0.1", "--port", "4321"],
       "port": 4321
+    },
+    {
+      "name": "admin-mock-github",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["admin/dev/mock-github.mjs"],
+      "port": 8790
+    },
+    {
+      "name": "admin-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["astro", "dev", "--root", "admin", "--host", "127.0.0.1", "--port", "4330"],
+      "port": 4330
     }
   ]
 }

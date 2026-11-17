@@ -1,9 +1,11 @@
 // Navigation and church details. Every link uses the live WordPress URL.
+import settings from "../data/site-settings.json";
 
 export interface NavLink { label: string; href: string; sub?: boolean }
 export interface NavItem { label: string; href: string; menu?: NavLink[] }
 
-export const notice = "Church Notice: No tuesday night study during the school holiday.";
+/** The banner above the header, edited in the admin. Empty when switched off. */
+export const notice = settings.notice.show ? settings.notice.text.trim() : "";
 
 export const contact = {
   name: "Saving Grace Bible Church",
