@@ -1,0 +1,34 @@
+---
+// The canvas for the admin's visual page editor: an empty page carrying exactly the website's own styles
+// and fonts. The admin draws the page being edited into it (src/app/preview.ts), so text is edited where
+// it sits on the real page. It never loads data or scripts itself.
+import "@fontsource-variable/newsreader/opsz.css";
+import "@fontsource-variable/newsreader/opsz-italic.css";
+import "@fontsource-variable/instrument-sans/index.css";
+import "../../../src/styles/base.css";
+import "../../../src/styles/chrome.css";
+import "../../../src/styles/home.css";
+import "../../../src/styles/pages.css";
+import "../../../src/styles/sermons.css";
+import "../../../src/styles/journal.css";
+import "../../../src/styles/listing.css";
+import "../../../src/styles/studies.css";
+import "../../../src/styles/search.css";
+import "../styles/preview-frame.css";
+
+const csp = ["default-src 'self'", "img-src 'self' data: https://raw.githubusercontent.com https://i.ytimg.com", "style-src 'self'", "font-src 'self'", "script-src 'none'", "base-uri 'none'", "form-action 'none'"].join("; ");
+---
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    {import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={csp} />}
+    <title>Page preview</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body class="preview-frame">
+    <main id="main-content"></main>
+  </body>
+</html>

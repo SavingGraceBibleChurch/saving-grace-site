@@ -6,6 +6,7 @@ import type { Page, Post } from "../../../../src/lib/types";
 import { DATA, DOCTRINAL, STAGING } from "../config";
 import type { Ctx } from "../context";
 import { blockList, markupField, textField } from "../blocks";
+import { mountPreview } from "../preview";
 import { jsonEdit, type Edit } from "../store";
 import { today } from "../text";
 import { badge, card, external, h, mount, nextId, problemsBox, saveBar, setDirty } from "../ui";
@@ -29,6 +30,8 @@ export function seoSection(opts: {
   h1Editable?: boolean;
   /** More fields that count as search settings (the home page's heading parts). */
   extraFields?: HTMLElement[];
+  /** Called when the lock is opened. */
+  onUnlock?(): void;
 }) {
   const counter = (n: number, ideal: [number, number]) => `${n} characters${n < ideal[0] || n > ideal[1] ? ` · Google shows about ${ideal[0]}–${ideal[1]}` : ""}`;
   const titleCount = h("span", { class: "field__count", text: counter(opts.title.length, [30, 65]) });
@@ -39,6 +42,7 @@ export function seoSection(opts: {
   const title = textField("Search title (the blue link in Google)", opts.title, (v) => { opts.onChange("title", v); titleCount.textContent = counter(v.length, [30, 65]); previewTitle.textContent = v; }, { disabled: opts.locked });
   const desc = markupField("Search description (the text under the link)", opts.description, (v) => { opts.onChange("description", v); descCount.textContent = counter(v.length, [70, 160]); previewDesc.textContent = v; }, { rows: 3, plain: true });
   const heading = opts.h1Editable === false ? null : textField("Main heading (the big title on the page)", opts.h1, (v) => opts.onChange("h1", v), { disabled: opts.locked });
+  heading?.setAttribute("data-seo-field", "h1");
   title.append(titleCount);
   desc.append(descCount);
   if (opts.locked) desc.querySelector("textarea")!.disabled = true;
@@ -63,6 +67,7 @@ export function seoSection(opts: {
     unlock.addEventListener("click", () => {
       for (const el of fields) el.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("input, textarea").forEach((x) => { x.disabled = false; });
       mount(unlockHost, h("p", { class: "lock-note lock-note--open", text: "Unlocked. Change only what you must; the reason below is saved with the change." }), reasonField);
+      opts.onUnlock?.();
     });
     mount(unlockHost,
       h("p", { class: "lock-note" }, "🔒 Locked. This page brings in a large share of the website's Google visits. Changing its search title, description or main heading can move it up or down in Google results."),
@@ -71,11 +76,12 @@ export function seoSection(opts: {
   } else {
     unlockHost.append(reasonField);
     reasonField.hidden = true;
-    // Only ask why once a search field is actually touched.
+    // Only ask why once a search field is actually touched (here, or the heading on the page itself).
     for (const el of fields) el.addEventListener("input", () => { reasonField.hidden = false; }, { once: true });
+    unlockHost.addEventListener("seo-touched", () => { reasonField.hidden = false; });
   }
 
-  return h("details", { class: "seo-card" },
+  return h("details", { class: "seo-card", attrs: { "data-seo-card": "" } },
     h("summary", { class: "seo-card__summary" }, h("span", { text: "Search engine settings" }), opts.locked ? badge("Locked", "warn") : badge("Change with care", "muted")),
     h("div", { class: "seo-card__body" },
       h("p", { class: "fixed-value" }, h("span", { class: "fixed-value__label", text: "Web address (never changes)" }), h("code", { text: opts.path })),
@@ -108,13 +114,66 @@ export async function pageEditPage(ctx: Ctx, kind: "page" | "post", id: string):
   const approve = h("input", { attrs: { type: "checkbox", id: approveId } });
 
   const page = draft as Page;
+  let unlocked = false;
+  let seo!: HTMLElement;
+
+  // ---- edit on the page (the default) or as a form
+  const previewHost = h("div", { class: "preview__canvas" });
+  const preview = mountPreview(previewHost, {
+    kind, draft, images: ctx.store.data.images, pages: files.pages,
+    headingLocked: () => locked && !unlocked,
+    onChange: () => {
+      setDirty(true);
+      // Keep the search card's heading field in step with the heading on the page.
+      const field = seo?.querySelector<HTMLInputElement>('[data-seo-field="h1"] input');
+      if (field && field.value !== draft.h1) {
+        field.value = draft.h1;
+        seo.querySelector(".seo-card__body > div:last-child")?.dispatchEvent(new Event("seo-touched"));
+      }
+    },
+  });
+  const widthButton = (label: string, px: number | null) => {
+    const b = h("button", { class: ["seg__btn", px === null && "is-on"], attrs: { type: "button", "aria-pressed": String(px === null) }, text: label });
+    b.addEventListener("click", () => { preview.setWidth(px); b.parentElement!.querySelectorAll(".seg__btn").forEach((x) => { x.classList.toggle("is-on", x === b); x.setAttribute("aria-pressed", String(x === b)); }); });
+    return b;
+  };
+  const visual = h("section", { class: "preview" },
+    h("div", { class: "preview__bar" },
+      h("span", { class: "preview__dots", attrs: { "aria-hidden": "true" } }),
+      h("span", { class: "preview__url", text: `savinggrace.org.au${original.path}` }),
+      h("span", { class: "seg", attrs: { role: "group", "aria-label": "Preview width" } }, widthButton("Computer", null), widthButton("Phone", 390))),
+    previewHost);
+  const formHost = h("div");
+  const drawForm = () => mount(formHost,
+    card("Content", h("p", { class: "card__lede", text: "Edit the text in place. Paragraphs, headings, lists, quotes and highlighted boxes can also be added, moved and deleted." }), blockList(draft.blocks)),
+    kind === "page" && page.aside?.length ? card("Sidebar", blockList(page.aside)) : null);
+  let mode: "visual" | "form" = "visual";
+  const modeButton = (label: string, value: "visual" | "form") => {
+    const b = h("button", { class: ["seg__btn", value === mode && "is-on"], attrs: { type: "button", "aria-pressed": String(value === mode) }, text: label });
+    b.addEventListener("click", () => {
+      if (mode === value) return;
+      mode = value;
+      if (value === "form") drawForm(); else preview.refresh();
+      visual.hidden = value !== "visual";
+      formHost.hidden = value !== "form";
+      b.parentElement!.querySelectorAll(".seg__btn").forEach((x) => { x.classList.toggle("is-on", x === b); x.setAttribute("aria-pressed", String(x === b)); });
+    });
+    return b;
+  };
+  formHost.hidden = true;
+  const modeBar = h("div", { class: "mode-bar" },
+    h("span", { class: "seg", attrs: { role: "group", "aria-label": "How to edit" } }, modeButton("Edit on the page", "visual"), modeButton("Edit as a form", "form")),
+    h("p", { class: "mode-bar__hint", text: "Click any text to change it. Select words to make them bold, italic or a link. Hover a paragraph to move it, add something below it, or delete it." }));
+
   const details = kind === "page"
-    ? card("Page",
+    ? card("Page settings",
         h("div", { class: "form-grid" },
           textField("Small label above the heading (optional)", page.eyebrow ?? "", (v) => { page.eyebrow = v.trim() ? v : null; }),
           textField("Short name (used in menus and link cards)", page.navTitle, (v) => { page.navTitle = v; })),
         markupField("Introduction (optional)", page.lede ?? "", (v) => { page.lede = v.trim() ? v : null; }, { rows: 3 }))
     : null;
+  // Settings typed here show on the page straight away.
+  details?.addEventListener("input", () => { if (mode === "visual") preview.refresh(); });
 
   const save = async () => {
     const errors: string[] = [];
@@ -141,13 +200,15 @@ export async function pageEditPage(ctx: Ctx, kind: "page" | "post", id: string):
     locked ? h("p", { class: "banner banner--warn" }, h("strong", { text: "This page brings in Google visits. " }), "Change its wording freely, but keep it about the same thing. Its search settings are locked below.") : null,
     doctrinal ? h("p", { class: "banner banner--info" }, h("strong", { text: "This page sets out what the church believes. " }), "Saving a change needs the elders' approval.") : null,
     problems,
+    modeBar,
+    visual,
+    formHost,
     details,
-    card("Content", h("p", { class: "card__lede", text: "Edit the text in place. Paragraphs, headings, lists, quotes and highlighted boxes can also be added, moved and deleted." }), blockList(draft.blocks)),
-    kind === "page" && page.aside?.length ? card("Sidebar", blockList(page.aside)) : null,
-    seoSection({
+    (seo = seoSection({
       path: original.path, locked, title: draft.seo.title, description: draft.seo.description, h1: draft.h1, reason,
-      onChange: (field, value) => { if (field === "h1") draft.h1 = value; else draft.seo[field] = value; setDirty(true); },
-    }),
+      onChange: (field, value) => { if (field === "h1") { draft.h1 = value; preview.refresh(); } else draft.seo[field] = value; setDirty(true); },
+      onUnlock: () => { unlocked = true; preview.refresh(); },
+    })),
     doctrinal ? card("Approval", h("label", { class: "check", attrs: { for: approveId } }, approve, h("span", null, h("strong", { text: "The elders have approved this change." }), " It is recorded with the change."))) : null,
     saveBar(save, () => { if (window.confirm("Throw away your changes?")) { setDirty(false); ctx.go(`#/pages/${kind}/${encodeURIComponent(id)}?reset=${Date.now()}`); } }));
 }

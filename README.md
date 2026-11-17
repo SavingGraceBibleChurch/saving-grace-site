@@ -54,7 +54,10 @@ Contents read/write, Actions read); there is no server, password store or databa
   2 minutes (see `deploy/staging/README.md`).
 - **`.github/workflows/admin.yml`** publishes the admin to GitHub Pages (Settings → Pages → Source: GitHub Actions).
 - Sermons added in the admin get IDs from 1,000,001 up; web addresses of published items are locked.
-- **Pages** edits the wording of every page and article, the home page, and the church details (address,
+- **Pages** shows each page and article as it looks on the site (`admin/src/app/preview.ts` draws it inside
+  `admin/src/pages/preview-frame.astro`, which carries the site's own stylesheets) and lets editors click any
+  text and type, with a toolbar for bold, italic and links; "Edit as a form" is still there for anything else.
+  It also edits the wording of every page and article, the home page, and the church details (address,
   phone, email, service times in `site-settings.json`; saving them also updates the copies on the home page,
   the contact page and the church venue). Text blocks can be added, moved and deleted; structured blocks keep
   their shape.

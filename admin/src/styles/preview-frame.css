@@ -1,0 +1,25 @@
+/* Only inside the admin's visual editor: shows what can be edited, without changing how the page looks. */
+.preview-frame { min-height: 0; }
+.preview-frame [data-edit] { border-radius: 3px; outline: 1px dashed transparent; outline-offset: 3px; cursor: text; transition: outline-color 0.15s, background-color 0.15s; }
+.preview-frame [data-edit]:hover { outline-color: rgb(169 74 34 / 0.55); }
+.preview-frame [data-edit]:focus { outline: 2px solid var(--ember-bright); background-color: rgb(213 106 51 / 0.06); }
+.preview-frame [data-edit]:empty::before { content: attr(data-placeholder); color: var(--ink-mute); font-style: italic; }
+.preview-frame [data-locked] { position: relative; cursor: not-allowed; }
+.preview-frame [data-locked]:hover { outline: 1px dashed var(--line-strong); outline-offset: 3px; }
+.preview-frame [data-locked]::after { content: "🔒"; margin-left: 0.35em; font-size: 0.4em; vertical-align: super; opacity: 0.55; }
+.preview-frame a { cursor: default; }
+.preview-frame [data-edit] a { cursor: text; }
+
+/* Blocks that fill themselves in from the website's data. */
+.preview-placeholder { display: grid; place-items: center; gap: 0.25rem; min-height: 6rem; margin-block: 1rem; padding: 1.25rem; border: 2px dashed var(--line-strong); border-radius: var(--radius); color: var(--ink-mute); text-align: center; font-size: 0.95rem; background: rgb(255 255 255 / 0.5); }
+.preview-placeholder strong { color: var(--ink-soft); }
+
+/* The small toolbars the admin places over the page. */
+.edit-bar { position: absolute; z-index: 50; display: flex; gap: 2px; padding: 3px; border-radius: 8px; background: var(--navy); box-shadow: 0 8px 24px -8px rgb(14 42 56 / 0.6); font: 600 0.8rem/1 var(--font-sans); }
+.edit-bar[hidden] { display: none; }
+.edit-bar button, .edit-bar select { min-width: 2rem; height: 2rem; padding: 0 0.55rem; border: 0; border-radius: 6px; background: transparent; color: var(--on-navy); font: inherit; cursor: pointer; }
+.edit-bar button:hover, .edit-bar select:hover { background: rgb(255 255 255 / 0.14); }
+.edit-bar select { appearance: none; }
+.edit-bar option { color: var(--ink); background: #fff; }
+.edit-bar__sep { width: 1px; margin: 4px 2px; background: rgb(255 255 255 / 0.2); }
+.preview-frame .block-hover { outline: 1px solid rgb(14 42 56 / 0.18); outline-offset: 6px; border-radius: 4px; }
