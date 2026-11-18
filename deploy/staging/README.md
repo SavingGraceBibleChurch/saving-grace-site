@@ -1,7 +1,6 @@
 # Public staging (http://54.253.237.138:8080/)
 
-The static site is served on the staging EC2 host next to the old Codex app, which is left running untouched.
-Staging runs **the same nginx rules as production** (`deploy/nginx/`) on a private port, so redirects, headers and
+The static site is the only thing this staging EC2 host serves. Staging runs **the same nginx rules as production** (`deploy/nginx/`) on a private port, so redirects, headers and
 caching are tested here before launch.
 
 | File | Installed at | Purpose |
@@ -11,7 +10,7 @@ caching are tested here before launch.
 | `../nginx/staging-nginx.conf` | `/etc/nginx/savinggrace-staging.conf` | A separate nginx on 127.0.0.1:8084 only, with `X-Robots-Tag: noindex` and no HTTPS |
 | `savinggrace-nginx.service` | `/etc/systemd/system/` | Runs that nginx (the system `nginx.service` stays disabled) |
 | `savinggrace-nginx.logrotate` | `/etc/logrotate.d/savinggrace-nginx` | Rotates its logs in `/var/log/nginx/savinggrace-staging/` daily, keeping a week |
-| `proxy-static.conf` | `/etc/systemd/system/savinggrace-staging-public.service.d/static-site.conf` | Points public port 8080 at that nginx instead of the old app |
+| `proxy-static.conf` | `/etc/systemd/system/savinggrace-staging-public.service.d/static-site.conf` | Points public port 8080 at that nginx. The base unit, `savinggrace-staging-public`, is left over from the old Codex app; this drop-in replaces its target |
 | `../upload-old-files.sh` | uploads to `/srv/savinggrace-static/uploads/` | The old WordPress files (`/wp-content/uploads/…`), kept outside the builds so updates never remove them |
 | `update.py` | `/srv/savinggrace-static/update.py` | Pulls the newest build from the `staging` GitHub release, checks its SHA-256, switches `current` and installs the build's redirect rules |
 | `savinggrace-static-update.service` / `.timer` | `/etc/systemd/system/` | Runs `update.py` every 2 minutes |
@@ -61,10 +60,21 @@ over from the WordPress server; see section 9 of `deploy/production/README.md`.
   1. Run `sudo systemctl enable --now savinggrace-static.service`.
   2. Put `/root/savinggrace-backups/static-site.conf.python-8083` back as `static-site.conf`.
   3. Run `sudo systemctl daemon-reload && sudo systemctl restart savinggrace-staging-public.service`.
-- **To the old Codex app:** delete `static-site.conf`, then `sudo systemctl daemon-reload && sudo systemctl restart savinggrace-staging-public.service`.
-  The original unit files are backed up under `/root/savinggrace-backups/`.
+## The old Codex app (removed 18 Nov 2026)
 
-Logs:
+The Codex app that used to run here was removed to free the disk, which went from 95% to 13% full. That covered its 5
+containers, 2 PostgreSQL databases, Docker images and build cache, the `/opt/savinggrace-*` release folders, its
+media store and its upload bundles. Docker is stopped and disabled because nothing uses it now.
+
+Before the removal, its databases (full `pg_dumpall` dumps), unused data volumes, private study files and the media
+not already in the WordPress uploads were downloaded to Samuel's PC. A `MANIFEST.txt` with each file's SHA-256 is
+kept with them. The app's systemd unit files are in `/root/savinggrace-backups/2026-11-18-codex-units/`. There is no
+going back to the Codex app on this server.
+
+The 452 old WordPress files were then uploaded with `deploy/upload-old-files.sh`. Every `/wp-content/uploads/`
+address from the live site now serves the same bytes as WordPress.
+
+## Logs
 
 - Updates: `journalctl -u savinggrace-static-update --since today`.
 - Requests and errors: `/var/log/nginx/savinggrace-staging/`.
