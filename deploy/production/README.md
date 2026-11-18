@@ -16,8 +16,8 @@ How a change reaches the site:
    check fails, it puts the previous rules back and nginx keeps running unchanged. It accepts only redirect maps
    from a build, never other nginx settings, so a push to the repository cannot change the server's configuration.
 
-Staging already runs this setup (same nginx rules, same updater) and it was tested there: see
-`deploy/staging/README.md`.
+This setup has been live since 18 Nov 2026. Before that it ran on staging (same nginx rules, same updater), where it
+was tested: see `deploy/staging/README.md`. The release is still called `staging`, a name left over from then.
 
 Nothing is pushed **to** the server: it pulls from the public repository. GitHub never connects to the server and
 has no address, SSH key, password or AWS credentials for it. The updater only makes outbound HTTPS requests to
@@ -34,7 +34,12 @@ The files referred to below are in this repository: `deploy/nginx/` and `deploy/
 
 ---
 
-## The plan: move the staging disk into the production instance
+## How it was launched (18 Nov 2026)
+
+On 18 Nov 2026, at about 15:00 Melbourne time, Yang put the prepared staging disk behind the Elastic IP 3.24.78.170.
+www.savinggrace.org.au went live on the new site with no DNS change. The WordPress server is kept for about a month:
+rolling back means putting it behind the Elastic IP again. The steps below are how the disk was prepared, kept for
+reference.
 
 The staging server's disk (Amazon Linux 2023, x86_64, UEFI boot) already has the site, its updater, the nginx rules
 and the 452 old WordPress files. It becomes production's disk, so the production instance keeps its address
@@ -263,5 +268,5 @@ Yang's nginx files from the WordPress server (November 2026), and what became of
 | `nginx.conf`: gzip, `server_tokens off`, `X-Frame-Options` | Already here (`savinggrace-site.conf`, `savinggrace-headers.conf`). |
 | `default-https-server-block.conf` with `bitnami/certs/server.crt` and `server.key` | Not needed: `production.conf` has its own catch-all server, and the site gets its own certificate (section 4). |
 
-Staging runs the same files, but every request reaches its nginx from 127.0.0.1 (through the port 8080 proxy),
-so only the user-agent and request rules take effect there; the address rules apply in production.
+Staging ran the same files before the launch. There every request reached nginx from 127.0.0.1 (through the port
+8080 proxy), so only the user-agent and request rules took effect; in production the address rules apply too.

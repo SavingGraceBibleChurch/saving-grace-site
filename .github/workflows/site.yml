@@ -1,7 +1,7 @@
 # Builds the public site on every change to main (including saves from the admin) and once a day,
-# then publishes the build to the rolling "staging" release. The staging server checks that release
-# every 2 minutes and switches to a new build only after verifying its SHA-256.
-# A build that fails any check is never published, so staging keeps the last good version.
+# then publishes the build to the rolling "staging" release (a name left over from before the launch). The live
+# server checks that release every 2 minutes and switches to a new build only after verifying its SHA-256.
+# A build that fails any check is never published, so the website keeps the last good version.
 name: Site
 
 on:

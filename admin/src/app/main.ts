@@ -1,5 +1,5 @@
 // Starts the admin: sign-in, the top bar, and hash routing between pages.
-import { REPO, STAGING, TOKEN_KEY, isLocalTest } from "./config";
+import { REPO, SITE_URL, TOKEN_KEY, isLocalTest } from "./config";
 import { makeCtx, type Ctx } from "./context";
 import { GitHub, GitHubError, type EditProblem } from "./github";
 import { Store } from "./store";
@@ -82,7 +82,7 @@ async function start() {
           h("details", { class: "account" },
             h("summary", { class: "account__summary" }, h("span", { class: "sr-only", text: "Signed in as " }), user),
             h("div", { class: "account__menu" },
-              external("Open staging site", STAGING, "account__item"),
+              external("Open the website", SITE_URL, "account__item"),
               external("Code and history on GitHub", `https://github.com/${REPO.owner}/${REPO.name}`, "account__item"),
               h("button", { class: "account__item", attrs: { type: "button" }, on: { click: signOut }, text: "Sign out" })))))),
     isLocalTest ? h("p", { class: "testbanner", text: `Test mode: saving to a local test server (branch ${REPO.branch}), not GitHub.` }) : null,
@@ -164,7 +164,7 @@ function loginPage(message?: string) {
     h("div", { class: "login__card" },
       h("p", { class: "brand brand--login" }, h("span", { class: "brand__name", text: "Saving Grace" }), h("span", { class: "brand__tag", text: "Admin" })),
       h("h1", { class: "login__title", text: "Sign in" }),
-      h("p", { class: "login__lede", text: "Edit sermons, studies, events and the church notice. Every change is saved to the website's GitHub repository and published to the staging site a few minutes later." }),
+      h("p", { class: "login__lede", text: "Edit sermons, studies, events and the church notice. Every change is saved to the website's GitHub repository and goes live on the website a few minutes later." }),
       form,
       h("details", { class: "login__help" },
         h("summary", { text: "How do I get a token? (one-time setup, about 2 minutes)" }),

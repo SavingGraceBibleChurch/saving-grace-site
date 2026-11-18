@@ -1,6 +1,6 @@
 // Add or edit a sermon: details, recording, description and transcript, saved as one commit.
 import type { Sermon, TaxonomyKind, TaxonomyTerm } from "../../../../src/lib/types";
-import { DATA, FIRST_NEW_ID, SEO_SUFFIX, STAGING, transcriptPath } from "../config";
+import { DATA, FIRST_NEW_ID, SEO_SUFFIX, SITE_URL, transcriptPath } from "../config";
 import type { Ctx } from "../context";
 import { fileEdit, jsonEdit, type Edit, type Source } from "../store";
 import { lastSunday, normaliseLongText, passageSlug, sermonAudioId, slugify, today, wordCount, youtubeId } from "../text";
@@ -45,7 +45,7 @@ export async function sermonEditPage(ctx: Ctx, id: number | null): Promise<Node>
   const checkSlug = () => {
     if (original) { slugInfo.textContent = "The web address can't change once a sermon is published, because links to it would break."; return; }
     const taken = data.sermons.some((s) => s.slug === draft.slug);
-    slugInfo.replaceChildren(draft.slug ? `${STAGING.replace(/^https?:\/\//u, "")}/sermons/${draft.slug}/` : "Fills in from the title.", taken ? h("strong", { class: "is-error", text: " — already used by another sermon" }) : "");
+    slugInfo.replaceChildren(draft.slug ? `${SITE_URL.replace(/^https?:\/\//u, "")}/sermons/${draft.slug}/` : "Fills in from the title.", taken ? h("strong", { class: "is-error", text: " — already used by another sermon" }) : "");
   };
   const titleInput = input(draft.title, { required: true, autocomplete: "off" }, (v) => {
     draft.title = v;
@@ -259,7 +259,7 @@ export async function sermonEditPage(ctx: Ctx, id: number | null): Promise<Node>
       h("p", { class: "page-head__crumb" }, h("a", { class: "link", attrs: { href: "#/sermons" }, text: "Sermons" }), " / "),
       h("h1", { class: "page-head__title", text: original ? original.title : "Add a sermon" }),
       original ? h("div", { class: "page-head__extra" },
-        external("View on staging", `${STAGING}${original.path}`),
+        external("View on the website", `${SITE_URL}${original.path}`),
         // Sermons added in the admin are not on the old WordPress site.
         original.wpId < FIRST_NEW_ID ? external("View on the live site", `https://www.savinggrace.org.au${original.path}`) : null) : null),
     problems,

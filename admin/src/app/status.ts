@@ -1,6 +1,6 @@
 // Follows the build of the latest save and shows it in the top bar:
-// building → published to staging, or failed (staging keeps the previous version).
-import { SITE_WORKFLOW, STAGING } from "./config";
+// building → live on the website, or failed (the website keeps the previous version).
+import { SITE_WORKFLOW, SITE_URL } from "./config";
 import type { GitHub } from "./github";
 import { h, mount } from "./ui";
 
@@ -30,13 +30,13 @@ export function trackBuild(gh: GitHub, sha: string) {
       } else if (run.status !== "completed") {
         show("busy", "Building…", "The site is being rebuilt with your change. Click to watch.", run.url);
       } else if (run.conclusion === "success") {
-        show("ok", "Published", "Built. It reaches the staging site within 2 minutes. Click to open staging.", STAGING);
+        show("ok", "Published", "Built. It goes live on the website within 2 minutes. Click to open the website.", SITE_URL);
         return;
       } else if (run.conclusion === "cancelled" || run.conclusion === "skipped") {
         show("ok", "Published", "Included in a newer build.");
         return;
       } else {
-        show("error", "Build failed", "The build failed, so staging still shows the previous version. Click to see why.", run.url);
+        show("error", "Build failed", "The build failed, so the website still shows the previous version. Click to see why.", run.url);
         return;
       }
     } catch {

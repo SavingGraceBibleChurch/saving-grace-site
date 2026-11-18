@@ -1,5 +1,5 @@
 // Tuesday Night Studies: courses → sections → studies, with reordering, and editors for each.
-import { DATA, STAGING, studyContentPath } from "../config";
+import { DATA, SITE_URL, studyContentPath } from "../config";
 import type { Ctx } from "../context";
 import { fileEdit, jsonEdit, toJson, type StudyContent, type StudySeries, type StudySession } from "../store";
 import { normaliseLongText, sermonAudioId, shortDate, slugify, wordCount, youtubeId } from "../text";
@@ -170,7 +170,7 @@ export async function studyEditPage(ctx: Ctx, slug: string | null, inGroup: stri
     h("header", { class: "page-head" },
       h("p", { class: "page-head__crumb" }, h("a", { class: "link", attrs: { href: "#/studies" }, text: "Tuesday Night Studies" }), " / "),
       h("h1", { class: "page-head__title", text: original ? original.title : "Add a study" }),
-      original ? h("div", { class: "page-head__extra" }, external("View on staging", `${STAGING}/studies/sessions/${original.slug}/`)) : null),
+      original ? h("div", { class: "page-head__extra" }, external("View on the website", `${SITE_URL}/studies/sessions/${original.slug}/`)) : null),
     problems,
     card("Details", h("div", { class: "form-grid" },
       field("Title", titleInput, { wide: true }),
@@ -237,7 +237,7 @@ export function seriesEditPage(ctx: Ctx, id: string | null, parentId: string | n
     h("header", { class: "page-head" },
       h("p", { class: "page-head__crumb" }, h("a", { class: "link", attrs: { href: "#/studies" }, text: "Tuesday Night Studies" }), parent ? ` / ${parent.title}` : "", " / "),
       h("h1", { class: "page-head__title", text: original ? original.title : `Add a ${kind}` }),
-      original ? h("div", { class: "page-head__extra" }, external("View on staging", `${STAGING}/studies/series/${original.slug}/`)) : null),
+      original ? h("div", { class: "page-head__extra" }, external("View on the website", `${SITE_URL}/studies/series/${original.slug}/`)) : null),
     problems,
     card(null, h("div", { class: "form-grid" }, field("Title", titleInput, { wide: true }), field("Web address", slugInput, { wide: true, hint: slugInfo })),
       original ? h("p", { class: "card__foot" }, badge(`${sessions} ${sessions === 1 ? "study" : "studies"} directly in this ${kind}`, "muted")) : h("p", { class: "card__foot", text: `After saving you'll be taken to add its first study.` })),

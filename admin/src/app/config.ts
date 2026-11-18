@@ -8,7 +8,8 @@ const read = (key: string) => {
 
 export const REPO = { owner: "SavingGraceBibleChurch", name: "saving-grace-site", branch: (local && read("sg-admin-branch")) || "main" };
 export const API = (local && read("sg-admin-api")) || "https://api.github.com";
-export const STAGING = "http://54.253.237.138:8080";
+/** The public website. A save goes live here a few minutes after it is made; there is no staging site. */
+export const SITE_URL = "https://www.savinggrace.org.au";
 export const SITE_WORKFLOW = "Site";
 export const TOKEN_KEY = "sg-admin-token";
 export const isLocalTest = local && API !== "https://api.github.com";

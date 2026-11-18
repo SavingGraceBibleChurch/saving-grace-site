@@ -26,7 +26,7 @@ export function makeCtx(store: Store, gh: GitHub, user: string, go: (hash: strin
           toast("Nothing to save: no changes were made.", "info");
           return store.head;
         }
-        toast("Saved. The site is rebuilding; it will be on staging in about 5 minutes.", "ok");
+        toast("Saved. The site is rebuilding; your change goes live in about 5 minutes.", "ok");
         trackBuild(gh, sha);
         return sha;
       } catch (error) {

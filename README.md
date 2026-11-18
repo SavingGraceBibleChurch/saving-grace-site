@@ -5,8 +5,8 @@ Every page is generated ahead of time with [Astro](https://astro.build), so ther
 WordPress, PHP, plugins, database or server to patch. Search is built at the same time
 by [Pagefind](https://pagefind.app).
 
-**Status:** the pages, sermons, events and SEO layer are built, verified, and running on public staging behind
-the nginx setup planned for production. WordPress is still the live site.
+**Status:** live at https://www.savinggrace.org.au since 18 November 2026, replacing WordPress. The pages, sermons,
+events and SEO layer were verified against the WordPress site before the switch.
 
 ## Design history
 
@@ -50,8 +50,8 @@ Contents read/write, Actions read); there is no server, password store or databa
 - **Every save is validated** in the browser and again in CI (`scripts/lib/validate.mjs`) before anything is built.
 - **`.github/workflows/site.yml`** runs on every push and daily. It fetches new SermonAudio transcripts
   (`scripts/fetch_new_transcripts.mjs`, using the `SERMONAUDIO_API_KEY` repository secret), validates, type-checks
-  and builds, and only then publishes the build to the `staging` release. The staging server pulls it within
-  2 minutes (see `deploy/staging/README.md`).
+  and builds, and only then publishes the build to the `staging` release. The name is left over from before the
+  launch: the live server pulls from that release within 2 minutes (see `deploy/production/README.md`).
 - **`.github/workflows/admin.yml`** publishes the admin to GitHub Pages (Settings → Pages → Source: GitHub Actions).
 - Sermons added in the admin get IDs from 1,000,001 up; web addresses of published items are locked.
 - **Pages** shows each page and article as it looks on the site (`admin/src/app/preview.ts` draws it inside
@@ -123,7 +123,7 @@ Improvements over the live site:
 
 ## Deployment requirements
 
-The production plan is a plain Linux server with nginx: see `deploy/production/README.md` (server, firewall,
+Production is a plain Linux server with nginx, live since 18 Nov 2026: see `deploy/production/README.md` (server, firewall,
 HTTPS, updates, switch-over, rollback, security checks). The points below are what any host must do.
 
 - **Canonical host is `www.savinggrace.org.au`.** `savinggrace.org.au` must 301 to `www`.
@@ -138,7 +138,7 @@ HTTPS, updates, switch-over, rollback, security checks). The points below are wh
 - **Blocking:** the WordPress server's bot, probe and address rules carry over (`deploy/nginx/savinggrace-blocking-maps.conf`,
   `savinggrace-ip-deny.conf`). What was left out, and why, is in section 9 of `deploy/production/README.md`.
 - **Uploads:** WordPress files that old URLs point at (452 files, 1.16 GB, mostly sermon MP3s) are uploaded once from `private/uploads/` with `deploy/upload-old-files.sh` to the server's permanent folder `/srv/savinggrace-static/uploads`, which nginx serves at `/wp-content/uploads/…` before looking in the build. Create that folder with `python scripts/collect_uploads.py <backup.zip>`.
-- **Daily rebuild:** "next service" and upcoming-event dates are worked out at build time. `site.yml` already rebuilds every day; the production host should take its builds the same way staging does.
+- **Daily rebuild:** "next service" and upcoming-event dates are worked out at build time. `site.yml` rebuilds every day, and the server takes each build by itself.
 - **Rollback:** keep WordPress running, untouched, for about a month after the switch.
 
 ## Not done yet
@@ -146,4 +146,3 @@ HTTPS, updates, switch-over, rollback, security checks). The points below are wh
 - Sermon Q&A, descriptions for the 8 sermons without a transcript, and transcripts for those 8.
 - Image uploads and deleting sermons in the admin; editing the home page visually (it is edited as a form).
 - Stripe/PayPal giving and a contact form. The giving and contact pages show the current content for now.
-- Setting up the production server (`deploy/production/README.md`; the same nginx setup already runs on staging).

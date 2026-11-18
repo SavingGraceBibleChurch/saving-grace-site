@@ -1,6 +1,6 @@
 // Events: the list, and an editor for title, schedule, times, place and description.
 import type { ChurchEvent, Schedule } from "../../../../src/lib/types";
-import { DATA, STAGING } from "../config";
+import { DATA, SITE_URL } from "../config";
 import type { Ctx } from "../context";
 import { jsonEdit, type Edit, type Redirect } from "../store";
 import { WEEKDAYS, shortDate, slugify, toParagraphs, today } from "../text";
@@ -134,7 +134,7 @@ export async function eventEditPage(ctx: Ctx, id: string | null): Promise<Node> 
     h("header", { class: "page-head" },
       h("p", { class: "page-head__crumb" }, h("a", { class: "link", attrs: { href: "#/events" }, text: "Events" }), " / "),
       h("h1", { class: "page-head__title", text: original ? original.title : "Add an event" }),
-      original ? h("div", { class: "page-head__extra" }, external("View on staging", `${STAGING}${original.path}`)) : null),
+      original ? h("div", { class: "page-head__extra" }, external("View on the website", `${SITE_URL}${original.path}`)) : null),
     problems,
     card("Details", h("div", { class: "form-grid" },
       field("Title", titleInput, { wide: true }),

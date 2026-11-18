@@ -1,5 +1,5 @@
 // Home: add this week's sermon, the church notice, what needs attention, and recent changes.
-import { DATA, STAGING } from "../config";
+import { DATA, SITE_URL } from "../config";
 import type { Ctx } from "../context";
 import { jsonEdit, type Settings } from "../store";
 import { shortDate, timeAgo } from "../text";
@@ -17,7 +17,7 @@ export function homePage(ctx: Ctx): Node {
     h("li", { class: "changes__item" }, h("span", { class: "changes__message", text: c.message }), h("span", { class: "changes__meta", text: `${c.author} · ${timeAgo(c.date)}` }))))).catch(() => mount(recent, h("li", { text: "Could not load recent changes." })));
 
   return h("div", { class: "home" },
-    h("header", { class: "page-head" }, h("h1", { class: "page-head__title", text: `Welcome, ${ctx.user}` }), h("p", { class: "page-head__lede", text: "Changes you save here go to the staging site within about five minutes." })),
+    h("header", { class: "page-head" }, h("h1", { class: "page-head__title", text: `Welcome, ${ctx.user}` }), h("p", { class: "page-head__lede", text: "Changes you save here go live on the website within about five minutes." })),
     h("section", { class: "hero-card" },
       h("div", null,
         h("h2", { class: "hero-card__title", text: "Add this week's sermon" }),
@@ -38,7 +38,7 @@ export function homePage(ctx: Ctx): Node {
           h("li", null, link("Sermons", "#/sermons"), h("span", { text: `${sermons.length} sermons` })),
           h("li", null, link("Tuesday Night Studies", "#/studies"), h("span", { text: `${ctx.store.data.studies.sessions.length} studies` })),
           h("li", null, link("Events", "#/events"), h("span", { text: `${ctx.store.data.events.events.length} events` })),
-          h("li", null, external("Staging site", STAGING), h("span", { text: "what visitors will see" }))))));
+          h("li", null, external("The website", SITE_URL), h("span", { text: "what visitors see" }))))));
 }
 
 function stat(count: number, label: string, href: string) {

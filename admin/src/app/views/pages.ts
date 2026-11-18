@@ -1,7 +1,7 @@
 // The Pages section: the list of pages and articles, the home page, and the church's details
 // (address, phone, email, service times) that appear across the site.
 import type { Page, Post } from "../../../../src/lib/types";
-import { DATA, DOCTRINAL, STAGING } from "../config";
+import { DATA, DOCTRINAL, SITE_URL } from "../config";
 import type { Ctx } from "../context";
 import { linesField, markupField, textField } from "../blocks";
 import { jsonEdit, type Contact, type Edit, type Settings } from "../store";
@@ -77,7 +77,7 @@ export async function homeEditPage(ctx: Ctx): Promise<Node> {
     h("header", { class: "page-head" },
       h("p", { class: "page-head__crumb" }, h("a", { class: "link", attrs: { href: "#/pages" }, text: "Pages" }), " / "),
       h("h1", { class: "page-head__title", text: "Home page" }),
-      h("div", { class: "page-head__extra" }, external("View on staging", `${STAGING}/`))),
+      h("div", { class: "page-head__extra" }, external("View on the website", `${SITE_URL}/`))),
     h("p", { class: "banner banner--warn" }, h("strong", { text: "The home page brings in the most Google visits. " }), "Change its wording freely; its search settings and main heading are locked below."),
     problems,
     card("Top of the page", h("div", { class: "form-grid" }, t("Small heading above the button", c.heroCopy, "newHere"), t("Service time", c.heroCopy, "serviceTime"), t("Address", c.heroCopy, "address"), t("Button", c.heroCopy, "join"))),

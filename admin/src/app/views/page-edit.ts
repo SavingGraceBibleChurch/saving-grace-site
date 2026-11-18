@@ -3,7 +3,7 @@
 // description and main heading locked; changing them takes a deliberate unlock and a reason, which is
 // recorded for the SEO check (scripts/seo-intentional-changes.json).
 import type { Page, Post } from "../../../../src/lib/types";
-import { DATA, DOCTRINAL, STAGING } from "../config";
+import { DATA, DOCTRINAL, SITE_URL } from "../config";
 import type { Ctx } from "../context";
 import { blockList, markupField, textField } from "../blocks";
 import { mountPreview } from "../preview";
@@ -196,7 +196,7 @@ export async function pageEditPage(ctx: Ctx, kind: "page" | "post", id: string):
     h("header", { class: "page-head" },
       h("p", { class: "page-head__crumb" }, h("a", { class: "link", attrs: { href: "#/pages" }, text: "Pages" }), " / "),
       h("h1", { class: "page-head__title", text: original.h1 }),
-      h("div", { class: "page-head__extra" }, external("View on staging", `${STAGING}${original.path}`))),
+      h("div", { class: "page-head__extra" }, external("View on the website", `${SITE_URL}${original.path}`))),
     locked ? h("p", { class: "banner banner--warn" }, h("strong", { text: "This page brings in Google visits. " }), "Change its wording freely, but keep it about the same thing. Its search settings are locked below.") : null,
     doctrinal ? h("p", { class: "banner banner--info" }, h("strong", { text: "This page sets out what the church believes. " }), "Saving a change needs the elders' approval.") : null,
     problems,
