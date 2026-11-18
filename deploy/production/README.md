@@ -253,7 +253,7 @@ Yang's nginx files from the WordPress server (November 2026), and what became of
 
 | WordPress server | Here |
 | --- | --- |
-| `bot-blocking.conf`: the bad-bot user-agent list | Kept as it was, in `savinggrace-blocking-maps.conf` (403). It also refuses curl, so test with `curl -A "Mozilla/5.0"`. |
+| `bot-blocking.conf`: the bad-bot user-agent list | Kept, in `savinggrace-blocking-maps.conf` (403), except the AI search bots (OAI-SearchBot, ChatGPT-User, PerplexityBot, Applebot). As agreed with Yang, these are allowed so the church appears in ChatGPT, Perplexity and Siri answers, but each bot is held to 5 requests a second (bursts of 30, then 429). AI training crawlers stay refused, and robots.txt opts out of Apple's AI training (`Applebot-Extended`). The list also refuses curl, so test with `curl -A "Mozilla/5.0"`. |
 | `bot-blocking.conf`: the bad-request list | Kept, in the same file, less two patterns that match this site's own addresses: `https?:/(?!/)` would refuse the `/https:/…` redirect for malformed self-links that Search Console reported, and `union.*select` could refuse a sermon whose address has "union" then "select" in it. |
 | `ip-blocking.conf` and `ip-blocking-safe.conf` (the same list), and the eight `deny` lines in `nginx.conf` | Kept, in `savinggrace-ip-deny.conf`. |
 | The rate-limit zones `bot_zone`, `api_zone` (`bot-blocking.conf`), `event_zone` and `event_feed_zone` (`event-protection.conf`) | Left out. They protected the WordPress login, its API, and the events calendar and its feeds, which ran PHP and MySQL on every request. Here every page is a file on disk, and a per-address limit would risk refusing a room of people on the church Wi-Fi, who all share one address. |
