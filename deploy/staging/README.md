@@ -1,5 +1,12 @@
 # Public staging (http://54.253.237.138:8080/)
 
+> **18 Nov 2026: this disk is now in production mode, waiting to be moved into the production instance.**
+> `deploy/production/switch-to-production.sh apply` was run with the purchased Sectigo certificate. The system nginx
+> serves https://www.savinggrace.org.au on 80 and 443 here, and the port 8080 address and the noindex header are gone.
+> To look at it before the DNS points here, map `www.savinggrace.org.au` to 54.253.237.138 in your computer's hosts
+> file, or use `curl --resolve www.savinggrace.org.au:443:54.253.237.138 -A "Mozilla/5.0" https://www.savinggrace.org.au/`.
+> `switch-to-production.sh rollback` makes it staging again. The rest of this file describes staging mode.
+
 The static site is the only thing this staging EC2 host serves. Staging runs **the same nginx rules as production** (`deploy/nginx/`) on a private port, so redirects, headers and
 caching are tested here before launch.
 
