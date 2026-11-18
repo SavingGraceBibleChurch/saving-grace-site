@@ -31,6 +31,12 @@
 .cover__bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid color-mix(in srgb, currentColor 35%, transparent); font-size: 0.8125rem; line-height: 1.5; font-variant-numeric: tabular-nums; }
 .cover__bottom > svg { transition: transform 0.35s var(--ease); }
 .cover__sections { display: block; font-size: 0.75rem; opacity: 0.85; }
+/* The library covers list the course's sections (or studies) under the title, like a contents page. */
+.cover--contents .cover__title { flex: none; }
+.cover--contents .cover__rule { margin-bottom: 1.75rem; }
+.cover__contents { flex: 1; display: grid; align-content: start; gap: 0.4rem; margin: 1.35rem 0 0; padding: 1.1rem 0 0; border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent); list-style: none; counter-reset: cover-contents; font-size: 0.8125rem; line-height: 1.4; }
+.cover__contents li { display: grid; grid-template-columns: 1.6rem minmax(0, 1fr); counter-increment: cover-contents; opacity: 0.9; }
+.cover__contents li::before { content: counter(cover-contents, decimal-leading-zero); padding-top: 0.08em; font-size: 0.6875rem; font-variant-numeric: tabular-nums; opacity: 0.6; }
 @media (hover: hover) {
   .cover:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
   .cover:hover .cover__rule { transform: scaleX(1.65); }

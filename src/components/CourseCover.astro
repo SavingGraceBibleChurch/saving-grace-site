@@ -1,18 +1,33 @@
 ---
-// A course shown as a book cover: title, session and section counts.
+// A course shown as a book cover: title, its contents, and session and section counts.
+// On the library page the cover lists the course's sections (or, for a course without sections, its studies) like
+// a book's contents page; the compact cover beside an outline or a study shows only the title and counts.
 import type { StudySeries } from "../lib/studies";
-import { courseSessions, sectionsOf, toneOf, seriesPath, quantity } from "../lib/studies";
+import { courseSessions, sectionsOf, sessionsOf, toneOf, seriesPath, quantity } from "../lib/studies";
 
 interface Props { course: StudySeries; compact?: boolean }
 const { course, compact = false } = Astro.props;
 const sessions = courseSessions(course).length;
-const sections = sectionsOf(course).length;
+const sectionList = sectionsOf(course);
+const sections = sectionList.length;
+const contents = compact ? [] : (sections > 0 ? sectionList : sessionsOf(course)).map((item) => item.title);
+const id = `cover-${course.slug}`;
 ---
-<a class:list={["cover", `cover--${toneOf(course)}`, { "cover--compact": compact }]} href={seriesPath(course)}>
+<a
+  class:list={["cover", `cover--${toneOf(course)}`, { "cover--compact": compact, "cover--contents": contents.length > 0 }]}
+  href={seriesPath(course)}
+  aria-labelledby={`${id}-title ${id}-counts`}
+  aria-describedby={contents.length > 0 ? `${id}-contents` : undefined}
+>
   <span class="cover__rule" aria-hidden="true"></span>
-  <span class="cover__title">{course.title}</span>
+  <span class="cover__title" id={`${id}-title`}>{course.title}</span>
+  {contents.length > 0 && (
+    <ol class="cover__contents" id={`${id}-contents`} aria-label={sections > 0 ? "Sections" : "Studies"}>
+      {contents.map((title) => <li>{title}</li>)}
+    </ol>
+  )}
   <span class="cover__bottom">
-    <span>{quantity(sessions, "session")}{sections > 0 && <span class="cover__sections">{quantity(sections, "section")}</span>}</span>
+    <span id={`${id}-counts`}>{quantity(sessions, "session")}{sections > 0 && <span class="cover__sections">{quantity(sections, "section")}</span>}</span>
     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
   </span>
 </a>

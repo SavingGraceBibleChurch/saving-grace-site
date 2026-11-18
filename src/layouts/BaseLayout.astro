@@ -112,7 +112,9 @@ const robots = indexable ? "index, follow, max-image-preview:large, max-snippet:
     {graph.length > 0 && <script type="application/ld+json" set:html={JSON.stringify(graph.length === 1 ? graph[0] : graph)} />}
     <slot name="head" />
   </head>
-  <body>
+  {/* "Back to top" (in the footer) links to #top. It must be the page itself: the header sticks to the top of the
+      screen, so linking to the header would leave the browser nothing to scroll to. */}
+  <body id="top">
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <Header currentPath={currentPath} />
     <main id="main-content" {...searchAttributes}>
