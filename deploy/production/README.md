@@ -85,6 +85,15 @@ sudo python3 -I /srv/savinggrace-static/update.py
 sudo install -m 644 /srv/savinggrace-static/current/_nginx/redirect-maps.conf /srv/savinggrace-static/nginx/
 ```
 
+Then, from a computer with `private/uploads/` (made by `scripts/collect_uploads.py` from the WordPress backup),
+upload the old WordPress files that live links point at: 452 files, 1.1 GB, mostly sermon MP3s and images. They go
+to `/srv/savinggrace-static/uploads`, a permanent folder that builds never touch, and nginx serves them at their
+original `/wp-content/uploads/` addresses:
+
+```sh
+deploy/upload-old-files.sh <user>@<server> -i <ssh-key>
+```
+
 ## 4. HTTPS certificate (Let's Encrypt)
 
 Let's Encrypt has to see the domain pointing at this server. Two ways:

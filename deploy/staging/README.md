@@ -12,6 +12,7 @@ caching are tested here before launch.
 | `savinggrace-nginx.service` | `/etc/systemd/system/` | Runs that nginx (the system `nginx.service` stays disabled) |
 | `savinggrace-nginx.logrotate` | `/etc/logrotate.d/savinggrace-nginx` | Rotates its logs in `/var/log/nginx/savinggrace-staging/` daily, keeping a week |
 | `proxy-static.conf` | `/etc/systemd/system/savinggrace-staging-public.service.d/static-site.conf` | Points public port 8080 at that nginx instead of the old app |
+| `../upload-old-files.sh` | uploads to `/srv/savinggrace-static/uploads/` | The old WordPress files (`/wp-content/uploads/…`), kept outside the builds so updates never remove them |
 | `update.py` | `/srv/savinggrace-static/update.py` | Pulls the newest build from the `staging` GitHub release, checks its SHA-256, switches `current` and installs the build's redirect rules |
 | `savinggrace-static-update.service` / `.timer` | `/etc/systemd/system/` | Runs `update.py` every 2 minutes |
 | `static-server.py`, `savinggrace-static.service` | `/srv/savinggrace-static/`, `/etc/systemd/system/` | The small Python server used before nginx (127.0.0.1:8083); stopped and disabled, kept as a fallback |
