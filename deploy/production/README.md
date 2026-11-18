@@ -34,11 +34,67 @@ The files referred to below are in this repository: `deploy/nginx/` and `deploy/
 
 ---
 
+## The plan: move the staging disk into the production instance
+
+The staging server's disk (Amazon Linux 2023, x86_64, UEFI boot) already has the site, its updater, the nginx rules
+and the 452 old WordPress files. It becomes production's disk, so the production instance keeps its address
+(3.24.78.170) and **the DNS does not change**. The site uses the purchased Sectigo certificate.
+
+`deploy/production/switch-to-production.sh` switches the disk from staging to production, and back. It was tested
+on staging on 18 Nov 2026 with a throwaway certificate: `check` → `apply` → its 10 HTTPS tests passed (including no
+noindex header, HSTS, old links and old files) → the updater reloaded the production nginx → `rollback` restored
+staging.
+
+1. **Before the day.**
+   - Bring the content up to date in the admin (anything added to WordPress since 16 Nov).
+   - Confirm 3.24.78.170 is an **Elastic IP**: stopping an instance without one changes its address.
+   - Confirm the production instance is x86 (not Graviton) and a type that boots UEFI, such as t3, t3a or m5.
+2. **Certificate onto the staging disk.** Copy it from the WordPress server (Bitnami keeps it in
+   `/opt/bitnami/nginx/conf/bitnami/certs/`) straight to the staging server, never by email:
+   - `/etc/nginx/ssl/savinggrace-fullchain.crt`: the certificate followed by Sectigo's intermediate certificates;
+   - `/etc/nginx/ssl/savinggrace.key`: the key, owned by root, mode 600.
+
+   If the certificate is renewed with a new key before the switch, as recommended, use the new files.
+3. **Check, on the staging server:**
+   ```sh
+   curl -L https://github.com/SavingGraceBibleChurch/saving-grace-site/archive/refs/heads/main.tar.gz | tar -xz -C /tmp
+   sudo bash /tmp/saving-grace-site-main/deploy/production/switch-to-production.sh check
+   ```
+   It changes nothing. It checks that the key matches the certificate, that the certificate covers both names and
+   chains to a trusted root, and that it is valid for more than 14 days. It also checks the build, the redirect
+   rules and the old files are in place, and that the production configuration passes `nginx -t`. Fix anything it
+   reports, then run it again.
+4. **Switch:** `sudo bash /tmp/saving-grace-site-main/deploy/production/switch-to-production.sh apply`. This:
+   - turns off staging's nginx and the port 8080 proxy;
+   - starts the system nginx on 80 and 443 with `production.conf`;
+   - points the updater at it;
+   - tests the site over HTTPS on the server itself.
+
+   If any test fails, it puts staging back by itself.
+5. **Swap the disks** (AWS console):
+   1. Snapshot both root volumes.
+   2. Stop both instances.
+   3. Detach the production instance's root volume and **keep it**: it is the rollback.
+   4. Attach the staging volume to the production instance as its root device (the same device name), then start
+      it. nginx and the updater start by themselves.
+6. **After the start.**
+   - Open https://www.savinggrace.org.au and run `check` once more.
+   - SSH is now `ec2-user` with the staging key. The host key changes, which is expected; cloud-init may also add
+     the production instance's own key pair.
+   - Security group: 80 and 443 from anywhere, 22 from your addresses only, nothing else (close 3307 and 8080).
+7. **Rolling back:** stop the instance and put the WordPress root volume back. The DNS was never changed.
+   (`switch-to-production.sh rollback` only turns the disk back into staging.)
+
+The sections below describe setting up a **fresh** server instead, and remain as the reference for every
+setting. On a fresh server, the certificate paths in `production.conf` are the same, whichever certificate is used.
+
 ## 1. The server
 
 - **Ubuntu 24.04 LTS** on the smallest EC2 or Lightsail size is plenty (the site is ~85 MB per build; give it a
   10 GB disk). Amazon Linux 2023 also works; the commands differ slightly (`dnf` instead of `apt`, nginx runs
-  as `nginx` instead of `www-data`, and there is no `sites-enabled`).
+  as `nginx` instead of `www-data`, and there is no `sites-enabled`). `production.conf` uses `http2 on;`, which
+  needs nginx 1.25.1 or newer: Amazon Linux 2023 has 1.30, but Ubuntu 24.04 has 1.24, so there either install
+  nginx from nginx.org's own packages or change each `listen 443 ssl;` + `http2 on;` back to `listen 443 ssl http2;`.
 - An **Elastic IP** (fixed address), because the DNS will point at it.
 
 ## 2. Firewall
@@ -124,6 +180,8 @@ into `/etc/nginx/ssl/` with the key readable by root only (`chmod 600`). Point `
 serves `/.well-known/acme-challenge/`), then put the Let's Encrypt paths back and delete the copied key.
 
 Either way certbot renews by itself (`systemctl list-timers | grep certbot`) and reloads nginx afterwards.
+`production.conf` reads the certificate from `/etc/nginx/ssl/`, so with Let's Encrypt link it there once:
+`sudo mkdir -p /etc/nginx/ssl && sudo ln -s /etc/letsencrypt/live/www.savinggrace.org.au/fullchain.pem /etc/nginx/ssl/savinggrace-fullchain.crt && sudo ln -s /etc/letsencrypt/live/www.savinggrace.org.au/privkey.pem /etc/nginx/ssl/savinggrace.key`.
 
 ## 5. Turn it on
 
