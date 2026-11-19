@@ -13,5 +13,10 @@
   "path": "/teaching-preaching-ministry/",
   "field": "description",
   "reason": "The live meta description was run-together page text (\"StudyOur next study:…\", 380+ characters); replaced on 2026-11-17 with a clean summary of the same page."
+ },
+ {
+  "path": "/our-history/",
+  "field": "description",
+  "reason": "Samuel asked on 2026-11-19 to stop mentioning the 2023 merger; the description now says the church was founded by a few families in Preston in 2017."
  }
 ]

@@ -1605,7 +1605,7 @@
    },
    {
     "kind": "paragraph",
-    "text": "Under the leadership of Pastor Wessam Saad, our church embarked on a humble journey with just three families in Preston. Driven by a passion for spreading the message of God’s grace and love, we have grown and relocated to better serve our vibrant community."
+    "text": "Under the leadership of Pastor Wessam Saad, our church embarked on a humble journey with just a few families in Preston. Driven by a passion for spreading the message of God’s grace and love, we have grown and relocated to better serve our vibrant community."
    },
    {
     "kind": "heading",
@@ -1641,7 +1641,7 @@
      {
       "when": "2017",
       "title": "The Birth of Saving Grace Bible Church",
-      "text": "Founded in 2017 with three families in Preston under Pastor Wesam Saad's leadership."
+      "text": "Founded in 2017 with a few families in Preston under Pastor Wesam Saad's leadership."
      },
      {
       "when": "2021",
@@ -1652,17 +1652,12 @@
       "when": "2021",
       "title": "Growth and Relocation",
       "text": "Relocation to Tullamarine"
-     },
-     {
-      "when": "2023",
-      "title": "Divine Ordinance: The Merger",
-      "text": "The providential merger with East Keilor Evangelical Christian Church, guided by God's purpose"
      }
     ]
    },
    {
     "kind": "figure",
-    "media": "merge",
+    "media": "congregation",
     "size": "full"
    }
   ],
@@ -1674,13 +1669,13 @@
   ],
   "seo": {
    "title": "Our History - Saving Grace Bible Church",
-   "description": "Discover the history of Saving Grace Bible Church, its merger in 2023, and our commitment to faith and unity.",
+   "description": "Discover the history of Saving Grace Bible Church, founded by a few families in Preston in 2017, and our commitment to faith and unity.",
    "canonical": "/our-history/",
    "indexable": true,
    "h1": "Our History",
    "ogType": "article",
    "ogTitle": "Our History - Saving Grace Bible Church",
-   "ogDescription": "Discover the history of Saving Grace Bible Church, its merger in 2023, and our commitment to faith and unity.",
+   "ogDescription": "Discover the history of Saving Grace Bible Church, founded by a few families in Preston in 2017, and our commitment to faith and unity.",
    "published": "2023-11-02T00:28:30.000Z",
    "modified": "2024-01-29T04:26:38.000Z",
    "captured": true
@@ -2779,7 +2774,7 @@
      {
       "name": "Ralph Gambardella",
       "role": "Music Ministry",
-      "media": "ralph-music",
+      "media": "ralph",
       "email": "ralph@savinggrace.org.au",
       "text": []
      }

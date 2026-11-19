@@ -86,11 +86,10 @@
 .welcome__art .arch img { object-position: 42% 50%; }
 .welcome__title { margin-top: 1rem; font-size: var(--step-4); letter-spacing: -0.025em; }
 .welcome__lede { margin-top: 1.75rem; font-family: var(--font-serif); font-size: var(--step-2); line-height: 1.42; color: var(--ink-soft); }
-.pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; margin: 3.25rem 0 0; padding: 0; list-style: none; counter-reset: pillar; }
-.pillar { position: relative; counter-increment: pillar; padding: 1.75rem 0 2rem; border-top: 1px solid var(--line-strong); transition: border-color 0.3s; }
+.pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; margin: 3.25rem 0 0; padding: 0; list-style: none; }
+.pillar { position: relative; padding: 1.75rem 0 2rem; border-top: 1px solid var(--line-strong); transition: border-color 0.3s; }
 .pillar:hover { border-top-color: var(--ember); }
-.pillar::before { content: "0" counter(pillar); font-family: var(--font-serif); font-style: italic; color: var(--ember); }
-.pillar__title { margin-top: 0.4rem; font-size: var(--step-2); }
+.pillar__title { font-size: var(--step-2); }
 .pillar__text { margin-top: 0.6rem; font-size: 0.9688rem; color: var(--ink-soft); }
 .pillar .link-arrow { margin-top: 1rem; font-size: 0.9375rem; }
 .pillar .link-arrow::before { content: ""; position: absolute; inset: 0; }

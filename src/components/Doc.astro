@@ -27,20 +27,18 @@ for (const block of first === -1 ? [] : blocks.slice(first)) {
 // Introductions with two or more paragraphs read as two columns on wide screens.
 const paragraphs = intro.filter((block) => block.kind === "paragraph" && !block.lede).length;
 const columns = paragraphs >= 2;
-const number = (index: number) => String(index + 1).padStart(2, "0");
 ---
 <div class="doc">
   {intro.length > 0 && <div class:list={["doc__intro", "prose", { "doc__intro--columns": columns }]}><Blocks blocks={intro} /></div>}
   {sections.length >= 4 && (
     <nav class="doc__toc" aria-label="On this page">
       <p class="doc__toc-label">On this page</p>
-      <ol role="list">{sections.map((section, index) => <li><a href={`#${section.id}`}><span aria-hidden="true">{number(index)}</span>{section.heading.text}</a></li>)}</ol>
+      <ul role="list">{sections.map((section) => <li><a href={`#${section.id}`}>{section.heading.text}</a></li>)}</ul>
     </nav>
   )}
-  {sections.map((section, index) => (
+  {sections.map((section) => (
     <section class="doc__section" id={section.id} aria-labelledby={`${section.id}-heading`}>
       <header class="doc__aside">
-        <p class="doc__num" aria-hidden="true">{number(index)}</p>
         <h2 class="doc__heading" id={`${section.id}-heading`}>{section.heading.text}</h2>
       </header>
       <div class="doc__content prose"><Blocks blocks={section.blocks} /></div>
