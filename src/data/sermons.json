@@ -1,5 +1,41 @@
 [
  {
+  "wpId": 1000001,
+  "slug": "james-from-thunder-to-grace",
+  "path": "/sermons/james-from-thunder-to-grace/",
+  "title": "James, From Thunder to Grace",
+  "date": "2026-11-22",
+  "modified": "2026-11-24",
+  "speakers": [
+   "wesam-saad"
+  ],
+  "series": [
+   "luke"
+  ],
+  "books": [
+   "luke"
+  ],
+  "passages": [
+   "luke-615"
+  ],
+  "passage": "Luke 6:15",
+  "youtubeId": "np0lshx2WJM",
+  "sermonAudioId": null,
+  "pdf": null,
+  "body": null,
+  "seo": {
+   "title": "James, From Thunder to Grace - Saving Grace Bible Church - Bible-Based Worship in Melbourne",
+   "description": "",
+   "canonical": "/sermons/james-from-thunder-to-grace/",
+   "indexable": true,
+   "h1": null,
+   "ogType": "website",
+   "ogTitle": null,
+   "ogDescription": null,
+   "captured": false
+  }
+ },
+ {
   "wpId": 30143,
   "slug": "angry-little-johnny",
   "path": "/sermons/angry-little-johnny/",
